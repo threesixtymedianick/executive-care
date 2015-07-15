@@ -43,8 +43,9 @@ vagrant up
 
 The admin panel can be accessed at http://pimcore.dev/admin
 
+```
 Username - admin
-
 password - pimcore
+```
 
 The /var folder is an unfortunate side of Pimcore, it gets too big to be committed into source control but is required for the configuration. If using this skeleton application to create a local copy of an already existing Pimcore application you will need to get a copy of the /var folder and a copy of the database from the exisiting installation.
