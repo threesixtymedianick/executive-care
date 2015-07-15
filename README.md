@@ -11,7 +11,9 @@ Clone this repository into ~/Sites
 
 Download the latest Stable release package from https://www.pimcore.org/en/resources/download
 
-Extract just the /website/var folder from the release package into ~/Sites/pimcore-skeleton/var
+Extract the /website/var directory from the release package into ~/Sites/pimcore-skeleton/var
+
+Extract the /pimcore directory from the release package into ~/Sites/pimcore-skeleton/pimcore
 
 Update the ~/Sites/pimcore-skeleton/var/config/system.xml file with the database credentials
 
