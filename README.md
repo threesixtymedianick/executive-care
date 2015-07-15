@@ -39,4 +39,8 @@ cd into the project directory and run
 vagrant up
 ```
 
-Profit
+The admin panel can be accessed at http://pimcore.dev
+
+Username - admin
+
+password - pimcore
