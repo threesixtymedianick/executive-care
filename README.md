@@ -1,9 +1,13 @@
 # pimcore-skeleton
 A skeleton Pimcore application with a Vagrant box
 
+Based on:
+
 Version: 3.0.6
 
 Release Date: May 29, 2015
+
+Future releases may make breaking changes to the DB structure so the provided SQL file may not work forever.
 
 ## Installation Instructions
 
