@@ -1,0 +1,4 @@
+/pimcore
+/var
+/node_modules
+.vagrant
