@@ -19,21 +19,62 @@ Extract the `/website/var` directory from the release package into `~/Sites/pimc
 
 Extract the `/pimcore` directory from the release package into `~/Sites/pimcore-skeleton/pimcore`
 
-Update the `~/Sites/pimcore-skeleton/var/config/system.xml` file with the database credentials
-
-The defaults are
+Create the file `~/Sites/pimcore-skeleton/var/config/system.xml` with the content
 
 ```
-<database>
-  <adapter>Mysqli</adapter>
-  <params>
-    <username>root</username>
-    <password>123</password>
-    <dbname>pimcore</dbname>
-    <host>localhost</host>
-    <port>3306</port>
-  </params>
-</database>
+<?xml version="1.0"?>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+  <general>
+    <timezone>Europe/Berlin</timezone>
+    <language>en</language>
+    <validLanguages>en</validLanguages>
+    <debug>1</debug>
+    <debugloglevel>debug</debugloglevel>
+    <custom_php_logfile>1</custom_php_logfile>
+  </general>
+  <database>
+    <adapter>Mysqli</adapter>
+    <params>
+      <username>root</username>
+      <password>123</password>
+      <dbname>pimcore</dbname>
+      <host>localhost</host>
+      <port>3306</port>
+    </params>
+  </database>
+  <documents>
+    <versions>
+      <steps>10</steps>
+    </versions>
+    <default_controller>default</default_controller>
+    <default_action>default</default_action>
+    <error_pages>
+      <default>/</default>
+    </error_pages>
+    <createredirectwhenmoved/>
+    <allowtrailingslash>no</allowtrailingslash>
+    <allowcapitals>no</allowcapitals>
+    <generatepreview>1</generatepreview>
+  </documents>
+  <objects>
+    <versions>
+      <steps>10</steps>
+    </versions>
+  </objects>
+  <assets>
+    <versions>
+      <steps>10</steps>
+    </versions>
+  </assets>
+  <services/>
+  <cache>
+    <excludeCookie/>
+  </cache>
+  <httpclient>
+    <adapter>Zend_Http_Client_Adapter_Socket</adapter>
+  </httpclient>
+</zend-config>
+
 ```
 
 Add a record to your host file
