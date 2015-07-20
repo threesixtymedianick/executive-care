@@ -9,6 +9,7 @@ class PageController extends Action
 {
     public function init()
     {
+        parent::init();
         $this->enableLayout();
     }
 

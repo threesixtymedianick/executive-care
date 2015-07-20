@@ -1,3 +1,5 @@
-body {
-  padding: 5px;
-}
+@import "settings";
+@import "vendor/all";
+
+@import "components/all";
+@import "templates/all";

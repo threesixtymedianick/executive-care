@@ -1,0 +1,33 @@
+.site-header {
+  background-color: #fff;
+  padding: 25px 0px;
+
+  &__logo {
+    @include span-columns(12);
+
+    @include media(769px) {
+      @include span-columns(3);
+    }
+  }
+
+  &__contact {
+    @include span-columns(12);
+
+    @include media(769px) {
+      @include span-columns(9);
+      text-align: right;
+    }
+
+
+    &-header {
+      text-transform: uppercase;
+      font-family: "Raleway", sans-serif;
+      font-size: 22px;
+      letter-spacing: 4px;
+    }
+
+    &-telephone, &-email {
+      display: inline-block;
+    }
+  }
+}
