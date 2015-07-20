@@ -63,7 +63,6 @@ gulp.task("build-css", function() {
         .pipe(plumber())
         .pipe(sass())
         .pipe(gulp.dest(paths.build.css))
-        .pipe(reload({stream:true}))
     ;
 });
 
