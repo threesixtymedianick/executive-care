@@ -1,19 +1,15 @@
 <?php
 
-use Website\Controller\Action;
+use Website\Controller\PageController as AbstractPageController;
 
 /**
  *
  */
-class NewsController extends Action
+class NewsController extends AbstractPageController
 {
-    public function init()
-    {
-        $this->enableLayout();
-    }
-
     /**
-     *
+     * [indexAction description]
+     * @return [type] [description]
      */
     public function indexAction()
     {
@@ -21,7 +17,8 @@ class NewsController extends Action
     }
 
     /**
-     *
+     * [viewAction description]
+     * @return [type] [description]
      */
     public function viewAction()
     {
@@ -29,7 +26,8 @@ class NewsController extends Action
     }
 
     /**
-     *
+     * [openDaysAction description]
+     * @return [type] [description]
      */
     public function openDaysAction()
     {

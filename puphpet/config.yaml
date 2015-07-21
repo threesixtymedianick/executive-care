@@ -3,12 +3,12 @@ vagrantfile:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: pimcore.dev
+        hostname: executive-care.dev
         memory: '512'
         cpus: '1'
         chosen_provider: virtualbox
         network:
-            private_network: 192.168.56.22
+            private_network: 192.168.56.174
             forwarded_port:
                 vflnp_olvckaktkvpz:
                     host: '8729'
@@ -34,7 +34,7 @@ vagrantfile:
                     - '--parser future'
         synced_folder:
             vflsf_ozjqtb9qyclr:
-                source: ~/Sites/pimcore-skeleton
+                source: ~/Sites/executive-care
                 target: /var/www
                 sync_type: nfs
                 smb:
@@ -91,7 +91,7 @@ cron:
         cj_b98wur352i9l:
             name: 'pimcore maintenance'
             user: root
-            command: 'php /var/www/pimcore-skeleton/pimcore/cli/maintenance.php'
+            command: 'php /var/www/executive-care/pimcore/cli/maintenance.php'
             minute: '5'
             hour: ''
             weekday: ''
@@ -163,7 +163,7 @@ apache:
         - rewrite
     vhosts:
         av_sybik1ypazpl:
-            servername: pimcore.dev
+            servername: executive-care.dev
             docroot: /var/www
             port: '80'
             setenv:
@@ -303,11 +303,11 @@ mysql:
     adminer: 0
     users:
         mysqlnu_w54efwo8rgs0:
-            name: pimcore
+            name: executive-care
             password: '123'
     databases:
         mysqlnd_quqi7c8dsbz9:
-            name: pimcore
+            name: executive-care
             sql: '/var/www/pimcore.sql'
     grants: {  }
 mariadb:

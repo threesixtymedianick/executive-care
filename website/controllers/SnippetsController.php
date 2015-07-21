@@ -1,12 +1,13 @@
 <?php
 
-use Website\Controller\Action;
+use Website\Controller\PageController as AbstractPageController;
 
-/**
- *
- */
-class SnippetsController extends Action
+class SnippetsController extends AbstractPageController
 {
+    /**
+     * [init description]
+     * @return void
+     */
     public function init()
     {
         parent::init();
@@ -14,7 +15,8 @@ class SnippetsController extends Action
     }
 
     /**
-     *
+     * [footerAction description]
+     * @return [type] [description]
      */
     public function footerAction()
     {

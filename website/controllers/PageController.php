@@ -1,20 +1,12 @@
 <?php
 
-use Website\Controller\Action;
+use Website\Controller\PageController as AbstractPageController;
 
-/**
- *
- */
-class PageController extends Action
+class PageController extends AbstractPageController
 {
-    public function init()
-    {
-        parent::init();
-        $this->enableLayout();
-    }
-
     /**
-     *
+     * [homeAction description]
+     * @return [type] [description]
      */
     public function homeAction()
     {
@@ -22,7 +14,8 @@ class PageController extends Action
     }
 
     /**
-     *
+     * [aboutUsAction description]
+     * @return [type] [description]
      */
     public function aboutUsAction()
     {
@@ -30,7 +23,8 @@ class PageController extends Action
     }
 
     /**
-     *
+     * [ourCareAction description]
+     * @return [type] [description]
      */
     public function ourCareAction()
     {
@@ -38,7 +32,8 @@ class PageController extends Action
     }
 
     /**
-     *
+     * [ourHomesAction description]
+     * @return [type] [description]
      */
     public function ourHomesAction()
     {
@@ -46,7 +41,8 @@ class PageController extends Action
     }
 
     /**
-     *
+     * [contactUsAction description]
+     * @return [type] [description]
      */
     public function contactUsAction()
     {

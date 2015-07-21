@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <?php require('includes/header.php'); ?>
+    <?php require('includes/head.php'); ?>
 
     <body>
         <div class="site-header">
@@ -25,32 +25,7 @@
         </div>
         <div class="site-navigation">
           <div class="container">
-            <?php
-            if (!$this->document instanceof DocumentPage) {
-                $this->document = Document::getById(1);
-            }
-
-            $navStartNode = $this->document->getProperty("navigationRoot");
-            if (!$navStartNode instanceof DocumentPage) {
-                $navStartNode = Document::getById(1);
-            }
-
-            $navigation = $this->pimcoreNavigation($this->document, $navStartNode);
-
-            $home = Document::getById(1);
-            $navigation->addPage(array(
-                'order' => -1, // put it in front of all the others
-                'uri' => '/', //path to homepage
-                'label' => 'Home',
-                'title' => 'Home',
-                'active' => $this->document->id == $home->id //active state (boolean)
-            ));
-
-            echo $navigation->menu()->renderMenu(null, [
-                "maxDepth" => 1,
-                "ulClass" => "site-navigation__main-navigation"
-            ]);
-            ?>
+            <?= $this->mainMenu($this->document) ?>
           </div>
         </div>
 
@@ -62,10 +37,7 @@
 
         <div class="site-footer">
           <div class="container">
-            <?php
-            $footer = Document_Snippet::getByPath('/snippets/footer');
-            echo $this->inc($footer);
-            ?>
+            <?= $this->inc(Document_Snippet::getByPath('/snippets/footer')); ?>
           </div>
         </div>
     </body>
