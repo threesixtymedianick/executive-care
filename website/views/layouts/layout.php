@@ -3,7 +3,7 @@
     <?php require('includes/head.php'); ?>
 
     <body>
-        <div class="site-header">
+        <header class="site-header">
           <div class="container">
             <div class="site-header__logo">
               <img src="website/static/images/executive-care-logo.png" alt="Executive Care" />
@@ -14,20 +14,23 @@
               </div>
               <div class="site-header__contact-details">
                 <div class="site-header__contact-telephone">
-                  01423 859 859
+                  <i class="site-header__contact-telephone-icon"></i>
+                  <div class="site-header__contact-text"><?= $this->config->telephone; ?></div>
                 </div>
                 <div class="site-header__contact-email">
-                  info@executivecare.com
+                  <i class="site-header__contact-email-icon"></i>
+                  <div class="site-header__contact-text"><?= $this->config->infoemail; ?></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="site-navigation">
+        </header>
+
+        <nav class="site-navigation">
           <div class="container">
-            <?= $this->mainMenu($this->document) ?>
+            <?php require('includes/nav.php'); ?>
           </div>
-        </div>
+        </nav>
 
         <div class="site-content">
           <div class="container">
@@ -35,11 +38,11 @@
           </div>
         </div>
 
-        <div class="site-footer">
+        <footer class="site-footer">
           <div class="container">
             <?= $this->inc(Document_Snippet::getByPath('/snippets/footer')); ?>
           </div>
-        </div>
+        </footer>
     </body>
 
     <?php require('includes/js.php'); ?>

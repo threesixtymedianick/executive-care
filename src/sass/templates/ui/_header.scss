@@ -3,31 +3,72 @@
   padding: 25px 0px;
 
   &__logo {
-    @include span-columns(12);
+    @include span-columns(6);
 
-    @include media(769px) {
-      @include span-columns(3);
+    img {
+      max-width: 100%;
     }
   }
 
   &__contact {
-    @include span-columns(12);
-
-    @include media(769px) {
-      @include span-columns(9);
-      text-align: right;
-    }
-
+    @include span-columns(6);
+    text-align: right;
 
     &-header {
       text-transform: uppercase;
       font-family: "Raleway", sans-serif;
       font-size: 22px;
       letter-spacing: 4px;
+
+      display: none;
+
+      @include media(769px) {
+        display: inline;
+      }
+    }
+
+    &-details {
+      line-height: 32px;
     }
 
     &-telephone, &-email {
       display: inline-block;
+    }
+
+    &-telephone {
+      @include media(769px) {
+        padding-right: 34px;
+      }
+    }
+
+    &-telephone-icon, &-email-icon {
+      background-image: url('../images/header-sprite.png');
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      margin-right: 10px;
+    }
+
+    &-telephone-icon {
+      width: 22px;
+      height: 21px;
+
+      background-position: 0px center;
+    }
+
+    &-email-icon {
+      width: 25px;
+      height: 21px;
+
+      background-position: 25px center;
+    }
+
+    &-text {
+      display: none;
+
+      @include media(769px) {
+        display: inline;
+      }
     }
   }
 }

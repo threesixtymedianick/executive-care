@@ -1,0 +1,14 @@
+.site-footer {
+  background-color: #5B7F9F;
+  padding: 25px 0px;
+
+  &__block {
+    color: #fff;
+    margin-bottom: 30px;
+
+    @include media(769px) {
+      @include span-columns(4);
+      margin-bottom: 0px;
+    }
+  }
+}

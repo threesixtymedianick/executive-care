@@ -1,3 +1,5 @@
+$nav-height: 47px;
+
 .site-navigation {
   background-color: #5B7F9F;
   color: #fff;
@@ -6,11 +8,17 @@
     margin: 0px;
     padding: 0px;
 
+    @include media(769px) {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+    }
+
     li {
-      display: inline-block;
-      padding: 10px 15px;
-      text-transform: uppercase;
       position: relative;
+      list-style-type: none;
+      flex-grow: 1;
+      text-align: center;
 
       &.active, &:hover {
         background-color: #818181;
@@ -21,21 +29,50 @@
         text-decoration: none;
         font-size: 18px;
         font-family: "Raleway", sans-serif;
+
+        padding: 10px 5px;
+        display: inline-block;
+        text-transform: uppercase;
       }
 
       ul {
-        display: none;
-        position: absolute;
-        left: 0px;
-        top: 47px;
+        width: 100%;
         padding-left: 0px;
-        width: 200px;
-        background: #818181;
+
+        @include media(769px) {
+          display: none;
+          position: absolute;
+          left: 0px;
+          top: $nav-height;
+          background: rgba(129, 129, 129, 0.9);
+
+          li {
+            border-top: 1px solid #fff;
+          }
+        }
       }
 
       &:hover ul {
-        display: block;
+        @include media(769px) {
+          display: block;
+        }
       }
+    }
+  }
+
+  .home {
+    flex-grow: 0.5;
+    width: 100%;
+    height: $nav-height;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Raleway", sans-serif;
+
+    @include media(769px) {
+      text-indent: -9999px;
+      background: url('../images/home.png') center center no-repeat;
+      width: 60px;
     }
   }
 }

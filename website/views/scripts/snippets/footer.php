@@ -1,18 +1,22 @@
-<div>
-  Address:
-  <?= $this->textarea("address") ?>
+<div class="site-footer__block">
+  <div>© 2015 Executive Care Group</div>
+  <div>
+    <?= $this->inc(Document_Snippet::getByPath('/snippets/address')); ?>
+  </div>
 </div>
+<div class="site-footer__block">
+  <div>
+      Telephone: <?= $this->config->telephone; ?>
+  </div>
 
-<div>
-  Telephone:
-  <?= $this->input("telephone") ?>
+  <div>
+      Fax: <?= $this->config->fax; ?>
+  </div>
+
+  <div>
+      Email: <?= $this->config->infoemail; ?>
+  </div>
 </div>
+<div class="site-footer__block">
 
-<div>Fax:
-  <?=
-   $this->input("fax") ?>
-</div>
-
-<div>Email:
-  <?= $this->input("email") ?>
 </div>

@@ -22,4 +22,12 @@ class SnippetsController extends AbstractPageController
     {
 
     }
+    /**
+     * [addressAction description]
+     * @return [type] [description]
+     */
+    public function addressAction()
+    {
+
+    }
 }

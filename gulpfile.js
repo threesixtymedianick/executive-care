@@ -21,6 +21,7 @@ var watch       = require("gulp-watch");
 var reactify    = require('reactify');
 var source      = require('vinyl-source-stream');
 var pixrem      = require('gulp-pixrem');
+var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
     src: {
@@ -62,6 +63,9 @@ gulp.task("build-css", function() {
         .src(paths.src.scss + "*.scss")
         .pipe(plumber())
         .pipe(sass())
+        .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'IE 10']
+              }))
         .pipe(gulp.dest(paths.build.css))
     ;
 });
