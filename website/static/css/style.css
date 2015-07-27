@@ -464,6 +464,8 @@ body {
         text-decoration: none;
         font-size: 18px;
         font-family: "Raleway", sans-serif;
+        height: 100%;
+        width: 100%;
         padding: 10px 5px;
         display: inline-block;
         text-transform: uppercase; }
@@ -475,7 +477,7 @@ body {
             display: none;
             position: absolute;
             left: 0px;
-            top: 47px;
+            top: 100%;
             background: rgba(129, 129, 129, 0.9); }
             .site-navigation__main-navigation li ul li {
               border-top: 1px solid #fff; } }
@@ -494,9 +496,10 @@ body {
     font-family: "Raleway", sans-serif; }
     @media screen and (min-width: 769px) {
       .site-navigation .home {
-        text-indent: -9999px;
         background: url("../images/home.png") center center no-repeat;
-        width: 60px; } }
+        width: 60px; }
+        .site-navigation .home a {
+          text-indent: 9999%; } }
 
 .site-footer {
   background-color: #5B7F9F;
@@ -504,6 +507,11 @@ body {
   .site-footer__block {
     color: #fff;
     margin-bottom: 30px; }
+    .site-footer__block a {
+      color: #fff;
+      text-decoration: none; }
+      .site-footer__block a:hover {
+        text-decoration: underline; }
     @media screen and (min-width: 769px) {
       .site-footer__block {
         float: left;

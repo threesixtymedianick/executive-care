@@ -11,8 +11,8 @@ if(!$navStartNode instanceof Document\Page) {
 ?>
 <ul class="site-navigation__main-navigation">
   <li class="home">
-    <a href="/">
-    Home
+    <a href="<?= $this->url(array("document" => Document::getById(1)), "default", true); ?>">
+      Home
     </a>
   </li>
 

@@ -29,6 +29,8 @@ $nav-height: 47px;
         text-decoration: none;
         font-size: 18px;
         font-family: "Raleway", sans-serif;
+        height: 100%;
+        width: 100%;
 
         padding: 10px 5px;
         display: inline-block;
@@ -43,7 +45,7 @@ $nav-height: 47px;
           display: none;
           position: absolute;
           left: 0px;
-          top: $nav-height;
+          top: 100%;
           background: rgba(129, 129, 129, 0.9);
 
           li {
@@ -70,9 +72,12 @@ $nav-height: 47px;
     font-family: "Raleway", sans-serif;
 
     @include media(769px) {
-      text-indent: -9999px;
       background: url('../images/home.png') center center no-repeat;
       width: 60px;
+
+      a {
+        text-indent: 9999%;
+      }
     }
   }
 }

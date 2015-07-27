@@ -18,5 +18,20 @@
   </div>
 </div>
 <div class="site-footer__block">
+  <div>
+    <a href="<?= $this->url(array("document" => Document::getById(1)), "default", true); ?>">Home</a>
+  </div>
+    <div>
+      <a href="<?= $this->url(array("document" => Document::getById(13)), "default", true); ?>">Care Home Jobs</a>
+    </div>
+    <div>
+      <a href="<?= $this->url(array("document" => Document::getById(7)), "default", true); ?>">Care Homes</a>
+    </div>
+    <div>
+      <a href="#">Dementia Care Homes</a>
+    </div>
+    <div>
+      <a href="#">Press</a>
+    </div>
 
 </div>
