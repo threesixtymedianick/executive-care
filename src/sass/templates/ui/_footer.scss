@@ -1,13 +1,13 @@
 .site-footer {
-  background-color: $executive-blue;
+  background-color: $color-blue;
   padding: 25px 0px;
 
   &__block {
-    color: #fff;
+    color: $color-white;
     margin-bottom: 30px;
 
     a {
-      color: #fff;
+      color: $color-white;
       text-decoration: none;
 
       &:hover {

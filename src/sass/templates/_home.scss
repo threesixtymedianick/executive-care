@@ -1,0 +1,135 @@
+.home {
+  @include outer-container;
+
+  &__left {
+    @include span-columns(8);
+  }
+
+  &__right {
+    @include span-columns(4);
+  }
+
+  &__panel {
+    background-color: $color-grey;
+    color: $color-white;
+    padding: 30px 15px;
+    margin-bottom: $gutter;
+
+    &-header {
+      font-family: 'Raleway', 'Open Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin: 0px;
+    }
+
+    &--split {
+      padding-left: 54%;
+    }
+
+    &--blue {
+      background-color: $color-blue;
+    }
+
+    &--green {
+      background-color: $color-green;
+    }
+
+    &--purple {
+      background-color: $color-purple;
+    }
+
+    p {
+      margin-top: 12px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+  }
+
+  &__panels {
+    @include outer-container;
+
+    .home__panel--split {
+      padding-left: 27%;
+    }
+  }
+
+  &__button, &__input {
+    background-color: $color-white;
+    color: #000;
+
+    padding: 7px 60px 7px 15px;
+
+    font-weight: 300;
+    font-family: 'Raleway', 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: -15px;
+  }
+
+  &__button {
+    display: inline-block;
+    line-height: 1;
+
+    &:hover {
+      background-color: darken($color-white, 20%);
+    }
+  }
+
+  &__find-a-home-form {
+    font-size: 0px;
+  }
+
+  &__input {
+    padding-right: 15px;
+    width: 152px;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  &__search {
+    width: 36px;
+    height: 30px;
+    background-image: url('../images/home/search-button.png');
+    text-indent: -9999%;
+    display: inline-block;
+    font-size: 14px;
+    border: none;
+  }
+
+  &__our-care-explained, &__recommendations {
+    @include span-columns(6);
+  }
+
+  &__our-care-explained {
+    background-image: url('../images/home/our-care-explained.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  &__recommendations {
+    a {
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+
+  &__find-a-home {
+    background-image: url('../images/home/find-a-home.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  &__news {
+    background-image: url('../images/home/news-and-events.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  &__work-for-us {
+    background-image: url('../images/home/work-for-executive-care.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+}

@@ -376,15 +376,17 @@ body {
     clear: both;
     content: "";
     display: table; }
+  .container__inner {
+    padding: 15px 0px; }
 
 .site-header {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 25px 0px; }
   .site-header__logo {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
+    margin-right: 0.73174%;
+    width: 49.63413%; }
     .site-header__logo:last-child {
       margin-right: 0; }
     .site-header__logo img {
@@ -392,8 +394,8 @@ body {
   .site-header__contact {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 0.73174%;
+    width: 49.63413%;
     text-align: right; }
     .site-header__contact:last-child {
       margin-right: 0; }
@@ -435,7 +437,7 @@ body {
 
 .site-navigation {
   background-color: #5B7F9F;
-  color: #fff; }
+  color: #ffffff; }
   .site-navigation__main-navigation {
     margin: 0px;
     padding: 0px; }
@@ -460,7 +462,7 @@ body {
       .site-navigation__main-navigation li.active, .site-navigation__main-navigation li:hover {
         background-color: #818181; }
       .site-navigation__main-navigation li a {
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
         font-size: 18px;
         font-family: "Raleway", sans-serif;
@@ -480,7 +482,7 @@ body {
             top: 100%;
             background: rgba(129, 129, 129, 0.9); }
             .site-navigation__main-navigation li ul li {
-              border-top: 1px solid #fff; } }
+              border-top: 1px solid #ffffff; } }
       @media screen and (min-width: 769px) {
         .site-navigation__main-navigation li:hover ul {
           display: block; } }
@@ -490,7 +492,7 @@ body {
             flex-grow: 0.5;
     width: 100%;
     height: 47px;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
     font-family: "Raleway", sans-serif; }
@@ -499,16 +501,16 @@ body {
         background: url("../images/home.png") center center no-repeat;
         width: 60px; }
         .site-navigation .home a {
-          text-indent: 9999%; } }
+          text-indent: -9999%; } }
 
 .site-footer {
   background-color: #5B7F9F;
   padding: 25px 0px; }
   .site-footer__block {
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 30px; }
     .site-footer__block a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none; }
       .site-footer__block a:hover {
         text-decoration: underline; }
@@ -516,8 +518,120 @@ body {
       .site-footer__block {
         float: left;
         display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%;
+        margin-right: 0.73174%;
+        width: 32.84551%;
         margin-bottom: 0px; }
         .site-footer__block:last-child {
           margin-right: 0; } }
+
+.home {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .home::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .home__left {
+    float: left;
+    display: block;
+    margin-right: 0.73174%;
+    width: 66.42275%; }
+    .home__left:last-child {
+      margin-right: 0; }
+  .home__right {
+    float: left;
+    display: block;
+    margin-right: 0.73174%;
+    width: 32.84551%; }
+    .home__right:last-child {
+      margin-right: 0; }
+  .home__panel {
+    background-color: #818181;
+    color: #ffffff;
+    padding: 30px 15px;
+    margin-bottom: 0.4045em; }
+    .home__panel-header {
+      font-family: 'Raleway', 'Open Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin: 0px; }
+    .home__panel--split {
+      padding-left: 54%; }
+    .home__panel--blue {
+      background-color: #5B7F9F; }
+    .home__panel--green {
+      background-color: #136265; }
+    .home__panel--purple {
+      background-color: #9A5998; }
+    .home__panel p {
+      margin-top: 12px;
+      margin-bottom: 24px;
+      line-height: 1.4; }
+  .home__panels {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto; }
+    .home__panels::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .home__panels .home__panel--split {
+      padding-left: 27%; }
+  .home__button, .home__input {
+    background-color: #ffffff;
+    color: #000;
+    padding: 7px 60px 7px 15px;
+    font-weight: 300;
+    font-family: 'Raleway', 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: -15px; }
+  .home__button {
+    display: inline-block;
+    line-height: 1; }
+    .home__button:hover {
+      background-color: #cccccc; }
+  .home__find-a-home-form {
+    font-size: 0px; }
+  .home__input {
+    padding-right: 15px;
+    width: 152px;
+    display: inline-block;
+    font-size: 14px; }
+  .home__search {
+    width: 36px;
+    height: 30px;
+    background-image: url("../images/home/search-button.png");
+    text-indent: -9999%;
+    display: inline-block;
+    font-size: 14px;
+    border: none; }
+  .home__our-care-explained, .home__recommendations {
+    float: left;
+    display: block;
+    margin-right: 0.73174%;
+    width: 49.63413%; }
+    .home__our-care-explained:last-child, .home__recommendations:last-child {
+      margin-right: 0; }
+  .home__our-care-explained {
+    background-image: url("../images/home/our-care-explained.png");
+    background-position: left center;
+    background-repeat: no-repeat; }
+  .home__recommendations a {
+    color: #fff;
+    font-weight: 400; }
+  .home__find-a-home {
+    background-image: url("../images/home/find-a-home.png");
+    background-position: left center;
+    background-repeat: no-repeat; }
+  .home__news {
+    background-image: url("../images/home/news-and-events.png");
+    background-position: left center;
+    background-repeat: no-repeat; }
+  .home__work-for-us {
+    background-image: url("../images/home/work-for-executive-care.png");
+    background-position: left center;
+    background-repeat: no-repeat; }

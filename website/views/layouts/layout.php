@@ -34,7 +34,7 @@
 
         <div class="site-content">
           <div class="container">
-            <?= $this->layout()->content ?>
+            <div class="container__inner"><?= $this->layout()->content ?></div>
           </div>
         </div>
 
