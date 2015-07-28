@@ -10,7 +10,7 @@ Extract the `/website/var` directory from the release package into `~/Sites/exec
 
 Extract the `/pimcore` directory from the release package into `~/Sites/executive-care/pimcore`
 
-Create the file `~/Sites/pimcore-skeleton/var/config/system.xml` with the content
+Create the file `~/Sites/executive-care/var/config/system.xml` with the content
 
 ```
 <?xml version="1.0"?>
