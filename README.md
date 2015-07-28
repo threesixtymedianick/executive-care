@@ -1,13 +1,4 @@
-# pimcore-skeleton
-A skeleton Pimcore application with a Vagrant box
-
-Based on:
-
-Version: 3.0.6
-
-Release Date: May 29, 2015
-
-Future releases may make breaking changes to the DB structure so the provided SQL file may not work forever.
+# Executive Care
 
 ## Installation Instructions
 
@@ -15,9 +6,9 @@ Clone this repository into `~/Sites`
 
 Download the latest Stable release package from https://www.pimcore.org/en/resources/download
 
-Extract the `/website/var` directory from the release package into `~/Sites/pimcore-skeleton/var`
+Extract the `/website/var` directory from the release package into `~/Sites/executive-care/var`
 
-Extract the `/pimcore` directory from the release package into `~/Sites/pimcore-skeleton/pimcore`
+Extract the `/pimcore` directory from the release package into `~/Sites/executive-care/pimcore`
 
 Create the file `~/Sites/pimcore-skeleton/var/config/system.xml` with the content
 
@@ -80,15 +71,15 @@ Create the file `~/Sites/pimcore-skeleton/var/config/system.xml` with the conten
 Add a record to your host file
 
 ```
-192.168.56.22   pimcore.dev
+192.168.56.174   executive-care.dev
 ```
 
-cd into ~/Sites/pimcore-skeleton and run
+cd into ~/Sites/executive-care and run
 ```
 vagrant up
 ```
 
-The admin panel can be accessed at http://pimcore.dev/admin
+The admin panel can be accessed at http://executive-care.dev/admin
 
 ```
 Username - admin
