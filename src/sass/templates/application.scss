@@ -1,7 +1,6 @@
 body {
   background-color: $color-background;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  @include font-body($weight: 300);
   font-size: 14px;
   line-height: 1.5;
 }

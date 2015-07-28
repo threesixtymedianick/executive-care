@@ -28,7 +28,7 @@ $nav-height: 47px;
         color: $color-white;
         text-decoration: none;
         font-size: 18px;
-        font-family: "Raleway", sans-serif;
+        @include font-header;
         height: 100%;
         width: 100%;
 
@@ -69,7 +69,7 @@ $nav-height: 47px;
     color: $color-white;
     text-decoration: none;
     font-size: 18px;
-    font-family: "Raleway", sans-serif;
+    @include font-header;
 
     @include media(769px) {
       background: url('../images/home.png') center center no-repeat;

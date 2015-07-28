@@ -362,7 +362,7 @@ html {
 
 body {
   background-color: #E9E9E9;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.5; }
@@ -401,7 +401,8 @@ body {
       margin-right: 0; }
     .site-header__contact-header {
       text-transform: uppercase;
-      font-family: "Raleway", sans-serif;
+      font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+      font-weight: 300;
       font-size: 22px;
       letter-spacing: 4px;
       display: none; }
@@ -465,7 +466,8 @@ body {
         color: #ffffff;
         text-decoration: none;
         font-size: 18px;
-        font-family: "Raleway", sans-serif;
+        font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+        font-weight: 300;
         height: 100%;
         width: 100%;
         padding: 10px 5px;
@@ -495,7 +497,8 @@ body {
     color: #ffffff;
     text-decoration: none;
     font-size: 18px;
-    font-family: "Raleway", sans-serif; }
+    font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300; }
     @media screen and (min-width: 769px) {
       .site-navigation .home {
         background: url("../images/home.png") center center no-repeat;
@@ -552,9 +555,9 @@ body {
     padding: 30px 15px;
     margin-bottom: 0.4045em; }
     .home__panel-header {
-      font-family: 'Raleway', 'Open Sans', sans-serif;
-      font-size: 18px;
+      font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
       font-weight: 300;
+      font-size: 18px;
       line-height: 1.1;
       text-transform: uppercase;
       margin: 0px; }
@@ -584,8 +587,8 @@ body {
     background-color: #ffffff;
     color: #000;
     padding: 7px 60px 7px 15px;
+    font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
     font-weight: 300;
-    font-family: 'Raleway', 'Open Sans', sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     margin-left: -15px; }
@@ -623,6 +626,36 @@ body {
   .home__recommendations a {
     color: #fff;
     font-weight: 400; }
+  .home__recommendations-header {
+    margin-bottom: 10px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto; }
+    .home__recommendations-header::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .home__recommendations-header-left {
+      float: left;
+      display: block;
+      margin-right: 0.73174%;
+      width: 58.02844%; }
+      .home__recommendations-header-left:last-child {
+        margin-right: 0; }
+    .home__recommendations-header-right {
+      float: left;
+      display: block;
+      margin-right: 0.73174%;
+      width: 41.23982%; }
+      .home__recommendations-header-right:last-child {
+        margin-right: 0; }
+  .home__recommendations-home-name {
+    font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    margin: 18px 0px; }
+  .home__recommendations-content p:last-child {
+    margin-bottom: 0px; }
   .home__find-a-home {
     background-image: url("../images/home/find-a-home.png");
     background-position: left center;

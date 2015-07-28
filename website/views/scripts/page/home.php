@@ -12,8 +12,12 @@
       </div>
       <div class="home__panel home__panel--blue home__recommendations">
         <div class="home__recommendations-header">
-          Carehome.co.uk<br>
-          Latest recommendations for homes in our group
+          <div class="home__recommendations-header-left">
+            <img src="website/static/images/home/carehome-co-uk.png" alt="carehome.co.uk" />
+          </div>
+          <div class="home__recommendations-header-right">
+            Latest recommendations for homes in our group
+          </div>
         </div>
         <div class="home__recommendations-body">
           <h4 class="home__recommendations-home-name">
