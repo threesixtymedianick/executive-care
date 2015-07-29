@@ -9,6 +9,7 @@ $color-white: #ffffff;
 $color-blue: #5B7F9F;
 $color-green: #136265;
 $color-purple: #9A5998;
+$color-light-purple: #d8c2d8;
 
 @mixin font-header($weight: 300) {
   font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
@@ -19,3 +20,4 @@ $color-purple: #9A5998;
   font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: $weight;
 }
+
