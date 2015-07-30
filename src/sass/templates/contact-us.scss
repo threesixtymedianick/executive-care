@@ -2,14 +2,14 @@
     @include outer-container;
 
     &__left {
-    @include span-columns(8);
-  }
+        @include span-columns(8);
+    }
 
-  &__right {
-    @include span-columns(4);
-  }
+    &__right {
+        @include span-columns(4);
+    }
 
-  ul {
+    ul {
         &.tabs {
             margin:0;
             padding: 0 !important;
@@ -25,26 +25,27 @@
         li {
             list-style:none;
             display:inline;
-        }
+            a {
+                padding:5px 10px;
+                display:inline-block;
+                color:$color-white;
+                text-decoration:none;
+                margin-right: -5px;
+                padding-left:  18px;
+                padding-right: 18px;
 
-        a {
-            padding:5px 10px;
-            display:inline-block;
-            background:$color-blue;
-            color:$color-white;
-            text-decoration:none;
-            margin-right: -5px;
-            padding-left:  18px;
-            padding-right: 18px;
-        }
+                &#enquiry_tab {
+                    background-color: $color-purple;
+                }
 
-        a.active {
-        background:$color-purple;
+                &#brochure_tab {
+                    background-color: $color-blue;
+                }
+            }
         }
     }
 
     .tab {
-        background: $color-light-purple;
         padding: 24px;
 
         &__left {
@@ -84,22 +85,43 @@
             width:auto;
         }
 
+        select {
+            @extend input;
+        }
+
         #message {
             width: 100%;
             height: 125px;
         }
-        #submit {
+        .submit_base {
             width: 174px;
             text-transform: uppercase;
             font-family: "Raleway", sans-serif;
             font-size: 18px;
             border: 0;
-            background-color: $color-purple;
             float: right;
             color: $color-white;
             margin-top: 24px;
             position: relative;
             right:-24px;
+        }
+
+        &#brochure {
+            background:  $color-light-blue;
+
+            & input[type=submit] {
+                @extend .submit_base;
+                background-color: $color-blue;
+            }
+        }
+
+        &#enquiry {
+            background-color: $color-light-purple;
+
+            & input[type=submit] {
+                @extend .submit_base;
+                background-color: $color-purple;
+            }
         }
     }
 }
