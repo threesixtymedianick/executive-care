@@ -1,3 +1,12 @@
+<?php
+    $contactUsAddress               = $this->wysiwyg("contact-us-address", ["width" => 200, "height" => 300]);
+    $contactUsEnquiryNumber         = $this->input("contact-us_enquiry-number");
+    $contactUsEnquiryNumberSecond   = $this->input("contact-us_enquiry-number-second");
+    $contactUsOpeningTimes          = $this->input("contact-us_opening_times");
+    $googleMapLocation              = $this->input("contact-us_map_location");
+    $contactUsLiveChatDetails       = $this->wysiwyg("live_chat_details_content");
+?>
+
 <div class="contact-us">
     <div class="contact-us__left">
         <ul class="tabs">
@@ -42,6 +51,22 @@
                 </div>
             </form>
         </div>
+        <div class="contact-us__live-chat">
+            <div class="contact-us__live-chat__icon">
+                <img src="website/static/images/home/woman_headset2.png" />
+            </div>
+            <div class="contact-us__live-chat__details">
+                <div class="contact-us__live-chat__details__title">
+                    Chat
+                </div>
+                <div class="contact-us__live-chat__details__content">
+                    <?= $contactUsLiveChatDetails ?>
+                </div>
+                <div class="contact-us__live-chat__details__open-chat">
+                    <a href="#livechat">Chat now</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="contact-us__right">
@@ -50,32 +75,30 @@
                 Crystal Court Care Home
             </div>
             <div class="contact-us__address__address">
-                Pannal Green<br />Pannal<br />Harrogate<br />HG3 1LH
+                <?= $contactUsAddress ?>
             </div>
             <div class="contact-us__address__enquiries">
             <div class="contact-us__address__enquiries__left">
                 Enquiries:
             </div>
             <div class="contact-us__address__enquiries__right">
-                01423 859 859<br />
-                <span id="opening_times">(Mon - Fri 8:30am - 5:00pm)</span>
+                <?= $contactUsEnquiryNumber ?><br />
+                <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
             </div>
             <br clear="all" />
             </div>
             <div class="contact-us__address__telephone">
-                Tel: 01423 810 627
+                Tel: <?= $contactUsEnquiryNumberSecond ?>
             </div>
         </div>
-        <iframe
-          width="100%"
-          height="275"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhZDrFac9-J2GF1Of27sv4W-YrfzZHna4
-            &q=Crystal+Court,Harrogate,UK" allowfullscreen>
-        </iframe>
+        <!-- This API key will need changing! -->
+        <?php if ($this->editmode) : ?>
+            <div style="height:25px;width:100%;margin-bottom:25px;">Editable Google Map location: <?= $googleMapLocation ?>
+            </div>
+        <?php endif; ?>
+        <iframe width="100%" height="275" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhZDrFac9-J2GF1Of27sv4W-YrfzZHna4
+            &q=<?= htmlspecialchars($googleMapLocation->getValue()); ?>" allowfullscreen></iframe>
     </div>
 
     <br clear="all" />
-
-    LIVE CHAT HERE
 </div>
