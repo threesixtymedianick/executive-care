@@ -1,44 +1,3 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>
-            // Wait until the DOM has loaded before querying the document
-            $(document).ready(function(){
-                $('ul.tabs').each(function(){
-                    // For each set of tabs, we want to keep track of
-                    // which tab is active and it's associated content
-                    var $active, $content, $links = $(this).find('a');
-
-                    // If the location.hash matches one of the links, use that as the active tab.
-                    // If no match is found, use the first link as the initial active tab.
-                    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-                    $active.addClass('active');
-
-                    $content = $($active[0].hash);
-
-                    // Hide the remaining content
-                    $links.not($active).each(function () {
-                        $(this.hash).hide();
-                    });
-
-                    // Bind the click event handler
-                    $(this).on('click', 'a', function(e){
-                        // Make the old tab inactive.
-                        $active.removeClass('active');
-                        $content.hide();
-
-                        // Update the variables with the new link and content
-                        $active = $(this);
-                        $content = $(this.hash);
-
-                        // Make the tab active.
-                        $active.addClass('active');
-                        $content.show();
-
-                        // Prevent the anchor's default click action
-                        e.preventDefault();
-                    });
-                });
-            });
-        </script>
 <div class="contact-us">
     <div class="contact-us__left">
         <ul class="tabs">
@@ -83,6 +42,37 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <div class="contact-us__right">
+        <div class="contact-us__address">
+            <div class="contact-us__address__title">
+                Crystal Court Care Home
+            </div>
+            <div class="contact-us__address__address">
+                Pannal Green<br />Pannal<br />Harrogate<br />HG3 1LH
+            </div>
+            <div class="contact-us__address__enquiries">
+            <div class="contact-us__address__enquiries__left">
+                Enquiries:
+            </div>
+            <div class="contact-us__address__enquiries__right">
+                01423 859 859<br />
+                <span id="opening_times">(Mon - Fri 8:30am - 5:00pm)</span>
+            </div>
+            <br clear="all" />
+            </div>
+            <div class="contact-us__address__telephone">
+                Tel: 01423 810 627
+            </div>
+        </div>
+        <iframe
+          width="100%"
+          height="275"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhZDrFac9-J2GF1Of27sv4W-YrfzZHna4
+            &q=Crystal+Court,Harrogate,UK" allowfullscreen>
+        </iframe>
     </div>
 
     <br clear="all" />
