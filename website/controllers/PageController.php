@@ -73,7 +73,7 @@ class PageController extends AbstractPageController
                 $view->data = $values;
 
                 // Send to a template
-                $html = $view->render('brochure.php');
+                $html = $view->render('brochure-request.php');
 
                 // Add our email address for this form
                 $mail->addTo('guser@bolser.co.uk');

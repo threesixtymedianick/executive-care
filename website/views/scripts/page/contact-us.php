@@ -42,30 +42,46 @@
 <div class="contact-us">
     <div class="contact-us__left">
         <ul class="tabs">
-            <li><a href='#enquiry'>Make an enquiry</a></li>
-            <li><a href='#brochure'>Request a brochure</a></li>
+            <li><a id="enquiry_tab" href='#enquiry'>Make an enquiry</a></li>
+            <li><a id="brochure_tab" href='#brochure'>Request a brochure</a></li>
         </ul>
         <div class="tab" id="enquiry">
             <form enctype="application/x-www-form-urlencoded" action="" method="post">
-
-            <div class="tab__left">
-                <?= $this->enquiryForm->name ?>
-                <?= $this->enquiryForm->number ?>
-            </div>
-            <div class="tab__right">
-                <?= $this->enquiryForm->email ?>
-                <?= $this->enquiryForm->address ?>
-            </div>
-            <div class="tab__controls">
-                <?= $this->enquiryForm->message ?>
-                <?= $this->enquiryForm->opt_in ?>
-                <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
-                <?= $this->enquiryForm->submit ?>
-            </div>
-        </form>
+                <div class="tab__left">
+                    <?= $this->enquiryForm->name ?>
+                    <?= $this->enquiryForm->number ?>
+                </div>
+                <div class="tab__right">
+                    <?= $this->enquiryForm->email ?>
+                    <?= $this->enquiryForm->address ?>
+                </div>
+                <div class="tab__controls">
+                    <?= $this->enquiryForm->message ?>
+                    <?= $this->enquiryForm->opt_in ?>
+                    <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
+                    <?= $this->enquiryForm->submit ?>
+                </div>
+            </form>
         </div>
         <div class="tab" id="brochure">
-            <?= $this->brochureForm; ?>
+            <form enctype="application/x-www-form-urlencoded" action="" method="post">
+                <div class="tab__left">
+                    <?= $this->brochureForm->care_home ?>
+                    <?= $this->brochureForm->name ?>
+                    <?= $this->brochureForm->number ?>
+                </div>
+                <div class="tab__right">
+                    <?= $this->brochureForm->delivery_method ?>
+                    <?= $this->brochureForm->email ?>
+                    <?= $this->brochureForm->address ?>
+                </div>
+                <div class="tab__controls">
+                    <?= $this->brochureForm->message ?>
+                    <?= $this->brochureForm->opt_in ?>
+                    <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
+                    <?= $this->brochureForm->submit ?>
+                </div>
+            </form>
         </div>
     </div>
 

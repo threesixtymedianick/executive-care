@@ -202,6 +202,7 @@ samp {
  */
 button,
 input,
+.contact-us .tab select,
 optgroup,
 select,
 textarea {
@@ -236,8 +237,9 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
-input[type="submit"] {
+html input[type="button"], html .contact-us .tab select[type="button"], .contact-us .tab html select[type="button"], input[type="reset"],
+.contact-us .tab select[type="reset"],
+input[type="submit"], .contact-us .tab select[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -247,14 +249,14 @@ input[type="submit"] {
  * Re-set default cursor for disabled elements.
  */
 button[disabled],
-html input[disabled] {
+html input[disabled], html .contact-us .tab select[disabled], .contact-us .tab html select[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+input::-moz-focus-inner, .contact-us .tab select::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -262,7 +264,7 @@ input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-input {
+input, .contact-us .tab select {
   line-height: normal; }
 
 /**
@@ -273,7 +275,8 @@ input {
  * 2. Remove excess padding in IE 8/9/10.
  */
 input[type="checkbox"],
-input[type="radio"] {
+.contact-us .tab select[type="checkbox"],
+input[type="radio"], .contact-us .tab select[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -285,7 +288,8 @@ input[type="radio"] {
  * decrement button to change from `default` to `text`.
  */
 input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+.contact-us .tab select[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, .contact-us .tab select[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -293,7 +297,7 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type="search"] {
+input[type="search"], .contact-us .tab select[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   /* 2 */
@@ -305,7 +309,8 @@ input[type="search"] {
  * padding (and `textfield` appearance).
  */
 input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+.contact-us .tab select[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration, .contact-us .tab select[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -669,29 +674,29 @@ body {
     .contact-us .tabs li {
       list-style: none;
       display: inline; }
-    .contact-us .tabs a {
-      padding: 5px 10px;
-      display: inline-block;
-      background: #5B7F9F;
-      color: #ffffff;
-      text-decoration: none;
-      margin-right: -5px;
-      padding-left: 18px;
-      padding-right: 18px; }
-    .contact-us .tabs a.active {
-      background: #9A5998; }
+      .contact-us .tabs li a {
+        padding: 5px 10px;
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        margin-right: -5px;
+        padding-left: 18px;
+        padding-right: 18px; }
+        .contact-us .tabs li a#enquiry_tab {
+          background-color: #9A5998; }
+        .contact-us .tabs li a#brochure_tab {
+          background-color: #5B7F9F; }
   .contact-us .tab {
-    background: #d8c2d8;
     padding: 24px; }
     .contact-us .tab__left {
       float: left;
       width: 48.5%; }
-      .contact-us .tab__left input {
+      .contact-us .tab__left input, .contact-us .tab__left .tab select, .contact-us .tab .tab__left select {
         margin-bottom: 24px; }
     .contact-us .tab__right {
       float: right;
       width: 48.5%; }
-      .contact-us .tab__right input {
+      .contact-us .tab__right input, .contact-us .tab__right .tab select, .contact-us .tab .tab__right select {
         margin-bottom: 24px; }
     .contact-us .tab__controls {
       margin-bottom: 40px;
@@ -699,24 +704,31 @@ body {
     .contact-us .tab label {
       display: inline-block;
       font-size: 12px; }
-    .contact-us .tab input {
+    .contact-us .tab input, .contact-us .tab select {
       width: 100%;
       height: 24px;
       display: inline; }
-    .contact-us .tab input[type=checkbox] {
+    .contact-us .tab input[type=checkbox], .contact-us .tab select[type=checkbox] {
       width: auto; }
     .contact-us .tab #message {
       width: 100%;
       height: 125px; }
-    .contact-us .tab #submit {
+    .contact-us .tab .submit_base, .contact-us .tab#brochure input[type=submit], .contact-us .tab#brochure select[type=submit], .contact-us .tab#enquiry input[type=submit], .contact-us .tab#enquiry select[type=submit] {
       width: 174px;
       text-transform: uppercase;
       font-family: "Raleway", sans-serif;
       font-size: 18px;
       border: 0;
-      background-color: #9A5998;
       float: right;
       color: #ffffff;
       margin-top: 24px;
       position: relative;
       right: -24px; }
+    .contact-us .tab#brochure {
+      background: #d0e0f8; }
+      .contact-us .tab#brochure input[type=submit], .contact-us .tab#brochure select[type=submit] {
+        background-color: #5B7F9F; }
+    .contact-us .tab#enquiry {
+      background-color: #d8c2d8; }
+      .contact-us .tab#enquiry input[type=submit], .contact-us .tab#enquiry select[type=submit] {
+        background-color: #9A5998; }
