@@ -76,15 +76,12 @@ class PageController extends AbstractPageController
                 $html = $view->render('brochure-request.php');
 
                 // Add our email address for this form
-                $mail->addTo('guser@bolser.co.uk');
-
-
-
+                $mail->addTo($this->config->brochure_email);
             } else if ($enquiryForm->isValid($request->getPost())) {
                 $values = $enquiryForm->getValues();
                 $view->data = $values;
                 $html = $view->render('enquiry.php');
-                $mail->addTo('guser@bolser.co.uk');
+                $mail->addTo($this->config->enquiry_email);
             }
             $mail->setBodyHtml($html);
             $mail->send();

@@ -840,3 +840,113 @@ body {
       margin-top: 50px;
       position: absolute;
       left: 0px; }
+
+.about-us__header {
+  background-image: url("../images/home/about-us_header.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  max-height: 750px;
+  max-width: 100%;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  z-index: -1; }
+
+.about-us__left {
+  float: left;
+  display: block;
+  margin-right: 0.73174%;
+  width: 66.42275%;
+  margin-top: 350px;
+  margin-bottom: 50px; }
+  .about-us__left:last-child {
+    margin-right: 0; }
+
+.about-us__right {
+  float: left;
+  display: block;
+  margin-right: 0.73174%;
+  width: 32.84551%;
+  margin-top: 387px;
+  margin-bottom: 50px; }
+  .about-us__right:last-child {
+    margin-right: 0; }
+  .about-us__right__boxes {
+    color: #ffffff; }
+    .about-us__right__boxes__content {
+      margin-left: 175px;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      float: left;
+      font-size: 12px; }
+    .about-us__right__boxes__title {
+      color: #ffffff;
+      padding: 10px;
+      font-family: "Raleway", sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      padding-left: 10px;
+      margin-left: 175px;
+      float: left; }
+    .about-us__right__boxes__button {
+      margin-left: 175px;
+      background-color: #ffffff;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      padding: 5px 0px 5px 10px;
+      margin-bottom: 20px;
+      float: left;
+      width: 150px; }
+      .about-us__right__boxes__button a {
+        text-decoration: none; }
+      .find-a-home .about-us__right__boxes__button {
+        color: #0f6062;
+        box-sizing: border-box; }
+      .contact-us .about-us__right__boxes__button {
+        color: red; }
+  .about-us__right .find-a-home {
+    background-image: url("../images/home/find-a-home.jpg");
+    background-repeat: no-repeat;
+    background-position: -25px 0px;
+    background-color: #0f6062;
+    margin-bottom: 10px;
+    height: 200px; }
+  .about-us__right .contact-us {
+    background-image: url("../images/home/contact-us");
+    background-repeat: no-repeat;
+    background-position: -33px 0px;
+    height: 200px;
+    background-color: #9e429c; }
+
+.about-us ul.tabs {
+  margin: 0;
+  padding: 0 !important; }
+
+.about-us .tabs {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px; }
+  .about-us .tabs li {
+    list-style: none;
+    display: inline; }
+    .about-us .tabs li a {
+      padding: 5px 10px;
+      display: inline-block;
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: -5px;
+      padding-left: 18px;
+      padding-right: 18px;
+      background-color: #5B7F9F; }
+      .about-us .tabs li a.active {
+        background-color: #d0e0f8;
+        color: #5B7F9F; }
+
+.about-us .tab {
+  padding: 24px;
+  background: #d0e0f8;
+  color: #5B7F9F; }

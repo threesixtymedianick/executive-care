@@ -1,0 +1,134 @@
+.about-us {
+  &__header {
+    background-image: url('../images/home/about-us_header.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-height: 750px;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+  }
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+  }
+
+  &__right {
+    @include span-columns(4);
+    margin-top: 387px;
+    margin-bottom: 50px;
+
+    &__boxes {
+      color: $color-white;
+
+      &__content {
+        margin-left: 175px;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        float: left;
+        font-size: 12px;
+      }
+
+      &__title {
+        color: $color-white;
+        padding: 10px;
+        font-family: "Raleway", sans-serif;
+        text-transform: uppercase;
+        font-size: 18px;
+        padding-left: 10px;
+        margin-left: 175px;
+        float: left;
+      }
+
+      &__button {
+        margin-left: 175px;
+        background-color: $color-white;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        padding: 5px 0px 5px 10px;
+        margin-bottom: 20px;
+        float: left;
+        width: 150px;
+
+        a {
+          text-decoration: none;
+        }
+
+        .find-a-home & {
+          color: $color-dark-green;
+          box-sizing: border-box;
+        }
+
+        .contact-us & {
+          color: red;
+        }
+      }
+    }
+
+    & .find-a-home {
+      background-image: url('../images/home/find-a-home.jpg');
+      background-repeat: no-repeat;
+      background-position: -25px 0px;
+      background-color: $color-dark-green;
+      margin-bottom: 10px;
+      height: 200px;
+    }
+
+    & .contact-us {
+      background-image: url('../images/home/contact-us');
+      background-repeat: no-repeat;
+      background-position: -33px 0px;
+      height: 200px;
+      background-color: $color-dark-purple;
+    }
+  }
+
+  ul {
+    &.tabs {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+
+  .tabs {
+    display: block;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+
+    li {
+      list-style: none;
+      display: inline;
+      a {
+        padding: 5px 10px;
+        display: inline-block;
+        color: $color-white;
+        text-decoration: none;
+        margin-right: -5px;
+        padding-left: 18px;
+        padding-right: 18px;
+        background-color: $color-blue;
+
+        &.active {
+          background-color: $color-light-blue;
+          color: $color-blue;
+        }
+      }
+
+    }
+  }
+
+  .tab {
+    padding: 24px;
+    background: $color-light-blue;
+    color: $color-blue;
+  }
+}
