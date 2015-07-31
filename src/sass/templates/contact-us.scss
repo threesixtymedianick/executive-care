@@ -1,229 +1,229 @@
 .contact-us {
-    @include outer-container;
+  @include outer-container;
 
-    &__left {
-        @include span-columns(8);
-    }
+  &__left {
+    @include span-columns(8);
+  }
 
-    &__right {
-        @include span-columns(4);
-        margin:0;
+  &__right {
+    @include span-columns(4);
+    margin: 0;
+  }
+
+  &__address {
+    color: $color-white;
+    padding: 10px;
+    background-color: $color-green;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+
+    &__title {
+      text-transform: uppercase;
+      color: $color-green;
+      background-color: $color-white;
+      padding: 10px 25px 10px 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-left: -10px;
     }
 
     &__address {
+      line-height: 97%;
+      margin-bottom: 10px;
+    }
+
+    &__enquiries {
+      &__left {
+        float: left;
+        text-transform: uppercase;
+      }
+
+      &__right {
+        float: left;
+        margin-left: 5px;
+        height: 44px;
+
+        #opening_times {
+          font-size: 9px;
+          position: relative;
+          top: -15px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  ul {
+    &.tabs {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+
+  .tabs {
+    display: block;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+
+    li {
+      list-style: none;
+      display: inline;
+      a {
+        padding: 5px 10px;
+        display: inline-block;
         color: $color-white;
-        padding: 10px;
-        background-color: $color-green;
-        font-family: "Raleway", sans-serif;
-        font-size: 18px;
+        text-decoration: none;
+        margin-right: -5px;
+        padding-left: 18px;
+        padding-right: 18px;
 
-        &__title {
-            text-transform: uppercase;
-            color: $color-green;
-            background-color: $color-white;
-            padding: 10px 25px 10px 10px;
-            display: inline-block;
-            margin-bottom: 20px;
-            margin-left: -10px;
+        &#enquiry_tab {
+          background-color: $color-purple;
         }
 
-        &__address {
-            line-height: 97%;
-            margin-bottom: 10px;
+        &#brochure_tab {
+          background-color: $color-blue;
         }
+      }
+    }
+  }
 
-        &__enquiries {
-            &__left {
-                float:left;
-                text-transform: uppercase;
-            }
+  .tab {
+    padding: 24px;
 
-            &__right {
-                float:left;
-                margin-left: 5px;
-                height: 44px;
+    &__left {
+      float: left;
+      width: 48.5%;
 
-                #opening_times {
-                    font-size: 9px;
-                    position: relative;
-                    top: -15px;
-                    display: inline-block;
-                }
-            }
-        }
+      input {
+        margin-bottom: 24px;
+      }
     }
 
-    ul {
-        &.tabs {
-            margin:0;
-            padding: 0 !important;
-        }
+    &__right {
+      float: right;
+      width: 48.5%;
+
+      input {
+        margin-bottom: 24px;
+      }
     }
 
-    .tabs {
-        display: block;
+    &__controls {
+      margin-bottom: 40px;
+      padding-top: 24px;
+    }
+
+    label {
+      display: inline-block;
+      font-size: 12px;
+    }
+    input {
+      width: 100%;
+      height: 24px;
+      display: inline;
+    }
+
+    input[type=checkbox] {
+      width: auto;
+    }
+
+    select {
+      @extend input;
+    }
+
+    #message {
+      width: 100%;
+      height: 125px;
+    }
+    .button_base {
+      width: 174px;
+      text-transform: uppercase;
+      font-family: "Raleway", sans-serif;
+      font-size: 18px;
+      border: 0;
+      float: right;
+      color: $color-white;
+      margin-top: 24px;
+      position: relative;
+      right: -24px;
+      text-align: left;
+      padding-left: 15px;
+    }
+
+    &#brochure {
+      background: $color-light-blue;
+
+      & input[type=submit] {
+        @extend .button_base;
+        background-color: $color-blue;
+      }
+    }
+
+    &#enquiry {
+      background-color: $color-light-purple;
+      min-height: 475px;
+
+      & input[type=submit] {
+        @extend .button_base;
+        background-color: $color-purple;
+      }
+    }
+  }
+
+  &__live-chat {
+    position: relative;
+
+    &__details {
+      background-color: $color-blue;
+      color: $color-white;
+      float: right;
+      display: block;
+      margin-top: 85px;
+      height: 150px;
+      width: 90%;
+      margin-bottom: 50px;
+      padding-left: 175px;
+      padding-top: 20px;
+
+      &__open-chat {
+        width: 174px;
         text-transform: uppercase;
         font-family: "Raleway", sans-serif;
         font-size: 18px;
-
-        li {
-            list-style:none;
-            display:inline;
-            a {
-                padding:5px 10px;
-                display:inline-block;
-                color:$color-white;
-                text-decoration:none;
-                margin-right: -5px;
-                padding-left:  18px;
-                padding-right: 18px;
-
-                &#enquiry_tab {
-                    background-color: $color-purple;
-                }
-
-                &#brochure_tab {
-                    background-color: $color-blue;
-                }
-            }
-        }
-    }
-
-    .tab {
-        padding: 24px;
-
-        &__left {
-            float:left;
-            width:48.5%;
-
-            input {
-                margin-bottom: 24px;
-            }
-        }
-
-        &__right {
-            float: right;
-            width:48.5%;
-
-            input {
-                margin-bottom: 24px;
-            }
-        }
-
-        &__controls {
-            margin-bottom: 40px;
-            padding-top: 24px;
-        }
-
-        label {
-            display: inline-block;
-            font-size:  12px;
-        }
-        input {
-            width: 100%;
-            height: 24px;
-            display: inline;
-        }
-
-        input[type=checkbox] {
-            width:auto;
-        }
-
-        select {
-            @extend input;
-        }
-
-        #message {
-            width: 100%;
-            height: 125px;
-        }
-        .button_base {
-            width: 174px;
-            text-transform: uppercase;
-            font-family: "Raleway", sans-serif;
-            font-size: 18px;
-            border: 0;
-            float: right;
-            color: $color-white;
-            margin-top: 24px;
-            position: relative;
-            right:-24px;
-            text-align: left;
-            padding-left: 15px;
-        }
-
-        &#brochure {
-            background:  $color-light-blue;
-
-            & input[type=submit] {
-                @extend .button_base;
-                background-color: $color-blue;
-            }
-        }
-
-        &#enquiry {
-            background-color: $color-light-purple;
-            min-height: 475px;
-
-            & input[type=submit] {
-                @extend .button_base;
-                background-color: $color-purple;
-            }
-        }
-    }
-
-    &__live-chat {
+        border: 0;
+        float: right;
+        color: $color-white;
         position: relative;
+        right: 0px;
+        text-align: left;
+        padding-left: 15px;
+        background-color: $color-purple;
+        float: right;
 
-        &__details {
-            background-color: $color-blue;
-            color: $color-white;
-            float: right;
-            display: block;
-            margin-top: 85px;
-            height:  150px;
-            width: 90%;
-            margin-bottom: 50px;
-            padding-left: 175px;
-            padding-top: 20px;
-
-            &__open-chat {
-                width: 174px;
-                text-transform: uppercase;
-                font-family: "Raleway", sans-serif;
-                font-size: 18px;
-                border: 0;
-                float: right;
-                color: $color-white;
-                position: relative;
-                right:0px;
-                text-align: left;
-                padding-left: 15px;
-                background-color: $color-purple;
-                float:right;
-
-                a {
-                    color:$color-white;
-                    text-decoration: none;
-                }
-            }
-
-            &__title {
-                text-transform: uppercase;
-                font-size: 18px;
-            }
-
-            &__content {
-                font-size: 11px;
-                display: inline-block;
-                max-width: 65%;
-                overflow: hidden;
-            }
+        a {
+          color: $color-white;
+          text-decoration: none;
         }
-        &__icon {
-            margin-top: 50px;
-            position: absolute;
-            left: 0px;
-        }
+      }
+
+      &__title {
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+
+      &__content {
+        font-size: 11px;
+        display: inline-block;
+        max-width: 65%;
+        overflow: hidden;
+      }
     }
+    &__icon {
+      margin-top: 50px;
+      position: absolute;
+      left: 0px;
+    }
+  }
 }

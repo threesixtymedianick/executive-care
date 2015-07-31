@@ -11,31 +11,31 @@ class ContactUsForm extends BaseForm
 
         $name = new \Zend_Form_Element_Text('name');
         $name->setLabel('Your name:')
-        ->addValidator('NotEmpty', true)
-        ->setRequired(true);
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $email = new \Zend_Form_Element_Text('email');
         $email->setLabel('Your email:')
-        ->addValidator('NotEmpty', true)
-        ->addValidator('EmailAddress')
-        ->addFilter('StringToLower')
-        ->setRequired(true)
-        ->setAttrib('class', 'form-control');
+            ->addValidator('NotEmpty', true)
+            ->addValidator('EmailAddress')
+            ->addFilter('StringToLower')
+            ->setRequired(true)
+            ->setAttrib('class', 'form-control');
 
         $number = new \Zend_Form_Element_Text('number');
         $number->setLabel('Your number:')
-        ->addValidator('NotEmpty', true)
-        ->setRequired(true);
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $address = new \Zend_Form_Element_Text('address');
         $address->setLabel('Your address:')
-        ->addValidator('NotEmpty', true)
-        ->setRequired(true);
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $message = new \Zend_Form_Element_Textarea('message');
         $message->setLabel('Your message:')
-        ->addValidator('NotEmpty', true)
-        ->setRequired(true);
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $opt = new \Zend_Form_Element_Checkbox('opt_in');
 

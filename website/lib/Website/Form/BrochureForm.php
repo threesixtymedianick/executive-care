@@ -15,23 +15,23 @@ class BrochureForm extends BaseForm
             -1 => $selectOne,
             0 => "Abbeyvale Care Centre, Hartlepool",
             1 => "Ashwood Court, Sunderland"
-            );
+        );
 
         $deliveryMethodOptions = array(
-                -1 => $selectOne,
-                0 => "Send to my address",
-                1 => "Download"
-            );
+            -1 => $selectOne,
+            0 => "Send to my address",
+            1 => "Download"
+        );
 
         $careHome = new \Zend_Form_Element_Select('care_home');
         $careHome->setMultiOptions($careHomeOptions)
-        ->setRequired(true)
-        ->setLabel('Care home:');
+            ->setRequired(true)
+            ->setLabel('Care home:');
 
         $deliveryMethod = new \Zend_Form_Element_Select('delivery_method');
         $deliveryMethod->setMultiOptions($deliveryMethodOptions)
-        ->setRequired(true)
-        ->setLabel('Send brochure by:');
+            ->setRequired(true)
+            ->setLabel('Send brochure by:');
 
         $name = new \Zend_Form_Element_Text('name');
         $name->setLabel('Your name:');
