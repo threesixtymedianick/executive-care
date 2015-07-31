@@ -81,7 +81,7 @@ gulp.task("minify-css", function() {
     ;
 });
 
-gulp.task("build-js", ["build-js-fallback", "build-js-polyfills", "build-js-libs"], function() {
+gulp.task("build-js", function() {
     var bundler = browserify({
         entries: ['./' + paths.src.js + 'index.js'], // Only need initial file, browserify finds the deps
         transform: [reactify] // We want to convert JSX to normal javascript

@@ -33,9 +33,7 @@
         </nav>
 
         <div class="site-content">
-          <div class="container">
-            <div class="container__inner"><?= $this->layout()->content ?></div>
-          </div>
+        <?= $this->layout()->content ?>
         </div>
 
         <footer class="site-footer">
