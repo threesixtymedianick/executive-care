@@ -24,6 +24,11 @@ class PageController extends AbstractPageController
 
     }
 
+    public function careersAction()
+    {
+
+    }
+
     /**
      * [ourCareAction description]
      * @return [type] [description]
