@@ -40,7 +40,7 @@
       &__title {
         color: $color-white;
         padding: 10px;
-        font-family: "Raleway", sans-serif;
+        @include font-header($weight: 300);
         text-transform: uppercase;
         font-size: 18px;
         padding-left: 10px;
@@ -51,7 +51,7 @@
       &__button {
         margin-left: 175px;
         background-color: $color-white;
-        font-family: "Raleway", sans-serif;
+        @include font-header($weight: 300);
         font-size: 14px;
         padding: 5px 0px 5px 10px;
         margin-bottom: 20px;
@@ -70,9 +70,9 @@
     }
 
     & .find-a-home {
-      background-image: url('../images/home/find-a-home.jpg');
+      background-image: url('../images/home/find-a-home.png');
       background-repeat: no-repeat;
-      background-position: -25px 0px;
+      background-position: -35px 0px;
       background-color: $color-dark-green;
       margin-bottom: 10px;
       height: 200px;
@@ -97,7 +97,7 @@
   .tabs {
     display: block;
     text-transform: uppercase;
-    font-family: "Raleway", sans-serif;
+    @include font-header($weight: 300);
     font-size: 18px;
 
     li {
