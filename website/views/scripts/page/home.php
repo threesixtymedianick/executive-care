@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-<div class="home">
-  <div class="home__left">
-    <div class="home__panel home__welcome">
-      <h1><?= $this->input("headline"); ?></h1>
-      <h2>Find out about us</h2>
-    </div>
-    <div class="home__panels">
-      <div class="home__panel home__panel--split home__our-care-explained">
-        <h3 class="home__panel-header"><?= $this->textarea("our-care-explained"); ?></h3>
-        <p><?= $this->textarea("our-care-explained-description"); ?></p>
-        <a class="home__button home__button--white" href="#">Read more</a>
-      </div>
-      <div class="home__panel home__panel--blue home__recommendations">
-        <div class="home__recommendations-header">
-          <div class="home__recommendations-header-left">
-            <img src="website/static/images/home/carehome-co-uk.png" alt="carehome.co.uk" />
-          </div>
-          <div class="home__recommendations-header-right">
-            Latest recommendations for homes in our group
-          </div>
-        </div>
-        <div class="home__recommendations-body">
-          <h4 class="home__recommendations-home-name">
-            <?= $this->input("recommendation-header"); ?>
-          </h4>
-          <div class="home__recommendations-meta">
-            <?= $this->input("recommendation-meta"); ?>
-=======
 <div class="container">
     <div class="container__inner">
       <div class="home">
@@ -34,7 +5,6 @@
           <div class="home__panel home__welcome">
             <h1><?= $this->input("headline"); ?></h1>
             <h2>Find out about us</h2>
->>>>>>> About us page and boxes
           </div>
           <div class="home__panels">
             <div class="home__panel home__panel--split home__our-care-explained">
