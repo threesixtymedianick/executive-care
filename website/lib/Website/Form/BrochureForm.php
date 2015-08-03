@@ -9,7 +9,7 @@ class BrochureForm extends BaseForm
         $this->setAttrib('id', 'brochureform');
         $this->setAttrib('action', '/contact-us');
 
-        $selectOne = "Select One:";
+        $selectOne = "Select one:";
 
         $careHomeOptions = array(
             -1 => $selectOne,
