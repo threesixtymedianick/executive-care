@@ -1079,10 +1079,7 @@ CREATE TABLE `search_backend_data` (
   KEY `maintype` (`maintype`),
   KEY `type` (`type`),
   KEY `subtype` (`subtype`),
-  KEY `published` (`published`),
-  KEY `data` (`data`),
-  KEY `properties` (`properties`),
-  KEY `fulltext` (`data`,`properties`)
+  KEY `published` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
