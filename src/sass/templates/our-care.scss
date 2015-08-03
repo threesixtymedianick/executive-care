@@ -1,0 +1,85 @@
+.our-care {
+  &__header {
+    background-image: url('../images/home/about-us_header.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-height: 750px;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+
+    &__content {
+      margin-bottom: 10px;
+
+      &__title {
+        background-color: $color-blue;
+        @include font-header($weight: 300);
+        font-size: 18px;
+        padding: 5px 10px 5px 10px;
+        display: inline-block;
+        color: $color-white;
+      }
+
+      &__box {
+        background-color: $color-light-blue;
+        padding: 20px;
+        color: $color-black;
+        font-size: 12px;
+      }
+    }
+    
+    &__sliding {
+
+      &__title {
+        @include font-header($weight: 300);
+        font-size: 18px;
+        color: white;
+        background-color: $color-blue;
+        padding: 5px 10px;
+        border-bottom: 1px solid #333333;
+
+        &__show-hide{
+          background-color: white;
+          color: $color-blue;
+          float: right;
+          padding: 5px 10px;
+          margin-top: -3px;
+          margin-right: -10px;
+          font-size: 16px;
+
+          & a {
+            text-decoration: none;
+            color: $color-blue;
+          }
+
+        }
+      }
+
+      &__content {
+        background-color: $color-light-blue;
+        padding: 20px;
+        display:none;
+
+      }
+
+    }
+  }
+
+  &__right {
+    @include span-columns(4);
+    margin-top: 387px;
+    margin-bottom: 50px;
+  }
+
+}
