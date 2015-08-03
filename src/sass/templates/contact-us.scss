@@ -118,6 +118,10 @@
     label {
       display: inline-block;
       font-size: 12px;
+
+      &.error {
+        color: red;
+      }
     }
     input {
       width: 100%;
@@ -227,3 +231,5 @@
     }
   }
 }
+
+

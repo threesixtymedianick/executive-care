@@ -15,7 +15,7 @@
                     <li><a id="brochure_tab" href='#brochure'>Request a brochure</a></li>
                 </ul>
                 <div class="tab" id="enquiry">
-                    <form enctype="application/x-www-form-urlencoded" action="" method="post">
+                    <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
                         <div class="tab__left">
                             <?= $this->enquiryForm->name ?>
                             <?= $this->enquiryForm->number ?>
@@ -33,7 +33,7 @@
                     </form>
                 </div>
                 <div class="tab" id="brochure">
-                    <form enctype="application/x-www-form-urlencoded" action="" method="post">
+                    <form enctype="application/x-www-form-urlencoded" action="" method="post" id="brochure_form">
                         <div class="tab__left">
                             <?= $this->brochureForm->care_home ?>
                             <?= $this->brochureForm->name ?>
