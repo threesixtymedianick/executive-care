@@ -1,2 +1,2 @@
 ---
-- include: staging.yml
+- include: development.yml
