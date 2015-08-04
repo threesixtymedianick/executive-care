@@ -1,0 +1,8 @@
+---
+- hosts: staging
+  vars:
+    type: staging
+    pimcore_db_user: exec-staging
+    pimcore_db_pass: T4ghCa2Hj7Nv
+  roles:
+    - base

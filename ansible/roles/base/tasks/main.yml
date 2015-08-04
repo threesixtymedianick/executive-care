@@ -4,9 +4,12 @@
     - curl
     - node
     - nodejs
+    - python-mysqldb
 
 - file: path=/root/.ssh state=directory
 - copy: src=.ssh/config mode=600 dest=/root/.ssh/config
+- copy: src=hosts dest=/etc/hosts
+- copy: src=hostname dest=/etc/hostname
 
 - authorized_key: user=root
                   key="{{ item }}"
@@ -14,3 +17,7 @@
     - public_keys/matt_booth_ubuntu_laptop
     - public_keys/paul_clegg
     - public_keys/tomcat
+
+- include: copy_files.yml
+- include: create_database.yml
+- include: apache.yml

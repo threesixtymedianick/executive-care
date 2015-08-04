@@ -303,8 +303,8 @@ mysql:
     adminer: 0
     users:
         mysqlnu_w54efwo8rgs0:
-            name: executive-care
-            password: '123'
+            name: exec-user
+            password: 'T4ghCa2Hj7Nv'
     databases:
         mysqlnd_quqi7c8dsbz9:
             name: executive-care
