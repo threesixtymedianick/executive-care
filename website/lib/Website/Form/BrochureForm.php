@@ -12,13 +12,13 @@ class BrochureForm extends BaseForm
         $selectOne = "Select one:";
 
         $careHomeOptions = array(
-            -1 => $selectOne,
+            "" => $selectOne,
             0 => "Abbeyvale Care Centre, Hartlepool",
             1 => "Ashwood Court, Sunderland"
         );
 
         $deliveryMethodOptions = array(
-            -1 => $selectOne,
+            "" => $selectOne,
             0 => "Send to my address",
             1 => "Download"
         );
