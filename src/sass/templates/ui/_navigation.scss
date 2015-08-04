@@ -57,6 +57,7 @@ $nav-height: 47px;
       &:hover ul {
         @include media(769px) {
           display: block;
+          z-index: 10;
         }
       }
     }

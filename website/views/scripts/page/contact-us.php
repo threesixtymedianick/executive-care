@@ -17,15 +17,25 @@
                 <div class="tab" id="enquiry">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
                         <div class="tab__left">
-                            <?= $this->enquiryForm->name ?>
-                            <?= $this->enquiryForm->number ?>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->name ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->number ?>
+                            </div>
                         </div>
                         <div class="tab__right">
-                            <?= $this->enquiryForm->email ?>
-                            <?= $this->enquiryForm->address ?>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->email ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->address ?>
+                            </div>
                         </div>
                         <div class="tab__controls">
-                            <?= $this->enquiryForm->message ?>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->message ?>
+                            </div>
                             <?= $this->enquiryForm->opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->enquiryForm->submit ?>
@@ -35,17 +45,31 @@
                 <div class="tab" id="brochure">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="brochure_form">
                         <div class="tab__left">
-                            <?= $this->brochureForm->care_home ?>
-                            <?= $this->brochureForm->name ?>
-                            <?= $this->brochureForm->number ?>
+                            <div class="select-wrap">
+                                <?= $this->brochureForm->care_home ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->name ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->number ?>
+                            </div>
                         </div>
                         <div class="tab__right">
-                            <?= $this->brochureForm->delivery_method ?>
-                            <?= $this->brochureForm->email ?>
-                            <?= $this->brochureForm->address ?>
+                            <div class="select-wrap">
+                                <?= $this->brochureForm->delivery_method ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->email ?>
+                            </div>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->address ?>
+                            </div>
                         </div>
                         <div class="tab__controls">
-                            <?= $this->brochureForm->message ?>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->message ?>
+                            </div>
                             <?= $this->brochureForm->opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->brochureForm->submit ?>
