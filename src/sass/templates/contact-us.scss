@@ -79,11 +79,21 @@
         padding-right: 18px;
 
         &#enquiry_tab {
-          background-color: $color-purple;
+          background-color: $color-grey;
+          
+          &.active{
+            background-color: $color-purple;
+          }
+
         }
 
         &#brochure_tab {
-          background-color: $color-blue;
+          background-color: $color-grey;
+          
+          &.active{
+            background-color: $color-blue;
+          }
+
         }
       }
     }
@@ -97,7 +107,7 @@
       width: 48.5%;
 
       input {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
       }
     }
 
@@ -106,22 +116,35 @@
       width: 48.5%;
 
       input {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
       }
     }
 
     &__controls {
       margin-bottom: 40px;
-      padding-top: 24px;
+      clear: both;
+    }
+
+    .field-wrap{
+      position: relative;
     }
 
     label {
       display: inline-block;
       font-size: 12px;
+      padding-bottom: 2px;
+
+      &.error {
+        color: red;
+        position: absolute;
+        top: 3px;
+        right: 0;
+      }
     }
     input {
       width: 100%;
-      height: 24px;
+      padding: 6px;
+      font-size: 12px;
       display: inline;
     }
 
@@ -129,13 +152,33 @@
       width: auto;
     }
 
+    .select-wrap{
+      position: relative;
+      /*width: 100%;
+      overflow: hidden;
+      background: url('../images/dropdown-arrow.png') no-repeat right;*/
+    }
+
     select {
       @extend input;
+      /*background: transparent;
+      width: 105%;
+      padding: 7px;
+      font-size: 12px;
+      line-height: 1;
+      border: 0;
+      border-radius: 0;
+      -webkit-appearance: none;
+      outline: none;
+      font-size: 12px;
+      background: #fff;*/
     }
 
     #message {
       width: 100%;
       height: 125px;
+      font-size: 12px;
+      padding: 6px;
     }
     .button_base {
       width: 174px;
@@ -227,3 +270,5 @@
     }
   }
 }
+
+
