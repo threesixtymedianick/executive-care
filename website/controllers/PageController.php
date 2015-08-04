@@ -39,6 +39,24 @@ class PageController extends AbstractPageController
     }
 
     /**
+     * [ourCareAction description]
+     * @return [type] [description]
+     */
+    public function ourCareTestimonialsAction()
+    {
+
+    }
+
+    /**
+     * [ourCareAction description]
+     * @return [type] [description]
+     */
+    public function ourCareHomeInitiativesAction()
+    {
+
+    }
+
+    /**
      * [ourHomesAction description]
      * @return [type] [description]
      */
