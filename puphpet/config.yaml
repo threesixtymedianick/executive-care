@@ -303,13 +303,19 @@ mysql:
     adminer: 0
     users:
         mysqlnu_w54efwo8rgs0:
-            name: exec-user
+            name: exec-dev
             password: 'T4ghCa2Hj7Nv'
+
     databases:
         mysqlnd_quqi7c8dsbz9:
             name: executive-care
             sql: '/var/www/pimcore.sql'
-    grants: {  }
+    grants:
+       mysqlng_1d1fmhx3smng:
+           user: exec-dev
+           table: '*.*'
+           privileges:
+               - ALL
 mariadb:
     install: '0'
     settings:
