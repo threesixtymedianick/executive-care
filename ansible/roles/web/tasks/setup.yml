@@ -1,0 +1,3 @@
+---
+- copy: src=hosts dest=/etc/hosts
+- copy: src=hostname dest=/etc/hostname
