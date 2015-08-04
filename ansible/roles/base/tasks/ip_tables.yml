@@ -1,5 +1,7 @@
 ---
 - command: iptables -A INPUT -s {{ bolser_ip }} -j ACCEPT
 - command: iptables -A OUTPUT -d {{ bolser_ip }} -j ACCEPT
+- command: iptables -A INPUT -s {{ jenkins_ip }} -j ACCEPT
+- command: iptables -A OUTPUT -d {{ jenkins_ip }} -j ACCEPT
 - command: iptables -P INPUT DROP
 - command: iptables -P OUTPUT DROP
