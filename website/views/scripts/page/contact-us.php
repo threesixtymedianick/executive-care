@@ -16,20 +16,22 @@
                 </ul>
                 <div class="tab" id="enquiry">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
-                        <div class="tab__left">
+                        <div class="tab__left field-wrap">
                             <?= $this->enquiryForm->name ?>
                         </div>
-                        <div class="tab__right">
+                        <div class="tab__right field-wrap">
                             <?= $this->enquiryForm->email ?>
                         </div>
-                        <div class="tab__left">
+                        <div class="tab__left field-wrap">
                             <?= $this->enquiryForm->number ?>
                         </div>
-                        <div class="tab__right">
+                        <div class="tab__right field-wrap">
                             <?= $this->enquiryForm->address ?>
                         </div>
                         <div class="tab__controls">
-                            <?= $this->enquiryForm->message ?>
+                            <div class="field-wrap">
+                                <?= $this->enquiryForm->message ?>
+                            </div>
                             <?= $this->enquiryForm->opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->enquiryForm->submit ?>
@@ -38,26 +40,28 @@
                 </div>
                 <div class="tab" id="brochure">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="brochure_form">
-                        <div class="tab__left">
+                        <div class="tab__left select-wrap">
                             <?= $this->brochureForm->care_home ?>
                         </div>
-                        <div class="tab__right">
+                        <div class="tab__right select-wrap">
                             <?= $this->brochureForm->delivery_method ?>
                         </div>
-                        <div class="tab__left">
+                        <div class="tab__left field-wrap">
                             <?= $this->enquiryForm->name ?>
                         </div>
-                        <div class="tab__right">
+                        <div class="tab__right field-wrap">
                             <?= $this->enquiryForm->email ?>
                         </div>
-                        <div class="tab__left">
+                        <div class="tab__left field-wrap">
                             <?= $this->enquiryForm->number ?>
                         </div>
-                        <div class="tab__right">
+                        <div class="tab__right field-wrap">
                             <?= $this->enquiryForm->address ?>
                         </div>
                         <div class="tab__controls">
-                            <?= $this->brochureForm->message ?>
+                            <div class="field-wrap">
+                                <?= $this->brochureForm->message ?>
+                            </div>
                             <?= $this->brochureForm->opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->brochureForm->submit ?>
