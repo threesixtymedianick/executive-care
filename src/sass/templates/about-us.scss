@@ -111,11 +111,11 @@
         margin-right: -5px;
         padding-left: 18px;
         padding-right: 18px;
-        background-color: $color-blue;
+        background-color: $color-grey;
 
         &.active {
-          background-color: $color-light-blue;
-          color: $color-blue;
+          background-color: $color-blue;
+          color: $color-white;
         }
       }
 
