@@ -3,5 +3,9 @@
 - command: iptables -A OUTPUT -d {{ bolser_ip }} -j ACCEPT
 - command: iptables -A INPUT -s {{ jenkins_ip }} -j ACCEPT
 - command: iptables -A OUTPUT -d {{ jenkins_ip }} -j ACCEPT
+- command: iptables -A OUTPUT -p tcp --sport 25 -j ACCEPT
+- command: iptables -A OUTPUT -p tcp --sport 587 -j ACCEPT
+- command: iptables -A OUTPUT -p tcp --sport 443 -j ACCEPT
+- command: iptables -I INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 - command: iptables -P INPUT DROP
 - command: iptables -P OUTPUT DROP

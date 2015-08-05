@@ -6,5 +6,6 @@
   notify:
   - restart apache2
 - apache2_module: name=rewrite state=present
+- apache2_module: name=ssl state=present
   notify:
   - restart apache2
