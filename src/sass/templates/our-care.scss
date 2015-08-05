@@ -25,10 +25,11 @@
       &__title {
         background-color: $color-blue;
         @include font-header($weight: 300);
-        font-size: 18px;
-        padding: 5px 10px 5px 10px;
+        font-size: 16px;
+        padding: 6px 20px;
         display: inline-block;
         color: $color-white;
+        text-transform: uppercase;
       }
 
       &__box {
@@ -43,20 +44,22 @@
 
       &__title {
         @include font-header($weight: 300);
-        font-size: 18px;
+        font-size: 16px;
         color: white;
         background-color: $color-blue;
-        padding: 5px 10px;
-        border-bottom: 1px solid #333333;
+        padding: 6px 0px 6px 20px;
+        border-top: 1px solid $color-background;
+        text-transform: uppercase;
 
         &__show-hide{
           background-color: white;
           color: $color-blue;
           float: right;
-          padding: 5px 10px;
-          margin-top: -3px;
-          margin-right: -10px;
-          font-size: 16px;
+          padding: 11px 10px 6px;
+          margin-top: -6px;
+          font-size: 13px;
+          width: 130px;
+          text-align: left;
 
           & a {
             text-decoration: none;
@@ -71,6 +74,10 @@
         padding: 20px;
         display:none;
 
+        p{
+          font-size: 12px;
+        }
+
       }
 
     }
@@ -80,6 +87,101 @@
     @include span-columns(4);
     margin-top: 387px;
     margin-bottom: 50px;
-  }
+    &__boxes {
+      color: $color-white;
+      margin-bottom: 10px;
+      min-height: 210px;
 
+      &__content {
+        margin-left: 175px;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        margin-right: 20px;
+        float: left;
+        font-size: 12px;
+      }
+
+      &__title {
+        color: $color-white;
+        padding: 10px;
+        @include font-header($weight: 300);
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 22px;
+        padding-left: 10px;
+        margin-left: 175px;
+        margin-top: 5px;
+        float: left;
+
+      }
+
+      &__button {
+        margin-left: 175px;
+        background-color: $color-white;
+        @include font-header($weight: 300);
+        font-size: 14px;
+        padding: 5px 0px 5px 10px;
+        margin-bottom: 20px;
+        float: left;
+        width: 150px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-grey;
+
+        a {
+          text-decoration: none;
+        }
+
+        .find-a-home & {
+          color: $color-dark-green;
+          box-sizing: border-box;
+        }
+      }
+
+      & .full-width-panel{
+          margin-left: 10px;
+        }
+    }
+
+
+    & .find-a-home {
+      background-image: url('../images/home/find-a-home.png');
+      background-repeat: no-repeat;
+      background-position: -35px 0px;
+      background-color: $color-dark-green;
+    }
+
+    & .open-days {
+      background-image: url('../images/home/open-days.png');
+      background-repeat: no-repeat;
+      background-position: -33px 0px;
+      background-color: $color-dark-purple;
+    }
+
+    & .book-a-visit{
+      background-color: $color-dark-green;
+    }
+
+    & .recommendation{
+      background-color: $color-blue;
+
+      a{
+        color: $color-white;
+      }
+        
+      .recommendations-logo{
+        width: 58%;
+        display: inline;
+        margin: 15px 5px 0 20px;
+      }
+
+      .recommendations-logo-copy{
+        width: 40%;
+        display: inline-block;
+        margin: 15px 20px 0 15px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
 }
