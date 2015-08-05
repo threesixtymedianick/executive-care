@@ -1,8 +1,10 @@
 ---
-- copy: src=hosts dest=/etc/hosts
-- copy: src=hostname dest=/etc/hostname
-- command: mkdir -p /var/www/html/{{ domain }}/{{ type }}/website
+- copy: src=hosts dest=/etc/hosts owner=root
+- copy: src=hostname dest=/etc/hostname owner=root
+- command: mkdir -p /var/www/html/{{ domain }}/{{ type }}/website owner=root
 - synchronize: src=../../../../pimcore dest=/var/www/html/{{ domain }}/{{ type }}
 - synchronize: src=../../../../var dest=/var/www/html/{{ domain }}/{{ type }}
-- copy: src=../../../../pimcore.sql dest=/var/www/html/{{ domain }}/{{ type }}/pimcore.sql
-- file: src=/var/www/html/{{ domain }}/{{ type }}/var dest=/var/www/html/{{ domain }}/{{ type }}/website/var state=link mode=777
+- file: path=/var/www/html/{{ domain }}/{{ type }}/var owner=root
+- file: path=/var/www/html/{{ domain }}/{{ type }}/pimcore owner=root
+- copy: src=../../../../pimcore.sql dest=/var/www/html/{{ domain }}/{{ type }}/pimcore.sql owner=root
+- file: src=/var/www/html/{{ domain }}/{{ type }}/var dest=/var/www/html/{{ domain }}/{{ type }}/website/var state=link mode=777 owner=root
