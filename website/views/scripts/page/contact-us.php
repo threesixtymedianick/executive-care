@@ -97,7 +97,7 @@
                     <div style="height:25px;width:100%;margin-bottom:25px;">Editable Google Map location: <?= $googleMapLocation ?>
                     </div>
                 <?php endif; ?>
-                <div id="map-canvas"></div>
+                <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
             </div>
 
             <br clear="all" />

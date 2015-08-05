@@ -1,22 +1,22 @@
 /**
  * Initialise Google Maps
  */
-function initializeGoogleMaps() {
-    var map;
-    var infowindow;
+var placeLocation;
 
-    // Crystal Court Care Homes long and lat position
-    var cch = new google.maps.LatLng(53.961533, -1.535130);
+function initializeGoogleMaps() {
+    // The map object
+    var map;
+    // The window that shows when you click the marker
+    var infowindow;
+    // Our place ID
+    var googlePlaceId = document.getElementById('map-canvas').getAttribute("data-placeId");
 
     // Create a new map object in the "map-canvas" element
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-        center: cch, // Center on the care home
-        zoom: 16 // Zoom right in. Higher is more zoom
-    });
+    map = new google.maps.Map(document.getElementById('map-canvas'));
 
     // The place ID for the care home
     var request = {
-        placeId: 'ChIJ72CCHT5ReUgR0MXrdLSsG-A'
+        placeId: googlePlaceId
     };
 
     // Maps info window
@@ -28,10 +28,21 @@ function initializeGoogleMaps() {
     // Place a marker on the map using the place we setup earlier
     service.getDetails(request, function(place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
+            placeLocation = place;
+
+            // Center the map and set the zoom level
+            map.setOptions({
+                center: placeLocation.geometry.location, // Center on the care home
+                zoom: 16 // Zoom right in. Higher is more zoom
+            });
+
+            // Place the marker
             var marker = new google.maps.Marker({
                 map: map,
-                position: place.geometry.location
+                position: placeLocation.geometry.location
             });
+
+            // An onclick listener for the marker
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(place.name);
                 infowindow.open(map, this);
@@ -42,12 +53,12 @@ function initializeGoogleMaps() {
     // Create the DIV to hold the control and
     // call the CenterControl() constructor passing
     // in this DIV.
-    var centerControlDiv = document.createElement('div');
-    var centerControl = new openMapsInGoogleMaps(centerControlDiv, map);
+    var viewOnGoogleDiv = document.createElement('div');
+    var centerControl = new openMapsInGoogleMaps(viewOnGoogleDiv);
 
     // Place the control div
-    centerControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+    viewOnGoogleDiv.index = 1;
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(viewOnGoogleDiv);
 }
 
 /**
@@ -55,7 +66,7 @@ function initializeGoogleMaps() {
  * @param controlDiv The div in which to style and control
  * @param map The map object to place the controls
  */
-function openMapsInGoogleMaps(controlDiv, map) {
+function openMapsInGoogleMaps(controlDiv) {
 
     // Set CSS for the control border
     var controlUI = document.createElement('div');
@@ -81,8 +92,10 @@ function openMapsInGoogleMaps(controlDiv, map) {
 
     // Setup the click event listeners. On click, open the place on Google Maps
     google.maps.event.addDomListener(controlUI, 'click', function() {
-        var url = "https://www.google.com/maps/place/Crystal+Court/@53.962505,-1.53513,16z/data=!4m2!3m1!1s0x0:0xe01bacb474ebc5d0";
-        window.open(url,'_blank');
+        var url ="https://www.google.com/maps/place/" + placeLocation.name + "+" + placeLocation.vicinity;
+        if (placeLocation != null) {
+            window.open(url, '_blank');
+        }
     });
 }
 
