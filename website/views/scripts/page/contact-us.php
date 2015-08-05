@@ -18,10 +18,14 @@
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
                         <div class="tab__left">
                             <?= $this->enquiryForm->name ?>
-                            <?= $this->enquiryForm->number ?>
                         </div>
                         <div class="tab__right">
                             <?= $this->enquiryForm->email ?>
+                        </div>
+                        <div class="tab__left">
+                            <?= $this->enquiryForm->number ?>
+                        </div>
+                        <div class="tab__right">
                             <?= $this->enquiryForm->address ?>
                         </div>
                         <div class="tab__controls">
@@ -36,13 +40,21 @@
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="brochure_form">
                         <div class="tab__left">
                             <?= $this->brochureForm->care_home ?>
-                            <?= $this->brochureForm->name ?>
-                            <?= $this->brochureForm->number ?>
                         </div>
                         <div class="tab__right">
                             <?= $this->brochureForm->delivery_method ?>
-                            <?= $this->brochureForm->email ?>
-                            <?= $this->brochureForm->address ?>
+                        </div>
+                        <div class="tab__left">
+                            <?= $this->enquiryForm->name ?>
+                        </div>
+                        <div class="tab__right">
+                            <?= $this->enquiryForm->email ?>
+                        </div>
+                        <div class="tab__left">
+                            <?= $this->enquiryForm->number ?>
+                        </div>
+                        <div class="tab__right">
+                            <?= $this->enquiryForm->address ?>
                         </div>
                         <div class="tab__controls">
                             <?= $this->brochureForm->message ?>
