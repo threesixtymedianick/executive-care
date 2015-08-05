@@ -150,6 +150,9 @@
 
     input[type=checkbox] {
       width: auto;
+      vertical-align: middle;
+      position: relative;
+      bottom: 1px;
     }
 
     .select-wrap{
