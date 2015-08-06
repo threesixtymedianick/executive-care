@@ -1,0 +1,10 @@
+.blog {
+  &__left {
+    @include span-columns(8);
+  }
+
+  &__right {
+    @include span-columns(4);
+    margin: 0;
+  }
+}
