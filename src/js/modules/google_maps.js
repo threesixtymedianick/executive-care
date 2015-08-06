@@ -13,7 +13,7 @@ function initializeGoogleMaps() {
     // Our place ID
     var googlePlaceId = document.getElementById('map-canvas').getAttribute("data-placeId");
 
-    if (!(googlePlaceId === 'undefined' || googlePlaceId === null)) {
+    if (googlePlaceId === 'undefined' || googlePlaceId === null) {
         return false
     }
 
