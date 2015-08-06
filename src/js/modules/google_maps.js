@@ -14,50 +14,52 @@ function initializeGoogleMaps() {
     var googlePlaceId = document.getElementById('map-canvas').getAttribute("data-placeId");
 
     if (!(googlePlaceId === 'undefined' || googlePlaceId === null)) {
-        // Create a new map object in the "map-canvas" element
-        map = new google.maps.Map(document.getElementById('map-canvas'));
-
-        // Maps info window
-        var infowindow = new google.maps.InfoWindow();
-
-        // Get the places service
-        var service = new google.maps.places.PlacesService(map);
-
-        // Place a marker on the map using the place we setup earlier
-        service.getDetails({ placeId:googlePlaceId }, function(place, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-                placeLocation = place;
-
-                // Center the map and set the zoom level
-                map.setOptions({
-                    center: placeLocation.geometry.location, // Center on the care home
-                    zoom: 16 // Zoom right in. Higher is more zoom
-                });
-
-                // Place the marker
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: placeLocation.geometry.location
-                });
-
-                // An onclick listener for the marker
-                google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.setContent(place.name);
-                    infowindow.open(map, this);
-                });
-            }
-        });
-
-        // Create the DIV to hold the control and
-        // call the CenterControl() constructor passing
-        // in this DIV.
-        var viewOnGoogleDiv = document.createElement('div');
-        var centerControl = new openMapsInGoogleMaps(viewOnGoogleDiv);
-
-        // Place the control div
-        viewOnGoogleDiv.index = 1;
-        map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(viewOnGoogleDiv);
+        return false
     }
+
+    // Create a new map object in the "map-canvas" element
+    map = new google.maps.Map(document.getElementById('map-canvas'));
+
+    // Maps info window
+    var infowindow = new google.maps.InfoWindow();
+
+    // Get the places service
+    var service = new google.maps.places.PlacesService(map);
+
+    // Place a marker on the map using the place we setup earlier
+    service.getDetails({placeId: googlePlaceId}, function (place, status) {
+        if (status == google.maps.places.PlacesServiceStatus.OK) {
+            placeLocation = place;
+
+            // Center the map and set the zoom level
+            map.setOptions({
+                center: placeLocation.geometry.location, // Center on the care home
+                zoom: 16 // Zoom right in. Higher is more zoom
+            });
+
+            // Place the marker
+            var marker = new google.maps.Marker({
+                map: map,
+                position: placeLocation.geometry.location
+            });
+
+            // An onclick listener for the marker
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.setContent(place.name);
+                infowindow.open(map, this);
+            });
+        }
+    });
+
+    // Create the DIV to hold the control and
+    // call the CenterControl() constructor passing
+    // in this DIV.
+    var viewOnGoogleDiv = document.createElement('div');
+    var centerControl = new openMapsInGoogleMaps(viewOnGoogleDiv);
+
+    // Place the control div
+    viewOnGoogleDiv.index = 1;
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(viewOnGoogleDiv);
 }
 
 /**
@@ -90,8 +92,8 @@ function openMapsInGoogleMaps(controlDiv) {
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners. On click, open the place on Google Maps
-    google.maps.event.addDomListener(controlUI, 'click', function() {
-        var url ="https://www.google.com/maps/place/" + placeLocation.name + "+" + placeLocation.vicinity;
+    google.maps.event.addDomListener(controlUI, 'click', function () {
+        var url = "https://www.google.com/maps/place/" + placeLocation.name + "+" + placeLocation.vicinity;
         if (placeLocation != null) {
             window.open(url, '_blank');
         }
