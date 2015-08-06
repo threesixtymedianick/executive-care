@@ -81,7 +81,7 @@ gulp.task("minify-css", function() {
     ;
 });
 
-gulp.task("build-js", function() {
+gulp.task("build-js", ["build-js-libs"], function() {
     var bundler = browserify({
         entries: ['./' + paths.src.js + 'index.js'], // Only need initial file, browserify finds the deps
         transform: [reactify] // We want to convert JSX to normal javascript
@@ -94,20 +94,17 @@ gulp.task("build-js", function() {
     ;
 });
 
-/*gulp.task('build-js-libs', function() {
+gulp.task('build-js-libs', function() {
     return gulp.src([
-            paths.src.js + 'third-party/jquery-1.11.2.js',
-            paths.src.js + 'third-party/hammer.js',
-            './bower_components/mobile-detect/mobile-detect.js',
-            './bower_components/mediaelement/build/mediaelement-and-player.js'
+            './bower_components/jquery/dist/jquery.js'
         ])
         .pipe(plumber())
-        .pipe(uglifyjs('libs.js'))
+        .pipe(uglifyjs('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
     ;
 });
 
-gulp.task('build-js-fallback', function() {
+/*gulp.task('build-js-fallback', function() {
     return gulp.src([
             './bower_components/selectivizr/selectivizr.js',
             './bower_components/respond/dest/respond.src.js'
