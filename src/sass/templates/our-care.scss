@@ -1,4 +1,5 @@
 .our-care {
+
   &__header {
     background-image: url('../images/home/about-us_header.jpg');
     background-size: 100% 100%;
@@ -51,7 +52,7 @@
         border-top: 1px solid $color-background;
         text-transform: uppercase;
 
-        &__show-hide{
+        &__show-hide {
           background-color: white;
           color: $color-blue;
           float: right;
@@ -65,7 +66,6 @@
             text-decoration: none;
             color: $color-blue;
           }
-
         }
       }
 
@@ -77,9 +77,7 @@
         p{
           font-size: 12px;
         }
-
       }
-
     }
   }
 
@@ -87,10 +85,12 @@
     @include span-columns(4);
     margin-top: 387px;
     margin-bottom: 50px;
+
     &__boxes {
       color: $color-white;
       margin-bottom: 10px;
       min-height: 210px;
+      overflow: hidden;
 
       &__content {
         margin-left: 175px;
@@ -112,7 +112,6 @@
         margin-left: 175px;
         margin-top: 5px;
         float: left;
-
       }
 
       &__button {
@@ -138,11 +137,10 @@
         }
       }
 
-      & .full-width-panel{
+      & .full-width-panel {
           margin-left: 10px;
-        }
+      }
     }
-
 
     & .find-a-home {
       background-image: url('../images/home/find-a-home.png');
@@ -158,24 +156,24 @@
       background-color: $color-dark-purple;
     }
 
-    & .book-a-visit{
+    & .book-a-visit {
       background-color: $color-dark-green;
     }
 
-    & .recommendation{
+    & .recommendation {
       background-color: $color-blue;
 
-      a{
+      a {
         color: $color-white;
       }
         
-      .recommendations-logo{
+      .recommendations-logo {
         width: 58%;
         display: inline;
         margin: 15px 5px 0 20px;
       }
 
-      .recommendations-logo-copy{
+      .recommendations-logo-copy {
         width: 40%;
         display: inline-block;
         margin: 15px 20px 0 15px;
