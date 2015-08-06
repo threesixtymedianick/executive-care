@@ -69,6 +69,7 @@
     li {
       list-style: none;
       display: inline;
+
       a {
         padding: 5px 10px;
         display: inline-block;
@@ -81,7 +82,7 @@
         &#enquiry_tab {
           background-color: $color-grey;
           
-          &.active{
+          &.active {
             background-color: $color-purple;
           }
 
@@ -90,10 +91,9 @@
         &#brochure_tab {
           background-color: $color-grey;
           
-          &.active{
+          &.active {
             background-color: $color-blue;
           }
-
         }
       }
     }
@@ -125,7 +125,7 @@
       clear: both;
     }
 
-    .field-wrap{
+    .field-wrap {
       position: relative;
     }
 
@@ -141,6 +141,7 @@
         right: 0;
       }
     }
+    
     input {
       width: 100%;
       padding: 6px;
@@ -155,7 +156,7 @@
       bottom: 1px;
     }
 
-    .select-wrap{
+    .select-wrap {
       position: relative;
     }
 
@@ -169,6 +170,7 @@
       font-size: 12px;
       padding: 6px;
     }
+
     .button_base {
       width: 174px;
       text-transform: uppercase;
