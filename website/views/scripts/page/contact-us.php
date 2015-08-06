@@ -108,12 +108,7 @@
                         Tel: <?= $contactUsEnquiryNumberSecond ?>
                     </div>
                 </div>
-                <!-- This API key will need changing! -->
-                <?php if ($this->editmode) : ?>
-                    <div style="height:25px;width:100%;margin-bottom:25px;">Editable Google Map location: <?= $googleMapLocation ?>
-                    </div>
-                <?php endif; ?>
-                <iframe width="100%" height="275" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<?= $this->config->google_api ?>&q=<?= htmlspecialchars($googleMapLocation->getValue()); ?>" allowfullscreen></iframe>
+                <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
             </div>
 
             <br clear="all" />
