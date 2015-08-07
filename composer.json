@@ -1,0 +1,15 @@
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+    "post-install-cmd": "Manager_Composer::postInstall"
+    },
+
+    "config": {
+        "document-root-path": "./"
+    },
+    "require": {
+        "pimcore-extensions/manager": "dev-master",
+        "pimcore-extensions/blog": "1.0.5"
+    }
+}
