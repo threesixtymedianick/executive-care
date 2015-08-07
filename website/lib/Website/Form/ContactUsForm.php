@@ -9,37 +9,26 @@ class ContactUsForm extends BaseForm
         $this->setAttrib('id', 'enquiryform');
         $this->setAttrib('action', '/contact-us');
 
-        $name = new \Zend_Form_Element_Text('name');
-        $name->setLabel('Your name:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $name = new \Zend_Form_Element_Text('enquiry_name');
+        $name->setLabel('Your name:');
 
-        $email = new \Zend_Form_Element_Text('email');
+        $email = new \Zend_Form_Element_Text('enquiry_email');
         $email->setLabel('Your email:')
-            ->addValidator('NotEmpty', true)
-            ->addValidator('EmailAddress')
             ->addFilter('StringToLower')
-            ->setRequired(true)
             ->setAttrib('class', 'form-control');
 
-        $number = new \Zend_Form_Element_Text('number');
-        $number->setLabel('Your number:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $number = new \Zend_Form_Element_Text('enquiry_number');
+        $number->setLabel('Your number:');
 
-        $address = new \Zend_Form_Element_Text('address');
-        $address->setLabel('Your address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $address = new \Zend_Form_Element_Text('enquiry_address');
+        $address->setLabel('Your address:');
 
-        $message = new \Zend_Form_Element_Textarea('message');
-        $message->setLabel('Your message:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $message = new \Zend_Form_Element_Textarea('enquiry_message');
+        $message->setLabel('Your message:');
 
-        $opt = new \Zend_Form_Element_Checkbox('opt_in');
+        $opt = new \Zend_Form_Element_Checkbox('enquiry_opt_in');
 
-        $submit = new \Zend_Form_Element_Submit('submit');
+        $submit = new \Zend_Form_Element_Submit('enquiry_submit');
         $submit->setLabel('Submit');
 
         $this->addElements(array($name, $email, $number, $address, $message, $opt, $submit));
