@@ -14,12 +14,12 @@ Create a symlink from `/website/var` to `/var` by
 
 ```
 cd website
-ln -s ../var var 
+ln -s ../var var
 ```
 
 Create the file `~/Sites/executive-care/var/config/system.xml` with the content
 
-```
+```XML
 <?xml version="1.0"?>
 <zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
   <general>
@@ -73,6 +73,12 @@ Create the file `~/Sites/executive-care/var/config/system.xml` with the content
   </httpclient>
 </zend-config>
 
+```
+
+You also need to pull the git sub modules, using this command
+
+```bash
+  git submodule foreach git pull origin master
 ```
 
 Add a record to your host file
