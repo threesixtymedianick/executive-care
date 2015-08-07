@@ -9,3 +9,4 @@ website/static/*
 /vendor/
 
 plugins/*
+composer.lock
