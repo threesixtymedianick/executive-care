@@ -7,3 +7,5 @@ website/static/*
 .DS_Store
 
 /vendor/
+
+plugins/*

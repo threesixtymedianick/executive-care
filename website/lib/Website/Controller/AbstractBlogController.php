@@ -22,13 +22,6 @@ namespace Website\Controller;
  * @license     http://www.modernweb.pl/license/new-bsd     New BSD License
  */
 
-/**
- * @category    Pimcore
- * @package     Plugin_Blog
- * @subpackage  Controller
- * @author      Rafał Gałka <rafal@modernweb.pl>
- * @copyright   Copyright (c) 2007-2012 ModernWeb (http://www.modernweb.pl)
- */
 abstract class AbstractBlogController extends \Pimcore_Controller_Action_Frontend
 {
     /**

@@ -1,21 +1,20 @@
-<?php
-    $entry = $this->entry;
-    $url = $this->url;
-?>
+<?php $entry = $this->entry; ?>
 
-<div class="blog__item">
-
+<div class="blog__content__item">
     <?php if ($entry->getBlogImage() !== null): ?>
-        <img class="blog__image"
-             src="<?= $entry->getBlogImage()->getFullPath(); ?>"/>
+        <img class="blog__content__item__image" src="<?= $entry->getBlogImage()->getFullPath(); ?>" />
     <?php endif; ?>
-    <h2>
-        <a href="<?= $url; ?>"><?= $entry->getTitle() ?></a>
-    </h2>
-    <small><?= $entry->getDate()->toString('FFFFF'); ?></small>
-    <p>
+    <div class="blog__content__item__title">
+        <a href="<?= $this->url(['key' => $entry->getUrlPath()], 'blog-show', false, false); ?>">
+            <?= $entry->getTitle() ?>
+        </a>
+    </div>
+    <div class="blog__content__item__date">
+        <?= $entry->getDate()->toString('FFFFF'); ?>
+    </div>
+    <div class="blog__content__item__summary">
         <?= (trim($entry->getSummary()))
             ? $entry->getSummary()
             : Website_Tool_Text::cutStringRespectingWhitespace(trim(strip_tags($entry->getContent())), 200) ?>
-    </p>
+    </div>
 </div>

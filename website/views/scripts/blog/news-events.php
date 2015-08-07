@@ -9,17 +9,15 @@
                 <div class="blog__content">
                     <div class="tab" id="news">
                         <?php foreach ($this->news as $entry) {
-                            $url = $this->url(['key' => $entry->getUrlPath()], 'blog-show', false, false);
-                            echo $this->partial("blog/partial/blog-entry.php", ["url" => $url, "entry" => $entry]);
+                            echo $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]);
                         } ?>
-                        <div class="blog__pagination"><?= $this->news ?></div>
+                        <div class="blog__content__pagination"><?= $this->news ?></div>
                     </div>
                     <div class="tab" id="events">
                         <?php foreach ($this->events as $entry) {
-                            $url = $this->url(['key' => $entry->getUrlPath()], 'blog-show', false, false);
-                            echo $this->partial("blog/partial/blog-entry.php", ["url" => $url, "entry" => $entry]);
+                            echo $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]);
                         } ?>
-                        <div class="blog__pagination"><?= $this->events ?></div>
+                        <div class="blog__content__pagination"><?= $this->events ?></div>
                     </div>
                 </div>
             </div>

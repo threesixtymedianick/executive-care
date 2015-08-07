@@ -4,9 +4,15 @@ use Website\Controller\AbstractBlogController as AbstractBlogController;
 
 class BlogController extends AbstractBlogController
 {
-    const EVENT_ID  = 5;
-    const NEWS_ID   = 6;
-    const DAYS_ID   = 8;
+    // Category ID for Events
+    const EVENT_ID = 5;
+
+    // Category ID for News
+    const NEWS_ID = 6;
+
+    // Category ID for Open days
+    const DAYS_ID = 8;
+
     /**
      * @var Blog
      */
@@ -28,8 +34,8 @@ class BlogController extends AbstractBlogController
         }
 
         $this->enableLayout();
-        $this->view->language = (string) $this->getLocale();
-        $this->language = (string) $this->getLocale();
+        $this->view->language = (string)$this->getLocale();
+        $this->language = (string)$this->getLocale();
     }
 
     public function newsEventsAction()

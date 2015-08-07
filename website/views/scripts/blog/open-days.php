@@ -8,10 +8,9 @@
                 <div class="blog__content">
                     <div class="tab" id="opendays">
                         <?php foreach ($this->days as $entry) {
-                            $url = $this->url(['key' => $entry->getUrlPath()], 'blog-show', false, false);
-                            echo $this->partial("blog/partial/blog-entry.php", ["url" => $url, "entry" => $entry]);
+                            echo $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]);
                         } ?>
-                        <div class="blog__pagination"><?= $this->days ?></div>
+                        <div class="blog__content__pagination"><?= $this->days ?></div>
                     </div>
                 </div>
             </div>
