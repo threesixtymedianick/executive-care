@@ -78,7 +78,7 @@ Create the file `~/Sites/executive-care/var/config/system.xml` with the content
 You also need to pull the git sub modules, using this command
 
 ```bash
-  git submodule foreach git pull origin master
+  git pull --recurse-submodules
 ```
 
 Add a record to your host file
