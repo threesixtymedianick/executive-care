@@ -8,12 +8,6 @@
     margin: 0;
   }
 
-  &__image {
-    width: 200px;
-    height: 200px;
-    float: left;
-  }
-
   ul {
     &.tabs {
       margin: 0;
@@ -52,6 +46,27 @@
 
   &__content {
     background-color: $color-light-purple;
+
+    &__item {
+
+      &__title {
+
+      }
+
+      &__summary {
+
+      }
+
+      &__date {
+
+      }
+
+      &__image {
+        width: 200px;
+        height: 200px;
+        float: left;
+      }
+    }
   }
 
   .tab {
