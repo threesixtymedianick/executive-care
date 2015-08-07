@@ -1,0 +1,3 @@
+[submodule "plugins/Blog"]
+	path = plugins/Blog
+	url = https://github.com/pimcore-extensions/blog

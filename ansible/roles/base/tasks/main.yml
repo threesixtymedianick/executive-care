@@ -5,6 +5,8 @@
     - node
     - nodejs
     - python-mysqldb
+    - php5-curl
+    - php5-gd
 
 - file: path=/root/.ssh state=directory
 - copy: src=.ssh/config mode=600 dest=/root/.ssh/config

@@ -1,0 +1,86 @@
+.blog {
+  &__left {
+    @include span-columns(8);
+  }
+
+  &__right {
+    @include span-columns(4);
+    margin: 0;
+  }
+
+  ul {
+    &.tabs {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+
+  .tabs {
+    display: block;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+
+    li {
+      list-style: none;
+      display: inline;
+      a {
+        padding: 5px 10px;
+        display: inline-block;
+        color: $color-white;
+        text-decoration: none;
+        margin-right: -5px;
+        padding-left: 18px;
+        padding-right: 18px;
+
+        &#news_tab {
+          background-color: $color-purple;
+        }
+
+        &#events_tab {
+          background-color: $color-blue;
+        }
+      }
+    }
+  }
+
+  &__content {
+    background-color: $color-light-purple;
+
+    &__item {
+
+      &__title {
+
+      }
+
+      &__summary {
+
+      }
+
+      &__date {
+
+      }
+
+      &__image {
+        width: 200px;
+        height: 200px;
+        float: left;
+      }
+    }
+  }
+
+  .tab {
+    padding: 24px;
+
+    &#brochure {
+      background: $color-light-blue;
+      min-height: 475px;
+    }
+
+    &#enquiry {
+      background-color: $color-light-purple;
+      min-height: 475px;
+    }
+  }
+
+}

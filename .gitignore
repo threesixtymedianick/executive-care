@@ -5,3 +5,7 @@
 website/static/*
 .idea
 .DS_Store
+
+/vendor/
+
+plugins/*
