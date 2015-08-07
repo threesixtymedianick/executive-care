@@ -63,7 +63,7 @@
   .tabs {
     display: block;
     text-transform: uppercase;
-    font-family: "Raleway", sans-serif;
+    @include font-header($weight: 300);
     font-size: 18px;
 
     li {
@@ -174,7 +174,7 @@
     .button_base {
       width: 174px;
       text-transform: uppercase;
-      font-family: "Raleway", sans-serif;
+      @include font-header($weight: 300);
       font-size: 18px;
       border: 0;
       float: right;
@@ -224,7 +224,7 @@
       &__open-chat {
         width: 174px;
         text-transform: uppercase;
-        font-family: "Raleway", sans-serif;
+        @include font-header($weight: 300);
         font-size: 18px;
         border: 0;
         float: right;
