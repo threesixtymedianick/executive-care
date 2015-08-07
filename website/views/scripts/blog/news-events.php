@@ -3,8 +3,8 @@
         <div class="blog">
             <div class="blog__left">
                 <ul class="tabs">
-                    <li><a id="news_tab" href='#news'>Make an enquiry</a></li>
-                    <li><a id="events_tab" href='#events'>Request a brochure</a></li>
+                    <li><a id="news_tab" href='#news'>Latest News</a></li>
+                    <li><a id="events_tab" href='#events'>Events</a></li>
                 </ul>
                 <div class="blog__content">
                     <div class="tab" id="news">
