@@ -21,7 +21,7 @@
          letter-spacing: 1px;
          display: none;
 
-         @include media(769px) {
+         @include media($tablet-lrg-breakpoint) {
             display: inline;
          }
 
@@ -46,7 +46,7 @@
       }
 
       &-telephone {
-         @include media(769px) {
+         @include media($tablet-lrg-breakpoint) {
             padding-right: 34px;
          }
       }
@@ -74,13 +74,13 @@
       &-text {
          display: none;
 
-         @include media(769px) {
+         @include media($tablet-lrg-breakpoint) {
             display: inline;
          }
       }
 
       &-telephone {
-         @include media(769px) {
+         @include media($tablet-lrg-breakpoint) {
             display: inline-block;
             line-height: 12px;
 
