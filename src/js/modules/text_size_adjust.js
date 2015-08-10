@@ -12,15 +12,11 @@ function resizeText(multiplier) {
 
 $(document).ready(function() {
 
-    $("#sizeUp").click(function() {
+    $("#larger").click(function() {
         resizeText(1);
     });
 
-    $("#normal").click(function() {
-        resizeText(0);
-    })
-
-    $("#sizeDown").click(function() {
+    $("#smaller").click(function() {
         resizeText(-1);
     })
 });
