@@ -17,7 +17,7 @@
 
     &-header {
       @include font-header($weight: 300);
-      font-size: 18px;
+      font-size: 1.8em;
       line-height: 1.1;
       text-transform: uppercase;
       margin: 0px;
@@ -83,7 +83,7 @@
     padding-right: 15px;
     width: 152px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 1.4em;
   }
 
   &__search {
@@ -92,7 +92,7 @@
     background-image: url('../images/home/search-button.png');
     text-indent: -9999%;
     display: inline-block;
-    font-size: 14px;
+    font-size: 1.4em;
     border: none;
   }
 
@@ -127,7 +127,7 @@
 
     &-home-name {
       @include font-header($weight: 300);
-      font-size: 18px;
+      font-size: 1.8em;
       margin: 18px 0px;
     }
 

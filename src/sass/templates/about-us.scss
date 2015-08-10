@@ -34,7 +34,7 @@
         padding-left: 10px;
         margin-bottom: 15px;
         float: left;
-        font-size: 12px;
+        font-size: 1.2em;
       }
 
       &__title {
@@ -42,7 +42,7 @@
         padding: 10px;
         @include font-header($weight: 300);
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 1.8em;
         padding-left: 10px;
         margin-left: 175px;
         float: left;
@@ -52,7 +52,7 @@
         margin-left: 175px;
         background-color: $color-white;
         @include font-header($weight: 300);
-        font-size: 14px;
+        font-size: 1.4em;
         padding: 5px 0px 5px 10px;
         margin-bottom: 20px;
         float: left;
@@ -98,7 +98,7 @@
     display: block;
     text-transform: uppercase;
     @include font-header($weight: 300);
-    font-size: 18px;
+    font-size: 1.8em;
 
     li {
       list-style: none;

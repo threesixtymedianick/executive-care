@@ -27,7 +27,7 @@ $nav-height: 47px;
       a {
         color: $color-white;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 1.8em;
         @include font-header;
         height: 100%;
         width: 100%;
@@ -69,7 +69,7 @@ $nav-height: 47px;
     height: $nav-height;
     color: $color-white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.8em;
     @include font-header;
 
     @include media(769px) {

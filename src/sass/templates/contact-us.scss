@@ -15,7 +15,7 @@
     padding: 10px;
     background-color: $color-green;
     font-family: "Raleway", sans-serif;
-    font-size: 18px;
+    font-size: 1.8em;
 
     &__title {
       text-transform: uppercase;
@@ -44,7 +44,7 @@
         height: 44px;
 
         #opening_times {
-          font-size: 9px;
+          font-size: 0.9em;
           position: relative;
           top: -15px;
           display: inline-block;
@@ -64,7 +64,7 @@
     display: block;
     text-transform: uppercase;
     @include font-header($weight: 300);
-    font-size: 18px;
+    font-size: 1.8em;
 
     li {
       list-style: none;
@@ -131,7 +131,7 @@
 
     label {
       display: inline-block;
-      font-size: 12px;
+      font-size: 1.2em;
       padding-bottom: 2px;
 
       &.error {
@@ -145,7 +145,7 @@
     input {
       width: 100%;
       padding: 6px;
-      font-size: 12px;
+      font-size: 1.2em;
       display: inline;
     }
 
@@ -167,7 +167,7 @@
     #message {
       width: 100%;
       height: 125px;
-      font-size: 12px;
+      font-size: 1.2em;
       padding: 6px;
     }
 
@@ -175,7 +175,7 @@
       width: 174px;
       text-transform: uppercase;
       @include font-header($weight: 300);
-      font-size: 18px;
+      font-size: 1.8em;
       border: 0;
       float: right;
       color: $color-white;
@@ -225,7 +225,7 @@
         width: 174px;
         text-transform: uppercase;
         @include font-header($weight: 300);
-        font-size: 18px;
+        font-size: 1.8em;
         border: 0;
         float: right;
         color: $color-white;
@@ -244,11 +244,11 @@
 
       &__title {
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 1.8em;
       }
 
       &__content {
-        font-size: 11px;
+        font-size: 1.1em;
         display: inline-block;
         max-width: 65%;
         overflow: hidden;

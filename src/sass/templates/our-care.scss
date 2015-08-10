@@ -26,7 +26,7 @@
       &__title {
         background-color: $color-blue;
         @include font-header($weight: 300);
-        font-size: 16px;
+        font-size: 1.6em;
         padding: 6px 20px;
         display: inline-block;
         color: $color-white;
@@ -37,7 +37,7 @@
         background-color: $color-light-blue;
         padding: 20px;
         color: $color-black;
-        font-size: 12px;
+        font-size: 1.2em;
       }
     }
     
@@ -45,7 +45,7 @@
 
       &__title {
         @include font-header($weight: 300);
-        font-size: 16px;
+        font-size: 1.6em;
         color: white;
         background-color: $color-blue;
         padding: 6px 0px 6px 20px;
@@ -58,7 +58,7 @@
           float: right;
           padding: 11px 10px 6px;
           margin-top: -6px;
-          font-size: 13px;
+          font-size: 1.3em;
           width: 130px;
           text-align: left;
 
@@ -75,7 +75,7 @@
         display:none;
 
         p{
-          font-size: 12px;
+          font-size: 1.2em;
         }
       }
     }
@@ -98,7 +98,7 @@
         margin-bottom: 15px;
         margin-right: 20px;
         float: left;
-        font-size: 12px;
+        font-size: 1.2em;
       }
 
       &__title {
@@ -106,7 +106,7 @@
         padding: 10px;
         @include font-header($weight: 300);
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 1.8em;
         line-height: 22px;
         padding-left: 10px;
         margin-left: 175px;
@@ -118,7 +118,7 @@
         margin-left: 175px;
         background-color: $color-white;
         @include font-header($weight: 300);
-        font-size: 14px;
+        font-size: 1.4em;
         padding: 5px 0px 5px 10px;
         margin-bottom: 20px;
         float: left;
@@ -177,7 +177,7 @@
         width: 40%;
         display: inline-block;
         margin: 15px 20px 0 15px;
-        font-size: 12px;
+        font-size: 1.2em;
         line-height: 14px;
       }
     }
