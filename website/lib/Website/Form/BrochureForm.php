@@ -23,34 +23,49 @@ class BrochureForm extends BaseForm
             1 => "Download"
         );
 
-        $careHome = new \Zend_Form_Element_Select('care_home');
+        $careHome = new \Zend_Form_Element_Select('care_home_options');
         $careHome->setMultiOptions($careHomeOptions)
             ->setRequired(true)
-            ->setLabel('Care home:');
+            ->setLabel('Care home:')
+            ->removeDecorator('Errors');
 
-        $deliveryMethod = new \Zend_Form_Element_Select('delivery_method');
+        $deliveryMethod = new \Zend_Form_Element_Select('delivery_method_options');
         $deliveryMethod->setMultiOptions($deliveryMethodOptions)
             ->setRequired(true)
-            ->setLabel('Send brochure by:');
+            ->setLabel('Send brochure by:')
+            ->removeDecorator('Errors');
 
-        $name = new \Zend_Form_Element_Text('name');
-        $name->setLabel('Your name:');
+        $name = new \Zend_Form_Element_Text('brochure_name');
+        $name->setLabel('Your name:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
-        $email = new \Zend_Form_Element_Text('email');
-        $email->setLabel('Your email:');
+        $email = new \Zend_Form_Element_Text('brochure_email');
+        $email->setLabel('Your email:')
+            ->addValidator('NotEmpty', true)
+            ->addValidator('EmailAddress')
+            ->addFilter('StringToLower')
+            ->setRequired(true);
 
-        $number = new \Zend_Form_Element_Text('number');
-        $number->setLabel('Your number:');
+        $number = new \Zend_Form_Element_Text('brochure_number');
+        $number->setLabel('Your number:')
+            ->addValidator('NotEmpty', true)
+            ->addValidator('Digits')
+            ->setRequired(true);
 
-        $address = new \Zend_Form_Element_Text('address');
-        $address->setLabel('Your address:');
+        $address = new \Zend_Form_Element_Text('brochure_address');
+        $address->setLabel('Your address:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
-        $message = new \Zend_Form_Element_Textarea('message');
-        $message->setLabel('Your message:');
+        $message = new \Zend_Form_Element_Textarea('brochure_message');
+        $message->setLabel('Your message:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
-        $opt = new \Zend_Form_Element_Checkbox('opt_in');
+        $opt = new \Zend_Form_Element_Checkbox('brochure_opt_in');
 
-        $submit = new \Zend_Form_Element_Submit('submit');
+        $submit = new \Zend_Form_Element_Submit('brochure_submit');
         $submit->setLabel('Submit');
 
         $this->addElements(array($careHome, $deliveryMethod, $name, $email, $number, $address, $message, $opt, $submit));
