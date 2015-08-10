@@ -17,54 +17,54 @@
                 <div class="tab" id="enquiry">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
                         <div class="tab__left field-wrap">
-                            <?= $this->enquiryForm->name ?>
+                            <?= $this->enquiryForm->enquiry_name ?>
                         </div>
                         <div class="tab__right field-wrap">
-                            <?= $this->enquiryForm->email ?>
+                            <?= $this->enquiryForm->enquiry_email ?>
                         </div>
                         <div class="tab__left field-wrap">
-                            <?= $this->enquiryForm->number ?>
+                            <?= $this->enquiryForm->enquiry_number ?>
                         </div>
                         <div class="tab__right field-wrap">
-                            <?= $this->enquiryForm->address ?>
+                            <?= $this->enquiryForm->enquiry_address ?>
                         </div>
                         <div class="tab__controls">
                             <div class="field-wrap">
-                                <?= $this->enquiryForm->message ?>
+                                <?= $this->enquiryForm->enquiry_message ?>
                             </div>
-                            <?= $this->enquiryForm->opt_in ?>
+                            <?= $this->enquiryForm->enquiry_opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
-                            <?= $this->enquiryForm->submit ?>
+                            <?= $this->enquiryForm->enquiry_submit ?>
                         </div>
                     </form>
                 </div>
                 <div class="tab" id="brochure">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="brochure_form">
                         <div class="tab__left select-wrap">
-                            <?= $this->brochureForm->care_home ?>
+                            <?= $this->brochureForm->care_home_options ?>
                         </div>
                         <div class="tab__right select-wrap">
-                            <?= $this->brochureForm->delivery_method ?>
+                            <?= $this->brochureForm->delivery_method_options ?>
                         </div>
                         <div class="tab__left field-wrap">
-                            <?= $this->enquiryForm->name ?>
+                            <?= $this->brochureForm->brochure_name ?>
                         </div>
                         <div class="tab__right field-wrap">
-                            <?= $this->enquiryForm->email ?>
+                            <?= $this->brochureForm->brochure_email ?>
                         </div>
                         <div class="tab__left field-wrap">
-                            <?= $this->enquiryForm->number ?>
+                            <?= $this->brochureForm->brochure_number ?>
                         </div>
                         <div class="tab__right field-wrap">
-                            <?= $this->enquiryForm->address ?>
+                            <?= $this->brochureForm->brochure_address ?>
                         </div>
                         <div class="tab__controls">
                             <div class="field-wrap">
-                                <?= $this->brochureForm->message ?>
+                                <?= $this->brochureForm->brochure_message ?>
                             </div>
-                            <?= $this->brochureForm->opt_in ?>
+                            <?= $this->brochureForm->brochure_opt_in ?>
                             <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
-                            <?= $this->brochureForm->submit ?>
+                            <?= $this->brochureForm->brochure_submit ?>
                         </div>
                     </form>
                 </div>

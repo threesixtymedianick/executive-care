@@ -9,12 +9,12 @@ class ContactUsForm extends BaseForm
         $this->setAttrib('id', 'enquiryform');
         $this->setAttrib('action', '/contact-us');
 
-        $name = new \Zend_Form_Element_Text('name');
+        $name = new \Zend_Form_Element_Text('enquiry_name');
         $name->setLabel('Your name:')
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-        $email = new \Zend_Form_Element_Text('email');
+        $email = new \Zend_Form_Element_Text('enquiry_email');
         $email->setLabel('Your email:')
             ->addValidator('NotEmpty', true)
             ->addValidator('EmailAddress')
@@ -22,24 +22,25 @@ class ContactUsForm extends BaseForm
             ->setRequired(true)
             ->setAttrib('class', 'form-control');
 
-        $number = new \Zend_Form_Element_Text('number');
+        $number = new \Zend_Form_Element_Text('enquiry_number');
         $number->setLabel('Your number:')
             ->addValidator('NotEmpty', true)
+            ->addValidator('Digits')
             ->setRequired(true);
 
-        $address = new \Zend_Form_Element_Text('address');
+        $address = new \Zend_Form_Element_Text('enquiry_address');
         $address->setLabel('Your address:')
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-        $message = new \Zend_Form_Element_Textarea('message');
+        $message = new \Zend_Form_Element_Textarea('enquiry_message');
         $message->setLabel('Your message:')
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-        $opt = new \Zend_Form_Element_Checkbox('opt_in');
+        $opt = new \Zend_Form_Element_Checkbox('enquiry_opt_in');
 
-        $submit = new \Zend_Form_Element_Submit('submit');
+        $submit = new \Zend_Form_Element_Submit('enquiry_submit');
         $submit->setLabel('Submit');
 
         $this->addElements(array($name, $email, $number, $address, $message, $opt, $submit));
