@@ -1,74 +1,114 @@
 .site-header {
-  background-color: $color-white;
-  padding: 25px 0px;
+   background-color: $color-white;
+   padding: 25px 0px;
 
-  &__logo {
-    @include span-columns(6);
+   &__logo {
+      @include span-columns(6);
 
-    img {
-      max-width: 100%;
-    }
-  }
-
-  &__contact {
-    @include span-columns(6);
-    text-align: right;
-
-    &-header {
-      text-transform: uppercase;
-      @include font-header;
-      font-size: 22px;
-      letter-spacing: 4px;
-
-      display: none;
-
-      @include media(769px) {
-        display: inline;
+      img {
+         max-width: 100%;
       }
-    }
+   }
 
-    &-details {
-      line-height: 32px;
-    }
+   &__contact {
+      @include span-columns(6);
+      text-align: right;
 
-    &-telephone, &-email {
+      &-header {
+         text-transform: uppercase;
+         @include font-header;
+         font-size: 16px;
+         letter-spacing: 1px;
+         display: none;
+
+         @include media($tablet-lrg-breakpoint) {
+            display: inline;
+         }
+
+         a {
+            color: $color-blue;
+            text-decoration: none;
+            font-weight: 400;
+
+            &#larger {
+               font-size: 28px;
+            }
+         }
+      }
+
+      &-details {
+         line-height: 32px;
+         font-size: 16px;
+      }
+
+      &-telephone, &-email {
+         display: inline-block;
+      }
+
+      &-telephone {
+         @include media($tablet-lrg-breakpoint) {
+            padding-right: 34px;
+         }
+      }
+
+      &-telephone-icon, &-email-icon {
+         background-image: url('../images/header-sprite.png');
+         display: inline-block;
+         vertical-align: top;
+         content: '';
+         margin-right: 10px;
+      }
+
+      &-telephone-icon {
+         width: 22px;
+         height: 21px;
+         background-position: 0px center;
+      }
+
+      &-email-icon {
+         width: 25px;
+         height: 21px;
+         background-position: 25px center;
+      }
+
+      &-text {
+         display: none;
+
+         @include media($tablet-lrg-breakpoint) {
+            display: inline;
+         }
+      }
+
+      &-telephone {
+         @include media($tablet-lrg-breakpoint) {
+            display: inline-block;
+            line-height: 12px;
+
+            span.opening-times{
+               font-size: 10px;
+            }
+         }
+      }
+   }
+
+   &__telephone {
       display: inline-block;
-    }
-
-    &-telephone {
-      @include media(769px) {
-        padding-right: 34px;
+    
+      &-number {
+         display: inline-block;
+         vertical-align: top;
+         line-height: 13px;
+      
+         span {
+            font-size: 11px;
+         }
       }
-    }
+   }
 
-    &-telephone-icon, &-email-icon {
-      background-image: url('../images/header-sprite.png');
+   &__email {
       display: inline-block;
-      vertical-align: middle;
-      content: '';
-      margin-right: 10px;
-    }
-
-    &-telephone-icon {
-      width: 22px;
-      height: 21px;
-
-      background-position: 0px center;
-    }
-
-    &-email-icon {
-      width: 25px;
-      height: 21px;
-
-      background-position: 25px center;
-    }
-
-    &-text {
-      display: none;
-
-      @include media(769px) {
-        display: inline;
-      }
-    }
-  }
+      margin-left: 25px;
+      vertical-align: top;
+      line-height: 15px;
+   }
 }

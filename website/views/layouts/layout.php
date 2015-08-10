@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <?php require('includes/head.php'); ?>
+   <?php require('includes/head.php'); ?>
 
-    <body>
-        <header class="site-header">
-          <div class="container">
+   <body>
+      <header class="site-header">
+         <div class="container">
             <div class="site-header__logo">
-              <img src="website/static/images/executive-care-logo.png" alt="Executive Care" />
+               <img src="website/static/images/executive-care-logo.png" alt="Executive Care" />
             </div>
             <div class="site-header__contact">
-              <div class="site-header__contact-header">
-                Contact Us
-              </div>
-              <div class="site-header__contact-details">
-                <div class="site-header__contact-telephone">
-                  <i class="site-header__contact-telephone-icon"></i>
-                  <div class="site-header__contact-text"><?= $this->config->telephone; ?></div>
-                </div>
-                <div class="site-header__contact-email">
-                  <i class="site-header__contact-email-icon"></i>
-                  <div class="site-header__contact-text"><?= $this->config->infoemail; ?></div>
-                </div>
-              </div>
+               <div class="site-header__contact-header">
+                  <a href="#" id="smaller">A-</a> | <a href="#" id="larger">A+</a>
+               </div>
+               <div class="site-header__contact-details"> 
+                  <div class="site-header__telephone">
+                     <i class="site-header__contact-telephone-icon"></i>
+                     <div class="site-header__telephone-number">
+                        <?= $this->config->telephone; ?><br />
+                        <span>Mon-Fri 8.30am-5pm</span>
+                     </div>
+                  </div>
+                  <div class="site-header__email">
+                     <i class="site-header__contact-email-icon"></i>
+                     <?= $this->config->infoemail; ?>
+                  </div>
+               </div>
             </div>
-          </div>
-        </header>
+         </div>
+      </header>
 
-        <nav class="site-navigation">
-          <div class="container">
+      <nav class="site-navigation">
+         <div class="container">
             <?php require('includes/nav.php'); ?>
-          </div>
-        </nav>
+         </div>
+      </nav>
 
-        <div class="site-content">
-        <?= $this->layout()->content ?>
-        </div>
+      <div class="site-content">
+         <?= $this->layout()->content ?>
+      </div>
 
-        <footer class="site-footer">
-          <div class="container">
+      <footer class="site-footer">
+         <div class="container">
             <?= $this->inc(Document_Snippet::getByPath('/snippets/footer')); ?>
-          </div>
-        </footer>
-    </body>
+         </div>
+      </footer>
+   </body>
 
-    <?php require('includes/js.php'); ?>
-    <?php require('includes/footer.php'); ?>
+   <?php require('includes/js.php'); ?>
+   <?php require('includes/footer.php'); ?>
 </html>
