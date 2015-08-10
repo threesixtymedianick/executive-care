@@ -102,18 +102,18 @@
   .tab {
     padding: 24px;
 
+    & ul {
+      &.errors {
+        display: none;
+      }
+    }
+
     &__left {
       float: left;
       width: 48.5%;
 
       input {
         margin-bottom: 20px;
-      }
-
-      & ul{
-        &.errors {
-          display: none;
-        }
       }
     }
 
@@ -123,12 +123,6 @@
 
       input {
         margin-bottom: 20px;
-      }
-
-      & ul{
-        &.errors {
-          display: none;
-        }
       }
     }
 

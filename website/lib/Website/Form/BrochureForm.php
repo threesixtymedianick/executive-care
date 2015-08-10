@@ -36,19 +36,32 @@ class BrochureForm extends BaseForm
             ->removeDecorator('Errors');
 
         $name = new \Zend_Form_Element_Text('brochure_name');
-        $name->setLabel('Your name:');
+        $name->setLabel('Your name:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $email = new \Zend_Form_Element_Text('brochure_email');
-        $email->setLabel('Your email:');
+        $email->setLabel('Your email:')
+            ->addValidator('NotEmpty', true)
+            ->addValidator('EmailAddress')
+            ->addFilter('StringToLower')
+            ->setRequired(true);
 
         $number = new \Zend_Form_Element_Text('brochure_number');
-        $number->setLabel('Your number:');
+        $number->setLabel('Your number:')
+            ->addValidator('NotEmpty', true)
+            ->addValidator('Digits')
+            ->setRequired(true);
 
         $address = new \Zend_Form_Element_Text('brochure_address');
-        $address->setLabel('Your address:');
+        $address->setLabel('Your address:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $message = new \Zend_Form_Element_Textarea('brochure_message');
-        $message->setLabel('Your message:');
+        $message->setLabel('Your message:')
+            ->addValidator('NotEmpty', true)
+            ->setRequired(true);
 
         $opt = new \Zend_Form_Element_Checkbox('brochure_opt_in');
 

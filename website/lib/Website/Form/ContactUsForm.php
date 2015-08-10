@@ -25,6 +25,7 @@ class ContactUsForm extends BaseForm
         $number = new \Zend_Form_Element_Text('enquiry_number');
         $number->setLabel('Your number:')
             ->addValidator('NotEmpty', true)
+            ->addValidator('Digits')
             ->setRequired(true);
 
         $address = new \Zend_Form_Element_Text('enquiry_address');
