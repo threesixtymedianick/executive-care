@@ -109,6 +109,12 @@
       input {
         margin-bottom: 20px;
       }
+
+      & ul{
+        &.errors {
+          display: none;
+        }
+      }
     }
 
     &__right {
@@ -117,6 +123,12 @@
 
       input {
         margin-bottom: 20px;
+      }
+
+      & ul{
+        &.errors {
+          display: none;
+        }
       }
     }
 

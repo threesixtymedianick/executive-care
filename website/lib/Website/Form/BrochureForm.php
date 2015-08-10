@@ -25,11 +25,15 @@ class BrochureForm extends BaseForm
 
         $careHome = new \Zend_Form_Element_Select('care_home_options');
         $careHome->setMultiOptions($careHomeOptions)
-            ->setLabel('Care home:');
+            ->setRequired(true)
+            ->setLabel('Care home:')
+            ->removeDecorator('Errors');
 
         $deliveryMethod = new \Zend_Form_Element_Select('delivery_method_options');
         $deliveryMethod->setMultiOptions($deliveryMethodOptions)
-            ->setLabel('Send brochure by:');
+            ->setRequired(true)
+            ->setLabel('Send brochure by:')
+            ->removeDecorator('Errors');
 
         $name = new \Zend_Form_Element_Text('brochure_name');
         $name->setLabel('Your name:');
