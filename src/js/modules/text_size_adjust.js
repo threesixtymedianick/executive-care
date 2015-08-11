@@ -15,19 +15,34 @@ $(document).ready(function () {
     // The value to adjust the font by
     var textSizeAdjustment = getCookie(cookieName);
 
+    // Value to increase the text by
+    var increasePercentage = 0.1; // 10%;
+
+    // Days to set the cookie for
+    var daysToSetCookie = 365;
+
+    // Multiplier +1
+    var multiUp = 1;
+
+    // Multiplier -1
+    var multiDown = -1;
+
+    // Whatever value we'll use to reset the text size
+    var textReset = 0;
+
     if (textSizeAdjustment !== null && !isNaN(textSizeAdjustment)) {
         resizeText(parseInt(textSizeAdjustment), false);
     } else {
-        resizeText(0);
-        setCookie(cookieName, 0, 365, '/', '', '', true)
+        resizeText(textReset);
+        setCookie(cookieName, textReset, daysToSetCookie, '/', '', '', true)
     }
 
     $("#larger").click(function() {
-        resizeText(1, true);
+        resizeText(multiUp, true);
     });
 
     $("#smaller").click(function() {
-        resizeText(-1, true);
+        resizeText(multiDown, true);
     })
 
     /**
@@ -50,9 +65,9 @@ $(document).ready(function () {
         var cookieValue = getCookie(cookieName);
 
         // Check the cookie value isn't null
-        // Set to 0- if it us, else parse the value to an int
+        // Set to 0 if it us, else parse the value to an int
         if (cookieValue == null) {
-            cookieValue = 0;
+            cookieValue = textReset;
         } else {
             cookieValue = parseInt(cookieValue);
         }
@@ -61,7 +76,7 @@ $(document).ready(function () {
          * If the multiplier is a 0 then we are resetting the font size
          *
          */
-        if (multiplier == 0) {
+        if (multiplier == textReset) {
             document.body.style.fontSize = defaultTextSize;
         }
         /**
@@ -70,8 +85,8 @@ $(document).ready(function () {
          *
          * Or, if the cookie value is the upper limit and the multiplier intends on going higher, block the change
          */
-        else if (cookieValue <= textSizeLowerLimit && multiplier === -1 && useCookie
-            || cookieValue >= textSizeUpperLimit && multiplier === 1) {
+        else if (cookieValue <= textSizeLowerLimit && multiplier === multiDown && useCookie
+            || cookieValue >= textSizeUpperLimit && multiplier === multiUp) {
             // Block the change
             useCookie = false;
         }
@@ -79,14 +94,14 @@ $(document).ready(function () {
          * Else, set the value
          */
         else {
-            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
+            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * increasePercentage) + "em";
         }
 
         /**
          * If we're intending to use a cookie, set the value
          */
         if (useCookie) {
-            setCookie(cookieName, (cookieValue) + multiplier, 365, '/', '', '');
+            setCookie(cookieName, (cookieValue) + multiplier, daysToSetCookie, '/', '', '');
         }
     }
 
