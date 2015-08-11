@@ -1,5 +1,9 @@
 # Executive Care
 
+Development - http://development.executive-care.bolser.co.uk
+
+UAT - http://uat.executive-care.bolser.co.uk
+
 ## Installation Instructions
 
 Clone this repository into `~/Sites`
