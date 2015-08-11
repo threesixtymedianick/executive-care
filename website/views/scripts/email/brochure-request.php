@@ -1,6 +1,6 @@
-Care home: <?= $this->data['care_home']; ?> <br />
-Name: <?= $this->data['name']; ?> <br />
-E-mail: <?= $this->data['email']; ?><br />
-Address: <?= $this->data['address']; ?><br />
-Number: <?= $this->data['number']; ?><br />
-Message: <?= $this->data['message']; ?><br />
+Care home: <?= $this->data['care_home_options']; ?> <br />
+Name: <?= $this->data['brochure_name']; ?> <br />
+E-mail: <?= $this->data['brochure_email']; ?><br />
+Address: <?= $this->data['brochure_address']; ?><br />
+Number: <?= $this->data['brochure_number']; ?><br />
+Message: <?= $this->data['brochure_message']; ?><br />
