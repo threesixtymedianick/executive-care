@@ -1,4 +1,95 @@
 $(document).ready(function () {
+
+    // The cookie name for text size
+    var cookieName = "textSize";
+
+    // The default text size
+    var defaultTextSize = "0.625em";
+
+    // The lowest limit we want the text size to go
+    var textSizeLowerLimit = -1;
+
+    // The highest limit we want the text size to go
+    var textSizeUpperLimit = 3;
+
+    // The value to adjust the font by
+    var textSizeAdjustment = getCookie(cookieName);
+
+    if (textSizeAdjustment !== null && !isNaN(textSizeAdjustment)) {
+        resizeText(parseInt(textSizeAdjustment), false);
+    } else {
+        resizeText(0);
+        setCookie(cookieName, 0, 365, '/', '', '', true)
+    }
+
+    $("#larger").click(function() {
+        resizeText(1, true);
+    });
+
+    $("#smaller").click(function() {
+        resizeText(-1, true);
+    })
+
+    /**
+     * Resizes the text on in on the website based on the supplied multiplier
+     *
+     * Should usually just use a multiplier of 1, the method will then increase by 1 * 0.1, or 10%
+     *
+     * A cookie is set if the parameter is set
+     * @param multiplier  the multiplier to increase the text by. This is multiplied by 0.1
+     * @param useCookie  Whether or not to set a cookie storing this value. Should not be used on document load
+     */
+    function resizeText(multiplier, useCookie) {
+        // Set the default font value just in case it's not set
+        // This should never be the case
+        if (document.body.style.fontSize == "") {
+            document.body.style.fontSize = defaultTextSize;
+        }
+
+        // The value of the cookie for text size
+        var cookieValue = getCookie(cookieName);
+
+        // Check the cookie value isn't null
+        // Set to 0- if it us, else parse the value to an int
+        if (cookieValue == null) {
+            cookieValue = 0;
+        } else {
+            cookieValue = parseInt(cookieValue);
+        }
+
+        /**
+         * If the multiplier is a 0 then we are resetting the font size
+         *
+         */
+        if (multiplier == 0) {
+            document.body.style.fontSize = defaultTextSize;
+        }
+        /**
+         * If the cookie value is currently the lower limit and the multiplier intends
+         * to go lower, and we're intending to set a cookie (I.E, this isn't the page load) then block the change
+         *
+         * Or, if the cookie value is the upper limit and the multiplier intends on going higher, block the change
+         */
+        else if (cookieValue <= textSizeLowerLimit && multiplier === -1 && useCookie
+            || cookieValue >= textSizeUpperLimit && multiplier === 1) {
+            // Block the change
+            useCookie = false;
+        }
+        /**
+         * Else, set the value
+         */
+        else {
+            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
+        }
+
+        /**
+         * If we're intending to use a cookie, set the value
+         */
+        if (useCookie) {
+            setCookie(cookieName, (cookieValue) + multiplier, 365, '/', '', '');
+        }
+    }
+
     /**
      * A function for setting cookies on the end users device
      * @param name  The name of the cookie key
@@ -70,94 +161,6 @@ $(document).ready(function () {
             return null;
         }
     }
-
-    /**
-     * Resizes the text on in on the website based on the supplied multiplier
-     *
-     * Should usually just use a multiplier of 1, the method will then increase by 1 * 0.1, or 10%
-     *
-     * A cookie is set if the parameter is set
-     * @param multiplier  the multiplier to increase the text by. This is multiplied by 0.1
-     * @param useCookie  Whether or not to set a cookie storing this value. Should not be used on document load
-     */
-    function resizeText(multiplier, useCookie) {
-        // Set the default font value just in case it's not set
-        // This should never be the case
-        if (document.body.style.fontSize == "") {
-            document.body.style.fontSize = "0.625em";
-        }
-
-        // The cookie name for the text size
-        var cookieName = "textSize";
-
-        // The value of the cookie for text size
-        var cookieValue = getCookie(cookieName);
-
-        // Check the cookie value isn't null
-        // Set to 0- if it us, else parse the value to an int
-        if (cookieValue == null) {
-            cookieValue = 0;
-        } else {
-            cookieValue = parseInt(cookieValue);
-        }
-
-        // The lowest limit we want the text size to go
-        var textSizeLowerLimit = -1;
-
-        // The highest limit we want the text size to go
-        var textSizeUpperLimit = 3;
-
-        /**
-         * If the multiplier is a 0 then we are resetting the font size
-         *
-         */
-        if (multiplier == 0) {
-            document.body.style.fontSize = "0.625em";
-        }
-        /**
-         * If the cookie value is currently the lower limit and the multiplier intends
-         * to go lower, and we're intending to set a cookie (I.E, this isn't the page load) then block the change
-         *
-         * Or, if the cookie value is the upper limit and the multiplier intends on going higher, block the change
-         */
-        else if (cookieValue <= textSizeLowerLimit && multiplier === -1 && useCookie
-            || cookieValue >= textSizeUpperLimit && multiplier === 1) {
-            // Block the change
-            useCookie = false;
-        }
-        /**
-         * Else, set the value
-         */
-        else {
-            document.body.style.fontSize = parseFloat(document.body.style.fontSize) + (multiplier * 0.1) + "em";
-        }
-
-        /**
-         * If we're intending to use a cookie, set the value
-         */
-        if (useCookie) {
-            setCookie(cookieName, (cookieValue) + multiplier, 365, '/', '', '');
-        }
-    }
-
-    var cookieName = "textSize";
-
-    var textSizeAdjustment = getCookie(cookieName);
-
-    if (textSizeAdjustment !== null && !isNaN(textSizeAdjustment)) {
-        resizeText(parseInt(textSizeAdjustment), false);
-    } else {
-        resizeText(0);
-        setCookie(cookieName, 0, 365, '/', '', '', true)
-    }
-
-    $("#larger").click(function() {
-        resizeText(1, true);
-    });
-
-    $("#smaller").click(function() {
-        resizeText(-1, true);
-    })
 });
 
 

@@ -15,13 +15,13 @@ $color-green: #106466;
 $color-dark-green: #0f6062;
 $color-dark-purple: #9e429c;
 
-$font-size-normal:1.4em;
-$font-size-small:1.2em;
-$font-size-x-small:1.1em;
-$font-size-x-x-small:0.9em;
-$font-size-large:1.6em;
-$font-size-x-large:1.8em;
-$font-size-x-x-large:2.2em;
+$font-size-normal: 1.4em;
+$font-size-small: 1.2em;
+$font-size-x-small: 1.1em;
+$font-size-x-x-small: 0.9em;
+$font-size-large: 1.6em;
+$font-size-x-large: 1.8em;
+$font-size-x-x-large: 2.2em;
 
 @mixin font-header($weight: 300) {
   font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
