@@ -3,6 +3,14 @@
       <div class="home">
         <div class="home__left">
           <div class="home__panel home__welcome">
+
+            <ul class="bxslider">
+              <li><img src="website/static/images/home/slider/slider_1.png" /></li>
+              <li><img src="website/static/images/home/slider/slider_2.png" /></li>
+              <li><img src="website/static/images/home/slider/slider_3.png" /></li>
+              <li><img src="website/static/images/home/slider/slider_4.png" /></li>
+            </ul>
+
             <h1><?= $this->input("headline"); ?></h1>
             <h2>Find out about us</h2>
           </div>
