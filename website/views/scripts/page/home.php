@@ -3,12 +3,15 @@
       <div class="home">
         <div class="home__left">
           <div class="home__panel home__welcome">
-
+              <?php if ($this->editmode) : ?>
+                  <?= $this->multihref("multihref"); ?>
+              <?php else: ?>
             <ul class="bxslider">
-              <li><img src="website/static/images/home/slider/slider_1.png" /></li>
-              <li><img src="website/static/images/home/slider/slider_2.png" /></li>
-              <li><img src="website/static/images/home/slider/slider_3.png" /></li>
-              <li><img src="website/static/images/home/slider/slider_4.png" /></li>
+                    <!-- you can iterate through the elements using directly the tag -->
+                    <?php foreach($this->multihref("multihref") as $element) : ?>
+                        <?= Element_Service::getElementType($element); ?>: <li><img src="<?= $element->getFullPath();?>" title="" /> </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </ul>
 
             <h1><?= $this->input("headline"); ?></h1>
