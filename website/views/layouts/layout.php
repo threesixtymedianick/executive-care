@@ -6,7 +6,7 @@
       <header class="site-header">
          <div class="container">
             <div class="site-header__logo">
-               <img src="website/static/images/executive-care-logo.png" alt="Executive Care" />
+               <a href="/"><img src="website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
                <div class="site-header__contact-header">
