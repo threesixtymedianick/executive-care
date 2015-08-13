@@ -1,5 +1,10 @@
 <?php
-    $ourCareInfoBox       = $this->wysiwyg("our-care_info");
+    $ourCareInfoBox         = $this->wysiwyg("our-care_info");
+    $isEditMode             = $this->editmode;
+    $slidingContentClass    = "our-care__left__sliding__content";
+    $adminSlide             = $isEditMode ?
+                                "class=\"{$slidingContentClass}\" style=\"display:block;\"" :
+                                "class=\"{$slidingContentClass} slide\"";
 ?>
 
 <div class="our-care__header">-</div>
@@ -19,11 +24,13 @@
                     <div class="our-care__left__sliding sliding_content">
                         <div class="our-care__left__sliding__title">
                             <?= $this->input("title"); ?>
-                            <div class="our-care__left__sliding__title__show-hide">
-                                <a href="#" class="show_hide">Show More +</a>
-                            </div>
+                            <?php if (!$isEditMode) : ?>
+                                <div class="our-care__left__sliding__title__show-hide">
+                                    <a href="#" class="show_hide">Show More +</a>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                        <div class="our-care__left__sliding__content slide">
+                        <div  <?= $adminSlide; ?>>
                             <?= $this->wysiwyg("content") ?>
                         </div>
                     </div>
