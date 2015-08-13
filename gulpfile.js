@@ -16,7 +16,9 @@ var imagemin    = require("gulp-imagemin");
 var plumber     = require("gulp-plumber");
 var runSequence = require('run-sequence');
 var sass        = require("gulp-sass");
+var uglify      = require('gulp-uglify');
 var uglifyjs    = require("gulp-uglifyjs"); // extended version of uglify
+var uglifycss   = require("gulp-uglifycss");
 var watch       = require("gulp-watch");
 var reactify    = require('reactify');
 var source      = require('vinyl-source-stream');
@@ -41,7 +43,7 @@ var paths = {
 gulp.task("default", [ "build", "watch" ]);
 
 gulp.task("build", function(cb) {
-    runSequence("build-css", "build-js", "copy-public-images", "copy-fonts", "copy-plugins", cb);
+    runSequence("build-css", "build-js", "copy-public-images", "copy-fonts", "copy-plugins", "build-css-libs", cb);
 });
 
 gulp.task("deploy", function(cb) {
@@ -96,12 +98,22 @@ gulp.task("build-js", ["build-js-libs"], function() {
 
 gulp.task('build-js-libs', function() {
     return gulp.src([
-            './bower_components/jquery/dist/jquery.js'
+            './bower_components/jquery/dist/jquery.js',
+            './bower_components/bxslider/source/jquery.bxSlider.js',
+            './bower_components/bxslider/jquery.easing.1.3.js'
         ])
         .pipe(plumber())
         .pipe(uglifyjs('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
     ;
+});
+
+gulp.task('build-css-libs', function () {
+  return gulp.src([
+          './bower_components/bxslider/bx_styles/bx_styles.css'
+      ])
+      .pipe(concat('libraries.css'))
+      .pipe(gulp.dest(paths.build.css))
 });
 
 /*gulp.task('build-js-fallback', function() {
