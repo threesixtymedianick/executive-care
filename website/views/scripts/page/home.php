@@ -1,7 +1,7 @@
 <?php if ($this->editmode) : ?>
     <div>
         <span id="admin_carousel">
-            <p>Drop assets from the panel on the left here to add to carousel, then refresh the page to see them below.</p>
+            <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them below.</p>
         </span>
         <?= $this->multihref("homepage-carousel"); ?>
     </div>
@@ -13,7 +13,7 @@
           <div class="home__panel home__welcome">
             <ul class="bxslider">
                     <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
-                        <?php if ($element->getFullPath() != "" || $element->getFullPath() != null) : ?>
+                        <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && strtolower($element->getType()) === "image") : ?>
                             <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
                         <?php endif; ?>
                     <?php endforeach; ?>
