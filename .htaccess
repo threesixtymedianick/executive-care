@@ -43,6 +43,11 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]
 
+<FilesMatch "\.(pdf)$" >
+    ForceType application/octet-stream
+    Header add Content-Disposition "attachment"
+</FilesMatch>
+
 
 
 ##########################################

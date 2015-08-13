@@ -5,6 +5,9 @@
 - command: a2dissite 000-default
   notify:
   - restart apache2
+- command: a2enmod headers
+  notify:
+  - restart apache2
 - apache2_module: name=rewrite state=present
 - apache2_module: name=ssl state=present
   notify:
