@@ -10,6 +10,10 @@ function initializeGoogleMaps() {
     // The window that shows when you click the marker
     var infowindow;
 
+    if ($('#map-canvas').length === 0) {
+        return false;
+    }
+
     // Our place ID
     var googlePlaceId = document.getElementById('map-canvas').getAttribute("data-placeId");
 

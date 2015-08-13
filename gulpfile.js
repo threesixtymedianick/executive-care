@@ -41,7 +41,7 @@ var paths = {
 gulp.task("default", [ "build", "watch" ]);
 
 gulp.task("build", function(cb) {
-    runSequence("build-css", "build-js", "copy-public-images", "copy-fonts", "copy-plugins", cb);
+    runSequence("build-css", "build-js", "copy-public-images", "copy-fonts", "copy-plugins", "build-css-libs", cb);
 });
 
 gulp.task("deploy", function(cb) {
@@ -96,12 +96,22 @@ gulp.task("build-js", ["build-js-libs"], function() {
 
 gulp.task('build-js-libs', function() {
     return gulp.src([
-            './bower_components/jquery/dist/jquery.js'
+            './bower_components/jquery/dist/jquery.js',
+            './bower_components/bxslider-4/dist/jquery.bxslider.js',
+            './bower_components/jquery-validation/dist/jquery.validate.js'
         ])
         .pipe(plumber())
-        .pipe(uglifyjs('libraries.js'))
+        .pipe(concat('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
     ;
+});
+
+gulp.task('build-css-libs', function () {
+  return gulp.src([
+          './bower_components/bxslider-4/dist/jquery.bxslider.css'
+      ])
+      .pipe(concat('libraries.css'))
+      .pipe(gulp.dest(paths.build.css))
 });
 
 /*gulp.task('build-js-fallback', function() {
@@ -125,7 +135,10 @@ gulp.task("minify-js", function() {
 });
 
 gulp.task('copy-public-images', function() {
-    return gulp.src('./src/images/public/**/*.*')
+    return gulp.src([
+        './src/images/public/**/*.*',
+        './bower_components/bxslider-4/dist/images/*.*',
+    ])
         .pipe(gulp.dest('./website/static/images/'))
     ;
 });

@@ -1,8 +1,23 @@
+<?php if ($this->editmode) : ?>
+    <div>
+        <span id="admin_carousel">
+            <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them below.</p>
+        </span>
+        <?= $this->multihref("homepage-carousel"); ?>
+    </div>
+<?php endif; ?>
 <div class="container">
     <div class="container__inner">
       <div class="home">
         <div class="home__left">
           <div class="home__panel home__welcome">
+            <ul class="bxslider">
+                <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
+                    <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
+                        <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
             <h1><?= $this->input("headline"); ?></h1>
             <h2>Find out about us</h2>
           </div>
