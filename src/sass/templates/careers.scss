@@ -1,0 +1,17 @@
+.careers {
+
+  &__left {
+    @include span-columns(8);
+  }
+
+  &__right {
+    @include span-columns(4);
+
+    &__applyonline {
+      background-color: $color-purple;
+    }
+
+  }
+
+
+}

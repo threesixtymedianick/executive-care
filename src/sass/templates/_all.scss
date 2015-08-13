@@ -1,16 +1,26 @@
+/* Variables and global */
 @import "application";
 
+/* UI elements */
 @import "ui/header";
 @import "ui/navigation";
 @import "ui/footer";
 
+/* Home page */
 @import "home";
 @import "bxslider";
 
+/* Our care page */
 @import "our-care";
 
+/* Careers page */
+@import "careers";
+
+/* Contact us page */
 @import "contact-us";
 
+/* Blog pages */
 @import "blog";
 
+/* About us page */
 @import "about-us";

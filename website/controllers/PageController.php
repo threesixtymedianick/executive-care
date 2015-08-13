@@ -112,4 +112,12 @@ class PageController extends AbstractPageController
         $this->view->brochureForm = $brochureForm;
         $this->view->enquiryForm = $enquiryForm;
     }
+
+    /**
+     *
+     */
+    public function careersApplyOnlineAction()
+    {
+
+    }
 }
