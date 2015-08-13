@@ -100,7 +100,6 @@ gulp.task('build-js-libs', function() {
     return gulp.src([
             './bower_components/jquery/dist/jquery.js',
             './bower_components/bxslider-4/dist/jquery.bxslider.js',
-            './bower_components/bxslider-4/dist/vendor/jquery.easing.1.3.js',
             './bower_components/jquery-validation/dist/jquery.validate.js'
         ])
         .pipe(plumber())
