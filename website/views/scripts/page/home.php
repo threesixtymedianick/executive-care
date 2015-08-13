@@ -12,11 +12,11 @@
         <div class="home__left">
           <div class="home__panel home__welcome">
             <ul class="bxslider">
-                    <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
-                        <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && strtolower($element->getType()) === "image") : ?>
-                            <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
+                    <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
+                        <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </ul>
             <h1><?= $this->input("headline"); ?></h1>
             <h2>Find out about us</h2>
