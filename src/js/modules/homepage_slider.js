@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('.bxslider').bxSlider({
-        slideWidth: 1000,
-        slideMargin: 0
+        adaptiveHeight: true,
+        mode: 'fade',
+        slideWidth: 1000
     });
 });

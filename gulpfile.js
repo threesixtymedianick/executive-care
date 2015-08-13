@@ -99,18 +99,19 @@ gulp.task("build-js", ["build-js-libs"], function() {
 gulp.task('build-js-libs', function() {
     return gulp.src([
             './bower_components/jquery/dist/jquery.js',
-            './bower_components/bxslider/source/jquery.bxSlider.js',
-            './bower_components/bxslider/jquery.easing.1.3.js'
+            './bower_components/bxslider-4/dist/jquery.bxslider.js',
+            './bower_components/bxslider-4/dist/vendor/jquery.easing.1.3.js',
+            './bower_components/jquery-validation/dist/jquery.validate.js'
         ])
         .pipe(plumber())
-        .pipe(uglifyjs('libraries.js'))
+        .pipe(concat('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
     ;
 });
 
 gulp.task('build-css-libs', function () {
   return gulp.src([
-          './bower_components/bxslider/bx_styles/bx_styles.css'
+          './bower_components/bxslider-4/dist/jquery.bxslider.css'
       ])
       .pipe(concat('libraries.css'))
       .pipe(gulp.dest(paths.build.css))
@@ -137,7 +138,10 @@ gulp.task("minify-js", function() {
 });
 
 gulp.task('copy-public-images', function() {
-    return gulp.src('./src/images/public/**/*.*')
+    return gulp.src([
+        './src/images/public/**/*.*',
+        './bower_components/bxslider-4/dist/images/*.*',
+    ])
         .pipe(gulp.dest('./website/static/images/'))
     ;
 });

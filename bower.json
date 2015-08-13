@@ -26,6 +26,8 @@
     "library"
   ],
   "dependencies": {
-    "jquery": "~2.1.4"
+    "jquery": "~1.11.3",
+    "bxslider-4": "~4.2.5",
+    "jquery-validation": "~1.14.0"
   }
 }

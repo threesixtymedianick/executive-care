@@ -4,16 +4,16 @@
         <div class="home__left">
           <div class="home__panel home__welcome">
               <?php if ($this->editmode) : ?>
-                  <?= $this->multihref("multihref"); ?>
+                  <?= $this->multihref("homepage-carousel"); ?>
               <?php else: ?>
             <ul class="bxslider">
-                    <!-- you can iterate through the elements using directly the tag -->
-                    <?php foreach($this->multihref("multihref") as $element) : ?>
-                        <?= Element_Service::getElementType($element); ?>: <li><img src="<?= $element->getFullPath();?>" title="" /> </li>
+                    <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
+                        <?php if ($element->getFullPath() != "" || $element->getFullPath() != null) : ?>
+                            <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-
             <h1><?= $this->input("headline"); ?></h1>
             <h2>Find out about us</h2>
           </div>
