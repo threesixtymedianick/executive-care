@@ -1,9 +1,8 @@
 <?php
     $ourCareInfoBox         = $this->wysiwyg("our-care_info");
-    $slidingContentClass    = "our-care__left__sliding__content";
-    $adminSlide             = $this->editmode ?
-                                "class=\"{$slidingContentClass}\" style=\"display:block;\"" :
-                                "class=\"{$slidingContentClass} slide\"";
+    $slideClass             = $this->editmode ?
+                                "class=\"our-care__left__sliding__content\" style=\"display:block;\"" :
+                                "class=\"our-care__left__sliding__content slide\"";
 ?>
 
 <div class="our-care__header">-</div>
@@ -29,7 +28,7 @@
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div  <?= $adminSlide; ?>>
+                        <div <?= $slideClass; ?>>
                             <?= $this->wysiwyg("content") ?>
                         </div>
                     </div>
