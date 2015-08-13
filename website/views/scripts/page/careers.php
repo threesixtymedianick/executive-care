@@ -1,7 +1,3 @@
-<?php
-$aboutUsInfoTab       = $this->wysiwyg("about_us_info");
-$aboutUsTrainingTab   = $this->wysiwyg("about_us_training");
-?>
 <div class="container">
     <div class="container__inner">
         <div class="careers">
