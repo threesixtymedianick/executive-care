@@ -1,5 +1,5 @@
 <?php
-    $ourCareInfoBox       = $this->wysiwyg("our-care_info");
+    $ourCareInfoBox         = $this->wysiwyg("our-care_info");
 ?>
 
 <div class="our-care__header">-</div>
@@ -19,11 +19,13 @@
                     <div class="our-care__left__sliding sliding_content">
                         <div class="our-care__left__sliding__title">
                             <?= $this->input("title"); ?>
-                            <div class="our-care__left__sliding__title__show-hide">
-                                <a href="#" class="show_hide">Show More +</a>
-                            </div>
+                            <?php if (!$this->editmode) : ?>
+                                <div class="our-care__left__sliding__title__show-hide">
+                                    <a href="#" class="show_hide">Show More +</a>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                        <div class="our-care__left__sliding__content slide">
+                        <div class="our-care__left__sliding__content <?= $this->editmode ? "" : "slide"; ?>">
                             <?= $this->wysiwyg("content") ?>
                         </div>
                     </div>
