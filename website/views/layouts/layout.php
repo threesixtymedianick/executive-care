@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
-   <?php require('includes/head.php'); ?>
+   <?php
+      require('includes/head.php');
+      $doc = Document::getById(1); echo $doc->getFullPath()
+   ?>
 
    <body>
       <header class="site-header">
          <div class="container">
             <div class="site-header__logo">
-               <a href="/"><img src="website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
+               <a href="<?= $doc; ?>"><img src="website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
                <div class="site-header__contact-header">
