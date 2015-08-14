@@ -37,9 +37,9 @@ Create the file `~/Sites/executive-care/var/config/system.xml` with the content
   <database>
     <adapter>Mysqli</adapter>
     <params>
-      <username>root</username>
-      <password>123</password>
-      <dbname>pimcore</dbname>
+      <username>exec-dev</username>
+      <password>T4ghCa2Hj7Nv</password>
+      <dbname>executive_care_development</dbname>
       <host>localhost</host>
       <port>3306</port>
     </params>

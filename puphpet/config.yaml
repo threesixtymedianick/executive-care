@@ -298,7 +298,7 @@ mysql:
     install: '1'
     settings:
         version: '5.6'
-        root_password: '123'
+        root_password: 'fgGc91LIlL'
         override_options: {  }
     adminer: 0
     users:
@@ -308,7 +308,7 @@ mysql:
 
     databases:
         mysqlnd_quqi7c8dsbz9:
-            name: executive-care
+            name: executive_care_development
             sql: '/var/www/pimcore.sql'
     grants:
        mysqlng_1d1fmhx3smng:
