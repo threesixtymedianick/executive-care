@@ -1,4 +1,4 @@
-<?php $asset = Asset::getById(25); ?>
+<?php $applicationFormPDF = Asset::getById(25); ?>
 <div class="container">
     <div class="container__inner">
         <div class="careers">
@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="careers__right__download">
-                    <a href="<?= $asset->getFullPath() ?>" alt="Download application form">Download form</a>
+                    <a href="<?= $applicationFormPDF->getFullPath() ?>" alt="Download application form">Download form</a>
                 </div>
             </div>
         </div>
