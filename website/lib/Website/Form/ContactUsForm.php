@@ -43,13 +43,13 @@ class ContactUsForm extends BaseForm
         $submit = new \Zend_Form_Element_Submit('enquiry_submit');
         $submit->setLabel('Submit');
 
-        $this->addElements(array($name, $email, $number, $address, $message, $opt, $submit));
+        $this->addElements([$name, $email, $number, $address, $message, $opt, $submit]);
 
         parent::clearDecorators();
 
         /* Submit elements don't need a label since we added a label on setElementDecorators()
            on <input> elements (including the submit) */
-        $submit->setDecorators(array('ViewHelper'));
+        $submit->setDecorators(['ViewHelper']);
 
         return $this;
     }

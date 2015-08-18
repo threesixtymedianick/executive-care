@@ -11,17 +11,17 @@ class BrochureForm extends BaseForm
 
         $selectOne = "Select one:";
 
-        $careHomeOptions = array(
+        $careHomeOptions = [
             "" => $selectOne,
             0 => "Abbeyvale Care Centre, Hartlepool",
             1 => "Ashwood Court, Sunderland"
-        );
+        ];
 
-        $deliveryMethodOptions = array(
+        $deliveryMethodOptions = [
             "" => $selectOne,
             0 => "Send to my address",
             1 => "Download"
-        );
+        ];
 
         $careHome = new \Zend_Form_Element_Select('care_home_options');
         $careHome->setMultiOptions($careHomeOptions)
@@ -68,13 +68,13 @@ class BrochureForm extends BaseForm
         $submit = new \Zend_Form_Element_Submit('brochure_submit');
         $submit->setLabel('Submit');
 
-        $this->addElements(array($careHome, $deliveryMethod, $name, $email, $number, $address, $message, $opt, $submit));
+        $this->addElements([$careHome, $deliveryMethod, $name, $email, $number, $address, $message, $opt, $submit]);
 
         parent::clearDecorators();
 
         /* Submit elements don't need a label since we added a label on setElementDecorators()
            on <input> elements (including the submit) */
-        $submit->setDecorators(array('ViewHelper'));
+        $submit->setDecorators(['ViewHelper']);
 
         return $this;
     }

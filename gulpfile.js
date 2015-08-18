@@ -26,6 +26,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var paths = {
     src: {
         js: "src/js/",
+        css: "src/css",
         scss: "src/sass/",
         images: "src/images/",
         plugins: "src/plugins/"
@@ -98,7 +99,8 @@ gulp.task('build-js-libs', function() {
     return gulp.src([
             './bower_components/jquery/dist/jquery.js',
             './bower_components/bxslider-4/dist/jquery.bxslider.js',
-            './bower_components/jquery-validation/dist/jquery.validate.js'
+            './bower_components/jquery-validation/dist/jquery.validate.js',
+            './src/js/vendor/*.js'
         ])
         .pipe(plumber())
         .pipe(concat('libraries.js'))
@@ -108,7 +110,8 @@ gulp.task('build-js-libs', function() {
 
 gulp.task('build-css-libs', function () {
   return gulp.src([
-          './bower_components/bxslider-4/dist/jquery.bxslider.css'
+          './bower_components/bxslider-4/dist/jquery.bxslider.css',
+          './src/css/**/*.css'
       ])
       .pipe(concat('libraries.css'))
       .pipe(gulp.dest(paths.build.css))
