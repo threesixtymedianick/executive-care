@@ -8,7 +8,7 @@
       <header class="site-header">
          <div class="container">
             <div class="site-header__logo">
-               <a href="<?= $homePage; ?>"><img src="website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
+               <a href="<?= $homePage; ?>"><img src="http://<?= $_SERVER['HTTP_HOST']; ?>/website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
                <div class="site-header__contact-header">
