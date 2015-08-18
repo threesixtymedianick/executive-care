@@ -33,7 +33,7 @@
                                 <?= $this->enquiryForm->enquiry_message ?>
                             </div>
                             <?= $this->enquiryForm->enquiry_opt_in ?>
-                            <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
+                            <label for="enquiry_opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->enquiryForm->enquiry_submit ?>
                         </div>
                     </form>
@@ -63,7 +63,7 @@
                                 <?= $this->brochureForm->brochure_message ?>
                             </div>
                             <?= $this->brochureForm->brochure_opt_in ?>
-                            <label for="opt_in">I would like to hear about the latest news and upcoming events</label>
+                            <label for="brochure_opt_in">I would like to hear about the latest news and upcoming events</label>
                             <?= $this->brochureForm->brochure_submit ?>
                         </div>
                     </form>
