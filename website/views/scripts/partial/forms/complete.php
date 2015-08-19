@@ -1,5 +1,5 @@
 <?php $form = $this->applicationForm; ?>
-<fieldset id="complete">
+<fieldset class="application_form_fields" id="complete">
     <div class="careers__apply__left__form__title">
         Complete Application (7/7)
     </div>
@@ -8,7 +8,7 @@
         <?= $form->application_signature; ?>
         <?= $form->application_agree_statement; ?>
     </p>
-    <a href="#" onclick="return $('#application_form').nextpage();" class="careers__apply__left__form__nextbutton">
+    <a href="#" class="__nextbutton">
         Submit
     </a>
 </fieldset>

@@ -83,15 +83,11 @@ class ApplicationForm extends BaseForm
 
         $homeName2 = new \Zend_Form_Element_Select($formName . 'home_name_2');
         $homeName2->setMultiOptions($careHomeOptions)
-            ->setRequired(true)
-            ->setLabel('Home name 2:')
-            ->removeDecorator('Errors');
+            ->setLabel('Home name 2:');
 
         $homeName3 = new \Zend_Form_Element_Select($formName . 'home_name_3');
         $homeName3->setMultiOptions($careHomeOptions)
-            ->setRequired(true)
-            ->setLabel('Home name 3:')
-            ->removeDecorator('Errors');
+            ->setLabel('Home name 3:');
 
         $position1 = new \Zend_Form_Element_Select($formName . 'position_1');
         $position1->setMultiOptions($positions)
@@ -101,15 +97,11 @@ class ApplicationForm extends BaseForm
 
         $position2 = new \Zend_Form_Element_Select($formName . 'position_2');
         $position2->setMultiOptions($positions)
-            ->setRequired(true)
-            ->setLabel('Position 2:')
-            ->removeDecorator('Errors');
+            ->setLabel('Position 2:');
 
         $position3 = new \Zend_Form_Element_Select($formName . 'position_3');
         $position3->setMultiOptions($positions)
-            ->setRequired(true)
-            ->setLabel('Position 3:')
-            ->removeDecorator('Errors');
+            ->setLabel('Position 3:');
 
         $preferredShift = new \Zend_Form_Element_Select($formName . 'preferred_shift');
         $preferredShift->setMultiOptions($shifts)
@@ -133,14 +125,10 @@ class ApplicationForm extends BaseForm
             ->removeDecorator('Errors');
 
         $howDidYouHearOther = new \Zend_Form_Element_Text($formName . 'how_did_you_hear_other');
-        $howDidYouHearOther->setLabel('If other please specify:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $howDidYouHearOther->setLabel('If other please specify:');
 
         $friendReferral = new \Zend_Form_Element_Text($formName . 'friend_referral');
-        $friendReferral->setLabel('If referred by a friend please provide their full name')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $friendReferral->setLabel('If referred by a friend please provide their full name');
 
         $this->addElements([
             $homeName1, $homeName2, $homeName3,
@@ -186,9 +174,7 @@ class ApplicationForm extends BaseForm
             ->setRequired(true);
 
         $workPermits = new \Zend_Form_Element_Textarea($formName . 'work_permits');
-        $workPermits->setLabel('Give details of Work Permits, Visas, Leave to Remain etc that allow you to work legally in the UK (include expiry dates)):')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $workPermits->setLabel('Give details of Work Permits, Visas, Leave to Remain etc that allow you to work legally in the UK (include expiry dates)):');
 
         $applyReason = new \Zend_Form_Element_Textarea($formName . 'apply_reason');
         $applyReason->setLabel('Why are you applying for this job?:')
@@ -237,19 +223,13 @@ class ApplicationForm extends BaseForm
         $qualificationSix->setLabel('Food Hygiene Certificate');
 
         $relevantQualifications = new \Zend_Form_Element_Textarea($formName . 'relevant_qualifications');
-        $relevantQualifications->setLabel('Please list any other qualifications that are relevant to the job you are applying for:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $relevantQualifications->setLabel('Please list any other qualifications that are relevant to the job you are applying for:');
 
         $professionalBodies = new \Zend_Form_Element_Textarea($formName . 'professional_bodies');
-        $professionalBodies->setLabel('Please give us details of any professional bodies that you are a member of:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $professionalBodies->setLabel('Please give us details of any professional bodies that you are a member of:');
 
         $nurseDetails = new \Zend_Form_Element_Textarea($formName . 'nurse_details');
-        $nurseDetails->setLabel('If you are a nurse please also let us have your pin and expiry date:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $nurseDetails->setLabel('If you are a nurse please also let us have your pin and expiry date:');
 
         $this->addElements([
             $qualificationOne, $qualificationTwo, $qualificationThree, $qualificationFour,
@@ -519,9 +499,7 @@ class ApplicationForm extends BaseForm
         $medicalImpairmentThree->setLabel('Do you have any impairment that has a substantial long term adverse effect on your ability to carry out day-to-day activities?');
 
         $medicalImpairmentReasons = new \Zend_Form_Element_Textarea($formName . 'medical_impairment_reasons');
-        $medicalImpairmentReasons->setLabel('If you answered yes to any of the above questions please provide further details:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $medicalImpairmentReasons->setLabel('If you answered yes to any of the above questions please provide further details:');
 
         $this->addElements([
             $medicalProblemOne, $medicalProblemTwo, $medicalProblemThree, $medicalProblemFour,
@@ -539,14 +517,15 @@ class ApplicationForm extends BaseForm
     private function setupCompleteForm($formName)
     {
         $agree = new \Zend_Form_Element_Checkbox($formName . 'agree_statement');
-        $agree->setLabel('If you agree to the above statements please tick this box and type name below:');
+        $agree->setLabel('If you agree to the above statements please tick this box and type name below:')
+            ->setRequired(true);
 
         $signature = new \Zend_Form_Element_Text($formName . 'signature');
         $signature->setLabel('Confirm name:')
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-        $keepOnFile = new \Zend_Form_Element_Checkbox($formName . 'agree_statement');
+        $keepOnFile = new \Zend_Form_Element_Checkbox($formName . 'keep_on_file');
         $keepOnFile->setLabel('If you do not want us to keep your details on file for six months for future job opportunities please tick');
 
         $this->addElements([

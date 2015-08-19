@@ -1,5 +1,5 @@
 <?php $form = $this->applicationForm; ?>
-<fieldset id="personal_details_two">
+<fieldset class="application_form_fields" id="personal_details_two">
     <div class="careers__apply__left__form__title">
         Personal Details (4/7)
     </div>
@@ -22,7 +22,7 @@
         <?= $form->application_recent_company_to_date_two; ?>
         <?= $form->application_reason_for_leaving_two; ?>
     </p>
-    <a href="#" onclick="return $('#application_form').nextpage();" class="careers__apply__left__form__nextbutton">
+    <a href="#" class="careers__apply__left__form__nextbutton">
         Next
     </a>
 </fieldset>

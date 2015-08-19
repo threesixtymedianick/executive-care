@@ -22,13 +22,6 @@
                         <?= $this->application_form->application_submit; ?>
                     </form>
                     <br style="clear:both;"/>
-                    <div id="careers__apply__left__form__pagination">
-                        <ul>
-                            <?php for ($i = 1; $i <= $numberOfFormPages; $i++): ?>
-                                <li><a href="#" onclick="return $('#application_form').gotopage(<?= $i; ?> );"><?= $i; ?></a></li>
-                            <?php endfor; ?>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="careers__apply__right">
