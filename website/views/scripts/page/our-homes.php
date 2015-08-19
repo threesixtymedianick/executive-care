@@ -1,3 +1,6 @@
+<?php
+    $ourHomesDescription       = $this->wysiwyg("our_homes_description");
+?>
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
@@ -7,12 +10,7 @@
                 </div>
                 <div class="our-homes__left__content">
                     <p>
-                        Bacon ipsum dolor amet sausage shoulder doner ham, drumstick flank beef pastrami tail. Doner
-                        meatball turkey, jowl pastrami corned beef t-bone pancetta. Pancetta pastrami spare ribs, kevin
-                        meatball picanha cow shank porchetta. Spare ribs cupim tongue ground round bresaola tri-tip.
-                        Hamburger kevin salami, doner pancetta swine chuck jowl strip steak tenderloin tri-tip chicken
-                        turkey. Pastrami ground round turkey pork belly pancetta strip steak t-bone leberkas spare ribs
-                        cupim brisket.
+                        <?= $ourHomesDescription ?>
                     </p>
                     <input type="search" placeholder="Search by name, town or postcode" />
                     <!-- TODO: Here we will eventually loop over the database of homes and add them automatically for now, here are some default ones I've added -->
