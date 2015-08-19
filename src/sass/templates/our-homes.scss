@@ -23,56 +23,10 @@
         margin-bottom: 16px;
       }
 
-      &__homes-box-left {
+      &__homes-box {
         background-color: $color-green;
         color: $color-white;
         width: 49%;
-        float: left;
-
-        &__image {
-          float: left;
-        }
-
-        &__info {
-          float: left;
-          clear: right;
-          display: inline-block;
-
-          &__title {
-            @include font-header($weight: 300);
-            font-size: $font-size-large;
-            display: inline-block;
-            color: $color-white;
-            text-transform: uppercase;
-            padding-left: 10px;
-          }
-
-          &__distance {
-            padding-left: 10px;
-            font-size: $font-size-small;
-          }
-
-          &__address {
-            padding-left: 10px;
-            font-size: $font-size-normal;
-          }
-        }
-
-        &__find-out-more {
-          color: $color-green;
-          font-size: $font-size-normal;
-          @include font-header($weight: 300);
-          display:  inline-block;
-          background-color: $color-white;
-          padding: 2px 16px 2px 10px;
-        }
-      }
-
-      &__homes-box-right {
-        background-color: $color-green;
-        color: $color-white;
-        width: 49%;
-        float: right;
 
         &__image {
           float: left;
@@ -119,4 +73,12 @@
     @include span-columns(4);
     margin: 0;
   }
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
 }
