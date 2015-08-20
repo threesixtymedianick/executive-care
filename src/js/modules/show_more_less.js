@@ -4,18 +4,14 @@ $(document).ready(function () {
     $(".show_hide:first").text("Show Less -");
 
     $('.our-care__left__sliding__title').click(function (e) {
-        var slide_content = $(this).closest('.sliding_content').find('.slide');
-        slide_content.slideToggle(500);
-
-        var showMore = "Show More +";
-        var showLess = "Show Less -";
+       $(this).closest('.sliding_content').find('.slide').slideToggle(500);
 
         var text = $(this).find('.show_hide').text();
 
-        if (text === showMore) {
-            text = showLess;
+        if (text === "Show More +") {
+            text = "Show Less -";
         } else {
-            text = showMore;
+            text = "Show More +";
         }
 
         $(this).find('.show_hide').text(text);
