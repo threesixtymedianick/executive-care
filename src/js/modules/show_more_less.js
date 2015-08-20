@@ -11,7 +11,6 @@ $(document).ready(function () {
         var showLess = "Show Less -";
 
         var text = $(this).find('.show_hide').text();
-        console.log(text);
 
         if (text === showMore) {
             text = showLess;
