@@ -8,7 +8,7 @@
         <?= $form->application_signature; ?>
         <?= $form->application_agree_statement; ?>
     </p>
-    <a href="#" class="__nextbutton">
+    <a href="#" class="careers__apply__left__form__nextbutton">
         Submit
     </a>
 </fieldset>
