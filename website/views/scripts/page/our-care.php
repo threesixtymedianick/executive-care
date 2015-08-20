@@ -20,8 +20,8 @@
                         <div class="our-care__left__sliding__title">
                             <?= $this->input("title"); ?>
                             <?php if (!$this->editmode) : ?>
-                                <div class="show_hide">
-                                    <a href="#">Show More +</a>
+                                <div class="our-care__left__sliding__title__show-hide">
+                                    <a href="#" class="show_hide">Show More +</a>
                                 </div>
                             <?php endif; ?>
                         </div>
