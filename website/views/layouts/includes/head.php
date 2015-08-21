@@ -6,5 +6,6 @@
   <link rel="stylesheet" href="/website/static/css/libraries.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="/website/static/css/style.css" media="screen" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="theme-color" content="#5B7F9F">
+  <!--<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">-->
 </head>
