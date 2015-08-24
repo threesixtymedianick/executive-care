@@ -1,30 +1,29 @@
-<?php $this->layout()->setLayout('layout') ?>
-<div class="container blog blog-post">
-    <div class="row">
-        <div class="span9">
-
+<?php $entry = $this->entry; ?>
+<div class="blog__left">
+    <div class="blog__left--title">
+        <h2><?=$entry->getTitle()?></h2>
+    </div>
+    <div class="blog__content">
+        <div class="blog__content--date uppercase">
+            <?=$this->entry->getDate()->toString('FFFFF');?>
+        </div>
+        <div class="blog__content--article">
             <?= $this->flashMessenger() ?>
+            <p>
+                Pannal Green<br />
+                Pannal<br />
+                Harrogate<br />
+                HG3 1LH
+            </p>
 
-            <h1><?= $this->input('page-header') ?></h1>
+            <h3 class="blog__content--article-subtitle">Lorem ipsum</h3>
 
-            <h2><?=$this->entry->getTitle()?></h2>
-            <small><?=$this->entry->getDate()->toString('FFFFF');?></small>
+            <?=$this->entry->getContent();?>
 
-            <?php if(count($this->entry->getCategories())): ?>
-            <div class="categories">
-                <small><?= $this->translate('categories') ?>:
-                <?php foreach($this->entry->getCategories() as $category): ?>
-                    <a href="<?=$this->url(array(
-                        'cat' => $category->getKey()
-                        ), 'blog-category')?>"><?=$category->getName()?></a>
-                    <?php endforeach; ?>
-                </small>
-            </div>
+            <?php if ($this->entry->getBlogImage() !== null): ?>
+                <img src="<?= $this->entry->getBlogImage()->getFullPath(); ?>" class="image-strip" />
+                <img src="<?= $this->entry->getBlogImage()->getFullPath(); ?>" class="image-strip" />
             <?php endif; ?>
-
-            <div class="entry">
-                <?=$this->entry->getContent();?>
-            </div>
 
             <?php try { $tags = $this->entry->getTags();?>
             <?php if (count($tags)): ?>
@@ -54,7 +53,7 @@
                 </blockquote>
                 <?php endforeach; ?>
 
-                <?=$this->comments; // paginator ?>
+                <?=$this->comments; ?>
             </div>
             <?php endif; ?>
 
