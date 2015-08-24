@@ -3,8 +3,8 @@ $(document).ready(function () {
     $(".slide:first").css( "display", "block" );
     $(".show_hide:first").text("Show Less -");
 
-    $('.our-care__left__sliding__title').click(function (e) {
-       $(this).closest('.sliding_content').find('.slide').slideToggle(500);
+    function controlSlide(e) {
+        $(this).closest('.sliding_content').find('.slide').slideToggle(500);
 
         var text = $(this).find('.show_hide').text();
 
@@ -17,5 +17,13 @@ $(document).ready(function () {
         $(this).find('.show_hide').text(text);
 
         e.preventDefault();
+    }
+
+    $('.our-care__left__sliding__title').click(function (e) {
+        controlSlide.call(this, e);
+    });
+
+    $('.our-homes__left__sliding__title').click(function (e) {
+        controlSlide.call(this, e);
     });
 });
