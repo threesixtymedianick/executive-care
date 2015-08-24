@@ -14,12 +14,13 @@
             <ul class="bxslider">
                 <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
                     <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
-                        <li><img src="<?= $element->getFullPath() ;?>" title="" /> </li>
+                        <li style="background-image: url('<?= $element->getFullPath() ;?>');">
+                          <h1>Welcome to Executive Care</h1>
+                          <h2>Find out more about us</h2>
+                        </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </ul>
-            <h1><?= $this->input("headline"); ?></h1>
-            <h2>Find out about us</h2>
           </div>
           <div class="home__panels">
             <div class="home__panel home__panel--split home__our-care-explained">
