@@ -62,7 +62,8 @@ class PageController extends AbstractPageController
      */
     public function ourHomesAction()
     {
-
+        $careHomeCategory = Object_CareHomes::getById(17);
+        $this->view->careHomeObject = $careHomeCategory;
     }
 
     /**
