@@ -19,11 +19,11 @@
          @include font-header;
          font-size: 16px;
          letter-spacing: 1px;
-         display: none;
-
-         @include media($tablet-lrg-breakpoint) {
-            display: inline;
+         display: inline;
+         @include media($tablet-breakpoint){
+            display:none;
          }
+
 
          a {
             color: $color-blue;
@@ -111,4 +111,15 @@
       vertical-align: top;
       line-height: 15px;
    }
+   
+   @media(max-width:$tablet-breakpoint) {
+   &__telephone, &__email, .contact-h{
+      display:none;
+
+      }
+   }
+   
+   .contact-h{
+      font-size:20px;
+      }
 }
