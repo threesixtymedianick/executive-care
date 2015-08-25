@@ -58,33 +58,32 @@
         top: 0;
         left: 0;
 
-        .bxslider li {
-          height: 500px;
-          background-repeat: no-repeat;
-          background-position: top center;
-          background-size: cover;
-          position: relative;
-
-          h1 {
-            position: absolute;
-            left: 0;
-            bottom: 70px;
-            text-transform: uppercase;
-            padding: 3px 18px;
-            font-size: 17px;
-            background-color: $color-purple;
-            margin: 0;
+        .bxslider {
+          li {
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            position: relative;
           }
 
-          h2 {
+          &__slider-caption {
             position: absolute;
             left: 0;
-            bottom: 39px;
-            text-transform: uppercase;
-            padding: 3px 18px;
-            font-size: 17px;
-            background-color: $color-blue;
-            margin: 0;
+            bottom: 60px;
+
+            h1, h2 {
+              text-transform: uppercase;
+              padding: 3px 18px;
+              font-size: 17px;
+              background-color: $color-purple;
+              margin: 0;
+              display: table;
+            }
+
+            h2 {
+              background-color: $color-blue;
+            }
           }
         }
 
