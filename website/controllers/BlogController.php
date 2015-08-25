@@ -23,6 +23,10 @@ class BlogController extends AbstractBlogController
      */
     protected $_commenting;
 
+    /**
+     * Init
+     * @return
+     */
     public function init()
     {
         parent::init();
@@ -38,6 +42,10 @@ class BlogController extends AbstractBlogController
         $this->language = (string)$this->getLocale();
     }
 
+    /**
+     * List news and events
+     * @return
+     */
     public function newsEventsAction()
     {
         $this->enableLayout();
@@ -60,6 +68,10 @@ class BlogController extends AbstractBlogController
         $this->render('news-events');
     }
 
+    /**
+     * List open days
+     * @return
+     */
     public function openDaysAction()
     {
         $this->enableLayout();
