@@ -36,14 +36,13 @@ $(document).ready(function () {
         var validator = $(form).validate({
             rules: rules
         });
-
     }
 
     $('.careers__apply__left__form__nextbutton').on('click', function (event) {
         event.preventDefault();
 
-        var visible = $('.careers__apply__left__form').find('input[type=text],textarea,select').filter(":visible"),
-            checkbox = $('.careers__apply__left__form').find('input[type=checkbox]'),
+        var visible = $('.careers__apply__left__form').find('input[type=text], textarea, select').filter(":visible"),
+            checkbox = $('.careers__apply__left__form').find('input[type=checkbox]').filter(":visible"),
             valid = 0;
 
         // Get elements in sections
@@ -62,10 +61,10 @@ $(document).ready(function () {
             }
         });
 
-        console.log(valid);
-        nextFormPage($(this));
+        if ((visible.length + checkbox.length) === valid) {
+            nextFormPage($(this));
+        }
     });
-
 
     function nextFormPage (thisPage) {
         $('.application_form_fields').fadeOut(600, function() {
