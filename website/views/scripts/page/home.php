@@ -17,7 +17,7 @@
                         <li style="background-image: url('<?= $element->getFullPath() ;?>');">
                           <div class="bxslider__slider-caption">
                             <h1>Welcome to Executive Care</h1>
-                            <h2>Find out more about us</h2>
+                            <h2><a href="#">Find out more about us</a></h2>
                           </div>
                         </li>
                     <?php endif; ?>

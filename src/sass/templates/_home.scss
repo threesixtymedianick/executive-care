@@ -70,7 +70,7 @@
           &__slider-caption {
             position: absolute;
             left: 0;
-            bottom: 60px;
+            bottom: 50px;
 
             h1, h2 {
               text-transform: uppercase;
@@ -83,6 +83,11 @@
 
             h2 {
               background-color: $color-blue;
+
+              a {
+                text-decoration: none;
+                color: $color-white;
+              }
             }
           }
         }
