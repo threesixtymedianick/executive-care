@@ -3,6 +3,7 @@
 use Website\Controller\PageController as AbstractPageController;
 use Website\Form\ContactUsForm as ContactUsForm;
 use Website\Form\BrochureForm as BrochureForm;
+use Website\Form\VolunteerForm as VolunteerForm;
 
 class PageController extends AbstractPageController
 {
@@ -26,7 +27,38 @@ class PageController extends AbstractPageController
 
     public function careersAction()
     {
+        $volunteerForm = new VolunteerForm();
 
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            // Create a new Zend View object
+            $view = new \Zend_View();
+
+            // Setup the location of our email templates
+            $view->setScriptPath('website/views/scripts/email');
+
+            // Create a new PimCore Mail object
+            $mail = new \Pimcore\Mail();
+
+            if ($volunteerForm->isValid($request->getPost())) {
+                // Get the values from the form
+                $values = $volunteerForm->getValues();
+
+                // Set the values to the view
+                //  in a variable called data
+                $view->data = $values;
+
+                // Send to a template
+                $html = $view->render('brochure-request.php');
+
+                // Add our email address for this form
+                $mail->addTo($this->config->brochure_email);
+            }
+            $mail->setBodyHtml($html);
+            $mail->send();
+        }
+        $this->view->volunteerForm = $volunteerForm;
     }
 
     /**

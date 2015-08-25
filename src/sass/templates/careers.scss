@@ -2,6 +2,36 @@
 
   &__left {
     @include span-columns(8);
+    margin-bottom: 100px;
+
+    &__title {
+      background-color: $color-purple;
+      @include font-header($weight: 300);
+      font-size: $font-size-large;
+      padding: 6px 20px;
+      display: inline-block;
+      color: $color-white;
+      text-transform: uppercase;
+    }
+
+    &__content {
+      background-color: $color-light-purple;
+      color: $color-black;
+
+      &__container {
+        padding: 16px 24px;
+      }
+
+      &__subtitle {
+        background-color: $color-purple;
+        @include font-header($weight: 300);
+        font-size: $font-size-normal;
+        padding: 6px 20px;
+        display: inline-block;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+    }
   }
 
   &__right {
