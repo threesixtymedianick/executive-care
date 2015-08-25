@@ -12,7 +12,7 @@
         <div class="home__left">
           <div class="home__panel home__welcome">
             <ul class="bxslider">
-                <?php foreach($this->multihref("homepage-carousel") as $element) : ?>
+                <?php foreach ($this->multihref("homepage-carousel") as $element) : ?>
                     <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
                         <li style="background-image: url('<?= $element->getFullPath() ;?>');">
                           <div class="bxslider__slider-caption">
