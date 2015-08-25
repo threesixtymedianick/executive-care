@@ -14,8 +14,7 @@ if(!$navStartNode instanceof Document\Page) {
     <img src="/website/static/images/home.png">
     </a>
   </li>
-<label for="show-menu" class="show-menu"><img src="/website/static/images/bar-menu.png">SHOW MENU</label>
-  <input type="checkbox" id="show-menu" role="button">
+<div class="show-menu"><img src="/website/static/images/bar-menu.png">SHOW MENU</div>
 <ul class="site-navigation__main-navigation">
   
   <?php $mainNavigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode); ?>
@@ -32,7 +31,7 @@ if(!$navStartNode instanceof Document\Page) {
                         <?php if(!$child->isVisible() || !$this->navigation()->accept($child)) { continue; } ?>
                         <li>
                             <a href="<?php echo $child->getHref() ?>">
-                                > &nbsp;&nbsp;<?php echo $this->translate($child->getLabel()) ?>
+                                <?php echo $this->translate($child->getLabel()) ?>
                             </a>
                         </li>
                     <?php } ?>
