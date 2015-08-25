@@ -161,6 +161,7 @@ apache:
     modules:
         - proxy_fcgi
         - rewrite
+        - headers
     vhosts:
         av_sybik1ypazpl:
             servername: executive-care.dev
