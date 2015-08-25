@@ -9,13 +9,15 @@ if(!$navStartNode instanceof Document\Page) {
     }
 }
 ?>
-<ul class="site-navigation__main-navigation">
-  <li class="home">
+<li class="home">
     <a href="<?= $this->url(array("document" => Document::getById(1)), "default", true); ?>">
-      Home
+    <img src="/website/static/images/home.png">
     </a>
   </li>
-
+<label for="show-menu" class="show-menu"><img src="/website/static/images/bar-menu.png">SHOW MENU</label>
+  <input type="checkbox" id="show-menu" role="button">
+<ul class="site-navigation__main-navigation">
+  
   <?php $mainNavigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode); ?>
   <?php foreach ($mainNavigation as $page) { ?>
       <?php if (!$page->isVisible() || !$this->navigation()->accept($page)) { continue; } ?>
@@ -25,12 +27,12 @@ if(!$navStartNode instanceof Document\Page) {
                   <?php echo $this->translate($page->getLabel()) ?>
               </a>
               <?php if ($hasChildren) { ?>
-                <ul>
+                <ul class="inner_links">
                     <?php foreach ($page->getPages() as $child) { ?>
                         <?php if(!$child->isVisible() || !$this->navigation()->accept($child)) { continue; } ?>
                         <li>
                             <a href="<?php echo $child->getHref() ?>">
-                                <?php echo $this->translate($child->getLabel()) ?>
+                                > &nbsp;&nbsp;<?php echo $this->translate($child->getLabel()) ?>
                             </a>
                         </li>
                     <?php } ?>

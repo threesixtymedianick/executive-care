@@ -1,5 +1,10 @@
 $nav-height: 47px;
 
+.home{
+  float: left;
+  list-style: none;
+}
+
 .site-navigation {
   background-color: $color-blue;
   color: $color-white;
@@ -8,7 +13,7 @@ $nav-height: 47px;
     margin: 0px;
     padding: 0px;
 
-    @include media(769px) {
+    @include media(892px) {
       display: flex;
       align-items: stretch;
       justify-content: space-between;
@@ -41,7 +46,7 @@ $nav-height: 47px;
         width: 100%;
         padding-left: 0px;
 
-        @include media(769px) {
+        @include media(892px) {
           display: none;
           position: absolute;
           left: 0px;
@@ -55,10 +60,9 @@ $nav-height: 47px;
       }
 
       &:hover ul {
-        @include media(769px) {
           display: block;
           z-index: 10;
-        }
+        
       }
     }
   }
@@ -71,14 +75,77 @@ $nav-height: 47px;
     text-decoration: none;
     font-size: $font-size-x-large;
     @include font-header;
-
-    @include media(769px) {
-      background: url('../images/home.png') center center no-repeat;
       width: 60px;
+
+      img {
+            margin-top: 11px;
+            margin-left: 15px;
+      }
 
       a {
         text-indent: -9999%;
       }
+    
+  }
+
+  .show-menu {
+    text-decoration: none;
+    text-align: center;
+    display: none;
+    font-size: 1.8em;
+    padding:10px 5px;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ .site-navigation__main-navigation {
+    display: block;
+  }
+
+  @media screen and (max-width : 891px) {
+  /*Make dropdown links appear inline*/
+    ul{
+      position: static;
+      display: none;
+    }
+
+    .inner_links {
+      display: block;
+      text-indent: 10px;
+      background-color: $color-grey !important;
+      font-size: 8px;
+      text-align: left;
+    }
+
+    .inner_links li:hover {
+      background-color:$color-grey;
+    }
+    /*Create vertical spacing*/
+    li {
+      margin-bottom: 1px;
+      text-align: left;
+    }
+
+    li:hover {
+      background-color:$color-blue;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+      width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+      display:block;
+      color: $color-blue;
+    }
+
+    .show-menu img {
+      width: 29px;
+      float: right;
+      margin-top: 4px;
+      cursor: pointer;
     }
   }
 }
