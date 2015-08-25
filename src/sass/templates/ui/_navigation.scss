@@ -13,7 +13,7 @@ $nav-height: 47px;
     margin: 0px;
     padding: 0px;
 
-    @include media(892px) {
+    @include media($laptop-breakpoint) {
       display: flex;
       align-items: stretch;
       justify-content: space-between;
@@ -46,7 +46,7 @@ $nav-height: 47px;
         width: 100%;
         padding-left: 0px;
 
-        @include media(892px) {
+        @include media($laptop-breakpoint) {
           display: none;
           position: absolute;
           left: 0px;
@@ -95,18 +95,14 @@ $nav-height: 47px;
     font-size: 1.8em;
     padding:10px 5px;
   }
-  
-  input[type=checkbox] {
-    display: none;
-  }
 
-  input[type=checkbox]:checked ~ .site-navigation__main-navigation {
-    display: block;
-  }
+  @media screen and (max-width: $laptop-breakpoint) {
 
-  @media screen and (max-width : 891px) {
+    .open {
+      display: block;
+    }
   /*Make dropdown links appear inline*/
-    ul{
+    ul {
       position: static;
       display: none;
     }
@@ -117,6 +113,10 @@ $nav-height: 47px;
       background-color: $color-grey !important;
       font-size: 8px;
       text-align: left;
+    }
+
+    .inner_links li a:before{
+      content: ">\0000a0\0000a0";
     }
 
     .inner_links li:hover {
