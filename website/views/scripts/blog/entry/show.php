@@ -1,18 +1,21 @@
-<?php $this->layout()->setLayout('layout') ?>
+<?php
+    $this->layout()->setLayout('layout');
+    $entry = $this->entry;
+?>
+
 <div class="blog__header">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
             <?php
-                $entry = $this->entry;
-                foreach($this->entry->getCategories() as $category) {
+                foreach ($this->entry->getCategories() as $category) {
                     $catName = $category->getName();
                 }
 
-                if($catName == "Open Days") {
-                    echo $this->partial("blog/partial/open-day.php", ["entry" => $entry]);
+                if ($catName === "Open Days") {
+                    echo $this->partial("blog/partial/open-day.php", [ "entry" => $entry ]);
                 } else {
-                    echo $this->partial("blog/partial/news-article.php", ["entry" => $entry]);
+                    echo $this->partial("blog/partial/news-article.php", [ "entry" => $entry ]);
                 }
             ?>
             <div class="blog__right">
@@ -36,7 +39,7 @@
                 </div>
                 <div class="blog__right__boxes recommendation">
                     <div class="recommendations-logo">
-                        <img src="http://<?= $_SERVER['HTTP_HOST']; ?>/website/static/images/home/carehome-co-uk.png" alt="Carehome">
+                        <img src="/website/static/images/home/carehome-co-uk.png" alt="Carehome">
                     </div>
                     <div class="recommendations-logo-copy">
                         Latest recommendations for homes in our group
