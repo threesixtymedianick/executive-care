@@ -15,7 +15,6 @@
                   <a href="#" id="smaller">A-</a> | <a href="#" id="larger">A+</a>
                </div>
                <div class="site-header__contact-details">
-
                   <div class="site-header__telephone">
                      <i class="site-header__contact-telephone-icon"></i>
                      <div class="site-header__telephone-number">
