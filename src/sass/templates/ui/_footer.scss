@@ -20,4 +20,10 @@
       margin-bottom: 0px;
     }
   }
+
+  @media(max-width:$laptop-breakpoint) {
+      &__block div br, &__block:last-child {
+        display:none;
+      }
+  }
 }
