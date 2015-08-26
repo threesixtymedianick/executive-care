@@ -3,6 +3,7 @@
 use Website\Controller\PageController as AbstractPageController;
 use Website\Form\ContactUsForm as ContactUsForm;
 use Website\Form\BrochureForm as BrochureForm;
+use Website\Form\ApplicationForm as ApplicationForm;
 
 class PageController extends AbstractPageController
 {
@@ -118,6 +119,34 @@ class PageController extends AbstractPageController
      */
     public function careersApplyOnlineAction()
     {
+        $applicationForm = new ApplicationForm();
 
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            // Create a new Zend View object
+            $view = new \Zend_View();
+
+            // Setup the location of our email templates
+            $view->setScriptPath('website/views/scripts/email');
+
+            // Create a new PimCore Mail object
+            $mail = new \Pimcore\Mail();
+
+            if ($applicationForm->isValid($request->getPost())) {
+                // Get posted form values
+                $values = $applicationForm->getValues();
+
+                // Assign form data to view
+                $view->data = $values;
+                $html = $view->render('application.php');
+
+                // Send the email
+                $mail->addTo($this->config->application_email);
+                $mail->setBodyHtml($html);
+                $mail->send();
+            }
+        }
+        $this->view->applicationForm = $applicationForm;
     }
 }

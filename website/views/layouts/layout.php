@@ -8,13 +8,13 @@
       <header class="site-header">
          <div class="container">
             <div class="site-header__logo">
-               <a href="<?= $homePage; ?>"><img src="http://<?= $_SERVER['HTTP_HOST']; ?>/website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
+               <a href="<?= $homePage; ?>"><img src="/website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
                <div class="site-header__contact-header">
                   <a href="#" id="smaller">A-</a> | <a href="#" id="larger">A+</a>
                </div>
-               <div class="site-header__contact-details"> 
+               <div class="site-header__contact-details">
                   <div class="site-header__telephone">
                      <i class="site-header__contact-telephone-icon"></i>
                      <div class="site-header__telephone-number">
