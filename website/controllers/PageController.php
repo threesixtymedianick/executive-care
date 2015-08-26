@@ -133,8 +133,6 @@ class PageController extends AbstractPageController
             // Create a new PimCore Mail object
             $mail = new \Pimcore\Mail();
 
-            $messages =  $applicationForm->getMessages();
-
             if ($applicationForm->isValid($request->getPost())) {
                 // Get posted form values
                 $values = $applicationForm->getValues();
@@ -147,9 +145,6 @@ class PageController extends AbstractPageController
                 $mail->addTo($this->config->application_email);
                 $mail->setBodyHtml($html);
                 $mail->send();
-            } else {
-                var_dump($applicationForm->getErrors());
-                die();
             }
             $mail->setBodyHtml($html);
             $mail->send();

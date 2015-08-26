@@ -1,8 +1,4 @@
-<?php
-    $formName = "application_";
-    $numberOfFormPages = 7;
-    $messages = $this->messages;
-?>
+<?php $formName = "application_"; ?>
 
 <div class="container">
     <div class="container__inner">
@@ -13,7 +9,6 @@
                 </div>
                 <div class="careers__apply__left__form">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="application_form">
-                        <?= print_r($messages); ?>
                         <?= $this->partial("partial/forms/personal_details_1.php", $this); ?>
                         <?= $this->partial("partial/forms/position.php", $this); ?>
                         <?= $this->partial("partial/forms/education_training.php", $this); ?>
