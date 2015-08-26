@@ -14,7 +14,7 @@ if(!$navStartNode instanceof Document\Page) {
     <img src="/website/static/images/home.png">
     </a>
   </li>
-<div class="show-menu"><img src="/website/static/images/bar-menu.png">SHOW MENU</div>
+<div class="show-menu"><img class="mob-menu" src="/website/static/images/bar-menu.png">SHOW MENU</div>
 <ul class="site-navigation__main-navigation">
   
   <?php $mainNavigation = $this->pimcoreNavigation()->getNavigation($this->document, $navStartNode); ?>
