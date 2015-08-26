@@ -53,7 +53,7 @@ class ApplicationForm extends BaseForm
 
         $submit = new \Zend_Form_Element_Submit($formName . 'submit');
         $submit->setLabel('Submit')
-        ->setAttrib('class', 'tab__nextbutton');
+        ->setAttrib('class', 'careers__apply__left__form__submitbutton');
 
         $this->addElements([$submit]);
 

@@ -48,6 +48,10 @@
         text-decoration: none;
       }
 
+      &__submitbutton {
+        @extend .careers__apply__left__form__nextbutton;
+      }
+
       &__pagination {
 
       }

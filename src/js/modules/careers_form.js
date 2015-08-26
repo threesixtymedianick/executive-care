@@ -38,6 +38,8 @@ $(document).ready(function () {
         });
     }
 
+
+
     $('.careers__apply__left__form__nextbutton').on('click', function (event) {
         event.preventDefault();
 
