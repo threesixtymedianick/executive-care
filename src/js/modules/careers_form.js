@@ -10,7 +10,6 @@ $(document).ready(function () {
         application_name                            : "required",
         application_number                          : { required: true, number: true },
         application_address                         : "required",
-        application_message                         : "required",
         application_email                           : { required: true, email: true },
         application_apply_reason                    : "required",
         application_special_experience              : "required",

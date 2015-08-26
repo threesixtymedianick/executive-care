@@ -168,11 +168,6 @@ class ApplicationForm extends BaseForm
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-        $message = new \Zend_Form_Element_Textarea($formName . 'message');
-        $message->setLabel('Your message:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
-
         $workPermits = new \Zend_Form_Element_Textarea($formName . 'work_permits');
         $workPermits->setLabel('Give details of Work Permits, Visas, Leave to Remain etc that allow you to work legally in the UK (include expiry dates)):');
 
@@ -276,13 +271,11 @@ class ApplicationForm extends BaseForm
         $fromDate = new \Zend_Form_Element_Text($formName . 'recent_company_from_date');
         $fromDate->setLabel('From (MM/YYYY):')
             ->addValidator('NotEmpty', true)
-            ->addValidator('Digits')
             ->setRequired(true);
 
         $toDate = new \Zend_Form_Element_Text($formName . 'recent_company_to_date');
         $toDate->setLabel('To (MM/YYYY):')
             ->addValidator('NotEmpty', true)
-            ->addValidator('Digits')
             ->setRequired(true);
 
         $reasonForLeaving = new \Zend_Form_Element_Textarea($formName . 'reason_for_leaving');
@@ -291,49 +284,31 @@ class ApplicationForm extends BaseForm
             ->setRequired(true);
 
         $recentCompanyNameTwo = new \Zend_Form_Element_Text($formName . 'recent_company_name_two');
-        $recentCompanyNameTwo->setLabel('Company:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $recentCompanyNameTwo->setLabel('Company:');
 
         $recentCompanyPositionTwo = new \Zend_Form_Element_Text($formName . 'recent_company_position_two');
-        $recentCompanyPositionTwo->setLabel('Position:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $recentCompanyPositionTwo->setLabel('Position:');
 
         $recentCompanyAddressTwo = new \Zend_Form_Element_Text($formName . 'recent_company_address_two');
-        $recentCompanyAddressTwo->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $recentCompanyAddressTwo->setLabel('Address:');
 
         $recentCompanyNumberTwo = new \Zend_Form_Element_Text($formName . 'recent_company_number_two');
         $recentCompanyNumberTwo->setLabel('Phone No:')
-            ->addValidator('NotEmpty', true)
-            ->addValidator('Digits')
-            ->setRequired(true);
+            ->addValidator('Digits');
 
         $recentCompanyEmailTwo = new \Zend_Form_Element_Text($formName . 'recent_company_email_two');
         $recentCompanyEmailTwo->setLabel('Email:')
-            ->addValidator('NotEmpty', true)
             ->addValidator('EmailAddress')
-            ->addFilter('StringToLower')
-            ->setRequired(true);
+            ->addFilter('StringToLower');
 
         $fromDateTwo = new \Zend_Form_Element_Text($formName . 'recent_company_from_date_two');
-        $fromDateTwo->setLabel('From (MM/YYYY):')
-            ->addValidator('NotEmpty', true)
-            ->addValidator('Digits')
-            ->setRequired(true);
+        $fromDateTwo->setLabel('From (MM/YYYY):');
 
         $toDateTwo = new \Zend_Form_Element_Text($formName . 'recent_company_to_date_two');
-        $toDateTwo->setLabel('To (MM/YYYY):')
-            ->addValidator('NotEmpty', true)
-            ->addValidator('Digits')
-            ->setRequired(true);
+        $toDateTwo->setLabel('To (MM/YYYY):');
 
         $reasonForLeavingTwo = new \Zend_Form_Element_Textarea($formName . 'reason_for_leaving_two');
-        $reasonForLeavingTwo->setLabel('Reason for leaving:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $reasonForLeavingTwo->setLabel('Reason for leaving:');
 
         $this->addElements([
             $recentCompanyName, $recentCompanyNameTwo, $recentCompanyPosition, $recentCompanyPositionTwo,
@@ -350,100 +325,64 @@ class ApplicationForm extends BaseForm
     private function setupReferencesForm($formName)
     {
         $referencesCompanyOne = new \Zend_Form_Element_Text($formName . 'references_company_one');
-        $referencesCompanyOne->setLabel('Company:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesCompanyOne->setLabel('Company:');
 
         $referencesContactOne = new \Zend_Form_Element_Text($formName . 'references_contact_one');
-        $referencesContactOne->setLabel('Contact Name:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesContactOne->setLabel('Contact Name:');
 
         $referencesPositionOne = new \Zend_Form_Element_Text($formName . 'references_position_one');
-        $referencesPositionOne->setLabel('Position:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesPositionOne->setLabel('Position:');
 
         $referencesAddressOne = new \Zend_Form_Element_Text($formName . 'references_address_one');
-        $referencesAddressOne->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesAddressOne->setLabel('Address:');
 
         $referencesTelephoneOne = new \Zend_Form_Element_Text($formName . 'references_telephone_one');
-        $referencesTelephoneOne->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesTelephoneOne->setLabel('Address:');
 
         $referencesCompanyEmailOne = new \Zend_Form_Element_Text($formName . 'references_email_one');
         $referencesCompanyEmailOne->setLabel('Email:')
-            ->addValidator('NotEmpty', true)
             ->addValidator('EmailAddress')
-            ->addFilter('StringToLower')
-            ->setRequired(true);
+            ->addFilter('StringToLower');
 
         $referencesCompanyTwo = new \Zend_Form_Element_Text($formName . 'references_company_two');
-        $referencesCompanyTwo->setLabel('Company:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesCompanyTwo->setLabel('Company:');
 
         $referencesContactTwo = new \Zend_Form_Element_Text($formName . 'references_contact_two');
-        $referencesContactTwo->setLabel('Contact Name:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesContactTwo->setLabel('Contact Name:');
 
         $referencesPositionTwo = new \Zend_Form_Element_Text($formName . 'references_position_two');
-        $referencesPositionTwo->setLabel('Position:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesPositionTwo->setLabel('Position:');
 
         $referencesAddressTwo = new \Zend_Form_Element_Text($formName . 'references_address_two');
-        $referencesAddressTwo->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesAddressTwo->setLabel('Address:');
 
         $referencesTelephoneTwo = new \Zend_Form_Element_Text($formName . 'references_telephone_two');
-        $referencesTelephoneTwo->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesTelephoneTwo->setLabel('Address:');
 
         $referencesCompanyEmailTwo = new \Zend_Form_Element_Text($formName . 'references_email_two');
         $referencesCompanyEmailTwo->setLabel('Email:')
-            ->addValidator('NotEmpty', true)
             ->addValidator('EmailAddress')
-            ->addFilter('StringToLower')
-            ->setRequired(true);
+            ->addFilter('StringToLower');
 
         $referencesCompanyThree = new \Zend_Form_Element_Text($formName . 'references_company_three');
-        $referencesCompanyThree->setLabel('Company:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesCompanyThree->setLabel('Company:');
 
         $referencesContactThree = new \Zend_Form_Element_Text($formName . 'references_contact_three');
-        $referencesContactThree->setLabel('Contact Name:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesContactThree->setLabel('Contact Name:');
 
         $referencesPositionThree = new \Zend_Form_Element_Text($formName . 'references_position_three');
-        $referencesPositionThree->setLabel('Position:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesPositionThree->setLabel('Position:');
 
         $referencesAddressThree = new \Zend_Form_Element_Text($formName . 'references_address_three');
-        $referencesAddressThree->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesAddressThree->setLabel('Address:');
 
         $referencesTelephoneThree = new \Zend_Form_Element_Text($formName . 'references_telephone_three');
-        $referencesTelephoneThree->setLabel('Address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $referencesTelephoneThree->setLabel('Address:');
 
         $referencesCompanyEmailThree = new \Zend_Form_Element_Text($formName . 'references_email_three');
         $referencesCompanyEmailThree->setLabel('Email:')
-            ->addValidator('NotEmpty', true)
             ->addValidator('EmailAddress')
-            ->addFilter('StringToLower')
-            ->setRequired(true);
+            ->addFilter('StringToLower');
 
         $this->addElements([
             $referencesCompanyOne, $referencesCompanyTwo, $referencesCompanyThree,

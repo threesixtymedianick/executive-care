@@ -5,8 +5,8 @@
         <th colspan="2">Personal details</th>
     </tr>
     <tr>
-        <th>Name: </th>
-        <th><?= $this->data[$formName . 'name']; ?></th>
+        <td>Name: </td>
+        <td><?= $this->data[$formName . 'name']; ?></td>
     </tr>
     <tr>
         <td>Email: </td>

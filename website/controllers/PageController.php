@@ -136,10 +136,20 @@ class PageController extends AbstractPageController
             $messages =  $applicationForm->getMessages();
 
             if ($applicationForm->isValid($request->getPost())) {
+                // Get posted form values
                 $values = $applicationForm->getValues();
+
+                // Assign form data to view
                 $view->data = $values;
                 $html = $view->render('application.php');
+
+                // Send the email
                 $mail->addTo($this->config->application_email);
+                $mail->setBodyHtml($html);
+                $mail->send();
+            } else {
+                var_dump($applicationForm->getErrors());
+                die();
             }
             $mail->setBodyHtml($html);
             $mail->send();
