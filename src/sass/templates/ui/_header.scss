@@ -20,10 +20,7 @@
          font-size: 16px;
          letter-spacing: 1px;
          display: inline;
-         @include media($tablet-breakpoint){
-            display:none;
-         }
-
+         
 
          a {
             color: $color-blue;
