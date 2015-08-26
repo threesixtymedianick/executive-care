@@ -111,4 +111,16 @@
       vertical-align: top;
       line-height: 15px;
    }
+   
+   @media(max-width:$tablet-breakpoint) {
+   &__telephone, &__email, .contact-h {
+      display:none;
+
+      }
+   }
+   
+   .contact-h {
+      font-size:20px;
+   }
+
 }
