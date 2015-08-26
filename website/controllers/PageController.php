@@ -146,10 +146,7 @@ class PageController extends AbstractPageController
                 $mail->setBodyHtml($html);
                 $mail->send();
             }
-            $mail->setBodyHtml($html);
-            $mail->send();
         }
         $this->view->applicationForm = $applicationForm;
-        $this->view->messages = $messages;
     }
 }
