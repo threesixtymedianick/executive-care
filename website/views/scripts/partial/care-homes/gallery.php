@@ -13,7 +13,7 @@
         <?php
         foreach ($careHomeObject->getGallery() as $element) {
             if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) {
-               echo "<img class=\"our-homes__left__sliding__content__gallery-item\" src=\"" . $element->getFullPath() . "\"/>";
+                echo '<img class="our-homes__left__sliding__content__gallery-item" src="' . $element->getFullPath() . '"/>';
             }
         }
         ?>
