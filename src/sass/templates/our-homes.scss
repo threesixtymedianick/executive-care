@@ -1,0 +1,278 @@
+.our-homes {
+  @include outer-container;
+
+  &__header {
+    background-image: url('../images/home/about-us_header.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-height: 750px;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+
+    &__title {
+      background-color: $color-green;
+      @include font-header($weight: 300);
+      font-size: $font-size-large;
+      padding: 6px 20px;
+      display: inline-block;
+      color: $color-white;
+      text-transform: uppercase;
+    }
+
+    &--search {
+      position: relative;
+      width: 46.5%;
+      margin-bottom: 20px;
+
+      input[type=search] {
+        width: 100%;
+        padding: 6px;
+        font-size: 1.2em;
+      }
+
+      .search-submit {
+        position: absolute;
+        top: 0;
+        right: -15px;
+        background: url('../images/arrow-submit.png') no-repeat 0 0;
+        background-size: cover;
+        border: none;
+        cursor: pointer;
+        font: 0/0 a;
+        height: 33px;
+        width: 35px;
+      }
+    }
+
+    &__content {
+      background-color: $color-light-green;
+      color: $color-green;
+      padding: 10px 24px;
+
+      p {
+        font-size: 1.2em;
+      }
+
+      &__homes-box {
+        background-color: $color-green;
+        color: $color-white;
+        width: 48.5%;
+        display: inline-block;
+        margin-bottom: 15px;
+
+        &:nth-child(even) {
+          margin-left: 2%;
+        }
+
+        &--image {
+          float: left;
+          display: block;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          width: 60%;
+          height: 230px;
+        }
+
+        &__image {
+          float: left;
+        }
+
+        &__info {
+          display: inline-block;
+          position: relative;
+          min-height: 230px;
+          min-width: 35%;
+
+          &__title {
+            @include font-header($weight: 300);
+            font-size: $font-size-large;
+            display: inline-block;
+            color: $color-white;
+            text-transform: uppercase;
+            padding: 15px 10px 0;
+          }
+
+          &__distance {
+            padding: 5px 10px;
+            font-size: $font-size-small;
+          }
+
+          &__address {
+            padding-left: 10px;
+            font-size: $font-size-normal;
+          }
+
+          &__find-out-more {
+            color: $color-green;
+            font-size: $font-size-normal;
+            @include font-header($weight: 300);
+            display:  inline-block;
+            background-color: $color-white;
+            padding: 2px 10px;
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+
+            a {
+              text-transform: uppercase;
+              text-decoration: none;
+              color: $color-green;
+            }
+          }
+        }
+      }
+    }
+
+    &--pagination {
+      text-align: right;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          padding: 2px 4px;
+
+          a {
+            text-decoration: none;
+            color: $color-green;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include span-columns(4);
+    margin-top: 387px;
+    margin-bottom: 50px;
+
+    &__boxes {
+      color: $color-white;
+
+      &__home-details {
+        background-image: url('../images/home/find-a-home.png');
+        background-repeat: no-repeat;
+        background-position: -35px center;
+        overflow: auto;
+        position: relative;
+        z-index: 999;
+      }
+
+      &__content {
+        margin-left: 175px;
+        padding-left: 10px;
+        margin-bottom: 15px;
+        float: left;
+        font-size: $font-size-small;
+
+        h4 {
+          color: $color-white;
+          @include font-header($weight: 300);
+          text-transform: uppercase;
+          font-size: $font-size-x-large;
+          margin: 10px 0;
+        }
+      }
+
+      &__title {
+        color: $color-white;
+        padding: 10px;
+        @include font-header($weight: 300);
+        text-transform: uppercase;
+        font-size: $font-size-x-large;
+        margin-left: 175px;
+        float: left;
+
+        &.full-width {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      &__button {
+        margin-left: 175px;
+        background-color: $color-white;
+        @include font-header($weight: 300);
+        font-size: $font-size-normal;
+        padding: 5px 0px 5px 10px;
+        margin-bottom: 20px;
+        float: left;
+        width: 150px;
+        text-transform: uppercase;
+
+        a {
+          text-decoration: none;
+        }
+
+        .find-a-home & {
+          color: $color-dark-green;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    & .find-a-home {
+      background-color: $color-dark-green;
+      margin-bottom: 10px;
+
+      .map {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-left: 2px solid $color-green;
+          border-right: 2px solid $color-green;
+          z-index: 8;
+        }
+
+        a {
+          position: absolute;
+          left: 2px;
+          bottom: 50px;
+          display: inline-block;
+          padding: 4px 15px;
+          background-color: $color-white;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: $color-green;
+          font-size: 1.4em;
+        }
+
+        .arrow {
+          background:url('../images/green-arrow.png') no-repeat 0 0;
+          height: 30px;
+          width: 29px;
+          position: absolute;
+          bottom: 0;
+          left:0;
+          right:0;
+          margin-left:auto;
+          margin-right:auto;
+          z-index: 10;
+        }
+      }
+    }
+
+    & .contact-us {
+      background-image: url('../images/home/contact-us');
+      background-repeat: no-repeat;
+      background-position: -33px 0px;
+      background-color: $color-dark-purple;
+    }
+  }
+}
