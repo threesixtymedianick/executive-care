@@ -37,6 +37,11 @@
         font-size: $font-size-large;
         margin: 0;
       }
+
+      h4 {
+        font-size: $font-size-normal;
+        margin-bottom: 0;
+      }
     }
 
     &--button {
@@ -47,6 +52,10 @@
       text-transform: uppercase;
       text-decoration: none;
       margin-left: -10px;
+
+      &.right {
+        margin-left: 0;
+      }
     }
 
     &--volunteer {
@@ -60,6 +69,23 @@
         background-size: cover;
         display: inline-block;
       }
+    }
+
+    &--news-events {
+      background-color: $color-grey;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/open-days.png') no-repeat top center;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+
+    &--visit {
+      background-color: $color-dark-green;
     }
 
     &--open-days {
@@ -85,17 +111,13 @@
       .recommendations-logo {
         width: 58%;
         display: inline;
-        margin: 15px 5px 0 20px;
-      }
-
-      .full-width-panel {
-        margin-left: 10px;
+        padding: 15px 5px 0 15px;
       }
 
       .recommendations-logo-copy {
         width: 40%;
         display: inline-block;
-        margin: 15px 20px 0 15px;
+        padding: 15px 15px 0 10px;
         font-size: $font-size-small;
         line-height: 14px;
       }
@@ -112,6 +134,11 @@
         background-size: cover;
         display: inline-block;
       }
+    }
+
+    .full-width-panel {
+      padding: 0 15px;
+      width: 100%;
     }
   }
 
