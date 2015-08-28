@@ -1,8 +1,11 @@
-<?php $careHomeObject = $this->careHomeObject; ?>
+<?php
+    $careHomeObject = $this->careHomeObject;
+    $ourCareHomesRatings   = $this->input("ourCareRatings");
+?>
 
 <div class="our-homes__left__sliding sliding_content">
     <div class="our-homes__left__sliding__title">
-        <?= "Ratings and report" ?>
+        <?= $ourCareHomesRatings ?>
         <?php if (!$this->editmode) : ?>
             <div class="our-homes__left__sliding__title__show-hide">
                 <a href="#" class="show_hide">Show More +</a>
