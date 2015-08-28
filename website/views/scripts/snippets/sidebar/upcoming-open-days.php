@@ -1,4 +1,11 @@
-<?= $this->snippetEditModeStyles(); ?>
+<?php
+    $page = "upcomingOpenDays";
+    $this->snippetEditModeStyles();
+    $title = $this->input($page . "Title");
+    $content = $this->textarea($page . "Content");
+    $linkTarget = $this->textarea($page . "LinkTarget");
+    $linkTitle = $this->textarea($page . "LinkTitle");
+?>
 
 <div class="sidebar__panel">
     <div class="sidebar__panel--open-days">

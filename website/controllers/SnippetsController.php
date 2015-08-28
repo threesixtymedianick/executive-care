@@ -49,4 +49,44 @@ class SnippetsController extends AbstractPageController
 
     }
 
+    public function findAHomeAction()
+    {
+
+    }
+
+    public function contactUsAction()
+    {
+
+    }
+
+    public function applyOnlineAction()
+    {
+
+    }
+
+    public function downloadFormAction()
+    {
+
+    }
+
+    public function jobAlertsAction()
+    {
+
+    }
+
+    public function newsAndEventsAction()
+    {
+
+    }
+
+    public function trainingAction()
+    {
+
+    }
+
+    public function volunteerAction()
+    {
+
+    }
+
 }

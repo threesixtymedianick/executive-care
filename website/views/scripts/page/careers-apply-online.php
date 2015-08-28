@@ -20,8 +20,14 @@
                     <br style="clear:both;"/>
                 </div>
             </div>
-            <div class="careers__apply__right">
-                Panel Right
+            <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/volunteer')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
+                
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/job-alerts')); ?>
             </div>
         </div>
     </div>
