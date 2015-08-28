@@ -175,37 +175,8 @@
       background-color: $color-dark-green;
     }
 
-    & .open-days {
-      background-image: url('../images/home/open-days.png');
-      background-repeat: no-repeat;
-      background-position: -33px 0px;
-      background-color: $color-dark-purple;
-    }
-
     & .book-a-visit {
       background-color: $color-dark-green;
-    }
-
-    & .recommendation {
-      background-color: $color-blue;
-
-      a {
-        color: $color-white;
-      }
-        
-      .recommendations-logo {
-        width: 58%;
-        display: inline;
-        margin: 15px 5px 0 20px;
-      }
-
-      .recommendations-logo-copy {
-        width: 40%;
-        display: inline-block;
-        margin: 15px 20px 0 15px;
-        font-size: $font-size-small;
-        line-height: 14px;
-      }
     }
   }
 

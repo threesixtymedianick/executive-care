@@ -44,7 +44,6 @@
       <footer class="site-footer">
          <div class="container">
             <?= $this->inc(Document_Snippet::getByPath('/snippets/footer')); ?>
-         </div>
       </footer>
    </body>
 

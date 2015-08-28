@@ -62,6 +62,45 @@
       }
     }
 
+    &--open-days {
+      background-color: $color-dark-purple;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/open-days.png') no-repeat top center;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+
+    &--recommendation {
+      background-color: $color-blue;
+
+      a {
+        color: $color-white;
+      }
+
+      .recommendations-logo {
+        width: 58%;
+        display: inline;
+        margin: 15px 5px 0 20px;
+      }
+
+      .full-width-panel {
+        margin-left: 10px;
+      }
+
+      .recommendations-logo-copy {
+        width: 40%;
+        display: inline-block;
+        margin: 15px 20px 0 15px;
+        font-size: $font-size-small;
+        line-height: 14px;
+      }
+    }
+
     &--training {
       background-color: $color-blue;
       display: table;
