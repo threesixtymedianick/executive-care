@@ -1,5 +1,5 @@
 <?php
-    $ourHomesDescription       = $this->wysiwyg("our_homes_description");
+$ourHomesDescription       = $this->wysiwyg("our_homes_description");
 ?>
 <div class="our-homes__header">-</div>
 <div class="container">

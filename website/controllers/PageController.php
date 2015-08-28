@@ -67,6 +67,16 @@ class PageController extends AbstractPageController
     }
 
     /**
+     * [ourHomesAction description]
+     * @return [type] [description]
+     */
+    public function singleHomeAction()
+    {
+        $careHomeCategory = Object_CareHomes::getById(17);
+        $this->view->careHomeObject = $careHomeCategory;
+    }
+
+    /**
      * [contactUsAction description]
      * @return [type] [description]
      */
