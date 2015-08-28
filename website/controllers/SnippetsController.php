@@ -30,6 +30,4 @@ class SnippetsController extends AbstractPageController
     {
 
     }
-
-    public function
 }
