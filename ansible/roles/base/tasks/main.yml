@@ -23,4 +23,3 @@
 - include: copy_files.yml
 - include: create_database.yml
 - include: apache.yml
-- include: ip_tables.yml
