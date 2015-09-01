@@ -33,24 +33,8 @@
                         <p><?= $this->textarea("our-care-explained-description"); ?></p>
                         <a class="home__button home__button--white" href="#">Read more</a>
                     </div>
-                    <div class="home__panel home__panel--blue home__recommendations">
-                        <div class="home__recommendations-header">
-                            Carehome.co.uk<br>
-                            Latest recommendations for homes in our group
-                        </div>
-                        <div class="home__recommendations-body">
-                            <h4 class="home__recommendations-home-name">
-                                <?= $this->input("recommendation-header"); ?>
-                            </h4>
 
-                            <div class="home__recommendations-meta">
-                                <?= $this->input("recommendation-meta"); ?>
-                            </div>
-                            <div class="home__recommendations-content">
-                                <?= $this->wysiwyg("recommendation-content"); ?>
-                            </div>
-                        </div>
-                    </div>
+                    <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
                 </div>
             </div>
 
