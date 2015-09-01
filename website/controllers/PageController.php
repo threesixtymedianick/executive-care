@@ -4,6 +4,7 @@ use Website\Controller\PageController as AbstractPageController;
 use Website\Form\ContactUsForm as ContactUsForm;
 use Website\Form\BrochureForm as BrochureForm;
 use Website\Form\ApplicationForm as ApplicationForm;
+use Website\Form\VolunteerForm as VolunteerForm;
 
 class PageController extends AbstractPageController
 {
@@ -158,5 +159,33 @@ class PageController extends AbstractPageController
             }
         }
         $this->view->applicationForm = $applicationForm;
+    }
+
+    public function volunteerAction()
+    {
+        $volunteerForm = new VolunteerForm();
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            // Create a new Zend View object
+            $view = new \Zend_View();
+
+            // Setup the location of our email templates
+            $view->setScriptPath('website/views/scripts/email');
+
+            // Create a new PimCore Mail object
+            $mail = new \Pimcore\Mail();
+
+            if ($volunteerForm->isValid($request->getPost())) {
+                $values = $volunteerForm->getValues();
+                $view->data = $values;
+                $html = $view->render('enquiry.php');
+                $mail->addTo($this->config->enquiry_email);
+            }
+            $mail->setBodyHtml($html);
+            $mail->send();
+        }
+        $this->view->volunteerForm = $volunteerForm;
     }
 }
