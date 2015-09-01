@@ -112,16 +112,21 @@ class PageController extends AbstractPageController
 
                 // Add our email address for this form
                 $mail->addTo($this->config->brochure_email);
+
             } else if ($enquiryForm->isValid($request->getPost())) {
                 $values = $enquiryForm->getValues();
                 $view->data = $values;
                 $html = $view->render('enquiry.php');
                 $mail->addTo($this->config->enquiry_email);
             }
+
             $mail->setBodyHtml($html);
+
             $mail->send();
         }
+
         $this->view->brochureForm = $brochureForm;
+
         $this->view->enquiryForm = $enquiryForm;
     }
 
@@ -154,10 +159,13 @@ class PageController extends AbstractPageController
 
                 // Send the email
                 $mail->addTo($this->config->application_email);
+
                 $mail->setBodyHtml($html);
+
                 $mail->send();
             }
         }
+
         $this->view->applicationForm = $applicationForm;
     }
 
@@ -183,9 +191,12 @@ class PageController extends AbstractPageController
                 $html = $view->render('enquiry.php');
                 $mail->addTo($this->config->enquiry_email);
             }
+
             $mail->setBodyHtml($html);
+
             $mail->send();
         }
+
         $this->view->volunteerForm = $volunteerForm;
     }
 }
