@@ -1,10 +1,9 @@
 <?php
-    $page = "workForUs";
     echo $this->snippetEditModeStyles();
-    $title = $this->input($page . "Title");
-    $content = $this->textarea($page . "Content");
-    $linkTarget = $this->textarea($page . "LinkTarget");
-    $linkTitle = $this->textarea($page . "LinkTitle");
+    $title = $this->input("title");
+    $content = $this->textarea("content");
+    $linkTarget = $this->textarea("linkTarget");
+    $linkTitle = $this->textarea("linkTitle");
 ?>
 
 <div class="home__panel home__panel--split home__panel--purple home__work-for-us">

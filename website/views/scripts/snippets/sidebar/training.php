@@ -1,5 +1,4 @@
 <?php
-    $page = "training";
     echo $this->snippetEditModeStyles();
     $title = $this->input($page . "Title");
     $content = $this->textarea($page . "Content");
