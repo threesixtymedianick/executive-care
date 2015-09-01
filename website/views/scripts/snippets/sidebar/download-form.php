@@ -1,5 +1,5 @@
 <?=
-    $this->snippetEditModeStyles();
+    echo $this->snippetEditModeStyles();
     $applicationFormPDF = $this->href("downloadApplicationForm");
 ?>
 <?php if ($this->editmode): ?>

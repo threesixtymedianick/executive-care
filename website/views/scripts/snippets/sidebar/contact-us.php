@@ -1,6 +1,6 @@
 <?php
     $page = "contactUs";
-    $this->snippetEditModeStyles();
+    echo $this->snippetEditModeStyles();
     $title = $this->input($page . "Title");
     $content = $this->textarea($page . "Content");
     $linkTarget = $this->textarea($page . "LinkTarget");

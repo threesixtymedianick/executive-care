@@ -1,5 +1,5 @@
 <?php
-    $this->snippetEditModeStyles();
+    echo $this->snippetEditModeStyles();
     $title = $this->input("applyOnlineTitle");
 ?>
 
