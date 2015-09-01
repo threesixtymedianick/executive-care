@@ -23,6 +23,40 @@
     &__content {
       margin-bottom: 10px;
 
+      h2 {
+        background-color: $color-purple;
+        margin-left: -20px;
+        padding: 4px 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: $font-size-small;
+        @include font-header($weight: 300);
+      }
+
+      h3, h4 {
+        color: $color-dark-purple;
+        font-weight: bold;
+        font-size: $font-size-x-small;
+        margin: 12px 0 4px 0;
+      }
+
+      ul {
+        list-style: none;
+        padding:0;
+        margin:0;
+
+        li { 
+          padding-left: 1em; 
+          text-indent: -.8em;
+
+          &:before {
+            content: "• ";
+            color: $color-dark-purple;
+          }
+        }
+      }
+
       &__title {
         background-color: $color-purple;
         @include font-header($weight: 300);
@@ -43,8 +77,36 @@
         color: $color-black;
         font-size: $font-size-small;
 
+        &--responsibilities {
+
+          p {
+            counter-increment: step-counter;
+            margin: 0;
+
+            &:before {
+              content: counter(step-counter) ". ";
+              margin-right: 5px;
+            }
+          }
+        }
+
         &--row {
           width: 100%;
+
+          .details-title {
+            display: inline-block;
+            width: 15%;
+            vertical-align: top;
+            color: $color-dark-purple;
+            font-weight: bold;
+          }
+
+          .details {
+            display: inline-block;
+            width: 83%;
+            vertical-align: top;
+            margin-bottom: 10px;
+          }
 
           &-pagination {
             text-align: center;
@@ -124,6 +186,28 @@
           width: 49%;
           display: inline-block;
           margin-bottom: 15px;
+        }
+      }
+
+      &--button { 
+        margin-top: 10px;
+        width: 49.3%;
+        height: 55px;
+        display: inline-block;
+
+        &:nth-child(even) {
+          margin-left: 1%;
+        }
+
+        a {
+          color: $color-white;
+          text-indent: 60px;
+          text-transform: uppercase;
+          text-decoration: none;
+          display: block;
+          font-size: 1.7em;
+          line-height: 55px;
+          background: url('../images/button-icon.png') $color-purple no-repeat 15px 5px;
         }
       }
     }
