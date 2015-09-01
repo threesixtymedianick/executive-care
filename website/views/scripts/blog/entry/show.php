@@ -19,42 +19,11 @@
                 }
             ?>
             <div class="sidebar">
-                <div class="sidebar__panel">
-                    <div class="sidebar__panel--news-events">
-                        <div class="sidebar__panel--news-events-image"></div>
-                        <div class="sidebar__panel--content">
-                            <h3>News &amp;<br />events</h3>
-                            <p>Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation</p>
-                            <a href="/contact-us" class="sidebar__panel--button">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar__panel">
-                    <div class="sidebar__panel--visit">
-                        <div class="sidebar__panel--content full-width-panel">
-                            <h3>Book a visit</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure illo, officiis, explicabo mollitia nemo natus, unde suscipit neque non distinctio quas, quidem numquam laborum nisi et reprehenderit facilis reiciendis officia. Consectetur adipisicing elit enim fuga illo officiis aliquam molestiae accusantium.</p>
-                            <a href="/contact-us" class="sidebar__panel--button right">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar__panel">
-                    <div class="sidebar__panel--recommendation">
-                        <div class="recommendations-logo">
-                            <img src="/website/static/images/home/carehome-co-uk.png" alt="Carehome" />
-                        </div>
-                        <div class="recommendations-logo-copy">
-                            Latest recommendations for homes in our group
-                        </div>
-                        <div class="sidebar__panel--content full-width-panel">
-                            <h4>Recommendation for Crystal Court</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ipsum praesentium earum dolorum fugiat
-                                ut similique facilis quod.<br>
-                            <a href="#">continue reading</a></p>
-                        </div>
-                    </div>
-                </div>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/book-a-visit')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
             </div>
         </div>
     </div>
