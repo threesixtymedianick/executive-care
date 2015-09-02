@@ -28,7 +28,7 @@
       p {
         margin-bottom: 20px;
       }
-      
+
       h3 {
         color: $color-white;
         padding: 10px 10px 0 0;
@@ -84,8 +84,47 @@
       }
     }
 
+    &--find-a-home {
+      background-color: $color-dark-green;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/contact-us') no-repeat top center;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+
     &--visit {
       background-color: $color-dark-green;
+
+    }
+
+    &--contact-us {
+      background-color: $color-purple;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/contact-us') no-repeat top center;;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+
+    &--news-and-events {
+      background-color: $color-grey;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background-image: url('../images/home/contact-us');
+        background-size: cover;
+        display: inline-block;
+      }
     }
 
     &--open-days {
@@ -157,7 +196,7 @@
       line-height: 55px;
     }
 
-    &.applyonline {    
+    &.applyonline {
       background: url('../images/apply.png') $color-purple no-repeat 15px 5px;
     }
 
@@ -186,9 +225,9 @@
     select {
       @extend input;
       background: transparent;
-      -webkit-border-radius:0px;
-      -moz-border-radius:0px;
-      border-radius:0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border-radius: 0px;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;

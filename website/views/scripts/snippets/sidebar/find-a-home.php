@@ -15,8 +15,10 @@ $link = $this->link("link");
         <div class="sidebar__panel--find-a-home-image"></div>
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
+
             <p><?= $content; ?></p>
-            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+
+            <input type="search" class="sidebar__panel--button" name="search" placeholder="Search" />
         </div>
     </div>
 </div>
