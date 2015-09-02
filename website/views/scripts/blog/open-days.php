@@ -1,4 +1,12 @@
-<div class="blog__header">-</div>
+<?php
+    $headerImage          = $this->href("open-days_header");
+?>
+
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
+<div class="blog__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
