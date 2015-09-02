@@ -5,10 +5,10 @@ use Website\Controller\AbstractBlogController as AbstractBlogController;
 class BlogController extends AbstractBlogController
 {
     // Category ID for Events
-    const EVENT_ID = 5;
+    const EVENT_ID = 6;
 
     // Category ID for News
-    const NEWS_ID = 6;
+    const NEWS_ID = 5;
 
     // Category ID for Open days
     const DAYS_ID = 8;
