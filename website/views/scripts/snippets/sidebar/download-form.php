@@ -1,4 +1,4 @@
-<?=
+<?php
     echo $this->snippetEditModeStyles();
     $applicationFormPDF = $this->href("downloadApplicationForm");
 ?>

@@ -1,18 +1,22 @@
 <?php
-    $page = "findAHome";
-    echo $this->snippetEditModeStyles();
-    $title = $this->input($page . "Title");
-    $content = $this->textarea($page . "Content");
-    $linkTarget = $this->textarea($page . "LinkTarget");
-    $linkTitle = $this->textarea($page . "LinkTitle");
+echo $this->snippetEditModeStyles();
+$title = $this->input("title");
+$content = $this->textarea("content");
+$link = $this->link("link");
 ?>
 
-<div class="our-care__right__boxes find-a-home">
-    <div class="our-care__right__boxes__title">
-        Find a<br />Home
+<?php if ($this->editmode) : ?>
+    <p>Add the contact page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
+
+<div class="sidebar__panel">
+    <div class="sidebar__panel--find-a-home">
+        <div class="sidebar__panel--find-a-home-image"></div>
+        <div class="sidebar__panel--content full-width-panel">
+            <h3><?= $title; ?></h3>
+            <p><?= $content; ?></p>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+        </div>
     </div>
-    <div class="our-care__right__boxes__content">
-        Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:
-    </div>
-    <input type="search" class="our-care__right__boxes__button" name="search" placeholder="Search" />
 </div>

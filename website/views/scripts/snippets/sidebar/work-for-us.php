@@ -1,13 +1,15 @@
-<?php
-    echo $this->snippetEditModeStyles();
-    $title = $this->input("title");
-    $content = $this->textarea("content");
-    $linkTarget = $this->textarea("linkTarget");
-    $linkTitle = $this->textarea("linkTitle");
-?>
+<?php if ($this->editmode) : ?>
+    <p>Add the contact page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
 
-<div class="home__panel home__panel--split home__panel--purple home__work-for-us">
-    <h3 class="home__panel-header"><?= $this->textarea("work-for-us"); ?></h3>
-    <p><?= $this->textarea("work-for-us-description"); ?></p>
-    <a class="home__button home__button--white" href="#">Read more</a>
+<div class="sidebar__panel">
+    <div class="sidebar__panel--work-for-us">
+        <div class="sidebar__panel--work-for-us-image"></div>
+        <div class="sidebar__panel--content full-width-panel">
+            <h3><?= $title; ?></h3>
+            <p><?= $content; ?></p>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+        </div>
+    </div>
 </div>

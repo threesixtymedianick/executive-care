@@ -2,18 +2,21 @@
     echo $this->snippetEditModeStyles();
     $title = $this->input("title");
     $content = $this->textarea("content");
-    $linkTarget = $this->textarea("linkTarget");
-    $linkTitle = $this->textarea("linkTitle");
+    $link = $this->link("link");
 ?>
 
-<div class="our-homes__right__boxes contact-us">
-    <div class="our-homes__right__boxes__title">
-        Contact<br />us
-    </div>
-    <div class="our-homes__right__boxes__content">
-        Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation
-    </div>
-    <div class="our-homes__right__boxes__button">
-        <a href="/contact-us">Read More</a>
+<?php if ($this->editmode) : ?>
+    <p>Add the contact page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
+
+<div class="sidebar__panel">
+    <div class="sidebar__panel--contact-us">
+        <div class="sidebar__panel--contact-us-image"></div>
+        <div class="sidebar__panel--content full-width-panel">
+            <h3><?= $title; ?></h3>
+            <p><?= $content; ?></p>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+        </div>
     </div>
 </div>

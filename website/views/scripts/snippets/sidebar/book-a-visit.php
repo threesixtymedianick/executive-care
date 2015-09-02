@@ -2,16 +2,21 @@
     echo $this->snippetEditModeStyles();
     $title = $this->input("title");
     $content = $this->textarea("content");
-    $linkTarget = $this->textarea("linkTarget");
-    $linkTitle = $this->textarea("linkTitle");
+    $link = $this->link("link");
 ?>
+
+<?php if ($this->editmode) : ?>
+    <p>Add the book a visit page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
 
 <div class="sidebar__panel">
     <div class="sidebar__panel--visit">
+        <div class="sidebar__panel--visit-image"></div>
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
-            <a href="<?= $linkTarget; ?>" class="sidebar__panel--button right"><?= $linkTitle; ?></a>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
         </div>
     </div>
 </div>

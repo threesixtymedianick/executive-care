@@ -1,25 +1,22 @@
 <?php
-    echo $this->snippetEditModeStyles();
-    $title = $this->input("title");
-    $content = $this->textarea("content");
-    $linkTarget = $this->textarea("linkTarget");
-    $linkTitle = $this->textarea("linkTitle");
+echo $this->snippetEditModeStyles();
+$title = $this->input("title");
+$content = $this->textarea("content");
+$link = $this->link("link");
 ?>
+
+<?php if ($this->editmode) : ?>
+    <p>Add the contact page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
 
 <div class="sidebar__panel">
     <div class="sidebar__panel--recommendation">
-        <div class="recommendations-logo">
-            <img src="/website/static/images/home/carehome-co-uk.png" alt="Carehome" />
-        </div>
-        <div class="recommendations-logo-copy">
-            Latest recommendations for homes in our group
-        </div>
+        <div class="sidebar__panel--recommendation-image"></div>
         <div class="sidebar__panel--content full-width-panel">
-            <h4>Recommendation for Crystal Court</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ipsum praesentium earum dolorum fugiat
-                ut similique facilis quod.<br>
-            <a href="#">continue reading</a></p>
+            <h3><?= $title; ?></h3>
+            <p><?= $content; ?></p>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
         </div>
     </div>
 </div>
