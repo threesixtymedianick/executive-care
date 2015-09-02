@@ -1,9 +1,15 @@
 <?php
     $aboutUsInfoTab       = $this->wysiwyg("about_us_info");
     $aboutUsTrainingTab   = $this->wysiwyg("about_us_training");
+    $headerImage          = $this->href("about_us_header");
 ?>
 
-<div class="about-us__header">-</div>
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
+
+<div class="about-us__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="about-us">

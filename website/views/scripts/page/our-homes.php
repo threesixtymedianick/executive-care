@@ -1,7 +1,14 @@
 <?php
 $ourHomesDescription       = $this->wysiwyg("our_homes_description");
+$headerImage               = $this->href("our_homes_header");
 ?>
-<div class="our-homes__header">-</div>
+
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
+
+<div class="our-homes__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
