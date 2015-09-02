@@ -1,0 +1,142 @@
+.sidebar {
+  @include span-columns(4);
+  margin-top: 387px;
+  margin-bottom: 50px;
+
+  input {
+    border: none;
+    margin-bottom: 10px;
+    padding: 0 6px;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+  }
+
+  &__panel {
+    color: $color-white;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &--content {
+      padding: 0 10px 10px;
+      margin-bottom: 15px;
+      font-size: $font-size-small;
+      width: 60%;
+      display: inline-block;
+      vertical-align: top;
+
+      p {
+        margin-bottom: 20px;
+      }
+      
+      h3 {
+        color: $color-white;
+        padding: 10px 10px 0 0;
+        @include font-header($weight: 300);
+        text-transform: uppercase;
+        font-size: $font-size-large;
+        margin: 0;
+      }
+    }
+
+    &--button {
+      background-color: $color-white;
+      @include font-header($weight: 300);
+      font-size: $font-size-small;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: -10px;
+    }
+
+    &--volunteer {
+      background-color: $color-grey;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/contact-us.png') no-repeat top center;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+
+    &--training {
+      background-color: $color-blue;
+      display: table;
+
+      &-image {
+        height: 100%;
+        width: 40%;
+        background: url('../images/home/work-for-executive-care.png') no-repeat top center;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+
+    a {
+      color: $color-white;
+      text-indent: 90px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block;
+      font-size: 1.7em;
+      line-height: 55px;
+    }
+
+    &.applyonline {    
+      background: url('../images/apply.png') $color-purple no-repeat 15px 5px;
+    }
+
+    &.download {
+      background: url('../images/download.png') $color-purple no-repeat 15px 5px;
+    }
+  }
+
+  &__job-alerts {
+    background-color: $color-blue;
+    padding: 18px 18px 40px;
+    position: relative;
+    font-size: 1.2em;
+
+    h5 {
+      text-transform: uppercase;
+      color: $color-white;
+      margin: 0 0 10px;
+      font-size: 1.7em;
+    }
+
+    input {
+      background-color: $color-light-blue;
+    }
+
+    select {
+      @extend input;
+      background: transparent;
+      -webkit-border-radius:0px;
+      -moz-border-radius:0px;
+      border-radius:0px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url('../images/white-blue-arrow.png') no-repeat top right $color-light-blue;
+    }
+
+    .signup-btn {
+      background-color: $color-white;
+      border: none;
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+      text-transform: uppercase;
+      padding: 4px 60px 4px 10px;
+    }
+  }
+}

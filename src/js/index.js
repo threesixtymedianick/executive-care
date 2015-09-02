@@ -1,8 +1,10 @@
 require("./modules/tabs");
-require("./modules/homepage_slider");
-require("./modules/blog_slider");
-require("./modules/contact-us_validation");
-require("./modules/google_maps");
-require("./modules/show_more_less");
-require("./modules/text_size_adjust");
+require("./modules/homepage-slider");
+require("./modules/blog-slider");
+require("./modules/contact-us-validation");
+require("./modules/volunteer-validation");
+require("./modules/google-maps");
+require("./modules/show-more-less");
+require("./modules/text-size-adjust");
+require("./modules/careers-form");
 

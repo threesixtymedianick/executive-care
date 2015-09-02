@@ -6,6 +6,9 @@
 @import "ui/navigation";
 @import "ui/footer";
 
+/* Sidebar */
+@import "sidebar";
+
 /* Home page */
 @import "home";
 @import "bxslider";
@@ -13,8 +16,14 @@
 /* Our care page */
 @import "our-care";
 
+/* Our homes page */
+@import "our-homes";
+
 /* Careers page */
 @import "careers";
+@import "careers-apply";
+@import "careers-volunteer";
+@import "training-development";
 
 /* Contact us page */
 @import "contact-us";

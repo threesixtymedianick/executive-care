@@ -3,7 +3,7 @@
     $entry = $this->entry;
 ?>
 
-<div class="blog__header">-</div>
+<div class="blog__header" style="background-image:url('<?= $this->entry->getBlogImage()->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
