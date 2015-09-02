@@ -199,4 +199,9 @@ class PageController extends AbstractPageController
 
         $this->view->volunteerForm = $volunteerForm;
     }
+
+    public function trainingDevelopmentAction()
+    {
+        
+    }
 }
