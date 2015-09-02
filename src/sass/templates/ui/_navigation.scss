@@ -1,10 +1,5 @@
 $nav-height: 47px;
 
-.home{
-  float: left;
-  list-style: none;
-}
-
 .site-navigation {
   background-color: $color-blue;
   color: $color-white;
@@ -68,6 +63,8 @@ $nav-height: 47px;
   }
 
   .home {
+    float: left;
+    list-style: none;
     flex-grow: 0.5;
     width: 100%;
     height: $nav-height;
@@ -77,14 +74,14 @@ $nav-height: 47px;
     @include font-header;
       width: 60px;
 
-      img {
+    img {
             margin-top: 11px;
             margin-left: 15px;
-      }
+    }
 
-      a {
+    a {
         text-indent: -9999%;
-      }
+    }
     
   }
 
@@ -97,11 +94,10 @@ $nav-height: 47px;
   }
 
   @media screen and (max-width: $laptop-breakpoint) {
-
     .open {
       display: block;
     }
-  /*Make dropdown links appear inline*/
+/*Make dropdown links appear inline*/
     ul {
       position: static;
       display: none;
@@ -115,7 +111,7 @@ $nav-height: 47px;
       text-align: left;
     }
 
-    .inner_links li a:before{
+    .inner_links li a:before {
       content: ">\0000a0\0000a0";
     }
 
