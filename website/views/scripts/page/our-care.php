@@ -1,5 +1,6 @@
 <?php
-    $ourCareInfoBox         = $this->wysiwyg("our-care_info");
+    $title                = $this->input('title');
+    $ourCareInfoBox       = $this->wysiwyg("our-care_info");
     $headerImage          = $this->href("our-care_header");
 ?>
 
@@ -15,7 +16,7 @@
             <div class="our-care__left">
                 <div class="our-care__left__content">
                     <div class="our-care__left__content__title">
-                        Our Care
+                        <?= $title ?>
                     </div>
                     <div class="our-care__left__content__box">
                         <?= $ourCareInfoBox ?>
