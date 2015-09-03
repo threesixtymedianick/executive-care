@@ -1,18 +1,6 @@
 .careers {
 
-  &__header {
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    max-height: 750px;
-    max-width: 100%;
-    overflow: hidden;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
+  @include header();
 
   &__left {
     @include span-columns(8);
@@ -57,13 +45,7 @@
       }
 
       &__title {
-        background-color: $color-purple;
-        @include font-header($weight: 300);
-        font-size: $font-size-large;
-        padding: 6px 20px;
-        display: inline-block;
-        color: $color-white;
-        text-transform: uppercase;
+        @include title($color-white, $color-purple);
 
         &.results {
           margin-top: 15px;
