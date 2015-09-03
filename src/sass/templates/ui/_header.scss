@@ -110,10 +110,9 @@
    }
    
    @media(max-width:$tablet-breakpoint) {
-
+      
       &__telephone, &__email, .contact-h {
-      display:none;
-
+         display:none;
       }
    }
    
