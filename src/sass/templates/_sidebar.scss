@@ -1,7 +1,19 @@
 .sidebar {
   @include span-columns(4);
-  margin-top: 387px;
+  margin-top: 386px;
   margin-bottom: 50px;
+
+  &.home {
+    margin-top: 0;
+  }
+
+  &.blog {
+    margin-top: 87px;
+  }
+
+  &.contact {
+    margin-top: 37px;
+  }
 
   input {
     border: none;
@@ -21,7 +33,7 @@
       padding: 0 10px 10px;
       margin-bottom: 15px;
       font-size: $font-size-small;
-      width: 60%;
+      width: 58%;
       display: inline-block;
       vertical-align: top;
 
@@ -51,7 +63,7 @@
       padding: 5px 10px;
       text-transform: uppercase;
       text-decoration: none;
-      margin-left: -10px;
+      margin-left: -13px;
 
       &.right {
         margin-left: 0;
@@ -59,25 +71,15 @@
     }
 
     &--volunteer {
-      background-color: $color-grey;
-      display: table;
+      @include sidebar-panels($color-grey);
 
       &-image {
         @include sidebar-image('../images/home/contact-us.png');
       }
     }
 
-    &--news-events {
-      background-color: $color-grey;
-      display: table;
-
-      &-image {
-        @include sidebar-image('../images/home/open-days.png');
-      }
-    }
-
     &--find-a-home {
-      background-color: $color-dark-green;
+      @include sidebar-panels($color-dark-green);
 
       &-image {
         @include sidebar-image('../images/home/contact-us.png');
@@ -86,12 +88,10 @@
 
     &--visit {
       background-color: $color-dark-green;
-
     }
 
     &--contact-us {
-      background-color: $color-purple;
-      display: table;
+      @include sidebar-panels($color-purple);
 
       &-image {
         @include sidebar-image('../images/home/contact-us.png');
@@ -99,20 +99,76 @@
     }
 
     &--news-and-events {
-      background-color: $color-grey;
-      display: table;
+      @include sidebar-panels($color-grey);
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image('../images/home/open-days.png');
       }
     }
 
     &--open-days {
-      background-color: $color-dark-purple;
-      display: table;
+      @include sidebar-panels($color-dark-purple);
 
       &-image {
         @include sidebar-image('../images/home/open-days.png');
+      }
+    }
+
+    &--our-homes-find-a-home {
+      @include sidebar-panels($color-dark-green);
+
+      &-details {
+        display: table;
+        width: 100%;
+      }
+
+      &-image {
+        @include sidebar-image('../images/home/contact-us.png');
+      }
+
+      &-title {
+
+        h2 {
+          text-transform: uppercase;
+          font-size: $font-size-x-large;
+          @include font-header($weight: 300);
+          margin: 0;
+          padding: 5px 10px;
+        }
+      }
+
+      & .map{
+        width: 100%;
+        border-left: 2px solid $color-dark-green;
+        border-right: 2px solid $color-dark-green;
+        position: relative;
+
+        a {
+          position: absolute;
+          left: 0;
+          bottom: 30px;
+          background-color: $color-white;
+          padding: 3px 8px;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: $font-size-normal;
+        }
+
+        & .arrow {
+          background: url('../images/green-arrow.png') no-repeat 0 0;
+          height: 32px;
+          width: 30px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
 
@@ -139,8 +195,7 @@
     }
 
     &--training {
-      background-color: $color-blue;
-      display: table;
+      @include sidebar-panels($color-blue);
 
       &-image {
         @include sidebar-image('../images/home/work-for-executive-care.png');
