@@ -229,8 +229,8 @@
   }
 
   @media (max-width:$laptop-breakpoint) {
-    &__left, &__right, &__our-care-explained, &__recommendations{
-    width:100%;
+    &__left, &__right, &__our-care-explained, &__recommendations {
+      width: 100%;
     }
   }
 }
