@@ -78,6 +78,14 @@
       }
     }
 
+    &--work-for-us {
+      @include sidebar-panels($color-dark-purple);
+
+      &-image {
+        @include sidebar-image('../images/home/work-for-executive-care.png');
+      }
+    }
+
     &--find-a-home {
       @include sidebar-panels($color-dark-green);
 
