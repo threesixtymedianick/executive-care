@@ -1,1 +1,9 @@
 ---
+- hosts: live
+  vars:
+    type: live
+    domain: executive-care
+    pimcore_db_user: exec-care
+    pimcore_db_pass: DegenerationDowntownAquamarineEsotericBalcony
+  roles:
+    - base
