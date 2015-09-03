@@ -259,13 +259,9 @@
 
     select {
       @extend input;
+      @include border-radius(0px);
       background: transparent;
-      -webkit-border-radius: 0px;
-      -moz-border-radius: 0px;
-      border-radius: 0px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      @include appearance(none);
       background: url('../images/white-blue-arrow.png') no-repeat top right $color-light-blue;
     }
 
