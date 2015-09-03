@@ -1,19 +1,6 @@
 .our-care {
 
-  &__header {
-    background-image: url('../images/home/about-us_header.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    max-height: 750px;
-    max-width: 100%;
-    overflow: hidden;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
+  @include header();
 
   &__left {
     @include span-columns(8);
