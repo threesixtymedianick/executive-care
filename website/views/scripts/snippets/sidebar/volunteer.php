@@ -1,8 +1,8 @@
 <?php
-echo $this->snippetEditModeStyles();
-$title = $this->input("title");
-$content = $this->textarea("content");
-$link = $this->link("link");
+    echo $this->snippetEditModeStyles();
+    $title = $this->input("title", [ "width" => 100]);
+    $content = $this->textarea("content");
+    $link = $this->link("link");
 ?>
 
 <?php if ($this->editmode) : ?>

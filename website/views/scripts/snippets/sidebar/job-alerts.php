@@ -2,8 +2,6 @@
     echo $this->snippetEditModeStyles();
     $title = $this->input("title");
     $content = $this->textarea("content");
-    $linkTarget = $this->textarea("linkTarget");
-    $linkTitle = $this->textarea("linkTitle");
 ?>
 
 <div class="sidebar__job-alerts">

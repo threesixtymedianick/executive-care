@@ -5,10 +5,15 @@
     $link = $this->link("link");
 ?>
 
+<?php if ($this->editmode) : ?>
+    <p>Add the contact page link here</p>
+    <?= $link; ?>
+<?php endif; ?>
+
 <div class="sidebar__panel">
     <div class="sidebar__panel--open-days">
         <div class="sidebar__panel--open-days-image"></div>
-        <div class="sidebar__panel--content">
+        <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>
