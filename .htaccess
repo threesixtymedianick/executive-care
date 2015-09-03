@@ -11,6 +11,7 @@ AddType image/jpeg .pjpeg
  allow from 81.130.199.179
  allow from 192.168.
  allow from kryten2k35.ddns.net
+ allow from 194.74.102.194
 </Limit>
 
 Options +SymLinksIfOwnerMatch
