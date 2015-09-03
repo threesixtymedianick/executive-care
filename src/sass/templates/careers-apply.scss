@@ -61,11 +61,6 @@
       }
     }
   }
-
-  &__right {
-    @include span-columns(4);
-
-  }
 }
 
 .application_form_fields {
