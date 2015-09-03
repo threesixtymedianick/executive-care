@@ -34,6 +34,12 @@ $font-size-x-x-large: 2.2em;
   font-weight: $weight;
 }
 
+@mixin sidebar-panels ($bg-color: $color-grey) {
+  background-color: $bg-color;
+  display: table;
+  width: 100%;
+}
+
 @mixin sidebar-image ($url: '../images/home/contact-us') {
   height: 100%;
   width: 40%;
