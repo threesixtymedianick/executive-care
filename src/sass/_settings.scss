@@ -16,6 +16,8 @@ $color-light-green: #cfdfe0;
 $color-dark-green: #0f6062;
 $color-dark-purple: #9e429c;
 
+$color-transparent: transparent;
+
 $font-size-normal: 1.4em;
 $font-size-small: 1.2em;
 $font-size-x-small: 1.1em;
@@ -40,6 +42,40 @@ $font-size-x-x-large: 2.2em;
   background: url($url) no-repeat top center;
   background-size: cover;
   display: inline-block;
+}
+
+@mixin tab-ul () {
+  ul {
+    &.tabs {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+}
+
+@mixin tabs () {
+  display: block;
+  text-transform: uppercase;
+  @include font-header($weight: 300);
+  font-size: $font-size-x-large;
+}
+
+@mixin tabs-li () {
+  list-style: none;
+  display: inline;
+}
+
+@mixin tabs-li-a ($background-color: $color-grey) {
+  padding: 5px 18px;
+  display: inline-block;
+  color: $color-white;
+  text-decoration: none;
+  margin-right: -5px;
+  background-color: $background-color;
+}
+
+@mixin tab () {
+  padding: 24px;
 }
 
 .right {

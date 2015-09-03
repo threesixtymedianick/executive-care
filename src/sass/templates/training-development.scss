@@ -21,31 +21,17 @@
     margin-bottom: 50px;
   }
 
-  ul {
-    &.tabs {
-      margin: 0;
-      padding: 0 !important;
-    }
-  }
+  @include tab-ul();
 
   .tabs {
-    display: block;
-    text-transform: uppercase;
-    @include font-header($weight: 300);
-    font-size: $font-size-x-large;
+    @include tabs();
 
     li {
-      list-style: none;
-      display: inline;
+
+      @include tabs-li();
+
       a {
-        padding: 5px 10px;
-        display: inline-block;
-        color: $color-white;
-        text-decoration: none;
-        margin-right: -5px;
-        padding-left: 18px;
-        padding-right: 18px;
-        background-color: $color-grey;
+        @include tabs-li-a($color-grey);
 
         &.active {
           background-color: $color-blue;
@@ -56,7 +42,7 @@
   }
 
   .tab {
-    padding: 24px;
+    @include tab();
     background: $color-light-blue;
     color: $color-blue;
   }
