@@ -9,7 +9,9 @@
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
-            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+            <?php if ($link !== null) : ?>
+                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+            <?php endif; ?>
         </div>
     </div>
 </div>
