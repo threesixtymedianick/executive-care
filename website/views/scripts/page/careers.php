@@ -1,4 +1,4 @@
-<?php 
+<?php
     $applicationFormPDF = Asset::getById(25);
     $headerImage          = $this->href("careers_header");
 ?>
@@ -106,44 +106,15 @@
                 </div>
             </div>
             <div class="sidebar">
-                <div class="sidebar__panel">
-                    <div class="sidebar__panel--volunteer">
-                        <div class="sidebar__panel--volunteer-image"></div>
-                        <div class="sidebar__panel--content">
-                            <h3>Volunteer<br />programme</h3>
-                            <p>Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation</p>
-                            <a href="/contact-us" class="sidebar__panel--button">Read More</a>
-                        </div>
-                    </div>
-                </div> 
-                <div class="sidebar__panel">
-                    <div class="sidebar__panel--training">
-                        <div class="sidebar__panel--training-image"></div>
-                        <div class="sidebar__panel--content">
-                            <h3>Staff<br />training</h3>
-                            <p>Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation</p>
-                            <a href="/contact-us" class="sidebar__panel--button">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar__buttons applyonline">
-                    <a href="/careers/apply" alt="Apply online now">Apply Online</a>
-                </div>
-                <div class="sidebar__buttons download">
-                    <a href="<?= $applicationFormPDF->getFullPath() ?>" alt="Download application form">Download form</a>
-                </div>
-                <div class="sidebar__job-alerts">
-                    <h5>Sign up for job alerts</h5>
-                    <form>
-                        <input type="text" name="email" id="email" placeholder="Your email">
-                        <input type="text" name="name" id="name" placeholder="Your name">
-                        <select name="vacancy_search" id="vacancy_search">
-                            <option value="">Location</option>
-                            <option value="0">Lorem ipsum dolor sit amet</option>
-                        </select>
-                        <button class="signup-btn" type="submit" role="button">Sign up</button>
-                    </form>
-                </div>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/volunteer')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/job-alerts')); ?>
             </div>
         </div>
     </div>

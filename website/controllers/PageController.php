@@ -202,6 +202,6 @@ class PageController extends AbstractPageController
 
     public function trainingDevelopmentAction()
     {
-        
+
     }
 }

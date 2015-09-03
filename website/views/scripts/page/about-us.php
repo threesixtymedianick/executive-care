@@ -25,27 +25,10 @@
                     <?= $aboutUsTrainingTab ?>
                 </div>
             </div>
-            <div class="about-us__right">
-                <div class="about-us__right__boxes find-a-home">
-                    <div class="about-us__right__boxes__title">
-                        Find a<br />Home
-                    </div>
-                        <div class="about-us__right__boxes__content">
-                            Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:
-                        </div>
-                        <input type="search" class="about-us__right__boxes__button" name="search" placeholder="Search" />
-                    </div>
-                <div class="about-us__right__boxes contact-us">
-                    <div class="about-us__right__boxes__title">
-                        Contact<br />us
-                    </div>
-                    <div class="about-us__right__boxes__content">
-                        Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation
-                    </div>
-                    <div class="about-us__right__boxes__button">
-                        <a href="/contact-us">Read More</a>
-                    </div>
-                </div>
+            <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/upcoming-open-days')); ?>
             </div>
         </div>
     </div>

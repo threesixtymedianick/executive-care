@@ -8,7 +8,7 @@ $nav-height: 47px;
     margin: 0px;
     padding: 0px;
 
-    @include media(769px) {
+    @include media($laptop-breakpoint) {
       display: flex;
       align-items: stretch;
       justify-content: space-between;
@@ -32,7 +32,7 @@ $nav-height: 47px;
         height: 100%;
         width: 100%;
 
-        padding: 10px 5px;
+        padding: 13px 5px;
         display: inline-block;
         text-transform: uppercase;
       }
@@ -41,7 +41,7 @@ $nav-height: 47px;
         width: 100%;
         padding-left: 0px;
 
-        @include media(769px) {
+        @include media($laptop-breakpoint) {
           display: none;
           position: absolute;
           left: 0px;
@@ -55,15 +55,16 @@ $nav-height: 47px;
       }
 
       &:hover ul {
-        @include media(769px) {
           display: block;
           z-index: 10;
-        }
+        
       }
     }
   }
 
   .home {
+    float: left;
+    list-style: none;
     flex-grow: 0.5;
     width: 100%;
     height: $nav-height;
@@ -71,14 +72,75 @@ $nav-height: 47px;
     text-decoration: none;
     font-size: $font-size-x-large;
     @include font-header;
+    width: 60px;
 
-    @include media(769px) {
-      background: url('../images/home.png') center center no-repeat;
-      width: 60px;
+    img {
+      margin-top: 11px;
+      margin-left: 15px;
+    }
 
-      a {
-        text-indent: -9999%;
-      }
+    a {
+      text-indent: -9999%;
+    }
+  }
+
+  .show-menu {
+    text-decoration: none;
+    text-align: center;
+    display: none;
+    font-size: 1.8em;
+    padding:10px 5px;
+  }
+
+  @media screen and (max-width: $laptop-breakpoint) {
+    .open {
+      display: block;
+    }
+/*Make dropdown links appear inline*/
+    ul {
+      position: static;
+      display: none;
+    }
+
+    .inner_links {
+      display: block;
+      text-indent: 10px;
+      background-color: $color-grey !important;
+      font-size: 8px;
+      text-align: left;
+    }
+
+    .inner_links li a:before {
+      content: ">\0000a0\0000a0";
+    }
+
+    .inner_links li:hover {
+      background-color:$color-grey;
+    }
+    /*Create vertical spacing*/
+    li {
+      margin-bottom: 1px;
+      text-align: left;
+    }
+
+    li:hover {
+      background-color:$color-blue;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+      width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+      display:block;
+      color: $color-blue;
+    }
+
+    .show-menu img {
+      width: 29px;
+      float: right;
+      margin-top: 4px;
+      cursor: pointer;
     }
   }
 }
