@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="contact-us__right">
+            <div class="sidebar contact">
                 <div class="contact-us__address">
                     <div class="contact-us__address__title">
                         Crystal Court Care Home
@@ -110,8 +110,6 @@
                 </div>
                 <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
             </div>
-
-            <br clear="all" />
         </div>
     </div>
 </div>
