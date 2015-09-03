@@ -63,11 +63,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/contact-us.png') no-repeat top center;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/contact-us.png');
       }
     }
 
@@ -76,11 +72,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/open-days.png') no-repeat top center;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/open-days.png');
       }
     }
 
@@ -88,11 +80,7 @@
       background-color: $color-dark-green;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/contact-us') no-repeat top center;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/contact-us.png');
       }
     }
 
@@ -106,11 +94,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/contact-us') no-repeat top center;;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/contact-us.png');
       }
     }
 
@@ -119,11 +103,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background-image: url('../images/home/contact-us');
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/contact-us.png');
       }
     }
 
@@ -132,11 +112,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/open-days.png') no-repeat top center;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/open-days.png');
       }
     }
 
@@ -167,11 +143,7 @@
       display: table;
 
       &-image {
-        height: 100%;
-        width: 40%;
-        background: url('../images/home/work-for-executive-care.png') no-repeat top center;
-        background-size: cover;
-        display: inline-block;
+        @include sidebar-image('../images/home/work-for-executive-care.png');
       }
     }
 
