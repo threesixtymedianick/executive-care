@@ -3,6 +3,10 @@
   margin-top: 387px;
   margin-bottom: 50px;
 
+  &.home {
+    margin-top: 0;
+  }
+
   input {
     border: none;
     margin-bottom: 10px;
@@ -21,7 +25,7 @@
       padding: 0 10px 10px;
       margin-bottom: 15px;
       font-size: $font-size-small;
-      width: 60%;
+      width: 58%;
       display: inline-block;
       vertical-align: top;
 
@@ -51,7 +55,7 @@
       padding: 5px 10px;
       text-transform: uppercase;
       text-decoration: none;
-      margin-left: -10px;
+      margin-left: -13px;
 
       &.right {
         margin-left: 0;
@@ -67,17 +71,8 @@
       }
     }
 
-    &--news-events {
-      background-color: $color-grey;
-      display: table;
-
-      &-image {
-        @include sidebar-image('../images/home/open-days.png');
-      }
-    }
-
     &--find-a-home {
-      background-color: $color-dark-green;
+      @include sidebar-panels($color-dark-green);
 
       &-image {
         @include sidebar-image('../images/home/contact-us.png');
@@ -86,7 +81,6 @@
 
     &--visit {
       background-color: $color-dark-green;
-
     }
 
     &--contact-us {
@@ -99,17 +93,17 @@
     }
 
     &--news-and-events {
-      background-color: $color-grey;
-      display: table;
+      @include sidebar-panels($color-grey);
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image('../images/home/open-days.png');
       }
     }
 
     &--open-days {
       background-color: $color-dark-purple;
       display: table;
+      width: 100%;
 
       &-image {
         @include sidebar-image('../images/home/open-days.png');
