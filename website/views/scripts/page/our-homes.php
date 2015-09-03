@@ -157,7 +157,7 @@ $headerImage               = $this->href("our_homes_header");
                     </div>
                 </div>
             </div>
-            <div class="our-homes__right">
+            <div class="sidebar">
                 <div class="our-homes__right__boxes find-a-home">
                     <div class="our-homes__right__boxes__title full-width">
                         Find a Home
@@ -177,17 +177,9 @@ $headerImage               = $this->href("our_homes_header");
                         </div>
                     </div>
                 </div>
-                <div class="our-homes__right__boxes contact-us">
-                    <div class="our-homes__right__boxes__title">
-                        Contact<br />us
-                    </div>
-                    <div class="our-homes__right__boxes__content">
-                        Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation
-                    </div>
-                    <div class="our-homes__right__boxes__button">
-                        <a href="/contact-us">Read More</a>
-                    </div>
-                </div>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/contact-us')); ?>
+
             </div>
         </div>
     </div>

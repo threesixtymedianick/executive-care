@@ -11,7 +11,10 @@ class SnippetsController extends AbstractPageController
     public function init()
     {
         parent::init();
-        $this->disableLayout();
+
+        if (true === $this->editmode) {
+            $this->disableLayout();
+        }
     }
 
     /**
@@ -30,4 +33,60 @@ class SnippetsController extends AbstractPageController
     {
 
     }
+
+    public function upcomingOpenDaysAction()
+    {
+
+    }
+
+    public function bookAVisitAction()
+    {
+
+    }
+
+    public function recommendationAction()
+    {
+
+    }
+
+    public function findAHomeAction()
+    {
+
+    }
+
+    public function contactUsAction()
+    {
+
+    }
+
+    public function applyOnlineAction()
+    {
+
+    }
+
+    public function downloadFormAction()
+    {
+
+    }
+
+    public function jobAlertsAction()
+    {
+
+    }
+
+    public function newsAndEventsAction()
+    {
+
+    }
+
+    public function trainingAction()
+    {
+
+    }
+
+    public function volunteerAction()
+    {
+
+    }
+
 }

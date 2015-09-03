@@ -34,6 +34,14 @@ $font-size-x-x-large: 2.2em;
   font-weight: $weight;
 }
 
+@mixin sidebar-image ($url: '../images/home/contact-us') {
+  height: 100%;
+  width: 40%;
+  background: url($url) no-repeat top center;
+  background-size: cover;
+  display: inline-block;
+}
+
 .right {
   float: right;
 }
