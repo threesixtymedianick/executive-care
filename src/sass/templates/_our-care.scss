@@ -11,13 +11,7 @@
       margin-bottom: 10px;
 
       &__title {
-        background-color: $color-blue;
-        @include font-header($weight: 300);
-        font-size: $font-size-large;
-        padding: 6px 20px;
-        display: inline-block;
-        color: $color-white;
-        text-transform: uppercase;
+        @include title($color-white, $color-blue);
       }
 
       &__box {
@@ -29,7 +23,6 @@
     }
     
     &__sliding {
-
       &__title {
         @include font-header($weight: 300);
         font-size: $font-size-large;

@@ -22,18 +22,7 @@
       background-color: $color-light-purple;
 
       &__title {
-        background-color: #777777;
-        display: inline-block;
-        text-transform: uppercase;
-        @include font-header($weight: 300);
-        font-size: $font-size-x-large;
-        padding: 5px 10px;
-        color: $color-white;
-        text-decoration: none;
-        margin-right: -5px;
-        padding-left: 18px;
-        padding-right: 18px;
-
+        @include title($color-white, $color-dark-grey);
       }
 
       &__nextbutton {

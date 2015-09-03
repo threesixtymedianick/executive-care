@@ -13,13 +13,7 @@
     font-size: $font-size-x-large;
 
     &__title {
-      text-transform: uppercase;
-      color: $color-green;
-      background-color: $color-white;
-      padding: 10px 25px 10px 10px;
-      display: inline-block;
-      margin-bottom: 20px;
-      margin-left: -10px;
+      @include title($color-white, $color-green);
     }
 
     &__address {

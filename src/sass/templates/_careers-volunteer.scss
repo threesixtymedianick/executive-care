@@ -11,13 +11,7 @@
       margin-bottom: 10px;
 
       &__title {
-        background-color: $color-purple;
-        @include font-header($weight: 300);
-        font-size: $font-size-large;
-        padding: 6px 20px;
-        display: inline-block;
-        color: $color-white;
-        text-transform: uppercase;
+        @include title($color-white, $color-purple);
 
         &.results {
           margin-top: 15px;

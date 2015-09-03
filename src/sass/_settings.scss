@@ -3,6 +3,7 @@ $gutter: modular-scale(1, 0.25em, $golden) !global;
 
 $color-background: #E9E9E9;
 $color-grey: #818181;
+$color-dark-grey: #777777;
 $color-black: #000000;
 $color-white: #ffffff;
 
@@ -98,6 +99,16 @@ $font-size-x-x-large: 2.2em;
     right: 0;
     z-index: -1;
   }
+}
+
+@mixin title($font-color, $background-color) {
+  background-color: $background-color;
+  @include font-header($weight: 300);
+  font-size: $font-size-large;
+  padding: 6px 20px;
+  display: inline-block;
+  color: $font-color;
+  text-transform: uppercase;
 }
 
 .right {

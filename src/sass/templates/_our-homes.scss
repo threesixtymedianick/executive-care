@@ -9,13 +9,7 @@
     margin-bottom: 50px;
 
     &__title {
-      background-color: $color-green;
-      @include font-header($weight: 300);
-      font-size: $font-size-large;
-      padding: 6px 20px;
-      display: inline-block;
-      color: $color-white;
-      text-transform: uppercase;
+      @include title($color-white, $color-green);
     }
 
     &--search {
