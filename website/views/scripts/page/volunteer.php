@@ -20,19 +20,19 @@
                         <?= $volunteerReq ?>
 
                         <form enctype="application/x-www-form-urlencoded" action="" method="post" id="volunteer_form">
-                            <div class="tab__left field-wrap">
+                            <div class="volunteer__left__content__box__left field-wrap">
                                 <?= $volunteerForm->volunteer_name ?>
                             </div>
-                            <div class="tab__right field-wrap">
+                            <div class="volunteer__left__content__box__right field-wrap">
                                 <?= $volunteerForm->volunteer_email ?>
                             </div>
-                            <div class="tab__left field-wrap">
+                            <div class="volunteer__left__content__box__left field-wrap">
                                 <?= $volunteerForm->volunteer_number ?>
                             </div>
-                            <div class="tab__right field-wrap">
+                            <div class="volunteer__left__content__box__right field-wrap">
                                 <?= $volunteerForm->volunteer_address ?>
                             </div>
-                            <div class="tab__controls">
+                            <div class="volunteer__left__content__box__controls">
                                 <div class="field-wrap">
                                     <?= $volunteerForm->volunteer_message ?>
                                 </div>
