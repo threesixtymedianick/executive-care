@@ -1,5 +1,13 @@
-<?php $formName = "application_"; ?>
+<?php 
+    $formName = "application_"; 
+    $headerImage = $this->href("about_us_header");
+?>
+<?php if ($this->editmode): ?>ß
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
 
+<div class="careers__apply__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="careers__apply">
