@@ -14,8 +14,8 @@
     <div class="sidebar__panel--news-and-events">
         <div class="sidebar__panel--news-and-events-image"></div>
         <div class="sidebar__panel--content">
-            <h3><?= $title; ?>Test Title</h3>
-            <p><?= $content; ?>Lorem ipsum dolor sit amet, consectetur adipiscing el</p>
+            <h3><?= $title; ?></h3>
+            <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>
                 <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
             <?php endif; ?>
