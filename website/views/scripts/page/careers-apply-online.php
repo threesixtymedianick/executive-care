@@ -1,5 +1,4 @@
 <?php 
-    $formName = "application_"; 
     $headerImage = $this->href("about_us_header");
 ?>
 <?php if ($this->editmode): ?>ß
