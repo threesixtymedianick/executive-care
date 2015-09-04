@@ -79,13 +79,13 @@
     }
     
     &__header {
-    background-image: none;
+      background-image: none;
     }
   }
   
   @media(max-width:$tablet-breakpoint) {
     #info_tab, #training_tab {
-      font-size:0.75em;
+      font-size: 0.75em;
     }
   }
 }
