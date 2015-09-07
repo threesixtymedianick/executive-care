@@ -73,6 +73,8 @@ $nav-height: 47px;
     font-size: $font-size-x-large;
     @include font-header;
     width: 60px;
+    padding-bottom: 53px;
+    cursor: pointer;
 
     img {
       margin-top: 11px;
@@ -82,6 +84,10 @@ $nav-height: 47px;
     a {
       text-indent: -9999%;
     }
+  }
+
+  .home:hover {
+    background: $color-grey;
   }
 
   .show-menu {
