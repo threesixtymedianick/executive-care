@@ -33,7 +33,6 @@
   &__panel {
     color: $color-white;
     margin-bottom: 10px;
-    width: 100%;
 
     &--content {
       padding: 0 10px 10px;
@@ -182,6 +181,26 @@
 
       &-image {
         @include sidebar-image('../images/home/open-days.png');
+      }
+
+      @media (max-width: $laptop-breakpoint) {
+        &-image {
+          width: 146px;
+        }
+      }
+      
+      @media (max-width: 400px) {
+        &-image {
+          width: 40%;
+        }
+      }
+    }
+
+    &--care-explained {
+      @include sidebar-panels($color-dark-green);
+
+      &-image {
+        @include sidebar-image('../images/home/our-care-explained.png');
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -404,6 +423,10 @@
   .sidebar {
     width: 100%;
     margin-top: 0px;
+
+    &__panel {
+      width: 100% !important;
+    }
   }
 }
 
