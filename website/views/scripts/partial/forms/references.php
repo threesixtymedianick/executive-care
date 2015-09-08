@@ -3,28 +3,80 @@
     <div class="careers__apply__left__form__title">
         References (5/7)
     </div>
-    <p>
-        <?= $form->application_references_company_one; ?>
-        <?= $form->application_references_contact_one; ?>
-        <?= $form->application_references_position_one; ?>
-        <?= $form->application_references_address_one; ?>
-        <?= $form->application_references_telephone_one; ?>
-        <?= $form->application_references_email_one; ?>
-
-        <?= $form->application_references_company_two; ?>
-        <?= $form->application_references_contact_two; ?>
-        <?= $form->application_references_position_two; ?>
-        <?= $form->application_references_address_two; ?>
-        <?= $form->application_references_telephone_two; ?>
-        <?= $form->application_references_email_two; ?>
-
-        <?= $form->application_references_company_three; ?>
-        <?= $form->application_references_contact_three; ?>
-        <?= $form->application_references_position_three; ?>
-        <?= $form->application_references_address_three; ?>
-        <?= $form->application_references_telephone_three; ?>
-        <?= $form->application_references_email_three; ?>
-    </p>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_company_one; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_contact_one; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_position_one; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_address_one; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_telephone_one; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_email_one; ?>
+        </div>
+    </div>
+        <hr />
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_company_two; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_contact_two; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_position_two; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_address_two; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_telephone_two; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_email_two; ?>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_company_three; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_contact_three; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_position_three; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_address_three; ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tab__left field-wrap">
+            <?= $form->application_references_telephone_three; ?>
+        </div>
+        <div class="tab__right field-wrap">
+            <?= $form->application_references_email_three; ?>
+        </div>
+    </div>
     <a href="#" class="careers__apply__left__form__nextbutton">
         Next
     </a>

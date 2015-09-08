@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
+            <div class="sidebar blog">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/upcoming-open-days')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/book-a-visit')); ?>

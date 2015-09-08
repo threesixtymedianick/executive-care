@@ -3,6 +3,7 @@ $gutter: modular-scale(1, 0.25em, $golden) !global;
 
 $color-background: #E9E9E9;
 $color-grey: #818181;
+$color-dark-grey: #777777;
 $color-black: #000000;
 $color-white: #ffffff;
 
@@ -15,6 +16,8 @@ $color-green: #106466;
 $color-light-green: #cfdfe0;
 $color-dark-green: #0f6062;
 $color-dark-purple: #9e429c;
+
+$color-transparent: transparent;
 
 $font-size-normal: 1.4em;
 $font-size-small: 1.2em;
@@ -34,12 +37,106 @@ $font-size-x-x-large: 2.2em;
   font-weight: $weight;
 }
 
+@mixin sidebar-panels ($bg-color: $color-grey) {
+  background-color: $bg-color;
+  display: table;
+  width: 100%;
+}
+
 @mixin sidebar-image ($url: '../images/home/contact-us') {
   height: 100%;
   width: 40%;
   background: url($url) no-repeat top center;
   background-size: cover;
+  display: table-cell;
+}
+
+@mixin tab-ul () {
+  ul {
+    &.tabs {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+}
+
+@mixin tabs () {
+  display: block;
+  text-transform: uppercase;
+  @include font-header($weight: 300);
+  font-size: $font-size-x-large;
+}
+
+@mixin tabs-li () {
+  list-style: none;
+  display: inline;
+}
+
+@mixin tabs-li-a ($background-color: $color-grey) {
+  padding: 5px 18px;
   display: inline-block;
+  color: $color-white;
+  text-decoration: none;
+  margin-right: -5px;
+  background-color: $background-color;
+}
+
+@mixin tab () {
+  padding: 24px;
+}
+
+@mixin header () {
+  &__header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-height: 750px;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+
+@mixin title($font-color, $background-color) {
+  background-color: $background-color;
+  @include font-header($weight: 300);
+  font-size: $font-size-large;
+  padding: 6px 20px;
+  display: inline-block;
+  color: $font-color;
+  text-transform: uppercase;
+}
+
+@mixin appearance($input) {
+  -webkit-appearance: $input;
+  -moz-appearance: $input;
+  appearance: $input;
+}
+
+@mixin border-radius ($px: 0px) {
+  -webkit-border-radius:$px;
+  -moz-border-radius:$px;
+  border-radius:$px;
+}
+
+@mixin button-base ($background-color, $right) {
+  width: 174px;
+  text-transform: uppercase;
+  @include font-header($weight: 300);
+  font-size: $font-size-x-large;
+  border: 0;
+  float: right;
+  color: $color-white;
+  margin-top: 24px;
+  position: relative;
+  right: $right;
+  text-align: left;
+  padding-left: 15px;
+  background-color: $background-color;
 }
 
 .right {

@@ -13,11 +13,11 @@
 <div class="sidebar__panel">
     <div class="sidebar__panel--news-and-events">
         <div class="sidebar__panel--news-and-events-image"></div>
-        <div class="sidebar__panel--content full-width-panel">
+        <div class="sidebar__panel--content">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button"><?= $link->getText(); ?></a>
             <?php endif; ?>
         </div>
     </div>

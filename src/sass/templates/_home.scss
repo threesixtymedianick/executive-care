@@ -116,6 +116,14 @@
     .home__panel--split {
       padding-left: 27%;
     }
+
+    & .sidebar__panel {
+      @include span-columns(6);
+
+      a.sidebar__panel--button {
+        color: $color-black;
+      }
+    }
   }
 
   &__button, &__input {
@@ -160,7 +168,7 @@
     border: none;
   }
 
-  &__our-care-explained, &__recommendations {
+  &__our-care-explained {
     @include span-columns(6);
   }
 
@@ -218,6 +226,12 @@
     background-image: url('../images/home/work-for-executive-care.png');
     background-position: left center;
     background-repeat: no-repeat;
+  }
+
+  @media (max-width:$laptop-breakpoint) {
+    &__left, &__right, &__our-care-explained, &__recommendations {
+      width: 100%;
+    }
   }
 }
 
