@@ -276,3 +276,11 @@
     }
   }
 }
+
+@media(max-width:$laptop-breakpoint) {
+  .sidebar {
+    margin-top: 0px;
+  }
+}
+
+
