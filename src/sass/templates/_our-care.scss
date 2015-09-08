@@ -191,13 +191,16 @@
   // Responive Mobile 
 
   @media(max-width: $laptop-breakpoint) {
+    
     &__right {
       width: 100%;
       margin-top: -40px;
     }
+
     &__left{
       width:100%;
     }
+
     &__left__content__title{
       width:100%;
       text-align: center;
@@ -205,30 +208,41 @@
   }
 
   @media(max-width: $tablet-breakpoint) {
+
     .title1 {
       width: 210px;
+      margin-top: 12px;
+      float: left;
     }
+
+    &__left__sliding:last-child .our-care__left__sliding__title .title1 {
+      margin-top: 0px;
+    }
+
     &__left__sliding__title__show-hide {
       padding: 18px 6px;
+      margin-top: -6px;
      }
+
     &__left__sliding__title {
       min-height: 61px;
-    }
-    &__left__sliding:last-child .our-care__left__sliding__title__show-hide {
-      margin-top: -54px;
     }
   }
 
   @media(max-width: 390px) {
+
     .title1 {
       width: 165px;
     }
+
     &__left__sliding__title__show-hide {
       padding: 30px 6px;
     }
+
     &__left__sliding__title {
       min-height: 85px;
     }
+
     &__left__sliding:last-child .our-care__left__sliding__title__show-hide {
       margin-top: -78px;
     }
