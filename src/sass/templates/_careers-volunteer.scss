@@ -1,0 +1,105 @@
+.volunteer {
+
+  @include header();
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+  
+    &__content {
+      margin-bottom: 10px;
+
+      &__title {
+        @include title($color-white, $color-purple);
+
+        &.results {
+          margin-top: 15px;
+        }
+      }
+
+      &__box {
+        background-color: $color-light-purple;
+        padding: 20px;
+        color: $color-black;
+
+        li, p {
+          font-size: $font-size-small;
+        }
+
+        &__left {
+          float: left;
+          width: 48.5%;
+
+          input {
+            margin-bottom: 20px;
+          }
+        }
+
+        &__right {
+          float: right;
+          width: 48.5%;
+
+          input {
+            margin-bottom: 20px;
+          }
+        }
+
+        &__controls {
+          margin-bottom: 40px;
+          clear: both;
+        }
+
+        .field-wrap {
+          position: relative;
+        }
+
+        label {
+          display: inline-block;
+          font-size: $font-size-small;
+          padding-bottom: 2px;
+
+          &.error {
+            color: red;
+            position: absolute;
+            top: 3px;
+            right: 0;
+          }
+        }
+
+        input {
+          width: 100%;
+          padding: 6px;
+          font-size: $font-size-small;
+          display: inline;
+        }
+
+        input[type=checkbox] {
+          width: auto;
+          vertical-align: middle;
+          position: relative;
+          bottom: 1px;
+        }
+
+        .select-wrap {
+          position: relative;
+        }
+
+        select {
+          @extend input;
+        }
+
+        textarea {
+          width: 100%;
+          height: 125px;
+          font-size: $font-size-small;
+          padding: 6px;
+        }
+
+        input[type=submit] {
+          @include button-base($color-purple, -20px);
+        }
+      }
+    }
+  }
+}

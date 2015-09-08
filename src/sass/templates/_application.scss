@@ -1,0 +1,15 @@
+body {
+  background-color: $color-background;
+  @include font-body($weight: 300);
+  font-size: 0.625em;
+  line-height: 1.5;
+}
+
+.container {
+  @include outer-container;
+  @include pad(0px 15px);
+
+  &__inner {
+    padding: 15px 0px;
+  }
+}

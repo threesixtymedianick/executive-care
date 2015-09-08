@@ -1,0 +1,278 @@
+.sidebar {
+  @include span-columns(4);
+  margin-top: 386px;
+  margin-bottom: 50px;
+
+  &.home {
+    margin-top: 0;
+  }
+
+  &.blog {
+    margin-top: 87px;
+  }
+
+  &.contact {
+    margin-top: 37px;
+  }
+
+  input {
+    border: none;
+    margin-bottom: 10px;
+    padding: 0 6px;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    color: $color-black;
+  }
+
+  &__panel {
+    color: $color-white;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &--content {
+      padding: 0 10px 10px;
+      margin-bottom: 15px;
+      font-size: $font-size-small;
+      display: inline-block;
+      vertical-align: top;
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        color: $color-white;
+        padding: 10px 10px 0 0;
+        @include font-header($weight: 300);
+        text-transform: uppercase;
+        font-size: $font-size-large;
+        margin: 0;
+      }
+
+      h4 {
+        font-size: $font-size-normal;
+        margin-bottom: 0;
+      }
+    }
+
+    &--button {
+      background-color: $color-white;
+      @include font-header($weight: 300);
+      font-size: $font-size-small;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin-left: -10px;
+
+      &.right {
+        margin-left: 0;
+      }
+    }
+
+    &--volunteer {
+      @include sidebar-panels($color-grey);
+
+      &-image {
+        @include sidebar-image('../images/home/contact-us.png');
+      }
+    }
+
+    &--work-for-us {
+      @include sidebar-panels($color-dark-purple);
+
+      &-image {
+        @include sidebar-image('../images/home/work-for-executive-care.png');
+      }
+    }
+
+    &--find-a-home {
+      @include sidebar-panels($color-dark-green);
+
+      &-image {
+        @include sidebar-image('../images/home/contact-us.png');
+      }
+    }
+
+    &--visit {
+      background-color: $color-dark-green;
+    }
+
+    &--contact-us {
+      @include sidebar-panels($color-purple);
+
+      &-image {
+        @include sidebar-image('../images/home/contact-us.png');
+      }
+    }
+
+    &--news-and-events {
+      @include sidebar-panels($color-grey);
+
+      &-image {
+        @include sidebar-image('../images/home/open-days.png');
+      }
+    }
+
+    &--open-days {
+      @include sidebar-panels($color-dark-purple);
+
+      &-image {
+        @include sidebar-image('../images/home/open-days.png');
+      }
+    }
+
+    &--our-homes-find-a-home {
+      @include sidebar-panels($color-dark-green);
+
+      &-details {
+        display: table;
+        width: 100%;
+      }
+
+      &-image {
+        @include sidebar-image('../images/home/contact-us.png');
+      }
+
+      &-title {
+
+        h2 {
+          text-transform: uppercase;
+          font-size: $font-size-x-large;
+          @include font-header($weight: 300);
+          margin: 0;
+          padding: 5px 10px;
+        }
+      }
+
+      & .map{
+        width: 100%;
+        border-left: 2px solid $color-dark-green;
+        border-right: 2px solid $color-dark-green;
+        position: relative;
+
+        a {
+          position: absolute;
+          left: 0;
+          bottom: 30px;
+          background-color: $color-white;
+          padding: 3px 8px;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: $font-size-normal;
+        }
+
+        & .arrow {
+          background: url('../images/green-arrow.png') no-repeat 0 0;
+          height: 32px;
+          width: 30px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &--recommendation {
+      background-color: $color-blue;
+
+      a {
+        color: $color-white;
+      }
+
+      .recommendations-logo {
+        width: 58%;
+        display: inline;
+        padding: 15px 5px 0 15px;
+      }
+
+      .recommendations-logo-copy {
+        width: 40%;
+        display: inline-block;
+        padding: 15px 15px 0 10px;
+        font-size: $font-size-small;
+        line-height: 14px;
+      }
+    }
+
+    &--training {
+      @include sidebar-panels($color-blue);
+
+      &-image {
+        @include sidebar-image('../images/home/work-for-executive-care.png');
+      }
+    }
+
+    .full-width-panel {
+      padding: 0 15px;
+      width: 100%;
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 10px;
+
+    a {
+      color: $color-white;
+      text-indent: 90px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: block;
+      font-size: 1.7em;
+      line-height: 55px;
+    }
+
+    &.applyonline {
+      background: url('../images/apply.png') $color-purple no-repeat 15px 5px;
+    }
+
+    &.download {
+      background: url('../images/download.png') $color-purple no-repeat 15px 5px;
+    }
+  }
+
+  &__job-alerts {
+    background-color: $color-blue;
+    padding: 18px 18px 40px;
+    position: relative;
+    font-size: 1.2em;
+
+    h5 {
+      text-transform: uppercase;
+      color: $color-white;
+      margin: 0 0 10px;
+      font-size: 1.7em;
+    }
+
+    input {
+      background-color: $color-light-blue;
+    }
+
+    select {
+      @extend input;
+      @include border-radius(0px);
+      background: transparent;
+      @include appearance(none);
+      background: url('../images/white-blue-arrow.png') no-repeat top right $color-light-blue;
+    }
+
+    .signup-btn {
+      background-color: $color-white;
+      border: none;
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+      text-transform: uppercase;
+      padding: 4px 60px 4px 10px;
+    }
+  }
+}

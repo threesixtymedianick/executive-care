@@ -1,0 +1,244 @@
+.contact-us {
+  @include outer-container;
+
+  &__left {
+    @include span-columns(8);
+  }
+
+  &__address {
+    color: $color-white;
+    padding: 10px;
+    background-color: $color-green;
+    font-family: "Raleway", sans-serif;
+    font-size: $font-size-x-large;
+
+    &__title {
+      @include title($color-white, $color-green);
+    }
+
+    &__address {
+      line-height: 97%;
+      margin-bottom: 10px;
+    }
+
+    &__enquiries {
+      &__left {
+        float: left;
+        text-transform: uppercase;
+      }
+
+      &__right {
+        float: left;
+        margin-left: 5px;
+        height: 44px;
+
+        #opening_times {
+          font-size: 0.7em;
+          position: relative;
+          top: -10px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @include tab-ul();
+
+  .tabs {
+    @include tabs();
+
+    li {
+      @include tabs-li();
+
+      a {
+        @include tabs-li-a($color-transparent);
+
+        &#enquiry_tab {
+          background-color: $color-grey;
+          
+          &.active {
+            background-color: $color-purple;
+          }
+
+        }
+
+        &#brochure_tab {
+          background-color: $color-grey;
+          
+          &.active {
+            background-color: $color-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .tab {
+    @include tab();
+
+    & ul {
+      &.errors {
+        display: none;
+      }
+    }
+
+    &__left {
+      float: left;
+      width: 48.5%;
+
+      input {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__right {
+      float: right;
+      width: 48.5%;
+
+      input {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__controls {
+      margin-bottom: 40px;
+      clear: both;
+    }
+
+    .field-wrap {
+      position: relative;
+    }
+
+    label {
+      display: inline-block;
+      font-size: $font-size-small;
+      padding-bottom: 2px;
+
+      &.error {
+        color: red;
+        position: absolute;
+        top: 3px;
+        right: 0;
+      }
+    }
+    
+    input {
+      width: 100%;
+      padding: 6px;
+      font-size: $font-size-small;
+      display: inline;
+    }
+
+    input[type=checkbox] {
+      width: auto;
+      vertical-align: middle;
+      position: relative;
+      bottom: 1px;
+    }
+
+    .select-wrap {
+      position: relative;
+    }
+
+    select {
+      @extend input;
+    }
+
+    textarea {
+      width: 100%;
+      height: 125px;
+      font-size: $font-size-small;
+      padding: 6px;
+    }
+
+    .button_base {
+      @include button-base($color-purple, -24px);
+    }
+
+    &#brochure {
+      background: $color-light-blue;
+      min-height: 475px;
+
+      textarea {
+          height: 67px;
+      }
+
+      & input[type=submit] {
+        @extend .button_base;
+        background-color: $color-blue;
+      }
+    }
+
+    &#enquiry {
+      background-color: $color-light-purple;
+      min-height: 475px;
+
+      & input[type=submit] {
+        @extend .button_base;
+        background-color: $color-purple;
+      }
+    }
+  }
+
+  &__live-chat {
+    position: relative;
+
+    &__details {
+      background-color: $color-blue;
+      color: $color-white;
+      float: right;
+      display: block;
+      margin-top: 85px;
+      height: 150px;
+      width: 90%;
+      margin-bottom: 50px;
+      padding-left: 175px;
+      padding-top: 20px;
+
+      &__open-chat {
+        width: 174px;
+        text-transform: uppercase;
+        @include font-header($weight: 300);
+        font-size: $font-size-x-large;
+        border: 0;
+        float: right;
+        color: $color-white;
+        position: relative;
+        right: 0px;
+        text-align: left;
+        padding-left: 15px;
+        background-color: $color-purple;
+        float: right;
+
+        a {
+          color: $color-white;
+          text-decoration: none;
+        }
+      }
+
+      &__title {
+        text-transform: uppercase;
+        font-size: $font-size-x-large;
+      }
+
+      &__content {
+        font-size: $font-size-x-small;
+        display: inline-block;
+        max-width: 65%;
+        overflow: hidden;
+      }
+    }
+    &__icon {
+      margin-top: 50px;
+      position: absolute;
+      left: 0px;
+    }
+  }
+
+  & #map-canvas {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+
