@@ -28,6 +28,12 @@
                 </div>
                 <div class="home__panels">
 
+                <?php
+                    echo $this->snippetEditModeStyles();
+                    $title = $this->input("our-care-title");
+                    $content = $this->textarea("our-care-content");
+                ?>
+
                     <div class="sidebar__panel">
                         <div class="sidebar__panel--care-explained">
                             <div class="sidebar__panel--care-explained-image"></div>
