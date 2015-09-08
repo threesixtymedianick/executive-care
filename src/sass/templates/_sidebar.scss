@@ -68,13 +68,7 @@
       padding: 5px 10px;
       text-transform: uppercase;
       text-decoration: none;
-<<<<<<< a35bf07e239ada933f22037621edc4e7cbd71a42
-<<<<<<< cae9168b5558ad3d20872607547a9871815a7e59
       margin-left: -10px;
-=======
->>>>>>> Made sidebar boxes mobile responsive
-=======
->>>>>>> Made recommendation and Our care explained boxes responsive
 
       &.right {
         margin-left: 0;
@@ -454,7 +448,18 @@
 }
 
 @media(max-width: $laptop-breakpoint) {
+<<<<<<< 8c92771e44f68f817ffc69beaa66f804d88f822c
   .sidebar__panel--our-homes-find-a-home {
     display: none;
+=======
+      .sidebar__panel--our-homes-find-a-home {
+        display: none;
+      }
+}
+
+@media(max-width:$laptop-breakpoint) {
+  .sidebar {
+    margin-top: 0px;
+>>>>>>> Bring branch unto development - resolves conflict for on pull request
   }
 }
