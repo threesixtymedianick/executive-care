@@ -422,18 +422,10 @@
 
     &__panel {
       width: 100% !important;
-    }
-  }
-}
 
-@media(max-width: $laptop-breakpoint) {
-      .sidebar__panel--our-homes-find-a-home {
+      &--our-homes-find-a-home {
         display: none;
       }
-}
-
-@media(max-width:$laptop-breakpoint) {
-  .sidebar {
-    margin-top: 0px;
+    }
   }
 }
