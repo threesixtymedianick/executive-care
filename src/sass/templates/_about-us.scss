@@ -31,4 +31,22 @@
     background: $color-light-blue;
     color: $color-blue;
   }
+
+  @media(max-width:$laptop-breakpoint) {
+    &__left {
+      width: 100%;
+      margin-top: 0px;
+    }
+
+    #info_tab, #training_tab {
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  @media(max-width:$tablet-breakpoint) {
+    #info_tab, #training_tab {
+      font-size: 0.75em;
+    }
+  }
 }
