@@ -443,15 +443,8 @@
 
     &__panel {
       width: 100% !important;
-    }
-  }
-}
 
 @media(max-width: $laptop-breakpoint) {
-<<<<<<< 8c92771e44f68f817ffc69beaa66f804d88f822c
-  .sidebar__panel--our-homes-find-a-home {
-    display: none;
-=======
       .sidebar__panel--our-homes-find-a-home {
         display: none;
       }
@@ -460,6 +453,5 @@
 @media(max-width:$laptop-breakpoint) {
   .sidebar {
     margin-top: 0px;
->>>>>>> Bring branch unto development - resolves conflict for on pull request
   }
 }
