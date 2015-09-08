@@ -190,4 +190,22 @@
       }
     }
   }
+
+  @media(max-width:$laptop-breakpoint) {
+    
+    &__left {
+      width: 100%;
+    }
+
+    .form-wrapper {
+      width: 100%;
+    }
+  }
+
+  @media(max-width:$tablet-breakpoint) {
+
+    &__left__content__box--result {
+      width: 100%;
+    }
+  }
 }
