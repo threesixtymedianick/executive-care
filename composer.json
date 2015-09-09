@@ -10,6 +10,8 @@
     },
     "require": {
         "pimcore-extensions/manager": "dev-master",
-        "pimcore-extensions/blog": "1.0.5"
+        "pimcore-extensions/blog": "1.0.5",
+        "ruflin/elastica": "^2.2@dev",
+        "willdurand/geocoder": "^3.1@dev"
     }
 }
