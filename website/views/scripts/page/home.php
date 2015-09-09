@@ -1,4 +1,8 @@
-<?php if ($this->editmode) : ?>
+<?php
+    $title = $this->input("our-care-title");
+    $content = $this->textarea("our-care-content");
+    
+    if ($this->editmode) : ?>
     <div>
         <span id="admin_carousel">
             <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them
@@ -27,11 +31,15 @@
                     </ul>
                 </div>
                 <div class="home__panels">
-                    <div class="home__panel home__panel--split home__our-care-explained">
-                        <h3 class="home__panel-header"><?= $this->textarea("our-care-explained"); ?></h3>
-
-                        <p><?= $this->textarea("our-care-explained-description"); ?></p>
-                        <a class="home__button home__button--white" href="#">Read more</a>
+                    <div class="sidebar__panel">
+                        <div class="sidebar__panel--care-explained">
+                            <div class="sidebar__panel--care-explained-image"></div>
+                            <div class="sidebar__panel--content">
+                                <h3><?= $title; ?></h3>
+                                <p><?= $content; ?></p>
+                                <a class="sidebar__panel--button mleft"></a>
+                            </div>
+                        </div>
                     </div>
 
                     <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>

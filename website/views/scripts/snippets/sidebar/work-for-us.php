@@ -17,7 +17,7 @@
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
             <?php endif; ?>
         </div>
     </div>
