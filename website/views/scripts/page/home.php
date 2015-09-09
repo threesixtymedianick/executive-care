@@ -1,4 +1,8 @@
-<?php if ($this->editmode) : ?>
+<?php
+    $title = $this->input("our-care-title");
+    $content = $this->textarea("our-care-content");
+    
+    if ($this->editmode) : ?>
     <div>
         <span id="admin_carousel">
             <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them
@@ -27,13 +31,6 @@
                     </ul>
                 </div>
                 <div class="home__panels">
-
-                <?php
-                    echo $this->snippetEditModeStyles();
-                    $title = $this->input("our-care-title");
-                    $content = $this->textarea("our-care-content");
-                ?>
-
                     <div class="sidebar__panel">
                         <div class="sidebar__panel--care-explained">
                             <div class="sidebar__panel--care-explained-image"></div>
