@@ -1,3 +1,6 @@
+<?php
+$documentKey = ($this->document->getId() === 1) ? 'home' : $this->document->getKey();
+?>
 <!DOCTYPE html>
 <html>
    <?php
@@ -37,7 +40,7 @@
          </div>
       </nav>
 
-      <div class="site-content" id="<?= $this->document->getKey(); ?>">
+      <div class="site-content" id="<?= $documentKey ?>">
          <?= $this->layout()->content ?>
       </div>
 
