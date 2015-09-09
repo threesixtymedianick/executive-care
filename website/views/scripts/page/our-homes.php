@@ -163,9 +163,8 @@ $headerImage               = $this->href("our_homes_header");
                         <div class="sidebar__panel--our-homes-find-a-home-title">
                             <h2>Find a Home</h2>
                         </div>
-                        <div class="map">
+                        <div class="map" id="map">
                             <div class="arrow"></div>
-                            <img class="" src="website/static/images/ec-map.png" alt=""/>
                             <a href="#">View on google</a>
                         </div>
                         <div class="sidebar__panel--our-homes-find-a-home-details">
