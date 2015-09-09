@@ -135,4 +135,50 @@
       }
     }
   }
+
+  @media(max-width:$desktop-breakpoint) {
+    &__left {
+      width: 100%;
+
+      &--search {
+        width: 96%;
+      }
+    }
+  }
+
+  @media(max-width:$laptop-breakpoint) {
+    &__left__content__homes-box {
+      width: 100%;
+
+      &:nth-child(even) {
+        margin-left: 0px;
+      }
+
+      &--image {
+        width: 30%;
+      }
+    }
+
+    &__left__title {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__left {
+      margin-top: 0px;
+    }
+  }
+
+  @media(max-width:$tablet-breakpoint) {
+    &__left__content__homes-box {
+
+      &--image {
+        width: 45%;
+      }
+
+      &__info__find-out-more {
+        font-size: 1.2em;
+      }
+    }
+  }
 }
