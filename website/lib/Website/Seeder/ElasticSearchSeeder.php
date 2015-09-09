@@ -8,6 +8,16 @@ use Elastica\Type\Mapping;
 class ElasticSearchSeeder
 {
     /**
+     * Name of the Elastic Search index to save to
+     */
+    const ES_INDEX = 'carehomes';
+
+    /**
+     * Name of the Elastic Search type to save to
+     */
+    const ES_TYPE = 'home';
+
+    /**
      * @var Elastica\Client
      */
     private $client;
@@ -34,7 +44,7 @@ class ElasticSearchSeeder
         }
 
         // Load index
-        $careHomeIndex = $this->client->getIndex('carehomes');
+        $careHomeIndex = $this->client->getIndex(self::ES_INDEX);
 
         // Create a new index
         $careHomeIndex->create([
@@ -44,7 +54,7 @@ class ElasticSearchSeeder
         ]);
 
         // Create a type
-        $elasticaType = $careHomeIndex->getType('home');
+        $elasticaType = $careHomeIndex->getType(self::ES_TYPE);
 
         // Define mapping
         $mapping = new Mapping();
