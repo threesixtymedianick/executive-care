@@ -37,7 +37,7 @@
          </div>
       </nav>
 
-      <div class="site-content">
+      <div class="site-content" id="<?= $this->document->getKey(); ?>">
          <?= $this->layout()->content ?>
       </div>
 
