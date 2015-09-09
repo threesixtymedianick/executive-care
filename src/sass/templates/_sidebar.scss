@@ -68,7 +68,6 @@
       padding: 5px 10px;
       text-transform: uppercase;
       text-decoration: none;
-      margin-left: -10px;
 
       &.right {
         margin-left: 0;
@@ -215,6 +214,7 @@
           width: 40%;
         }
       }
+<<<<<<< HEAD
     }
 
     &--care-explained {
@@ -235,6 +235,8 @@
           width: 40%;
         }
       }
+=======
+>>>>>>> ebf61ea78da07ac8b22a558dc2b0e3fcc40786ab
     }
 
     &--open-days {
@@ -444,14 +446,9 @@
     &__panel {
       width: 100% !important;
 
-@media(max-width: $laptop-breakpoint) {
-      .sidebar__panel--our-homes-find-a-home {
+    &--our-homes-find-a-home {
         display: none;
       }
-}
-
-@media(max-width:$laptop-breakpoint) {
-  .sidebar {
-    margin-top: 0px;
+    }
   }
 }
