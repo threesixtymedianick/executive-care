@@ -34,9 +34,6 @@ $careHomes                 = $this->careHomes;
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>
                                 </div>
-                                <div class="our-homes__left__content__homes-box__info__distance">
-                                    <?= $distances[$counter]; ?> Miles away<br/>
-                                </div>
                                 <div class="our-homes__left__content__homes-box__info__address">
                                     <?= $home->getAddress() ?><br />
                                     <?= $home->getPostcode() ?>
