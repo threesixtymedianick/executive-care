@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * https://github.com/pimcore/pimcore/pull/230/files
  */
-class ElasticSearchSeederComamnd extends Pimcore\Console\AbstractCommand
+class ElasticSearchSeederCommand extends Pimcore\Console\AbstractCommand
 {
     /**
      * Name of the Elastic Search index to save to
