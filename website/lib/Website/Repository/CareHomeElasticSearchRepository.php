@@ -18,7 +18,7 @@ class CareHomeElasticSearchRepository
     protected $client;
 
     /**
-     * [__construct description]
+     * Constructor
      */
     public function __construct()
     {
