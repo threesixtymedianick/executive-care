@@ -46,7 +46,7 @@ class ElasticSearchSeederCommand extends Pimcore\Console\AbstractCommand
 
         // Check if the index already exists
         if ($status->indexExists('carehomes')) {
-            $output->writeln('Indexing already exists');
+            $output->writeln('Index already exists');
             return false;
         }
 
