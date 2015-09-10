@@ -13,6 +13,9 @@ vagrantfile:
                 vflnp_olvckaktkvpz:
                     host: '8729'
                     guest: '22'
+                elastic_search:
+                    host: '9200'
+                    guest: '9200'
         post_up_message: ''
         provider:
             virtualbox:

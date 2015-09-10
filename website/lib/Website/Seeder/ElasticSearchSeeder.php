@@ -48,9 +48,22 @@ class ElasticSearchSeeder
 
         // Create a new index
         $careHomeIndex->create([
-            'number_of_shards' => 4,
+            'number_of_shards'   => 4,
             'number_of_replicas' => 1,
-            // @todo add further config
+            'analysis' => [
+                'analyzer' => [
+                    'indexAnalyzer' => [
+                        'type'      => 'custom',
+                        'tokenizer' => 'standard',
+                        'filter'    => ['standard', 'lowercase']
+                    ],
+                    'searchAnalyzer' => [
+                        'type'      => 'custom',
+                        'tokenizer' => 'standard',
+                        'filter'    => ['standard', 'lowercase']
+                    ]
+                ],
+            ]
         ]);
 
         // Create a type
@@ -59,20 +72,21 @@ class ElasticSearchSeeder
         // Define mapping
         $mapping = new Mapping();
         $mapping->setType($elasticaType);
-        $mapping->setParam('index_analyzer', 'default_index');
-        $mapping->setParam('search_analyzer', 'default_search');
+        $mapping->setParam('index_analyzer', 'indexAnalyzer');
+        $mapping->setParam('search_analyzer', 'searchAnalyzer');
 
         // Set mapping
         $mapping->setProperties([
             'id'      => ['type' => 'integer', 'include_in_all' => true],
+            'title'   => ['type' => 'string', 'include_in_all' => true],
             'address'    => [
                 'type'       => 'object',
                 'properties' => [
-                    'postcode'      => array('type' => 'string', 'include_in_all' => true),
+                    'postcode'      => ['type' => 'string', 'include_in_all' => true],
                 ]
             ],
             'location'   => [
-                'type' => 'object',
+                'type' => 'geo_point',
                 'properties' => [
                     'lat' => ['type' => 'string', 'include_in_all' => true],
                     'lon' => ['type' => 'string', 'include_in_all' => true],

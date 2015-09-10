@@ -27,6 +27,7 @@ $careHomes                 = $this->careHomes;
                             </button>
                         </form>
                     </div>
+                    <?php $counter++; ?>
                     <?php foreach ($careHomes as $home) : ?>
                         <div class="our-homes__left__content__homes-box">
                             <div class="our-homes__left__content__homes-box--image" style="background-image: url('website/static/images/home/find-a-home.png');"></div>
@@ -34,9 +35,9 @@ $careHomes                 = $this->careHomes;
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>
                                 </div>
-                                <!--div class="our-homes__left__content__homes-box__info__distance">
-                                    xx Miles away<br/>
-                                </div-->
+                                <div class="our-homes__left__content__homes-box__info__distance">
+                                    <?= $distances[$counter]; ?> Miles away<br/>
+                                </div>
                                 <div class="our-homes__left__content__homes-box__info__address">
                                     <?= $home->getAddress() ?><br />
                                     <?= $home->getPostcode() ?>
@@ -46,6 +47,7 @@ $careHomes                 = $this->careHomes;
                                 </div>
                             </div>
                         </div>
+                        <?php $counter++; ?>
                     <?php endforeach; ?>
                     <div class="our-homes__left--pagination">
                         <ul>
