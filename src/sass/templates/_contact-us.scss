@@ -1,6 +1,11 @@
 .contact-us {
   @include outer-container;
 
+  .sidebar.contact {
+    float: right;
+    margin-right: 0px;
+  }
+
   &__left {
     @include span-columns(8);
   }
