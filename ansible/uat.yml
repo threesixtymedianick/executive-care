@@ -2,6 +2,7 @@
 - hosts: uat
   vars:
     type: uat
+    domain: bolser.co.uk
     pimcore_db_user: exec-uat
     pimcore_db_pass: T4ghCa2Hj7Nv
   roles:
