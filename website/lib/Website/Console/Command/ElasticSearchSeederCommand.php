@@ -1,18 +1,20 @@
 <?php
-namespace Website\Seeder;
+namespace Website\Console\Command;
 
 use Elastica\Client;
 use Elastica\Status;
 use Elastica\Type\Mapping;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Output\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * There is a recent merged pull request within Pimcore that implements
- * the Symfony\Console component.
+ * This depends on a recently merged pull request in Pimcore being downloaded
+ * and added to the core
  *
- * Once this has made it into a release candidate/we manually update pimcore
- * this needs to be made into a command
+ * https://github.com/pimcore/pimcore/pull/230/files
  */
-class ElasticSearchSeeder
+class ElasticSearchSeederCommand extends Pimcore\Console\AbstractCommand
 {
     /**
      * Name of the Elastic Search index to save to
@@ -24,34 +26,32 @@ class ElasticSearchSeeder
      */
     const ES_TYPE = 'home';
 
-    /**
-     * @var Elastica\Client
-     */
-    private $client;
-
-    /**
-     * @param Elastica\Client $client
-     */
-    public function __construct(Client $client)
+    protected function configure()
     {
-        $this->client = $client;
-        $this->status = new Status($client);
+        $this
+            ->setName('elasticsearch:seed')
+            ->setDescription('Generates the Elastic Search Mappings');
     }
 
-    /**
-     * Build the required Elastic Search indexes and mappings
-     *
-     * @return
-     */
-    public function build()
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
+        /* @todo DI! */
+        $client = new Client([
+            'host' => 'localhost',
+            'port' => 9200,
+            'log'  => realpath(PIMCORE_PATH . '/../') . '/var/log/elasticsearch.log',
+        ]);
+
+        $status = new Status();
+
         // Check if the index already exists
-        if ($this->status->indexExists('carehomes')) {
+        if ($status->indexExists('carehomes')) {
+            $output->writeln('Index already exists');
             return false;
         }
 
         // Load index
-        $careHomeIndex = $this->client->getIndex(self::ES_INDEX);
+        $careHomeIndex = $client->getIndex(self::ES_INDEX);
 
         // Create a new index
         $careHomeIndex->create([
@@ -103,5 +103,7 @@ class ElasticSearchSeeder
 
         // Send mapping to type
         $mapping->send();
+
+        $output->writeln('Indexing complete');
     }
 }
