@@ -32,7 +32,7 @@
                 </div>
                 <div class="home__panels">
                     <div class="sidebar__panel">
-                        <div class="sidebar__panel--care-explained boxHeight">
+                        <div class="sidebar__panel--care-explained equalHeight">
                             <div class="sidebar__panel--care-explained-image"></div>
                             <div class="sidebar__panel--content">
                                 <h3><?= $title; ?></h3>

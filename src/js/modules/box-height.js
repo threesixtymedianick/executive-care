@@ -1,3 +1,3 @@
 $(function() {
-   $('.boxHeight').matchHeight();
+   $('.equalHeight').matchHeight();
 });
