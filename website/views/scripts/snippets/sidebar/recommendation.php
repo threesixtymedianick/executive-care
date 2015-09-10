@@ -11,7 +11,7 @@
 <?php endif; ?>
 
 <div class="sidebar__panel">
-    <div class="sidebar__panel--recommendation">
+    <div class="sidebar__panel--recommendation boxHeight">
         <div class="sidebar__panel--recommendation-image"></div>
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
