@@ -16,7 +16,7 @@ class GeocoderService
      */
     public function __construct()
     {
-        $adapter        = new \Ivory\HttpAdapter\CurlHttpAdapter();
+        $adapter        = new CurlHttpAdapter();
         $this->geocoder = new ProviderAggregator();
 
         // Set up endpoints
