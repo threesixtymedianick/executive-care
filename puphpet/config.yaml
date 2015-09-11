@@ -13,6 +13,9 @@ vagrantfile:
                 vflnp_olvckaktkvpz:
                     host: '8729'
                     guest: '22'
+                elastic_search:
+                    host: '9200'
+                    guest: '9200'
         post_up_message: ''
         provider:
             virtualbox:
@@ -205,6 +208,7 @@ php:
             - cli
             - intl
             - mcrypt
+            - curl
         pear: {  }
         pecl:
             - pecl_http
@@ -393,7 +397,7 @@ rabbitmq:
     vhosts: {  }
     plugins: {  }
 elastic_search:
-    install: '0'
+    install: '1'
     settings:
         version: 1.4.1
         java_install: true

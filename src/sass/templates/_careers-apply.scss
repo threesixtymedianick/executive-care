@@ -1,7 +1,11 @@
 .careers__apply {
 
+  @include header();
+
   &__left {
     @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
 
     &__title {
       color: $color-white;
@@ -17,12 +21,16 @@
     }
 
     &__form {
-      padding-bottom: 20px;
+      padding: 46px 10px 30px;
       margin-bottom: 20px;
       background-color: $color-light-purple;
+      position: relative;
 
       &__title {
         @include title($color-white, $color-dark-grey);
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       &__nextbutton {
@@ -32,13 +40,11 @@
         @include font-header($weight: 300);
         font-size: $font-size-x-large;
         display: inline-block;
-        padding: 5px 18px;
-        float: right;
+        padding: 5px 80px 5px 18px;
         text-decoration: none;
-      }
-
-      &__submitbutton {
-        @extend .careers__apply__left__form__nextbutton;
+        position: absolute;
+        bottom: 15px;
+        right: 0;
       }
 
       &__pagination {
@@ -46,8 +52,120 @@
       }
 
       & p {
-        padding: 24px;
+        font-size: $font-size-small;
       }
+
+      hr {
+        display: block;
+        clear: both;
+      }
+
+      .tab {
+        &__left {
+          float: left;
+          width: 48.5%;
+        }
+
+        &__right {
+          float: right;
+          width: 48.5%;
+
+          &--col-1-2 {
+            @include span-columns(6);
+          }
+        }
+
+        &__controls {
+          margin-bottom: 20px;
+          clear: both;
+        }
+        
+        &__col-1-3 {
+          @include span-columns(4);
+          margin:0;
+        }
+      }
+
+      .row {
+        width: 100%;
+        clear: both;
+      }
+
+      .field-wrap {
+        position: relative;
+        margin-bottom: 20px;
+
+        &.half {
+          width: 48.5%;
+        }
+      }
+
+      label {
+        display: inline-block;
+        font-size: $font-size-small;
+        padding-bottom: 2px;
+
+        &.error {
+          color: red;
+          position: absolute;
+          top: 3px;
+          right: 0;
+        }
+      }
+      
+      input {
+        width: 100%;
+        padding: 6px;
+        font-size: $font-size-small;
+        display: inline;
+      }
+
+      input[type=checkbox] {
+        width: auto;
+        vertical-align: middle;
+        position: relative;
+        bottom: 1px;
+      }
+
+      input[type=submit] {
+        color: $color-white;
+        background-color: $color-purple;
+        text-transform: uppercase;
+        @include font-header($weight: 300);
+        font-size: $font-size-x-large;
+        display: inline-block;
+        padding: 5px 80px 5px 18px;
+        text-decoration: none;
+        position: absolute;
+        bottom: 15px;
+        right: 0;
+        width: auto;
+      }
+
+      .select-wrap {
+        position: relative;
+      }
+
+      select {
+        @extend input;
+        -webkit-border-radius:0px;
+        -moz-border-radius:0px;
+        border-radius:0px;
+        background: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url('../images/down-arrow.png') no-repeat top right $color-white;
+        background-size: 29px 29px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 125px;
+        font-size: $font-size-small;
+        padding: 6px;
+      }
+
     }
   }
 }

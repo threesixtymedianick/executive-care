@@ -151,13 +151,9 @@
 
             select {
               @extend input;
-              -webkit-border-radius:0px;
-              -moz-border-radius:0px;
-              border-radius:0px;
+              @include border-radius(0px);
               background: transparent;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
+              @include appearance(none);
               background: url('../images/down-arrow.png') no-repeat top right $color-white;
               background-size: 29px 29px;
             }
@@ -192,6 +188,24 @@
           background: url('../images/button-icon.png') $color-purple no-repeat 15px 5px;
         }
       }
+    }
+  }
+
+  @media(max-width:$laptop-breakpoint) {
+    
+    &__left {
+      width: 100%;
+    }
+
+    .form-wrapper {
+      width: 100%;
+    }
+  }
+
+  @media(max-width:$tablet-breakpoint) {
+
+    &__left__content__box--result {
+      width: 100%;
     }
   }
 }

@@ -1,6 +1,6 @@
 ---
 http_port: 80
-domain: executive-care
+name: executive-care
 domain_db: executive_care
 server_db_user: root
 server_db_pass: fgGc91LIlL

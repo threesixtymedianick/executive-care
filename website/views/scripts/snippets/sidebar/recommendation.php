@@ -11,13 +11,13 @@
 <?php endif; ?>
 
 <div class="sidebar__panel">
-    <div class="sidebar__panel--recommendation">
+    <div class="sidebar__panel--recommendation equalHeight">
         <div class="sidebar__panel--recommendation-image"></div>
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button right"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
             <?php endif; ?>
         </div>
     </div>

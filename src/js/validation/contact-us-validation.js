@@ -32,7 +32,7 @@ $("#brochure_form").validate({
         brochure_email              : { required: true, email: true }
     },
     messages: {
-        care_home_options           : "Please choose a Care Home",
+        care_home_options           : "Please choose a care home",
         delivery_method_options     : "Please choose a delivery method",
         brochure_name               : "Please enter your name",
         brochure_number             : {

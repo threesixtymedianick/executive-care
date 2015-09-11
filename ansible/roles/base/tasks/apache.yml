@@ -1,7 +1,7 @@
-- template: src=vhost.conf dest=/etc/apache2/sites-available/{{ domain }}.{{ type }}.conf
-- command: a2ensite {{ domain }}.{{ type }}
+- template: src=vhost.conf dest=/etc/apache2/sites-available/{{ name }}.{{ type }}.conf
+- command: a2ensite {{ name }}.{{ type }}
   args:
-    creates: /etc/apache2/sites-enabled/{{ domain }}.{{ type }}.conf
+    creates: /etc/apache2/sites-enabled/{{ name }}.{{ type }}.conf
 - command: a2dissite 000-default
   notify:
   - restart apache2

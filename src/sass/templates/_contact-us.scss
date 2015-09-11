@@ -33,9 +33,9 @@
         height: 44px;
 
         #opening_times {
-          font-size: $font-size-x-x-small;
+          font-size: 0.7em;
           position: relative;
-          top: -15px;
+          top: -10px;
           display: inline-block;
         }
       }
@@ -152,18 +152,7 @@
     }
 
     .button_base {
-      width: 174px;
-      text-transform: uppercase;
-      @include font-header($weight: 300);
-      font-size: $font-size-x-large;
-      border: 0;
-      float: right;
-      color: $color-white;
-      margin-top: 24px;
-      position: relative;
-      right: -24px;
-      text-align: left;
-      padding-left: 15px;
+      @include button-base($color-purple, -24px);
     }
 
     &#brochure {
