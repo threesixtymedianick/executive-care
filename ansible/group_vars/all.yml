@@ -3,7 +3,6 @@ http_port: 80
 name: executive-care
 domain_db: executive_care
 server_db_user: root
-#server_db_pass: fgGc91LIlL
-server_db_pass:
+server_db_pass: u0dTMCrYotREYsemjocxaH8y
 bolser_ip: 81.130.199.179
 jenkins_ip: 52.18.221.30
