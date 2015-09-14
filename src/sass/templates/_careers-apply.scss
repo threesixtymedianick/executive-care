@@ -170,7 +170,11 @@
   }
 
   @media(max-width:$laptop-breakpoint) {
-    &__left, &__left__title, &__left__form__title, .tab__left.field-wrap, .tab__right.field-wrap {
+    &__left, 
+    &__left__title, 
+    &__left__form__title, 
+    .tab__left.field-wrap, 
+    .tab__right.field-wrap {
       width: 100%;
     }
 
