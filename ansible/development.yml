@@ -7,3 +7,4 @@
     pimcore_db_pass: T4ghCa2Hj7Nv
   roles:
     - base
+  sudo: yes
