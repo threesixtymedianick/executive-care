@@ -29,6 +29,7 @@
     "bxslider-4": "~4.2.5",
     "jquery": "~1.11.3",
     "jquery-validation": "~1.14.0",
-    "matchHeight": "~0.6.0"
+    "matchHeight": "~0.6.0",
+    "datetimepicker": "~2.4.5"
   }
 }
