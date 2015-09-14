@@ -1,5 +1,8 @@
-<?php
+<?php if ($this->editmode) :
     echo $this->snippetEditModeStyles();
+endif; ?>
+
+<?php
     $title = $this->input("title");
     $content = $this->textarea("content");
 ?>
