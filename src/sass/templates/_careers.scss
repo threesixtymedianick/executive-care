@@ -195,6 +195,11 @@
     
     &__left {
       width: 100%;
+
+      &__content__title, &__content__title.results {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .form-wrapper {
