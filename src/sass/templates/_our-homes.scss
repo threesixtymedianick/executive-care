@@ -104,7 +104,8 @@
             display:  inline-block;
             background-color: $color-white;
             padding: 2px 10px;
-            margin-top: 20px;
+            position: absolute;
+            bottom: 10px;
 
             a {
               text-transform: uppercase;
@@ -136,7 +137,7 @@
     }
   }
 
-  @media(max-width:$laptop-breakpoint) {
+  @media(max-width:1005px) {
     &__left {
       width: 100%;
 
@@ -152,7 +153,7 @@
     }
   }
 
-  @media(max-width:$laptop-breakpoint) {
+  @media(max-width:1005px) {
     &__left__content__homes-box {
       width: 100%;
 
@@ -190,6 +191,16 @@
         font-size: 1.1em;
         padding: 3px;
       }
+    }
+  }
+
+  @media(max-width:371px) {
+    &__left__content__homes-box__info__title {
+      font-size: 1.5em;
+    }
+
+    &__left__content__homes-box__info__address {
+      font-size: 1.3em;
     }
   }
 }
