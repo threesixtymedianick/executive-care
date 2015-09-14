@@ -11,13 +11,14 @@
     - python-mysqldb
     - php5-curl
     - php5-gd
+    - php5-mysql
 
-- file: path=/root/.ssh state=directory
-- copy: src=.ssh/config mode=600 dest=/root/.ssh/config
+- file: path=/ubuntu/.ssh state=directory
+- copy: src=.ssh/config mode=600 dest=/ubuntu/.ssh/config
 - copy: src=hosts dest=/etc/hosts
 - copy: src=hostname dest=/etc/hostname
 
-- authorized_key: user=root
+- authorized_key: user=ubuntu
                   key="{{ item }}"
   with_file:
     - public_keys/matt_booth_ubuntu_laptop
