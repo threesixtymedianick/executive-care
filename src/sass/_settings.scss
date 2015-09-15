@@ -88,6 +88,8 @@ $font-size-x-x-large: 2.2em;
 @mixin header () {
   &__header {
     background-size: cover;
+    -ms-behavior: url(backgroundsize.min.htc);
+    behavior: url(backgroundsize.min.htc);
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
