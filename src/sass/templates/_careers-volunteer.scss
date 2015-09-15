@@ -113,6 +113,11 @@
         width: 100%;
         text-align: center;
       }
+
+      &__content__box__left.field-wrap, 
+      &__content__box__right.field-wrap {
+        width: 100%;
+      }
     }
 
     .form-wrapper {
