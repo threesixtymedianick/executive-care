@@ -6,6 +6,7 @@ $(document).ready(function(){
         pause: 8000,
         pager: false,
         controls: true,
-        autoHover: true
+        autoHover: true,
+        touchEnabled: false
     });
 });

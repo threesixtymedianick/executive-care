@@ -5,6 +5,7 @@ $(document).ready(function(){
         pause: 5000,
         pager: false,
         autoHover: true,
-        controls: true
+        controls: true,
+        touchEnabled: false
     });
 });
