@@ -9,6 +9,30 @@
 <div class="container">
     <div class="container__inner">
         <div class="contact-us">
+            <div class="sidebar contact">
+                    <div class="contact-us__address">
+                        <div class="contact-us__address__title">
+                            Crystal Court Care Home
+                        </div>
+                        <div class="contact-us__address__address">
+                            <?= $contactUsAddress ?>
+                        </div>
+                        <div class="contact-us__address__enquiries">
+                        <div class="contact-us__address__enquiries__left">
+                            Enquiries:
+                        </div>
+                        <div class="contact-us__address__enquiries__right">
+                            <?= $contactUsEnquiryNumber ?><br />
+                            <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
+                        </div>
+                        <br clear="all" />
+                        </div>
+                        <div class="contact-us__address__telephone">
+                            Tel: <?= $contactUsEnquiryNumberSecond ?>
+                        </div>
+                    </div>
+                    <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
+                </div>
             <div class="contact-us__left">
                 <ul class="tabs">
                     <li><a id="enquiry_tab" href='#enquiry'>Make an enquiry</a></li>
@@ -84,31 +108,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="sidebar contact">
-                <div class="contact-us__address">
-                    <div class="contact-us__address__title">
-                        Crystal Court Care Home
-                    </div>
-                    <div class="contact-us__address__address">
-                        <?= $contactUsAddress ?>
-                    </div>
-                    <div class="contact-us__address__enquiries">
-                    <div class="contact-us__address__enquiries__left">
-                        Enquiries:
-                    </div>
-                    <div class="contact-us__address__enquiries__right">
-                        <?= $contactUsEnquiryNumber ?><br />
-                        <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
-                    </div>
-                    <br clear="all" />
-                    </div>
-                    <div class="contact-us__address__telephone">
-                        Tel: <?= $contactUsEnquiryNumberSecond ?>
-                    </div>
-                </div>
-                <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
             </div>
         </div>
     </div>
