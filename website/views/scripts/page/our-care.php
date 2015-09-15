@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <?php while($this->block("contentblock")->loop()) : ?>
-                    <div class="our-care__left__sliding sliding_content">
+                    <div class="our-care__left__sliding sliding_content equalHeight">
                         <div class="our-care__left__sliding__title">
                             <div class="title1">
                                 <?= $this->input("title"); ?>

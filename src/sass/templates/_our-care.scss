@@ -211,8 +211,9 @@
 
     .title1 {
       width: 210px;
-      margin-top: 12px;
-      float: left;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%)
     }
 
     &__left__sliding:last-child .our-care__left__sliding__title .title1 {
@@ -226,6 +227,8 @@
 
     &__left__sliding__title {
       min-height: 61px;
+      position: relative;
+      resize: vertical;
     }
   }
 
@@ -233,7 +236,6 @@
 
     .title1 {
       width: 165px;
-      margin-top: 24px;
     }
 
     &__left__sliding__title__show-hide {
@@ -253,19 +255,10 @@
 
     &__left__sliding__title__show-hide {
       padding: 42px 6px;
-      margin-top: -66px;
-    }
-
-    &__left__sliding:last-child .our-care__left__sliding__title__show-hide {
-      margin-top: -91px;
-    }
-    
-    &__left__sliding:last-child .our-care__left__sliding__title .title1 {
-      margin-top: 13px;
     }
 
     .title1 {
-      margin-top: 36px;
+      width: 164px;
     }
   }
 }
