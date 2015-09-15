@@ -14,7 +14,7 @@ class BlogController extends AbstractBlogController
     const DAYS_ID = 8;
 
     // Category ID for testimonials
-    const TESTIMONIALS_ID = 21;
+    const TESTIMONIALS_ID = 37;
 
     /**
      * @var Blog
@@ -99,7 +99,6 @@ class BlogController extends AbstractBlogController
         $this->enableLayout();
 
         $testimonialCategory = Object_BlogCategory::getById(self::TESTIMONIALS_ID);
-
 
         $this->view->testimonial = $this->_blog->getListByCategory(
             $testimonialCategory,
