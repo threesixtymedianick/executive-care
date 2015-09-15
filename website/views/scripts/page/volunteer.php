@@ -3,9 +3,15 @@
     $volunteerTitle = $this->input("volunteerTitle");
     $volunteerDesc = $this->wysiwyg("volunteerDesc");
     $volunteerReq = $this->wysiwyg("volunteerReq");
+    $headerImage = $this->href("volunteer_header");
 ?>
 
-<div class="volunteer__header">-</div>
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
+
+<div class="volunteer__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">
@@ -43,9 +49,17 @@
                         </form>
                     </div>
                 </div>
-                <div class="sidebar">
-                    
-                </div>
+            </div>
+            <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/work-for-us')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/job-alerts')); ?>               
             </div>
         </div>
     </div>

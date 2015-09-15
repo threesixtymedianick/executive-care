@@ -102,4 +102,21 @@
       }
     }
   }
+
+  @media(max-width:$laptop-breakpoint) {
+    
+    &__left {
+      width: 100%;
+      margin-top: 0px;
+
+      &__content__title, &__content__title.results {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .form-wrapper {
+      width: 100%;
+    }
+  }
 }
