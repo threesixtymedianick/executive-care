@@ -3,6 +3,7 @@
 AddType video/mp4 .mp4
 AddType video/webm .webm
 AddType image/jpeg .pjpeg
+AddType text/x-component .htc
 
 # ALLOW USER BY IP
 <Limit GET POST>
