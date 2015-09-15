@@ -3,7 +3,7 @@ $whyWorkForm = $this->whyWorkForm;
 $whyWorkTitle = $this->input("whyWorkTitle", ["width"=> 300]);
 $whyWorkDesc = $this->wysiwyg("whyWorkDesc");
 $whyWorkReq = $this->wysiwyg("whyWorkReq");
-$headerImage = $this->href("whyWork_header");
+$headerImage = $this->image("whyWorkHeader");
 ?>
 
 <?php if ($this->editmode): ?>
