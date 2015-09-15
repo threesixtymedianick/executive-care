@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>Executive Care Homes | <?= $this->document->getTitle(); ?></title>
+  <title>Executive Care Homes | <?= (!$this->editmode) ? $this->document->getTitle() : ''; ?></title>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/website/static/css/libraries.css" media="screen" charset="utf-8">

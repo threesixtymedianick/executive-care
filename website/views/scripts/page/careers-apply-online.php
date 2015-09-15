@@ -1,7 +1,7 @@
 <?php 
     $headerImage = $this->href("about_us_header");
 ?>
-<?php if ($this->editmode): ?>ß
+<?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
 <?php endif; ?>

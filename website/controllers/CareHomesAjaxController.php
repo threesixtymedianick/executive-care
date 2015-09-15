@@ -13,7 +13,15 @@ class CareHomesAjaxController extends AjaxController
         $careHomes = new Object\CareHomes\Listing();
         $careHomes->load();
 
+        foreach ($careHomes->objects as $home) {
+            $data[] = [
+                'title'    => $home->Title,
+                'lat'      => $home->Lat,
+                'lon'      => $home->Lon,
+            ];
+        }
+
         $this->getHelper('json')
-             ->sendJson($careHomes->objects);
+             ->sendJson($data);
     }
 }

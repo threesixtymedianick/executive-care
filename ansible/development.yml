@@ -2,7 +2,9 @@
 - hosts: development
   vars:
     type: development
+    domain: bolser.co.uk
     pimcore_db_user: exec-dev
     pimcore_db_pass: T4ghCa2Hj7Nv
   roles:
     - base
+  sudo: yes

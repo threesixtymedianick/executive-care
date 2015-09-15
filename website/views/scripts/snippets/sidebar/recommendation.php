@@ -1,5 +1,8 @@
-<?php
+<?php if ($this->editmode) :
     echo $this->snippetEditModeStyles();
+endif; ?>
+
+<?php
     $title = $this->input("title");
     $content = $this->textarea("content");
     $link = $this->link("link");
@@ -11,7 +14,7 @@
 <?php endif; ?>
 
 <div class="sidebar__panel">
-    <div class="sidebar__panel--recommendation">
+    <div class="sidebar__panel--recommendation equalHeight">
         <div class="sidebar__panel--recommendation-image"></div>
         <div class="sidebar__panel--content full-width-panel">
             <h3><?= $title; ?></h3>

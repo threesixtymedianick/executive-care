@@ -101,6 +101,7 @@ class CareHomeEventHandler
     {
         $careHome = [
             'id'      => $object->getId(),
+            'title'   => $object->getTitle(),
             'address' => [
                 'postcode' => $object->getPostcode(),
             ],
