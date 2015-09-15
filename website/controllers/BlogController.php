@@ -13,6 +13,9 @@ class BlogController extends AbstractBlogController
     // Category ID for Open days
     const DAYS_ID = 8;
 
+    // Category ID for testimonials
+    const TESTIMONIALS_ID = 37;
+
     /**
      * @var Blog
      */
@@ -85,5 +88,24 @@ class BlogController extends AbstractBlogController
         );
 
         $this->render('open-days');
+    }
+
+    /**
+     * List testimonials
+     * @return
+     */
+    public function testimonialsAction()
+    {
+        $this->enableLayout();
+
+        $testimonialCategory = Object_BlogCategory::getById(self::TESTIMONIALS_ID);
+
+        $this->view->testimonial = $this->_blog->getListByCategory(
+            $testimonialCategory,
+            $this->_getParam('page', 1),
+            $this->_getParam('perpage', 3)
+        );
+
+        $this->render('testimonials');
     }
 }

@@ -1,279 +1,88 @@
 .blog {
 
-  &__slider {
-    width: 100%;
-    height: 550px;
+  @include blog-slider();
 
-    .bx-wrapper {
-      border: none;
-      background-color: transparent;
-      margin: 0;
-      padding: 0;
-
-      .bx-controls-direction a {
-        height: 45px;
-        width: 34px;
-      }
-
-      .bx-prev {
-        background: url('../images/slider-controls.png') no-repeat 0 0;
-        left: 15px;
-      }
-
-      .bx-next {
-        background: url('../images/slider-controls.png') no-repeat -46px 0;
-        right: 15px;
-      }
-    }
-
-    & .blogslider {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-
-      li {
-        display: block;
-        width: 100%;
-        height: 550px;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        left: 0;
-        right: 0;
-        top: 0;
-      }
-
-      &__details {
-        max-width: 1280px;
-        margin: 0 auto;
-        position: relative;
-        height: 550px;
-
-        &--title {
-          display: table;
-          background-color: $color-purple;
-          padding: .5em 1.6em;
-          position: absolute;
-          bottom: 80px;
-          left: 15px;
-
-          a {
-            color: $color-white;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-size: 1.3em;
-          }
-        }
-
-        &--date {
-          display: table;
-          background-color: $color-grey;
-          padding: .5em 1.6em;
-          color: $color-white;
-          font-size: 1.1em;
-          position: absolute;
-          bottom: 53px;
-          left: 15px;
-        }
-      }
-    }
-  }
-
-  &__left {
-    @include span-columns(8);
-    margin-top: 350px;
-    margin-bottom: 50px;
-
-    &.news-home{
-      margin-top: 50px;
-    }
-    
-    &--title {
-      background-color: $color-purple;
-      padding: 8px 18px;
-      display: inline-block;
-      color: $color-white;
-
-      h2 {
-        margin: 0;
-        padding: 0;
-        text-transform: uppercase;
-      }
-    }
-  }
+  @include blog-left();
 
   @include tab-ul();
 
-  &__header {
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    max-height: 750px;
-    max-width: 100%;
-    overflow: hidden;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
+  @include blog-header();
 
-  .tabs {
-    @include tabs();
+   .tabs {
+     @include tabs();
 
-    li {
-      @include tabs-li();
+     li {
+       @include tabs-li();
 
-      a {
-        @include tabs-li-a($color-transparent);
+       a {
+         @include tabs-li-a($color-transparent);
 
-        &#news_tab {
-          background-color: $color-purple;
-        }
+         &#news_tab {
+           background-color: $color-purple;
+         }
 
-        &#events_tab {
-          background-color: $color-blue;
-        }
-      }
-    }
-  }
+         &#events_tab {
+           background-color: $color-blue;
+         }
+       }
+     }
+   }
 
-  .tab {
-    @include tab();
+   .tab {
+     @include tab();
 
-    &#brochure {
-      background: $color-light-blue;
-      min-height: 475px;
-    }
+     &#brochure {
+       background: $color-light-blue;
+       min-height: 475px;
+     }
 
-    &#enquiry {
-      background-color: $color-light-purple;
-      min-height: 475px;
-    }
-  }
+     &#enquiry {
+       background-color: $color-light-purple;
+       min-height: 475px;
+     }
+   }
 
-  &__content {
-    background-color: $color-light-purple;
+   &__content {
+     background-color: $color-light-purple;
 
-    &--date {
-      display: inline-block;
-      background-color: $color-grey;
-      padding: .7em 1.7em;
-      color: $color-white;
-      font-size: 1.3em;
+     &--date {
+       display: inline-block;
+       background-color: $color-grey;
+       padding: .7em 1.7em;
+       color: $color-white;
+       font-size: 1.3em;
 
-      &.uppercase {
-        text-transform: uppercase;
-      }
-    }
+       &.uppercase {
+         text-transform: uppercase;
+       }
+     }
 
-    &--article {
-      padding: 20px;
+     @include blog-article();
 
-      &-subtitle {
-        background-color: $color-purple;
-        padding: 8px 20px;
-        display: inline-block;
-        color: $color-white;
-        margin-left: -20px;
-        text-transform: uppercase;
-      }
+     &__item {
+       overflow: hidden;
+       padding: 1.8em 0;
+       border-top: 1px solid $color-grey;
 
-      & .image-left {
-        width: 260px;
-        height: auto;
-        float: left;
-        padding: 0 15px 10px 0;
-      }
+       &:first-of-type {
+         border-top: none;
+       }
 
-      & .image-strip {
-        width: 48%;
-        display: inline-block;
+       @include blog-image();
 
-        &:nth-child(2n) {
-          margin-left: 2%;
-        }
-      }
+       &--summary {
+         @include span-columns(9);
 
-      p {
-        font-size: 1.2em;
-        line-height: 1.6em;
-        margin-top: 0;
+         &--title {
+           @include blog-title($color-purple)
+         }
 
-        strong {
-          color: $color-purple;
-          font-weight: bold;
-        }
-      }
-    }
+         @include blog-date();
 
-    &__item {
-      overflow: hidden;
-      padding: 1.8em 0;
-      border-top: 1px solid $color-grey;
+         @include blog-text();
+       }
+     }
 
-      &:first-of-type {
-        border-top: none;
-      }
-
-      &--image {
-        @include span-columns(3);
-
-        img {
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      &--summary {
-        @include span-columns(9);
-
-        &--title {
-          display: table;
-          background-color: $color-purple;
-          padding: .5em 1.6em;
-
-          a {
-            color: $color-white;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-size: 1.3em;
-          }
-        }
-
-        &--date {
-          display: table;
-          background-color: $color-grey;
-          padding: .5em 1.6em;
-          color: $color-white;
-          font-size: 1.1em;
-        }
-
-        &-text {
-          padding-top: .8em;
-          font-size: 1.1em;
-        }
-      }
-    }
-
-    &__pagination {
-      text-align: center;
-
-      ul {
-        list-style-type: none;
-
-        li {
-          display: inline-block;
-          padding: .3em;
-
-          a {
-            color: $color-black;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-}
+     @include blog-pagination();
+   }
+ }

@@ -19,7 +19,9 @@ $headerImage          = $this->href("our-care_header");
                         <?= $title ?>
                     </div>
                     <div class="our-care__left__content__box">
-                        <!-- Content here -->
+                        <?php foreach ($this->testimonial as $entry) {
+                            echo $this->partial("blog/partial/testimonial-entry.php", ["entry" => $entry]);
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -31,7 +33,6 @@ $headerImage          = $this->href("our-care_header");
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/book-a-visit')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
-
             </div>
         </div>
     </div>
