@@ -26,9 +26,12 @@ $(document).ready(function() {
                     // Create LatLng
                     var latLng = new google.maps.LatLng(data.lat, data.lon);
 
+                    var iconBase = '../website/static/images/place_icons/';
+
                     // Create marker
                     var marker = new google.maps.Marker({
                         position: latLng,
+                        icon: iconBase + 'place_icon_1.png',
                         map: map,
                     });
                 }
