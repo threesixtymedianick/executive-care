@@ -233,6 +233,7 @@
 
     .title1 {
       width: 165px;
+      margin-top: 24px;
     }
 
     &__left__sliding__title__show-hide {
@@ -242,9 +243,29 @@
     &__left__sliding__title {
       min-height: 85px;
     }
+  }
+
+  @media(max-width:344px) {
+
+    &__left__sliding__title {
+      min-height: 109px;
+    }
+
+    &__left__sliding__title__show-hide {
+      padding: 42px 6px;
+      margin-top: -66px;
+    }
 
     &__left__sliding:last-child .our-care__left__sliding__title__show-hide {
-      margin-top: -78px;
+      margin-top: -91px;
+    }
+    
+    &__left__sliding:last-child .our-care__left__sliding__title .title1 {
+      margin-top: 13px;
+    }
+
+    .title1 {
+      margin-top: 36px;
     }
   }
 }
