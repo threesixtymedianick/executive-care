@@ -89,7 +89,8 @@ $nav-height: 47px;
     text-align: center;
     display: none;
     font-size: 1.8em;
-    padding:10px 5px;
+    padding: 10px 5px;
+    height: 47px;
   }
 
   @media screen and (max-width: $laptop-breakpoint) {
