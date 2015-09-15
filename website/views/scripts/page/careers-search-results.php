@@ -1,5 +1,14 @@
-<?php $applicationFormPDF = Asset::getById(25); ?>
-<div class="careers__header">-</div>
+<?php 
+    $applicationFormPDF = Asset::getById(25);
+     $headerImage          = $this->href("careers_header");
+?>
+
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php endif; ?>
+
+<div class="careers__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="careers">

@@ -172,9 +172,14 @@
         width: 49.3%;
         height: 55px;
         display: inline-block;
+        float: left;
+
+        @media (max-width:$laptop-breakpoint) {
+          width: 100%;
+        }
 
         &:nth-child(even) {
-          margin-left: 1%;
+          float: right;
         }
 
         a {
@@ -195,6 +200,12 @@
     
     &__left {
       width: 100%;
+      margin-top: 0px;
+
+      &__content__title, &__content__title.results {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .form-wrapper {

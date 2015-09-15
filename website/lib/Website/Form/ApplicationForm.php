@@ -271,11 +271,13 @@ class ApplicationForm extends BaseForm
         $fromDate = new \Zend_Form_Element_Text($formName . 'recent_company_from_date');
         $fromDate->setLabel('From (MM/YYYY):')
             ->addValidator('NotEmpty', true)
+            ->setAttrib('class', 'date_picker')
             ->setRequired(true);
 
         $toDate = new \Zend_Form_Element_Text($formName . 'recent_company_to_date');
         $toDate->setLabel('To (MM/YYYY):')
             ->addValidator('NotEmpty', true)
+            ->setAttrib('class', 'date_picker')
             ->setRequired(true);
 
         $reasonForLeaving = new \Zend_Form_Element_Textarea($formName . 'reason_for_leaving');
@@ -302,10 +304,12 @@ class ApplicationForm extends BaseForm
             ->addFilter('StringToLower');
 
         $fromDateTwo = new \Zend_Form_Element_Text($formName . 'recent_company_from_date_two');
-        $fromDateTwo->setLabel('From (MM/YYYY):');
+        $fromDateTwo->setLabel('From (MM/YYYY):')
+            ->setAttrib('class', 'date_picker');
 
         $toDateTwo = new \Zend_Form_Element_Text($formName . 'recent_company_to_date_two');
-        $toDateTwo->setLabel('To (MM/YYYY):');
+        $toDateTwo->setLabel('To (MM/YYYY):')
+            ->setAttrib('class', 'date_picker');
 
         $reasonForLeavingTwo = new \Zend_Form_Element_Textarea($formName . 'reason_for_leaving_two');
         $reasonForLeavingTwo->setLabel('Reason for leaving:');

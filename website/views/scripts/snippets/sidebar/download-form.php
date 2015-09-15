@@ -1,7 +1,11 @@
-<?php
+<?php if ($this->editmode) :
     echo $this->snippetEditModeStyles();
+endif; ?>
+
+<?php
     $applicationFormPDF = $this->href("downloadApplicationForm");
 ?>
+
 <?php if ($this->editmode): ?>
     <p>Place application form asset here</p>
     <?= $applicationFormPDF ?>

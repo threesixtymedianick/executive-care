@@ -100,7 +100,8 @@ gulp.task('build-js-libs', function() {
             './bower_components/jquery/dist/jquery.js',
             './bower_components/bxslider-4/dist/jquery.bxslider.js',
             './bower_components/jquery-validation/dist/jquery.validate.js',
-            './bower_components/matchHeight/jquery.matchHeight.js'
+            './bower_components/matchHeight/jquery.matchHeight.js',
+            './bower_components/datetimepicker/jquery.datetimepicker.js'
         ])
         .pipe(plumber())
         .pipe(concat('libraries.js'))
@@ -111,6 +112,7 @@ gulp.task('build-js-libs', function() {
 gulp.task('build-css-libs', function () {
   return gulp.src([
           './bower_components/bxslider-4/dist/jquery.bxslider.css',
+          './bower_components/datetimepicker/jquery.datetimepicker.css',
           './src/css/**/*.css'
       ])
       .pipe(concat('libraries.css'))
