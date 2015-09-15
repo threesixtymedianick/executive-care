@@ -17,7 +17,11 @@
     font-size: $font-size-x-large;
 
     &__title {
-      @include title($color-white, $color-green);
+      background-color: $color-white;
+      color: $color-green;
+      padding: 5px 0px 5px 10px;
+      margin-left: -10px;
+      width: 70%;
     }
 
     &__address {
