@@ -52,6 +52,7 @@
         width: 48.5%;
         display: inline-block;
         margin-bottom: 15px;
+        float: left;
 
         &:nth-child(even) {
           margin-left: 2%;
@@ -75,7 +76,7 @@
           display: inline-block;
           position: relative;
           min-height: 230px;
-          min-width: 35%;
+          width: 39%;
 
           &__title {
             @include font-header($weight: 300);
@@ -104,8 +105,7 @@
             background-color: $color-white;
             padding: 2px 10px;
             position: absolute;
-            bottom: 25px;
-            left: 0;
+            bottom: 10px;
 
             a {
               text-transform: uppercase;
@@ -119,6 +119,7 @@
 
     &--pagination {
       text-align: right;
+      clear: both;
 
       ul {
         list-style-type: none;
@@ -136,7 +137,7 @@
     }
   }
 
-  @media(max-width:$desktop-breakpoint) {
+  @media(max-width:1005px) {
     &__left {
       width: 100%;
 
@@ -146,12 +147,22 @@
     }
   }
 
-  @media(max-width:$laptop-breakpoint) {
+  @media(max-width:$desktop-breakpoint) {
+    &__left__content__homes-box__info__find-out-more{
+      font-size: 1.1em;
+    }
+  }
+
+  @media(max-width:1005px) {
     &__left__content__homes-box {
       width: 100%;
 
       &:nth-child(even) {
         margin-left: 0px;
+      }
+
+      &__info__find-out-more {
+        font-size: 1.4em;
       }
 
       &--image {
@@ -177,8 +188,19 @@
       }
 
       &__info__find-out-more {
-        font-size: 1.2em;
+        font-size: 1.1em;
+        padding: 3px;
       }
+    }
+  }
+
+  @media(max-width:371px) {
+    &__left__content__homes-box__info__title {
+      font-size: 1.5em;
+    }
+
+    &__left__content__homes-box__info__address {
+      font-size: 1.3em;
     }
   }
 }

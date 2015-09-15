@@ -28,7 +28,7 @@ $careHomes                 = $this->careHomes;
                         </form>
                     </div>
                     <?php foreach ($careHomes as $home) : ?>
-                        <div class="our-homes__left__content__homes-box">
+                        <div class="our-homes__left__content__homes-box equalHeight">
                             <div class="our-homes__left__content__homes-box--image" style="background-image: url('website/static/images/home/find-a-home.png');"></div>
                             <div class="our-homes__left__content__homes-box__info">
                                 <div class="our-homes__left__content__homes-box__info__title">
