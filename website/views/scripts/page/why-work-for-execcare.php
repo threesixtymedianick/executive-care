@@ -11,7 +11,7 @@ $headerImage = $this->image("whyWorkHeader");
     <?= $headerImage ?>
 <?php endif; ?>
 
-<div class="whyWork__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
+<div class="whyWork__header" style="background-image: url('<?= $headerImage->getSrc(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">
