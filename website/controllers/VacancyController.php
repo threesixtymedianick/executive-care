@@ -23,10 +23,14 @@ class VacancyController extends AbstractPageController
     public function detailAction()
     {
         $key = $this->_getParam("key");
-        $list = new Object_Vacancy_List();
-        $list->setCondition("o_key = '".$key."'");
-        $vacancyItem = $list->load();
 
-        $this->view->vacancy = $vacancyItem;
+        if (null !== $key) {
+            $list = new Object_Vacancy_List();
+            $list->setCondition("o_key = '" . $key . "'");
+            $vacancyItem = $list->load();
+            $this->view->vacancy = $vacancyItem;
+        } else {
+            throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
+        }
     }
 }
