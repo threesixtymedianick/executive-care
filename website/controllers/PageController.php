@@ -185,4 +185,9 @@ class PageController extends AbstractPageController
     {
 
     }
+
+    public function whyWorkForExecccareAction()
+    {
+
+    }
 }
