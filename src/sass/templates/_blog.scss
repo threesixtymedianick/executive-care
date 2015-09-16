@@ -85,4 +85,11 @@
 
      @include blog-pagination();
    }
- }
+
+  @media(max-width:$laptop-breakpoint) {
+
+    &__header {
+      background-image: none !important;
+    }
+  }
+}

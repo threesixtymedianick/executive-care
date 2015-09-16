@@ -15,6 +15,12 @@
     z-index: -1;
   }
 
+  @media(max-width:$laptop-breakpoint) {
+    &__header {
+      background-image: none !important;
+    }
+  }
+
   &__left {
     @include span-columns(8);
     margin-top: 350px;
@@ -199,6 +205,7 @@
 
     &__left{
       width:100%;
+      margin-top: 0px;
     }
 
     &__left__content__title{
