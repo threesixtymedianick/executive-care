@@ -172,9 +172,14 @@
         width: 49.3%;
         height: 55px;
         display: inline-block;
+        float: left;
+
+        @media (max-width:$laptop-breakpoint) {
+          width: 100%;
+        }
 
         &:nth-child(even) {
-          margin-left: 1%;
+          float: right;
         }
 
         a {

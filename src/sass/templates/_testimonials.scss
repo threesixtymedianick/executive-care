@@ -1,0 +1,79 @@
+.testimonials {
+
+  @include blog-slider();
+
+  @include blog-left();
+
+  @include tab-ul();
+
+  @include blog-header();
+
+  .tabs {
+    @include tabs();
+
+    li {
+      @include tabs-li();
+
+      a {
+        @include tabs-li-a($color-transparent);
+      }
+    }
+  }
+
+  .tab {
+    @include tab();
+  }
+
+  &__content {
+    background-color: $color-light-purple;
+
+    &--date {
+      display: inline-block;
+      background-color: $color-grey;
+      padding: .7em 1.7em;
+      color: $color-white;
+      font-size: 1.3em;
+
+      &.uppercase {
+        text-transform: uppercase;
+      }
+    }
+
+    @include blog-article();
+
+    &__item {
+      overflow: hidden;
+      padding: 1.8em 0;
+      border-top: 1px solid $color-grey;
+
+      &:first-of-type {
+        border-top: none;
+      }
+
+      @include blog-image();
+
+      &--summary {
+        @include span-columns(9);
+
+        &--title {
+          @include blog-title($color-blue)
+        }
+
+        &--name {
+          display: table;
+          background-color: $color-purple;
+          padding: .5em 1.6em;
+          color: $color-white;
+          text-transform: uppercase;
+          font-size: 1.3em;
+        }
+
+        @include blog-date();
+
+        @include blog-text();
+      }
+    }
+
+    @include blog-pagination();
+  }
+}

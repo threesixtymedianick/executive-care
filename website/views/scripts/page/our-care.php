@@ -23,9 +23,11 @@
                     </div>
                 </div>
                 <?php while($this->block("contentblock")->loop()) : ?>
-                    <div class="our-care__left__sliding sliding_content">
+                    <div class="our-care__left__sliding sliding_content equalHeight">
                         <div class="our-care__left__sliding__title">
-                            <?= $this->input("title"); ?>
+                            <div class="title1">
+                                <?= $this->input("title"); ?>
+                            </div>
                             <?php if (!$this->editmode) : ?>
                                 <div class="our-care__left__sliding__title__show-hide">
                                     <a href="#" class="show_hide">Show More +</a>

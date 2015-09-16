@@ -60,6 +60,12 @@ $nav-height: 47px;
         
       }
     }
+
+    @media(max-width:1060px) {
+      .inner_links {
+        font-size: 0.8em;
+      }
+    }
   }
 
   .home {
@@ -95,7 +101,8 @@ $nav-height: 47px;
     text-align: center;
     display: none;
     font-size: 1.8em;
-    padding:10px 5px;
+    padding: 10px 5px;
+    height: 47px;
   }
 
   @media screen and (max-width: $laptop-breakpoint) {

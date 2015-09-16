@@ -16,7 +16,7 @@ if(!$navStartNode instanceof Document\Page) {
 </li>
 
 <div class="show-menu">
-  <img class="mob-menu" src="/src/images/public/bar-menu.png">SHOW MENU
+  <img class="mob-menu" src="/src/images/public/bar-menu.png">
 </div>
 <ul class="site-navigation__main-navigation">
   
