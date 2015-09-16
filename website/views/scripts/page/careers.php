@@ -21,35 +21,9 @@
                     <div class="careers__left__content__box">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, repellendus blanditiis saepe laboriosam reprehenderit pariatur, quod voluptates voluptas perferendis, corrupti fugit suscipit odit maxime quasi. Consequatur culpa nobis laboriosam minus.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, repellendus blanditiis saepe laboriosam reprehenderit pariatur, quod voluptates voluptas perferendis, corrupti fugit suscipit odit maxime quasi. Consequatur culpa nobis laboriosam minus.</p>
-                        <div class="careers__left__content__box--row">
-                            <div class="form-wrapper">
-                                <h5>Search by postcode:</h5>
-                                <form>
-                                    <input type="text" name="postcode_search" id="postcode_search" placeholder="Enter postcode">
-                                    <button class="search-submit" type="submit" role="button">Search</button>
-                                </form>
-                            </div>
-                            <div class="form-wrapper">
-                                <h5>Search by home:</h5>
-                                <form>
-                                    <select name="home_search" id="home_search">
-                                        <option value="">Select</option>
-                                        <option value="0">Abbeyvale Care Centre, Hartlepool</option>
-                                        <option value="1">Ashwood Court, Sunderland</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <div class="form-wrapper">
-                                <h5>Search by vacancy:</h5>
-                                <form>
-                                    <select name="vacancy_search" id="vacancy_search">
-                                        <option value="">Select</option>
-                                        <option value="0">Abbeyvale Care Centre, Hartlepool</option>
-                                        <option value="1">Ashwood Court, Sunderland</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
+
+                        <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
+
                     </div>
                     <div class="careers__left__content__title results">
                         Results:

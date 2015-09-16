@@ -1,9 +1,7 @@
 <?php
-$applicationFormPDF         = Asset::getById(25);
-$headerImage                = $this->href("careers_header");
-$vacancy                    = $this->vacancy;
-
-$vacancyChunk = array_chunk($vacancy, 2, true);
+$applicationFormPDF = Asset::getById(25);
+$headerImage = $this->href("careers_header");
+$vacancy = $this->vacancy;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -22,19 +20,10 @@ $vacancyChunk = array_chunk($vacancy, 2, true);
                         Current Vacancies
                     </div>
                     <div class="careers__left__content__box">
-                        <?php foreach($vacancyChunk as $chunk) : ?>
-                            <div class="careers__left__content__box--row">
-                                <?php foreach ($chunk as $home) : ?>
-                                    <div class="careers__left__content__box--result">
-                                        <p>
-                                            <?= $home->getRoleTitle(); ?><br />
-                                            <?= $home->getCareHomes()[0]->getTitle(); ?> <br />
-                                            <?= $home->getContractHours(); ?> hours, <?= $home->getContractShift(); ?> - <?= $home->getContractType(); ?><br />
-                                            Closing date: <?= $home->getClosingDate(); ?>
-                                        </p>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
+                        <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
+
+                        <?php foreach ($vacancy as $item) : ?>
+                            <?= $this->partial("partial/vacancy/vacancy-item.php", ["item" => $item]); ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

@@ -22,8 +22,11 @@ class VacancyController extends AbstractPageController
      */
     public function detailAction()
     {
-        $vacancyItem = Object_Vacancy::getById(52);
+        $key = $this->_getParam("key");
+        $list = new Object_Vacancy_List();
+        $list->setCondition("o_key = '".$key."'");
+        $vacancyItem = $list->load();
 
-        $this->view->vacancyObject = $vacancyItem;
+        $this->view->vacancy = $vacancyItem;
     }
 }
