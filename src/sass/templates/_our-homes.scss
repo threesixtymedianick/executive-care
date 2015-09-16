@@ -145,6 +145,10 @@
         width: 96%;
       }
     }
+
+    &__header {
+      background-image: none !important;
+    }
   }
 
   @media(max-width:$desktop-breakpoint) {

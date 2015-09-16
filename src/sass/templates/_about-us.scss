@@ -38,6 +38,10 @@
       margin-top: 0px;
     }
 
+    &__header {
+      background-image: none !important;
+    }
+
     #info_tab, #training_tab {
       width: 50%;
       text-align: center;

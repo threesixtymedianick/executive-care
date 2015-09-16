@@ -33,4 +33,10 @@
     background: $color-light-blue;
     color: $color-blue;
   }
+
+  @media(max-width:$laptop-breakpoint) {
+    &__header {
+      background-image: none !important;
+    }
+  }
 }
