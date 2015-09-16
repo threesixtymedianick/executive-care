@@ -1,9 +1,13 @@
 <?php
     $this->layout()->setLayout('layout');
     $entry = $this->entry;
+
+    if (null !== $this->entry->getBlogImage()) {
+        $blogImage = $this->entry->getBlogImage()->getFullPath();
+    }
 ?>
 
-<div class="blog__header" style="background-image:url('<?= $this->entry->getBlogImage()->getFullPath(); ?>');">-</div>
+<div class="blog__header" style="background-image:url('<?= $blogImage; ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
