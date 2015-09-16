@@ -54,25 +54,43 @@
 
       &__box {
         background-color: $color-light-purple;
-        padding: 20px;
         color: $color-black;
         font-size: $font-size-small;
+        overflow: auto;
+        padding: 20px;
+        padding: 20px;
 
-        &--responsibilities {
+        a {
+          color: $color-black !important;
+          text-decoration: none;
+        }
 
-          p {
-            counter-increment: step-counter;
-            margin: 0;
+        &--row {
+          @include span-columns(6);
+          @include omega(2n+1);
 
-            &:before {
-              content: counter(step-counter) ". ";
-              margin-right: 5px;
+          &-pagination {
+            text-align: center;
+
+            ul {
+              list-style-type: none;
+
+              li {
+                display: inline-block;
+
+                a {
+                  text-decoration: none;
+                  color: $color-black;
+                  padding: 2px 4px;
+                }
+              }
             }
           }
         }
 
-        &--row {
-          width: 100%;
+        &--detailrow {
+          @include span-columns(12);
+          @include omega(1);
 
           .details-title {
             display: inline-block;
@@ -106,6 +124,16 @@
               }
             }
           }
+        }
+
+        &--result {
+          width: 49%;
+          display: inline-block;
+          margin-bottom: 15px;
+        }
+
+        &--search {
+          @include span-columns(12);
 
           & .form-wrapper {
             width: 32%;
@@ -158,12 +186,6 @@
               background-size: 29px 29px;
             }
           }
-        }
-
-        &--result {
-          width: 49%;
-          display: inline-block;
-          margin-bottom: 15px;
         }
       }
 
