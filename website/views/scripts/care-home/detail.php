@@ -36,6 +36,8 @@
                 </div>
             </div>
             <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/get-in-touch')); ?>
+
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
