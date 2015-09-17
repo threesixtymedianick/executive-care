@@ -397,6 +397,10 @@
     &.download {
       background: url('../images/download.png') $color-purple no-repeat 15px 5px;
     }
+
+    &.get-in-touch {
+      background: url('../images/get-in-touch.png') $color-purple no-repeat 15px 5px;
+    }
   }
 
   &__job-alerts {
