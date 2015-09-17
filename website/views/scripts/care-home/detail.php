@@ -40,6 +40,8 @@
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure')); ?>
 
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancies')); ?>
+
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
