@@ -25,14 +25,15 @@ class VacancyController extends AbstractPageController
     {
         $key = $this->_getParam("key");
 
-        if (null !== $key) {
-            $list = new Object_Vacancy_List();
-            $list->setCondition("o_key = '" . $key . "'");
-            $vacancyItem = $list->load();
-            $this->view->vacancy = $vacancyItem;
-        } else {
+        if (null === $key) {
             throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
         }
+
+        $list = new Object_Vacancy_List();
+        $list->setCondition("o_key = '" . $key . "'");
+        $vacancyItem = $list->load();
+
+        $this->view->vacancy = $vacancyItem;
     }
 
     /**
@@ -51,7 +52,7 @@ class VacancyController extends AbstractPageController
 
         // Initalise empty arrays, template will check for them being empty and
         // display no results found if necessary
-        $careHomes = [];
+        $vacancies = [];
         $distances = [];
 
         if (!empty($results)) {
@@ -65,5 +66,73 @@ class VacancyController extends AbstractPageController
         $this->view->distances = $distances;
 
         $this->renderScript('vacancy/search.php');
+    }
+
+    /**
+     * Filter vacancies
+     *
+     * @return
+     */
+    public function filterAction()
+    {
+        $home = $this->_getParam("home");
+        $role = $this->_getParam("role");
+
+        // Neither filter value is set redirect to careers page
+        if (null === $home && null === $role) {
+            return $this->redirect('/careers');
+        }
+
+        // Filtered by care home
+        if (null !== $home) {
+            $vacancies = $this->filterByHome($home);
+        }
+
+        // Filtered by vacancy role
+        if (null !== $role) {
+            $vacancies = $this->filterByRole($role);
+        }
+
+        $this->view->results = $vacancies;
+
+        $this->renderScript('vacancy/search.php');
+    }
+
+    /**
+     * Filter vacancies by care home
+     *
+     * @param  int $home
+     * @return array
+     */
+    protected function filterByHome($home)
+    {
+        $list = new Object_Vacancy_List();
+        $list->setCondition("careHomes LIKE " . $list->quote("%$home%"));
+        $vacancies = $list->load();
+
+        if (!empty($vacancies)) {
+            return $vacancies;
+        }
+
+        return [];
+    }
+
+    /**
+     * Filter vacancies by role
+     *
+     * @param  string $role
+     * @return array
+     */
+    protected function filterByRole($role)
+    {
+        $list = new Object_Vacancy_List();
+        $list->setCondition("roleTitle = " . $list->quote($role));
+        $vacancies = $list->load();
+
+        if (!empty($vacancies)) {
+            return $vacancies;
+        }
+
+        return [];
     }
 }

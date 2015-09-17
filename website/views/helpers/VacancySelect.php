@@ -4,18 +4,18 @@ class Zend_View_Helper_VacancySelect extends Zend_View_Helper_Abstract
 {
     public function vacancySelect()
     {
-        $vacancy = new Object_Vacancy_List();
+        $vacancies = new Object_VacancyRole_List();
 
-        if (!$vacancy instanceof Pimcore\Model\Object\Vacancy\Listing) {
+        if (!$vacancies instanceof Pimcore\Model\Object\VacancyRole\Listing) {
             return [];
         }
 
-        $vacancy->setOrderKey("roleTitle");
+        $vacancies->setOrderKey("name");
 
-        foreach ($vacancy as $home) {
+        foreach ($vacancies as $vacancy) {
             $vacancyAssociativeArray[] = [
-                $home->getId(),
-                sprintf('%s %s', $home->getRoleTitle() . ",", $home->getCareHomes()[0]->getTitle())
+                $vacancy->getId(),
+                $vacancy->getName()
             ];
         }
         return $vacancyAssociativeArray;
