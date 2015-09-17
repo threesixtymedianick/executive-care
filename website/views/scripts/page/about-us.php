@@ -28,7 +28,7 @@
             <div class="sidebar">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/upcoming-open-days')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/contact-us')); ?>
             </div>
         </div>
     </div>
