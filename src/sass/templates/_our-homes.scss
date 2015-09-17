@@ -279,5 +279,9 @@
 @media(max-width:1005px) {
   .our-homes {
     margin-bottom: -15px !important;
+
+    &__left {
+    margin-bottom: -10px !important;
+    }
   }
 }
