@@ -10,7 +10,7 @@
                 <?= $item->getContractHours(); ?>
                 hours, <?= $item->getContractShift(); ?>
                 - <?= $item->getContractType(); ?><br/>
-                Closing date: <?= date("j F Y", strtotime($item->getClosingDate())); ?>
+                Closing date: <?= (new DateTime($item->getClosingDate()))->format('j F Y'); ?>
             </p>
         </div>
     </a>
