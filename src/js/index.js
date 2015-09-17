@@ -1,5 +1,3 @@
-require("./helpers/get-parameter-by-name");
-
 require("./modules/tabs");
 require("./modules/homepage-slider");
 require("./modules/blog-slider");
