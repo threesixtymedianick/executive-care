@@ -119,7 +119,7 @@ class ElasticSearchSeederCommand extends AbstractCommand
                 );
             } catch (CollectionIsEmpty $e) {
                 Pimcore_Log_Simple::log(
-                    'care-home-event',
+                    'elastic-search-seeder',
                     'Geoencoder returned no results for postcode: ' . $home->getPostcode() . ' ' . $e->getMessage()
                 );
             }
