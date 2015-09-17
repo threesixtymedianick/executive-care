@@ -1,7 +1,7 @@
 <?php
-$ourHomesDescription       = $this->wysiwyg("our_homes_description");
-$headerImage               = $this->href("our_homes_header");
-$careHomes                 = $this->careHomes;
+$ourHomesDescription = $this->wysiwyg("our_homes_description");
+$headerImage = $this->href("our_homes_header");
+$careHomes = $this->careHomes;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -18,14 +18,17 @@ $careHomes                 = $this->careHomes;
                     Our Homes
                 </div>
                 <div class="our-homes__left__content">
-                    <p><?= $ourHomesDescription ?></p>
-                    <div class="our-homes__left--search">
-                        <form action="/our-homes/search" method="POST">
-                            <input type="search" name="query" placeholder="Search by name, town or postcode" />
-                            <button class="search-submit" type="submit" role="button">
-                                Search
-                            </button>
-                        </form>
+                    <div class="our-homes__left__content__box">
+                        <p><?= $ourHomesDescription ?></p>
+
+                        <div class="our-homes__left--search">
+                            <form action="/our-homes/search" method="POST">
+                                <input type="search" name="query" placeholder="Search by name, town or postcode"/>
+                                <button class="search-submit" type="submit" role="button">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
                     </div>
                     <?php foreach ($careHomes as $home) : ?>
                         <div class="our-homes__left__content__homes-box equalHeight">
@@ -34,13 +37,14 @@ $careHomes                 = $this->careHomes;
                             <?php else : ?>
                                 <?php $image = "/website/static/images/home/find-a-home.png"; ?>
                             <?php endif; ?>
-                            <div class="our-homes__left__content__homes-box--image" style="background-image: url('<?= $image ?>');"></div>
+                            <div class="our-homes__left__content__homes-box--image"
+                                 style="background-image: url('<?= $image ?>');"></div>
                             <div class="our-homes__left__content__homes-box__info">
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__address">
-                                    <?= $home->getAddress() ?><br />
+                                    <?= $home->getAddress() ?><br/>
                                     <?= $home->getPostcode() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__find-out-more">
@@ -74,7 +78,9 @@ $careHomes                 = $this->careHomes;
                             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
                             <div class="sidebar__panel--content">
                                 <h3>Fernedale Care Home</h3>
-                                <p>Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:</p>
+
+                                <p>Use our interactive search tool to find an Executive Care home near you. Enter your
+                                    postcode, town or city below:</p>
                                 <a href="/contact-us" class="sidebar__panel--button right">Find out more</a>
                             </div>
                         </div>
