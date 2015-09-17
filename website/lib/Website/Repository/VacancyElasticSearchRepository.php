@@ -55,14 +55,6 @@ class VacancyElasticSearchRepository
             return false;
         }
 
-        echo "<pre>";
-        print_r($address);
-        echo $address->getLatitude();
-        echo $address->getLongitude();
-        echo "</pre>";
-
-
-
         // Get the co-ordinates
         $lat = $address->getLatitude();
         $lon = $address->getLongitude();
@@ -89,11 +81,6 @@ class VacancyElasticSearchRepository
         } catch (Exception $e) {
             return false;
         }
-
-        echo "<pre>";
-        print_r($vacancies);
-        echo "</pre>";
-        die();
 
         if (!empty($vacancies)) {
             return $vacancies;

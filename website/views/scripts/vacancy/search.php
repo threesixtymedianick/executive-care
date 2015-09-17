@@ -22,7 +22,7 @@ $results = $this->results;
                     <div class="careers__left__content__box">
                         <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
 
-                        <?php foreach ($results as $item) : ?>
+                        <?php foreach ($results as $i => $item) : ?>
                             <?= $this->partial("partial/vacancy/vacancy-item.php", ["item" => $item]); ?>
                         <?php endforeach; ?>
                     </div>
