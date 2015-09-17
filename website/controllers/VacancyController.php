@@ -1,5 +1,6 @@
 <?php
 use Website\Controller\PageController as AbstractPageController;
+use Website\Repository\VacancyElasticSearchRepository;
 
 class VacancyController extends AbstractPageController
 {
@@ -32,5 +33,37 @@ class VacancyController extends AbstractPageController
         } else {
             throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
         }
+    }
+
+    /**
+     * Search for vacancies
+     *
+     * @return
+     */
+    public function searchAction()
+    {
+        $query = $this->getRequest()->getPost('postcode_search');
+
+        if (null !== $query) {
+            $vacancyRepo = new VacancyElasticSearchRepository();
+            $results = $vacancyRepo->search($query);
+        }
+
+        // Initalise empty arrays, template will check for them being empty and
+        // display no results found if necessary
+        $careHomes = [];
+        $distances = [];
+
+        if (!empty($results)) {
+            foreach ($results as $vacancy) {
+                $vacancies[] = Object_Vacancy::getById($vacancy->getId());
+                $distances[] = $vacancy->getParam('sort');
+            }
+        }
+
+        $this->view->results = $vacancies;
+        $this->view->distances = $distances;
+
+        $this->renderScript('vacancy/search.php');
     }
 }

@@ -11,7 +11,7 @@ $vacancy = $this->vacancySelect();
 <div class="careers__left__content__box--search">
     <div class="form-wrapper">
         <h5>Search by postcode:</h5>
-        <form>
+        <form action="/vacancy/search" method="POST">
             <input type="text" name="postcode_search" id="postcode_search" placeholder="Enter postcode">
             <button class="search-submit" type="submit" role="button">Search</button>
         </form>

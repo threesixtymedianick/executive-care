@@ -10,7 +10,10 @@
                 <?= $item->getContractHours(); ?>
                 hours, <?= $item->getContractShift(); ?>
                 - <?= $item->getContractType(); ?><br/>
-                Closing date: <?= (new DateTime($item->getClosingDate()))->format('j F Y'); ?>
+                Closing date: <?= (new DateTime($item->getClosingDate()))->format('j F Y'); ?><br />
+                <?php if (isset($item->getCareHomes()[0])) : ?>
+                    <?= $item->getCareHomes()[0]->getPostcode(); ?>
+                <?php endif; ?>
             </p>
         </div>
     </a>
