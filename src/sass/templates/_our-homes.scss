@@ -188,6 +188,7 @@
 
     &__left {
       margin-top: 0px;
+      margin-bottom: 0px !important;
     }
   }
 
@@ -272,5 +273,11 @@
     .title1 {
       width: 164px;
     }
+  }
+}
+
+@media(max-width:1005px) {
+  .our-homes {
+    margin-bottom: -15px !important;
   }
 }
