@@ -233,6 +233,34 @@
       width: 100%;
     }
   }
+
+  @media(max-width:$laptop-breakpoint) { 
+    .bx-viewport, 
+    &__panel.home__welcome .bx-wrapper .bxslider li {
+      height: 450px !important;
+    }
+  }
+
+  @media(max-width:$tablet-lrg-breakpoint) { 
+    .bx-viewport, 
+    &__panel.home__welcome .bx-wrapper .bxslider li {
+      height: 400px !important;
+    }
+  }
+
+  @media(max-width:$tablet-breakpoint) { 
+    .bx-viewport, 
+    &__panel.home__welcome .bx-wrapper .bxslider li {
+      height: 325px !important;
+    }
+  }
+
+  @media(max-width:470px) { 
+    .bx-viewport, 
+    &__panel.home__welcome .bx-wrapper .bxslider li {
+      height: 300px !important;
+    }
+  }
 }
 
 #admin_carousel {
