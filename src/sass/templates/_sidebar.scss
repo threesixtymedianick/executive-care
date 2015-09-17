@@ -401,6 +401,10 @@
     &.get-in-touch {
       background: url('../images/get-in-touch.png') $color-purple no-repeat 15px 5px;
     }
+
+    &.request-brochure {
+      background: url('../images/request-brochure.png') $color-blue no-repeat 15px 5px;
+    }
   }
 
   &__job-alerts {
