@@ -29,7 +29,12 @@ $careHomes                 = $this->careHomes;
                     </div>
                     <?php foreach ($careHomes as $home) : ?>
                         <div class="our-homes__left__content__homes-box equalHeight">
-                            <div class="our-homes__left__content__homes-box--image" style="background-image: url('website/static/images/home/find-a-home.png');"></div>
+                            <?php if ($home->getListingImage()) : ?>
+                                <?php $image = $home->getListingImage()->getFullPath(); ?>
+                            <?php else : ?>
+                                <?php $image = "/website/static/images/home/find-a-home.png"; ?>
+                            <?php endif; ?>
+                            <div class="our-homes__left__content__homes-box--image" style="background-image: url('<?= $image ?>');"></div>
                             <div class="our-homes__left__content__homes-box__info">
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>

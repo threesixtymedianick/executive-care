@@ -12,6 +12,7 @@ class CareHomeController extends AbstractPageController
     public function indexAction()
     {
         $careHomes = new Object\CareHomes\Listing();
+        $careHomes->setOrderKey("title");
 
         $this->view->careHomes = $careHomes->load();
     }
