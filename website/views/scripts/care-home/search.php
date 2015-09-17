@@ -1,8 +1,8 @@
 <?php
-$ourHomesDescription       = $this->wysiwyg("our_homes_description");
-$headerImage               = $this->href("our_homes_header");
-$results                   = $this->results;
-$distances                 = $this->distances;
+$ourHomesDescription = $this->wysiwyg("our_homes_description");
+$headerImage = $this->href("our_homes_header");
+$results = $this->results;
+$distances = $this->distances;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -20,9 +20,10 @@ $distances                 = $this->distances;
                 </div>
                 <div class="our-homes__left__content">
                     <p><?= $ourHomesDescription ?></p>
+
                     <div class="our-homes__left--search">
                         <form action="/our-homes/search" method="POST">
-                            <input type="search" name="query" placeholder="Search by name, town or postcode" />
+                            <input type="search" name="query" placeholder="Search by name, town or postcode"/>
                             <button class="search-submit" type="submit" role="button">
                                 Search
                             </button>
@@ -35,7 +36,13 @@ $distances                 = $this->distances;
 
                     <?php foreach ($results as $i => $home) : ?>
                         <div class="our-homes__left__content__homes-box">
-                            <div class="our-homes__left__content__homes-box--image" style="background-image: url('website/static/images/home/find-a-home.png');"></div>
+                            <?php if ($home->getListingImage()) : ?>
+                                <?php $image = $home->getListingImage()->getFullPath(); ?>
+                            <?php else : ?>
+                                <?php $image = "/website/static/images/home/find-a-home.png"; ?>
+                            <?php endif; ?>
+                            <div class="our-homes__left__content__homes-box--image"
+                                 style="background-image: url('<?= $image; ?>');"></div>
                             <div class="our-homes__left__content__homes-box__info">
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>
@@ -44,7 +51,7 @@ $distances                 = $this->distances;
                                     <?= round($distances[$i][0], 2); ?> Miles away<br/>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__address">
-                                    <?= $home->getAddress() ?><br />
+                                    <?= $home->getAddress() ?><br/>
                                     <?= $home->getPostcode() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__find-out-more">
@@ -78,7 +85,9 @@ $distances                 = $this->distances;
                             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
                             <div class="sidebar__panel--content">
                                 <h3>Fernedale Care Home</h3>
-                                <p>Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:</p>
+
+                                <p>Use our interactive search tool to find an Executive Care home near you. Enter your
+                                    postcode, town or city below:</p>
                                 <a href="/contact-us" class="sidebar__panel--button right">Find out more</a>
                             </div>
                         </div>
