@@ -24,6 +24,8 @@ $headerImage = $this->image("whyWorkHeader");
                         <?= $whyWorkDesc ?>
 
                         <?= $whyWorkReq ?>
+
+                        <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
                     </div>
                 </div>
             </div>
