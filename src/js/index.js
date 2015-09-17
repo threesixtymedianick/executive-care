@@ -4,6 +4,7 @@ require("./modules/blog-slider");
 require("./modules/nav");
 require("./modules/box-height");
 require("./modules/date-picker");
+require("./modules/live-chat");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");
