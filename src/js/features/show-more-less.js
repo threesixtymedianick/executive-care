@@ -14,9 +14,8 @@ $(document).ready(function () {
     } else if (showHide.text() === viewText) {
         showHide.text(hideText);
     } else  {
-        showHide.text(errorText);
+        showHide.text(errorText); // Shouldn't be here
     }
-    
 
     function controlSlide(e) {
         $(this).closest('.sliding_content').find('.slide').slideToggle(500);
@@ -32,7 +31,7 @@ $(document).ready(function () {
         } else if (text === hideText) {
             text = viewText;
         } else {
-            text = errorText;
+            text = errorText; // Shouldn't be here
         }
 
         $(this).find('.show_hide').text(text);
