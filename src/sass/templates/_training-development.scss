@@ -21,7 +21,7 @@
         @include tabs-li-a($color-grey);
 
         &.active {
-          background-color: $color-blue;
+          background-color: $color-purple;
           color: $color-white;
         }
       }
@@ -30,13 +30,22 @@
 
   .tab {
     @include tab();
-    background: $color-light-blue;
-    color: $color-blue;
+    background: $color-light-purple;
   }
 
   @media(max-width:$laptop-breakpoint) {
     &__header {
       background-image: none !important;
+    }
+
+    &__left {
+      width: 100%;
+      margin-top: 0px;
+
+      #training_tab, #development_tab {
+        width: 50%;
+        text-align: center;
+      }
     }
   }
 }

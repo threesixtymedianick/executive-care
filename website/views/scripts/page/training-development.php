@@ -19,28 +19,11 @@
                     <?= $developmentTab ?>
                 </div>
             </div>
-            <div class="training-development__right">
-                <div class="training-development__right__boxes find-a-home">
-                    <div class="training-development__right__boxes__title">
-                        Find a<br />Home
-                    </div>
-                    <div class="training-development__right__boxes__content">
-                        Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:
-                    </div>
-                    <input type="search" class="training-development__right__boxes__button" name="search" placeholder="Search" />
+                <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/volunteer')); ?>
+                
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
                 </div>
-                <div class="training-development__right__boxes contact-us">
-                    <div class="training-development__right__boxes__title">
-                        Contact<br />us
-                    </div>
-                    <div class="training-development__right__boxes__content">
-                        Lorem ipsum dolor sit amet, aperiam gubergren vim ei, ex usu imperdiet moderatius. Solet tation
-                    </div>
-                    <div class="training-development__right__boxes__button">
-                        <a href="/contact-us">Read More</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
