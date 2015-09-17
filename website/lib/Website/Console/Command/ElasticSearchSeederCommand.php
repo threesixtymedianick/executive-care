@@ -2,38 +2,55 @@
 namespace Website\Console\Command;
 
 use Elastica\Client;
+use Elastica\Document;
 use Elastica\Status;
-use Elastica\Type\Mapping;
+use Pimcore\Console\AbstractCommand;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Output\InputInterface;
+use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\OutputInterface;
+use Website\Service\GeocoderService;
 
-/**
- * This depends on a recently merged pull request in Pimcore being downloaded
- * and added to the core
- *
- * https://github.com/pimcore/pimcore/pull/230/files
- */
-class ElasticSearchSeederCommand extends Pimcore\Console\AbstractCommand
+class ElasticSearchSeederCommand extends AbstractCommand
 {
     /**
-     * Name of the Elastic Search index to save to
+     * ES Care Home index
      */
-    const ES_INDEX = 'carehomes';
+    const ES_CAREHOME_INDEX = 'carehomes';
 
     /**
-     * Name of the Elastic Search type to save to
+     * ES Care Home type
      */
-    const ES_TYPE = 'home';
+    const ES_CAREHOME_TYPE = 'home';
 
+    /**
+     * ES Vacancy index
+     */
+    const ES_VACANCY_INDEX = 'vacancies';
+
+    /**
+     * ES Vacancy type
+     */
+    const ES_VACANCY_TYPE = 'vacancy';
+
+    /**
+     * Configure the command
+     * @return
+     */
     protected function configure()
     {
         $this
-            ->setName('elasticsearch:seed')
-            ->setDescription('Generates the Elastic Search Mappings');
+            ->setName('elasticsearch:seeder')
+            ->setDescription('Seeds the Elastic Search indexes');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    /**
+     * Execute the command
+     * @param  ArgvInput       $input
+     * @param  OutputInterface $output
+     * @return
+     */
+    protected function execute(ArgvInput $input, OutputInterface $output)
     {
         /* @todo DI! */
         $client = new Client([
@@ -42,68 +59,127 @@ class ElasticSearchSeederCommand extends Pimcore\Console\AbstractCommand
             'log'  => realpath(PIMCORE_PATH . '/../') . '/var/log/elasticsearch.log',
         ]);
 
-        $status = new Status();
+        $this->seedCareHomes($client);
+
+        $this->seedVacancies($client);
+    }
+
+    /**
+     * Seed the care homes
+     *
+     * @param  Elastica\Client $client
+     * @return
+     */
+    protected function seedCareHomes($client)
+    {
+        $geocoder = new GeocoderService();
+        $status = new Status($client);
 
         // Check if the index already exists
-        if ($status->indexExists('carehomes')) {
-            $output->writeln('Index already exists');
+        if (!$status->indexExists(self::ES_CAREHOME_INDEX)) {
+            echo 'Care home index does not exist, run the mapping command first' . PHP_EOL;
             return false;
         }
 
         // Load index
-        $careHomeIndex = $client->getIndex(self::ES_INDEX);
+        $careHomeIndex = $client->getIndex(self::ES_CAREHOME_INDEX);
 
-        // Create a new index
-        $careHomeIndex->create([
-            'number_of_shards'   => 4,
-            'number_of_replicas' => 1,
-            'analysis' => [
-                'analyzer' => [
-                    'indexAnalyzer' => [
-                        'type'      => 'custom',
-                        'tokenizer' => 'standard',
-                        'filter'    => ['standard', 'lowercase']
-                    ],
-                    'searchAnalyzer' => [
-                        'type'      => 'custom',
-                        'tokenizer' => 'standard',
-                        'filter'    => ['standard', 'lowercase']
+        // Get the type
+        $elasticaType = $careHomeIndex->getType(self::ES_CAREHOME_TYPE);
+
+        // Get care homes
+        $careHomes = new \Object\CareHomes\Listing();
+
+        if (null === $careHomes || empty($careHomes)) {
+            echo 'Error getting care homes' . PHP_EOL;
+            return false;
+        }
+
+        $careHomes = $careHomes->load();
+
+        foreach ($careHomes as $home) {
+            $geocodeData = $geocoder->geocode($home->getPostcode());
+
+            try {
+                // Get the first result
+                $address = $geocodeData->first();
+
+                $documents[] = new Document(
+                    $home->getId(),
+                    [
+                        'title'    => $home->getTitle(),
+                        'address'  => [
+                            'postcode' => $home->getPostcode(),
+                        ],
+                        'location' => [
+                            'lat' => $address->getLatitude(),
+                            'lon' => $address->getLongitude(),
+                        ],
                     ]
-                ],
-            ]
-        ]);
+                );
+            } catch (CollectionIsEmpty $e) {
+                Pimcore_Log_Simple::log(
+                    'care-home-event',
+                    'Geoencoder returned no results for postcode: ' . $home->getPostcode() . ' ' . $e->getMessage()
+                );
+            }
+        }
 
-        // Create a type
-        $elasticaType = $careHomeIndex->getType(self::ES_TYPE);
+        $elasticaType->addDocuments($documents);
+        $elasticaType->getIndex()->refresh();
 
-        // Define mapping
-        $mapping = new Mapping();
-        $mapping->setType($elasticaType);
-        $mapping->setParam('index_analyzer', 'indexAnalyzer');
-        $mapping->setParam('search_analyzer', 'searchAnalyzer');
+        echo 'Care homes seeded' . PHP_EOL;
+    }
 
-        // Set mapping
-        $mapping->setProperties([
-            'id'      => ['type' => 'integer', 'include_in_all' => true],
-            'title'   => ['type' => 'string', 'include_in_all' => true],
-            'address'    => [
-                'type'       => 'object',
-                'properties' => [
-                    'postcode'      => ['type' => 'string', 'include_in_all' => true],
+    /**
+     * Seed the vacancies
+     *
+     * @param  Elastica\Client $client
+     * @return
+     */
+    protected function seedVacancies($client)
+    {
+        $status = new Status($client);
+
+        // Check if the index already exists
+        if (!$status->indexExists(self::ES_VACANCY_INDEX)) {
+            echo 'Vacancies index does not exist, run the mapping command first' . PHP_EOL;
+            return false;
+        }
+
+        // Load index
+        $vacancyIndex = $client->getIndex(self::ES_VACANCY_INDEX);
+
+        // Get the type
+        $elasticaType = $vacancyIndex->getType(self::ES_VACANCY_TYPE);
+
+        // Get vacancies
+        $vacancies = new \Object\Vacancy\Listing();
+
+        if (null === $vacancies || empty($vacancies)) {
+            echo 'Error getting vacancies' . PHP_EOL;
+            return false;
+        }
+
+        $vacancies = $vacancies->load();
+
+        foreach ($vacancies as $vacancy) {
+            $documents[] = new Document(
+                $vacancy->getId(),
+                [
+                    'type'  => $vacancy->getRoleTitle(),
+                    'location' => [
+                        'lat' => $vacancy->getCareHomes()[0]->getLat(),
+                        'lon' => $vacancy->getCareHomes()[0]->getLon(),
+                    ],
                 ]
-            ],
-            'location'   => [
-                'type' => 'geo_point',
-                'properties' => [
-                    'lat' => ['type' => 'string', 'include_in_all' => true],
-                    'lon' => ['type' => 'string', 'include_in_all' => true],
-                ]
-            ]
-        ]);
+            );
 
-        // Send mapping to type
-        $mapping->send();
+        }
 
-        $output->writeln('Indexing complete');
+        $elasticaType->addDocuments($documents);
+        $elasticaType->getIndex()->refresh();
+
+        echo 'Vacancies seeded' . PHP_EOL;
     }
 }
