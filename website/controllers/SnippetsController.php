@@ -94,4 +94,23 @@ class SnippetsController extends AbstractPageController
 
     }
 
+    public function letterFromTheManagerAction()
+    {
+
+    }
+
+    public function activitiesCalendarAction()
+    {
+
+    }
+
+    public function galleryAction()
+    {
+
+    }
+
+    public function ratingsAndReportAction()
+    {
+
+    }
 }

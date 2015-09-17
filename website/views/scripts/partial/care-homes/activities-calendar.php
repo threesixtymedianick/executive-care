@@ -1,14 +1,13 @@
 <?php
     $careHomeObject = $this->careHomeObject;
-    $ourCareHomesActivitiesCal   = $this->input("ourCareActivitiesCal");
 ?>
 
 <div class="our-homes__left__sliding sliding_content">
     <div class="our-homes__left__sliding__title">
-        <?= $ourCareHomesActivitiesCal ?>
+        Activities Calendar
         <?php if (!$this->editmode) : ?>
             <div class="our-homes__left__sliding__title__show-hide">
-                <a href="#" class="show_hide">Show More +</a>
+                <a href="#" class="show_hide">View +</a>
             </div>
         <?php endif; ?>
     </div>

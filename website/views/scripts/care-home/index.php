@@ -39,7 +39,7 @@ $careHomes                 = $this->careHomes;
                                     <?= $home->getPostcode() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__find-out-more">
-                                    <a href="#">Find out more</a>
+                                    <a href="/care-homes/detail/<?= $home->getKey(); ?>">Find out more</a>
                                 </div>
                             </div>
                         </div>

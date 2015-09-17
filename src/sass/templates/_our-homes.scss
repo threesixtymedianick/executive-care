@@ -135,6 +135,13 @@
         }
       }
     }
+
+    @include sliding-content($color-green, $color-green, $color-green, $color-light-green, -6px);
+
+    &__nearby {
+      padding: 20px;
+      background-color: $color-light-green;
+    }
   }
 
   @media(max-width:1005px) {
