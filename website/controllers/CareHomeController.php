@@ -23,9 +23,16 @@ class CareHomeController extends AbstractPageController
      */
     public function detailAction()
     {
-        $careHomeCategory = Object_CareHomes::getById(17);
+        $key = $this->_getParam("key");
 
-        $this->view->careHomeObject = $careHomeCategory;
+        if (null !== $key) {
+            $list = new Object_CareHomes_List();
+            $list->setCondition("o_key = '" . $key . "'");
+            $homeItem = $list->load();
+            $this->view->careHome = $homeItem[0];
+        } else {
+            throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
+        }
     }
 
     /**

@@ -46,50 +46,8 @@
         font-size: $font-size-small;
       }
     }
-    
-    &__sliding {
+    @include sliding-content($color-blue, $color-blue, $color-blue, $color-light-blue, -30px);
 
-      &__title {
-        @include font-header($weight: 300);
-        font-size: $font-size-large;
-        color: white;
-        background-color: $color-blue;
-        padding: 6px 0px 6px 20px;
-        border-top: 1px solid $color-background;
-        text-transform: uppercase;
-        cursor: pointer;
-
-        &__show-hide {
-          background-color: white;
-          color: $color-blue;
-          float: right;
-          padding: 6px;
-          margin-top: -30px;
-          width: 130px;
-          text-align: left;
-
-        &__show-hide:not(:last-child) {
-          margin-top: -54px;
-          padding:6px;
-        }
-
-          & a {
-            text-decoration: none;
-            color: $color-blue;
-          }
-        }
-      }
-
-      &__content {
-        background-color: $color-light-blue;
-        padding: 20px;
-        display:block;
-
-        p{
-          font-size: $font-size-small;
-        }
-      }
-    }
   }
 
   &__right {

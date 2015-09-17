@@ -141,6 +141,52 @@ $font-size-x-x-large: 2.2em;
   background-color: $background-color;
 }
 
+@mixin sliding-content ($background-color, $showhide-font-color, $link-color,  $content-color, $showhide-margin-top) {
+  &__sliding {
+
+    &__title {
+      @include font-header($weight: 300);
+      font-size: $font-size-large;
+      color: white;
+      background-color: $background-color;
+      padding: 6px 0px 6px 20px;
+      border-top: 1px solid $color-background;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &__show-hide {
+        background-color: white;
+        color: $showhide-font-color;
+        float: right;
+        padding: 6px;
+        margin-top: $showhide-margin-top;
+        width: 130px;
+        text-align: left;
+
+        &__show-hide:not(:last-child) {
+          margin-top: -54px;
+          padding:6px;
+        }
+
+        & a {
+          text-decoration: none;
+          color: $link-color;
+        }
+      }
+    }
+
+    &__content {
+      background-color: $content-color;
+      padding: 20px;
+      display:block;
+
+      p{
+        font-size: $font-size-small;
+      }
+    }
+  }
+}
+
 .right {
   float: right;
 }
