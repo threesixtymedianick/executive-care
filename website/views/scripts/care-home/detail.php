@@ -26,7 +26,8 @@
                         <?= $this->partial("partial/care-homes/ratings-and-report.php", ["careHomeObject" => $careHome]); ?>
                     </div>
                 </div>
-                <br />
+                <br/>
+
                 <div class="our-homes__left__title">
                     Others nearby
                 </div>
@@ -34,8 +35,11 @@
                     More 'ere
                 </div>
             </div>
-        </div>
-        <div class="our-homes__right">
+            <div class="sidebar">
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
+
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
+            </div>
         </div>
     </div>
 </div>
