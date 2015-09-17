@@ -188,6 +188,7 @@
 
     &__left {
       margin-top: 0px;
+      margin-bottom: 0px !important;
     }
   }
 
@@ -213,5 +214,11 @@
     &__left__content__homes-box__info__address {
       font-size: 1.3em;
     }
+  }
+}
+
+@media(max-width:1005px) {
+  .our-homes {
+    margin-bottom: -15px !important;
   }
 }

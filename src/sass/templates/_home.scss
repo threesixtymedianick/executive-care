@@ -239,6 +239,10 @@
     &__panel.home__welcome .bx-wrapper .bxslider li {
       height: 450px !important;
     }
+
+    &__panel.home__welcome {
+      margin-bottom: 10px;
+    }
   }
 
   @media(max-width:$tablet-lrg-breakpoint) { 
@@ -265,4 +269,10 @@
 
 #admin_carousel {
   font-size: $font-size-large;
+}
+
+@media(max-width:$laptop-breakpoint) {
+  .home {
+    margin-bottom: 0px;
+  }
 }
