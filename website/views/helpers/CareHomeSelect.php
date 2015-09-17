@@ -9,6 +9,7 @@ class Zend_View_Helper_CareHomeSelect extends Zend_View_Helper_Abstract
         if (!$careHomes instanceof Pimcore\Model\Object\CareHomes\Listing) {
             return [];
         }
+
         $careHomes->setOrderKey("title");
 
         foreach ($careHomes as $home) {
