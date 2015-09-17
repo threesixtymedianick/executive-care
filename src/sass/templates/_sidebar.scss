@@ -409,6 +409,10 @@
     &.request-brochure {
       background: url('../images/request-brochure.png') $color-blue no-repeat 15px 5px;
     }
+
+    &.vacancies {
+      background: url('../images/vacancies.png') $color-purple no-repeat 15px 5px;
+    }
   }
 
   &__job-alerts {
