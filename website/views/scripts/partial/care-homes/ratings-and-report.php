@@ -4,14 +4,15 @@
 
 <div class="our-homes__left__sliding sliding_content">
     <div class="our-homes__left__sliding__title">
-        Ratings and reports
-        <?php if (!$this->editmode) : ?>
+        <div class="title1">
+            Ratings and reports
+        </div>        <?php if (!$this->editmode) : ?>
             <div class="our-homes__left__sliding__title__show-hide">
                 <a href="#" class="show_hide">View +</a>
             </div>
         <?php endif; ?>
     </div>
-    <div class="our-homes__left__sliding__content <?= $this->editmode ? "" : "slide"; ?>">
+    <div class="our-homes__left__sliding__content equalHeight <?= $this->editmode ? "" : "slide"; ?>">
         Ratings and Report
     </div>
 </div>

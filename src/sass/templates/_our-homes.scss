@@ -40,7 +40,6 @@
     &__content {
       background-color: $color-light-green;
       color: $color-green;
-      padding: 10px 24px;
 
       p {
         font-size: 1.2em;
@@ -115,6 +114,15 @@
           }
         }
       }
+
+      &__box {
+        padding: 10px 20px;
+      }
+
+      &__headerimage {
+        width: 100%;
+        max-height: 200px;
+      }
     }
 
     &--pagination {
@@ -136,7 +144,7 @@
       }
     }
 
-    @include sliding-content($color-green, $color-green, $color-green, $color-light-green, -6px);
+    @include sliding-content($color-green, $color-green, $color-green, $color-light-green);
 
     &__nearby {
       padding: 20px;
@@ -156,15 +164,7 @@
     &__header {
       background-image: none !important;
     }
-  }
 
-  @media(max-width:$desktop-breakpoint) {
-    &__left__content__homes-box__info__find-out-more{
-      font-size: 1.1em;
-    }
-  }
-
-  @media(max-width:1005px) {
     &__left__content__homes-box {
       width: 100%;
 
@@ -191,7 +191,46 @@
     }
   }
 
-  @media(max-width:$tablet-breakpoint) {
+  @media(max-width:$desktop-breakpoint) {
+    &__left__content__homes-box__info__find-out-more{
+      font-size: 1.1em;
+    }
+  }
+
+  @media(max-width:371px) {
+    &__left__content__homes-box__info__title {
+      font-size: 1.5em;
+    }
+
+    &__left__content__homes-box__info__address {
+      font-size: 1.3em;
+    }
+  }
+
+  @media(max-width: $tablet-breakpoint) {
+
+    .title1 {
+      width: 210px;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%)
+    }
+
+    &__left__sliding:last-child .our-care__left__sliding__title .title1 {
+      margin-top: 0px;
+    }
+
+    &__left__sliding__title__show-hide {
+      padding: 18px 6px;
+      margin-top: -6px;
+    }
+
+    &__left__sliding__title {
+      min-height: 61px;
+      position: relative;
+      resize: vertical;
+    }
+
     &__left__content__homes-box {
 
       &--image {
@@ -205,13 +244,33 @@
     }
   }
 
-  @media(max-width:371px) {
-    &__left__content__homes-box__info__title {
-      font-size: 1.5em;
+  @media(max-width: 390px) {
+
+    .title1 {
+      width: 165px;
     }
 
-    &__left__content__homes-box__info__address {
-      font-size: 1.3em;
+    &__left__sliding__title__show-hide {
+      padding: 30px 6px;
+    }
+
+    &__left__sliding__title {
+      min-height: 85px;
+    }
+  }
+
+  @media(max-width:344px) {
+
+    &__left__sliding__title {
+      min-height: 109px;
+    }
+
+    &__left__sliding__title__show-hide {
+      padding: 42px 6px;
+    }
+
+    .title1 {
+      width: 164px;
     }
   }
 }

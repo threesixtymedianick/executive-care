@@ -46,7 +46,7 @@
         font-size: $font-size-small;
       }
     }
-    @include sliding-content($color-blue, $color-blue, $color-blue, $color-light-blue, -30px);
+    @include sliding-content($color-blue, $color-blue, $color-blue, $color-light-blue);
 
   }
 
