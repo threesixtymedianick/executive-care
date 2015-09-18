@@ -5,7 +5,7 @@ use Website\Repository\VacancyElasticSearchRepository;
 class VacancyController extends AbstractPageController
 {
     /**
-     * Displays the Care Home index page
+     * Displays the vacancy index page
      *
      * @return
      */
