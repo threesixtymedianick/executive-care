@@ -1,5 +1,6 @@
 <?php
     $careHomeObject = $this->careHomeObject;
+    $recommendations = $this->recommendations;
 ?>
 
 <div class="our-homes__left__sliding sliding_content">
@@ -12,7 +13,15 @@
             </div>
         <?php endif; ?>
     </div>
+
     <div class="our-homes__left__sliding__content equalHeight <?= $this->editmode ? "" : "slide"; ?>">
-        Ratings and Report
+        <?php if (!empty($recommendations)) : ?>
+            <?php foreach ($recommendations as $recommendation) : ?>
+                <?= $recommendation['title']; ?>
+                <?= $recommendation['description']; ?>
+                <?= $recommendation['pubDate']; ?>
+                <?= $recommendation['author']; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </div>

@@ -1,4 +1,7 @@
-<?php $careHome = $this->careHome; ?>
+<?php
+$careHome        = $this->careHome;
+$recommendations = $this->recommendations;
+?>
 
 <div class="our-care__header">-</div>
 <div class="container">
@@ -23,7 +26,10 @@
 
                         <?= $this->partial("partial/care-homes/gallery.php", ["careHomeObject" => $careHome]); ?>
 
-                        <?= $this->partial("partial/care-homes/ratings-and-report.php", ["careHomeObject" => $careHome]); ?>
+                        <?= $this->partial("partial/care-homes/ratings-and-report.php", [
+                            "careHomeObject"  => $careHome,
+                            "recommendations" => $recommendations,
+                        ]); ?>
                     </div>
                 </div>
                 <br/>
