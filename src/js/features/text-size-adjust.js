@@ -1,51 +1,94 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
-    //min font size
-    var min=0.5;  
- 
-    //max font size
-    var max=2; 
-     
-    //grab the default font size
-    var reset = "0.625em"; 
-     
-    //font resize these elements
-    var elm = $('p, h1, h2, h3');  
-     
-    //set the default font size and remove px from the value
-    var size = 1; 
-     
-    //Increase font size
-    $('#larger').click(function() {
-        //if the font size is lower or equal than the max value
-        if (size<=max) {
-             console.log("larger");
-            //increase the size
-            size = size + 0.1;
-             
-            //set the font size
-            elm.css({'fontSize' : size + "em"});
+    // min font size
+    var min = 14;
+
+    // max font size
+    var max = 18;
+
+    // font resize these elements
+    var elm = $('p, h1, h2, h3');
+
+    // The cookie name for text size
+    var cookieName = "textSize";
+
+    // Days to set the cookie for
+    var daysToSetCookie = 365;
+
+    // Set size on page load if cookie value is set
+    if (getCookie() !== undefined) {
+        elm.css({'fontSize' : parseFloat(getCookie())});
+    }
+
+    // Increase font size
+    $('#larger').click(function(e) {
+
+        e.preventDefault();
+
+        if (getCookie() === undefined) {
+            var currentSize = parseFloat($('p').css('fontSize'));
+        } else {
+            var currentSize = parseFloat(getCookie());
         }
-         
-        //cancel a click event
-        return false;   
-         
-    });
- 
-    $('#smaller').click(function() {
- 
-        //if the font size is greater or equal than min value
-        if (size>=min) {
-             
-            //decrease the size
-            size = size - 0.1;
-             
-            //set the font size
-            elm.css({'fontSize' : size + "em"});
+
+        // if the font size is lower or equal than the max value
+        if (currentSize <= max) {
+
+            // Onload text size is in em's, so the currentSize calculation
+            // returns a value smaller than the minimum
+            if (currentSize < min) {
+                currentSize = min;
+            }
+
+            // increase the size
+            currentSize = currentSize + 1;
+
+            // set the font size
+            elm.css({'fontSize' : currentSize});
+
+            // Set cookie value
+            setCookie(parseFloat(currentSize));
         }
-         
-        //cancel a click event
-        return false;   
-         
     });
+
+    // Decrease font size
+    $('#smaller').click(function(e) {
+
+        e.preventDefault();
+
+        if (getCookie() === undefined) {
+            var currentSize = parseFloat($('p').css('fontSize'));
+        } else {
+            var currentSize = parseFloat(getCookie());
+        }
+
+        // if the font size is greater or equal than min value
+        if (currentSize >= min) {
+
+            // decrease the size
+            currentSize = currentSize - 1;
+
+            // set the font size
+            elm.css({'fontSize' : currentSize});
+
+            // Set cookie value
+            setCookie(parseFloat(currentSize));
+        }
+    });
+
+    /**
+     * Set a text-size cookie
+     * @param int value
+     */
+    function setCookie(value) {
+        $.cookie('text-size', value, { expires: 365, path: '/' });
+    }
+
+    /**
+     * Get the text-size cookie
+     * @return int
+     */
+    function getCookie() {
+        return $.cookie('text-size');
+    }
 });

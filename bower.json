@@ -31,6 +31,7 @@
     "jquery-validation": "~1.14.0",
     "matchHeight": "~0.6.0",
     "datetimepicker": "~2.4.5",
-    "background-size-polyfill": "~0.2.0"
+    "background-size-polyfill": "~0.2.0",
+    "jquery.cookie": "~1.4.1"
   }
 }
