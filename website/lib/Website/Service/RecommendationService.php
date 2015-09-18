@@ -59,7 +59,7 @@ class RecommendationService
 
         $response = $this->client->get("recommendations/rss.cfm?displayid=$careHomeId")->send();
 
-        if (!$response->hasHeader('Content-Length') && $response->getStatusCode() === 404) {
+        if (!$response->hasHeader('Content-Length') || $response->getStatusCode() === 404) {
             return false;
         }
 
