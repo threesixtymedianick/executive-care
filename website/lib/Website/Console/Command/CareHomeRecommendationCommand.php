@@ -1,6 +1,7 @@
 <?php
 namespace Website\Console\Command;
 
+use Cocur\Slugify\Slugify;
 use Pimcore\Console\AbstractCommand;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Output\InputInterface;
@@ -28,6 +29,8 @@ class CareHomeRecommendationCommand extends AbstractCommand
      */
     protected function execute(ArgvInput $input, OutputInterface $output)
     {
+        $slugify = new Slugify();
+
         $list = new \Object\CareHomes\Listing();
         $careHomes = $list->load();
 
@@ -40,13 +43,18 @@ class CareHomeRecommendationCommand extends AbstractCommand
             );
 
             foreach ($xml->channel->item as $review) {
-                \Object\Recommendations::create([
-                    'title'       => (string) $review->title,
-                    'description' => (string) $review->description,
-                    'author'      => (string) $review->author,
+                $recommendation = \Object\Recommendations::create([
+                    'title'       => $slugify->slugify((string) $review->title),
+                    'description' => '',
                 ]);
 
-                die();
+                $recommendation->setTitle((string) $review->title);
+                $recommendation->setDescription((string) $review->description);
+                $recommendation->setAuthor((string) $review->author);
+                $recommendation->setKey(uniqid());
+                $recommendation->setParentId(uniqid());
+                $recommendation->save();
+die();
             }
         }
     }

@@ -1,6 +1,7 @@
 <?php
 use Website\Controller\PageController as AbstractPageController;
 use Website\Repository\CareHomeElasticSearchRepository;
+use Website\Service\RecommendationService;
 
 class CareHomeController extends AbstractPageController
 {
@@ -29,8 +30,16 @@ class CareHomeController extends AbstractPageController
         if (null !== $key) {
             $list = new Object_CareHomes_List();
             $list->setCondition("o_key = '" . $key . "'");
-            $homeItem = $list->load();
-            $this->view->careHome = $homeItem[0];
+            $careHome = $list->load();
+
+            $recommendationService = new RecommendationService();
+            $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
+
+            if (false !== $recommendations && !empty($recommendations)) {
+                $this->view->recommendations = $recommendations;
+            }
+
+            $this->view->careHome = $careHome[0];
         } else {
             throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
         }
