@@ -10,6 +10,9 @@ use Guzzle\Plugin\Cache\DefaultCacheStorage;
 
 class RecommendationService
 {
+    /**
+     * @var Guzzle\Http\Client
+     */
     protected $client;
 
     /**
