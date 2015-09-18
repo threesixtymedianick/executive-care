@@ -101,7 +101,7 @@ gulp.task('build-js-libs', function() {
             './bower_components/bxslider-4/dist/jquery.bxslider.js',
             './bower_components/jquery-validation/dist/jquery.validate.js',
             './bower_components/matchHeight/jquery.matchHeight.js',
-            './bower_components/datetimepicker/jquery.datetimepicker.js'
+            './bower_components/datetimepicker/jquery.datetimepicker.js',
             './bower_components/jquery.cookie/jquery.cookie.js'
         ])
         .pipe(plumber())
