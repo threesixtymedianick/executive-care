@@ -70,15 +70,24 @@
           &__slider-caption {
             position: absolute;
             left: 0;
-            bottom: 50px;
+            bottom: 20px;
+
+            @media(min-width:$tablet-breakpoint) {
+              bottom: 50px;
+            }
 
             h1, h2 {
               text-transform: uppercase;
-              padding: 3px 18px;
-              font-size: 17px;
+              padding: 3px 15px;
+              font-size: 15px;
               background-color: $color-purple;
               margin: 0;
               display: table;
+              
+              @media(min-width:$tablet-breakpoint) {
+                font-size: 17px;
+                padding: 3px 18px;
+              }
             }
 
             h2 {
@@ -92,9 +101,14 @@
           }
         }
 
-        .bx-controls-direction a {
-          width: 34px;
-          height: 44px;
+
+
+        .bx-controls-direction {
+
+          a {
+            width: 34px;
+            height: 44px;
+          }
         }
 
         .bx-prev {
