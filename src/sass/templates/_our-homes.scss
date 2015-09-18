@@ -40,9 +40,59 @@
     &__content {
       background-color: $color-light-green;
       color: $color-green;
+      overflow: auto;
 
       p {
         font-size: 1.2em;
+      }
+
+      &--ratings-row {
+        @include span-columns(12);
+        @include omega(1);
+
+        & .description {
+          display: inline-block;
+          width: 83%;
+          vertical-align: top;
+          margin-bottom: 10px;
+        }
+
+        & .date {
+          display: inline-block;
+          background-color: $color-grey;
+          padding: .7em 1.7em;
+          color: $color-white;
+          font-size: 1.1em;
+          margin-left: -20px;
+
+          &.uppercase {
+            text-transform: uppercase;
+          }
+        }
+
+        .author {
+          @include title($color-white, $color-green);
+          margin-left: -20px;
+          font-size: $font-size-normal;
+        }
+
+        &-pagination {
+          text-align: center;
+
+          ul {
+            list-style-type: none;
+
+            li {
+              display: inline-block;
+
+              a {
+                text-decoration: none;
+                color: $color-black;
+                padding: 2px 4px;
+              }
+            }
+          }
+        }
       }
 
       &__homes-box {
