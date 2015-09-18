@@ -48,8 +48,8 @@ class RecommendationService
     /**
      * Get recommendations for a care home
      *
-     * @param  [type] $careHomeId [description]
-     * @return [type]             [description]
+     * @param  int $careHomeId
+     * @return array|bool
      */
     public function getRecommendationsForCareHome($careHomeId)
     {
