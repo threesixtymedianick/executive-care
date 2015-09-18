@@ -123,10 +123,6 @@ class RecommendationService
         // Pick a random recommendation from this list
         $random = rand(0, $recommendationCount - 1);
 
-        // Recommendation title
-        $title = (string) $xmlData->channel->title;
-        $title = str_replace(' from carehome.co.uk', '', $title);
-
         // Create the recommendation
         $recommendation = [
             'title'       => (string) $xmlData->channel->title,
