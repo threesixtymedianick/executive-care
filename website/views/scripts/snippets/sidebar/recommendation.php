@@ -3,9 +3,7 @@
 endif; ?>
 
 <?php
-    $title = $this->input("title");
-    $content = $this->textarea("content");
-    $link = $this->link("link");
+    $recommendation = $this->recommendation;
 ?>
 
 <?php if ($this->editmode) : ?>
@@ -17,11 +15,12 @@ endif; ?>
     <div class="sidebar__panel--recommendation equalHeight">
         <div class="sidebar__panel--recommendation-image"></div>
         <div class="sidebar__panel--content full-width-panel">
-            <h3><?= $title; ?></h3>
-            <p><?= $content; ?></p>
-            <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
-            <?php endif; ?>
+            <h3><?= $recommendation['title']; ?></h3>
+            <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
+            <p><?= $recommendation['description']; ?></p>
+            <a href="<?= $recommendation['link']; ?>" target="_blank">
+                Continue reading
+            </a>
         </div>
     </div>
 </div>
