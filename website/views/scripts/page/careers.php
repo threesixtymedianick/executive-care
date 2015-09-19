@@ -1,6 +1,8 @@
 <?php
     $applicationFormPDF = Asset::getById(25);
-    $headerImage          = $this->href("careers_header");
+    $headerImage        = $this->href("careers_header");
+    $pageDescription    = $this->wysiwyg('description');
+    $vacancies          = $this->vacancies;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -19,52 +21,24 @@
                         Jobs in our care homes
                     </div>
                     <div class="careers__left__content__box">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, repellendus blanditiis saepe laboriosam reprehenderit pariatur, quod voluptates voluptas perferendis, corrupti fugit suscipit odit maxime quasi. Consequatur culpa nobis laboriosam minus.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, repellendus blanditiis saepe laboriosam reprehenderit pariatur, quod voluptates voluptas perferendis, corrupti fugit suscipit odit maxime quasi. Consequatur culpa nobis laboriosam minus.</p>
+                        <?= $pageDescription; ?>
 
                         <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
 
                     </div>
                     <div class="careers__left__content__title results">
-                        Results:
+                        Vacancies
                     </div>
                     <div class="careers__left__content__box">
-                        <div class="careers__left__content__box--row">
-                            <div class="careers__left__content__box--result">
-                                <p>
-                                    Cook<br />
-                                    Craigend Gardens<br />
-                                    30 hours, days - Permanent<br />
-                                    Closing date: 00/00/00
-                                </p>
-                            </div>
-                            <div class="careers__left__content__box--result">
-                                <p>
-                                    Cook<br />
-                                    Craigend Gardens<br />
-                                    30 hours, days - Permanent<br />
-                                    Closing date: 00/00/00
-                                </p>
-                            </div>
-                        </div>
-                        <div class="careers__left__content__box--row">
-                            <div class="careers__left__content__box--result">
-                                <p>
-                                    Cook<br />
-                                    Craigend Gardens<br />
-                                    30 hours, days - Permanent<br />
-                                    Closing date: 00/00/00
-                                </p>
-                            </div>
-                            <div class="careers__left__content__box--result">
-                                <p>
-                                    Cook<br />
-                                    Craigend Gardens<br />
-                                    30 hours, days - Permanent<br />
-                                    Closing date: 00/00/00
-                                </p>
-                            </div>
-                        </div>
+
+                        <?php if (empty($vacancies)) : ?>
+                            No vacancies
+                        <?php else: ?>
+                            <?php foreach ($vacancies as $item) : ?>
+                                <?= $this->partial("partial/vacancy/vacancy-item.php", [ "item" => $item ]); ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
                         <div class="careers__left__content__box--row-pagination">
                             <ul>
                                 <li><a href="#">1</a></li>

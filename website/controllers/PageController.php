@@ -26,9 +26,16 @@ class PageController extends AbstractPageController
 
     }
 
+    /**
+     * Careers index page
+     *
+     * @return
+     */
     public function careersAction()
     {
+        $vacancy = new Object\Vacancy\Listing();
 
+        $this->view->vacancies = $vacancy->load();
     }
 
     /**
@@ -59,8 +66,9 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [contactUsAction description]
-     * @return [type] [description]
+     * Contact Us page
+     *
+     * @return
      */
     public function contactUsAction()
     {
