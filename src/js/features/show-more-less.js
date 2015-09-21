@@ -13,7 +13,7 @@ $(document).ready(function () {
     var minus = "-";
 
     function init() {
-        if (screen.width < 768) {
+        if (screen.width < 641) {
             showMoreText = plus;
             showLessText = minus;
             viewText = plus;
