@@ -1,7 +1,7 @@
 <?php
 $ourHomesDescription = $this->wysiwyg("our_homes_description");
-$headerImage = $this->image("our_homes_header");
-$careHomes = $this->careHomes;
+$headerImage = $this->href("our_homes_header");
+$careHomes = $this->paginator;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -53,12 +53,10 @@ $careHomes = $this->careHomes;
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <!-- pagination start -->
-                    <?= $this->paginationControl($this->careHomes, 'Sliding', 'includes/paging.php', [
-                       'urlprefix'         => $this->document->getFullPath() . '?page=',
-                       'appendQueryString' => true
+                    <?= $this->paginationControl($this->paginator, 'Sliding', 'partial/pagination.php', [
+                        'urlprefix' => $this->document->getFullPath() . '?page=',
+                        'appendQueryString' => true
                     ]); ?>
-                    <!-- pagination end -->
                 </div>
             </div>
             <div class="sidebar">
@@ -83,9 +81,7 @@ $careHomes = $this->careHomes;
                         </div>
                     </div>
                 </div>
-
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/contact-us')); ?>
-
             </div>
         </div>
     </div>
