@@ -111,6 +111,13 @@ class BlogController extends AbstractBlogController
         $this->render('testimonials');
     }
 
+    /**
+     * Checks the given item to ensure that is is not null and
+     * that it is an instance of the BlogCategory class
+     * 
+     * @param $item The category item that requires checking
+     * @throws Zend_Controller_Action_Exception
+     */
     private function categoryValidation($item)
     {
         if (null === $item || !($item instanceof Object_BlogCategory)) {
