@@ -1,5 +1,5 @@
 <?php
-    $headerImage          = $this->image("open-days_header");
+    $headerImage  = $this->image("open-days_header");
 ?>
 
 <?php if ($this->editmode): ?>
