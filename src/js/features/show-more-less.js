@@ -23,17 +23,6 @@ $(document).ready(function () {
                 $(this).text(plus);
             });
 
-            $('.our-care__left__sliding__title__show-hide').each(function() {
-                var minHeight = $('.our-care__left__sliding__title').css("min-height");
-                console.log(minHeight);
-                $(this).css("padding", "0");
-                $(this).css("text-align", "center");
-                $(this).css("width", "50px");
-                $(this).css("font-size", "40px");
-                $(this).css("min-height", minHeight);
-                $(this).css("display", "table-cell");
-                $(this).css("vertical-align", "middle");
-            });
             showHide.text(minus);
         } else {
             if (showHide.text() == showMoreText) {
