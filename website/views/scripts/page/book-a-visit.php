@@ -26,14 +26,22 @@ $headerImage = $this->href("book-a-visitHeader");
                                 echo $careHome;
                                 ?>
                             </div>
-                            <div class="book-a-visit__left__content__box__left field-wrap">
+                            <div class="book-a-visit__left__content__box__left field-wrap clear fullWidth">
+                                <div class="bkv">
+                                <label for="bookAVisit_date" class="optional">Date:</label>
                                 <?= $bookAVisitForm->bookAVisit_date ?>
-
+                                </div>
+                                
+                                <div class="bkv">
                                 <?= $bookAVisitForm->bookAVisit_day ?>
+                                </div>
 
+                                <div class="bkv">
+                                <label for="bookAVisit_time" class="optional">Time:</label>
                                 <?= $bookAVisitForm->bookAVisit_time ?>
+                                </div>
                             </div>
-                            <div class="book-a-visit__left__content__box__left field-wrap">
+                            <div class="book-a-visit__left__content__box__left field-wrap clear">
                                 <?= $bookAVisitForm->bookAVisit_name ?>
                             </div>
                             <div class="book-a-visit__left__content__box__right field-wrap">
@@ -54,6 +62,24 @@ $headerImage = $this->href("book-a-visitHeader");
                         </form>
                     </div>
                 </div>
+
+                <div class="contact-us__live-chat">
+                    <div class="contact-us__live-chat__icon">
+                        <img src="website/static/images/home/woman_headset2.png" />
+                    </div>
+                    <div class="contact-us__live-chat__details" style="margin-bottom:10px;">
+                        <div class="contact-us__live-chat__details__title">
+                            Chat
+                        </div>
+                        <div class="contact-us__live-chat__details__content">
+                            <?= $contactUsLiveChatDetails ?>
+                        </div>
+                        <div class="contact-us__live-chat__details__open-chat">
+                            <a href="#livechat">Chat now</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="sidebar">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>

@@ -12,6 +12,7 @@ class BookAVisitForm extends BaseForm
         $formName = "bookAVisit_";
 
         $careHomes = new \Zend_Form_Element_Select($formName . 'careHomes');
+        $careHomes->setLabel('Care Home:');
 
         $date = new \Zend_Form_Element_Select($formName . 'date');
         $date->setAttrib('class', 'book-a-visit__left__content__box__left--date');

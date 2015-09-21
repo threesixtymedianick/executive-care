@@ -55,6 +55,43 @@
           position: relative;
         }
 
+        .fullWidth {
+          width: 100%;
+        }
+
+          #bookAVisit_date, 
+          #bookAVisit_day, 
+          #bookAVisit_time,
+          #bookAVisit_careHomes {
+            @extend input;
+            @include border-radius(0px);
+            background: transparent;
+            @include appearance(none);
+            background: url('../images/down-arrow-green.png') no-repeat top right $color-white;
+            background-size: 29px 29px;
+            padding: 0 6px;
+            height: 29px;
+            line-height: 29px;
+            border: none;
+          }
+
+          .bkv {
+            display: inline;
+            width: 23%;
+            float: left;
+          }
+
+          .bkv:not(:first-child) {
+            margin-left: 20px;
+          }
+
+          .bkv:nth-child(2) {
+            margin-bottom: 0px;
+            margin-top: 20px;
+          }
+
+
+
         label {
           display: inline-block;
           font-size: $font-size-small;
@@ -118,6 +155,11 @@
       &__content__box__left.field-wrap,
       &__content__box__right.field-wrap {
         width: 100%;
+      }
+
+      &__content__box .bkv {
+        width: 100%;
+        margin-left: 0px !important;
       }
     }
 
