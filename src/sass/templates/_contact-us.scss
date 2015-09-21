@@ -8,6 +8,17 @@
 
   &__left {
     @include span-columns(8);
+
+    select {
+      border-radius: 0px;
+      background: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url("../images/arrow-down-blue.png") no-repeat top right #ffffff;
+      background-size: 29px 29px;
+      border: none;
+    }
   }
 
   &__address {
@@ -254,6 +265,10 @@
       #brochure_tab, #enquiry_tab {
         width: 50%;
         text-align: center;
+      }
+
+      .select-wrap {
+        width: 100%;
       }
     }
 
