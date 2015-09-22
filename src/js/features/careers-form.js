@@ -5,12 +5,18 @@ $(document).ready(function () {
     $(".application_form_fields").hide();
     $(".application_form_fields:first").show();
 
+    jQuery.validator.addMethod("valDomain",function (emailAddress) {
+        var pattern = new RegExp(/\S+@\S+\.\S+/);
+        return pattern.test(emailAddress);
+    }, 'Invalid domain name.');
+
+
     var form = "#application_form",
         rules = {
         application_name                            : "required",
         application_number                          : { required: true, number: true },
         application_address                         : "required",
-        application_email                           : { required: true, email: true },
+        application_email                           : { required: true, email: true, valDomain: true },
         application_apply_reason                    : "required",
         application_special_experience              : "required",
         application_strengths                       : "required",
@@ -18,7 +24,7 @@ $(document).ready(function () {
         application_recent_company_position         : "required",
         application_recent_company_address          : "required",
         application_recent_company_number           : "required",
-        application_recent_company_email            : { required: true, email: true },
+        application_recent_company_email            : { required: true, email: true, valDomain: true },
         application_recent_company_from_date        : "required",
         application_recent_company_to_date          : "required",
         application_reason_for_leaving              : "required",

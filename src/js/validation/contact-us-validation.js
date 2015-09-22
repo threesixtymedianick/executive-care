@@ -1,10 +1,15 @@
+jQuery.validator.addMethod("valDomain",function (emailAddress) {
+    var pattern = new RegExp(/\S+@\S+\.\S+/);
+    return pattern.test(emailAddress);
+}, 'Invalid domain name.');
+
 $("#enquiry_form").validate({
     rules: {
         enquiry_name                : "required",
         enquiry_number              : { required: true, number: true },
         enquiry_address             : "required",
         enquiry_message             : "required",
-        enquiry_email               : { required: true, email: true }
+        enquiry_email               : { required: true, email: true, valDomain: true }
     },
     messages: {
         enquiry_name                : "Please enter your name",
@@ -29,7 +34,7 @@ $("#brochure_form").validate({
         brochure_number             : { required: true, number: true },
         brochure_address            : "required",
         brochure_message            : "required",
-        brochure_email              : { required: true, email: true }
+        brochure_email              : { required: true, email: true, valDomain: true }
     },
     messages: {
         care_home_options           : "Please choose a care home",
