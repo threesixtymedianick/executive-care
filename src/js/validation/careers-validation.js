@@ -5,12 +5,6 @@ $(document).ready(function () {
     $(".application_form_fields").hide();
     $(".application_form_fields:first").show();
 
-    jQuery.validator.addMethod("valDomain",function (emailAddress) {
-        var pattern = new RegExp(/\S+@\S+\.\S+/);
-        return pattern.test(emailAddress);
-    }, 'Invalid domain name.');
-
-
     var form = "#application_form",
         rules = {
         application_name                            : "required",
