@@ -17,7 +17,8 @@
        a {
          @include tabs-li-a($color-transparent);
 
-         &#news_tab {
+         &#news_tab,
+         &#open_day_tab {
            background-color: $color-purple;
          }
 
@@ -122,18 +123,28 @@
   }
 
   @media(max-width:$laptop-breakpoint) {
+
+    .blog__left.opendays {
+      margin-bottom: 10px;
+    }
+
     .blog__left {
       width: 100%;
       margin-top: 0px;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
 
-      #news_tab {
+      #open_day_tab {
         width: 100%;
+        text-align: center;
       }
     }
 
     .m-bottom {
       margin-bottom: 5px;
+    }
+
+    .sidebar__panel--recommendation.equalHeight {
+      display: none;
     }
   }
 }
