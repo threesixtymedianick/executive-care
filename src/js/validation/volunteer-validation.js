@@ -1,11 +1,10 @@
-
 $("#volunteer_form").validate({
     rules: {
         volunteer_name                : "required",
         volunteer_number              : { required: true, number: true },
         volunteer_address             : "required",
         volunteer_message             : "required",
-        volunteer_email               : { required: true, email: true }
+        volunteer_email               : { required: true, email: true, valDomain: true }
     },
     messages: {
         volunteer_name                : "Please enter your name",
