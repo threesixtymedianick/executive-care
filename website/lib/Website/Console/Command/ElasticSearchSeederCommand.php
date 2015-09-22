@@ -167,10 +167,10 @@ class ElasticSearchSeederCommand extends AbstractCommand
             $documents[] = new Document(
                 $vacancy->getId(),
                 [
-                    'type'  => $vacancy->getRoleTitle(),
+                    'type'  => ($vacancy->getRoleTitle()[0]) ? $vacancy->getRoleTitle()[0]->getName() : '',
                     'location' => [
-                        'lat' => $vacancy->getCareHomes()[0]->getLat(),
-                        'lon' => $vacancy->getCareHomes()[0]->getLon(),
+                        'lat' => ($vacancy->getCareHomes()[0]) ? $vacancy->getCareHomes()[0]->getLat() : '',
+                        'lon' => ($vacancy->getCareHomes()[0]) ? $vacancy->getCareHomes()[0]->getLon() : '',
                     ],
                 ]
             );
