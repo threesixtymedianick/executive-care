@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
+            <div class="sidebar m-bottom">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/book-a-visit')); ?>

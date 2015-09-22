@@ -120,4 +120,20 @@
       padding: 0px;
     }
   }
+
+  @media(max-width:$laptop-breakpoint) {
+    .blog__left {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 10px;
+
+      #news_tab {
+        width: 100%;
+      }
+    }
+
+    .m-bottom {
+      margin-bottom: 5px;
+    }
+  }
 }
