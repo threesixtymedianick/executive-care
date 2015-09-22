@@ -37,7 +37,7 @@
                             <div class="sidebar__panel--content">
                                 <h3><?= $title; ?></h3>
                                 <p><?= $content; ?></p>
-                                <a class="sidebar__panel--button mleft"></a>
+                                <a href="/our-care" class="sidebar__panel--button mleft">Read More</a>
                             </div>
                         </div>
                     </div>
