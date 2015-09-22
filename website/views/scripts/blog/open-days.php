@@ -10,9 +10,9 @@
 <div class="container">
     <div class="container__inner">
         <div class="blog">
-            <div class="blog__left">
+            <div class="blog__left opendays">
                 <ul class="tabs">
-                    <li><a id="news_tab" href='#opendays'>Upcoming open days</a></li>
+                    <li><a id="open_day_tab" href='#opendays'>Upcoming open days</a></li>
                 </ul>
                 <div class="blog__content">
                     <div class="tab" id="opendays">
