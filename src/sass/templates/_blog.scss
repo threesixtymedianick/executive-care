@@ -28,6 +28,10 @@
      }
    }
 
+   &__slider .bx-viewport {
+    z-index: 1;
+   }
+
    .tab {
      @include tab();
 
