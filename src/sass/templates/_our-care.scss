@@ -192,10 +192,14 @@
     &__left__sliding__title__show-hide {
       padding: 18px 6px;
       margin-top: -6px;
+      font-size: 2.0em;
+      text-align: center;
+      width: 84px;
+
      }
 
     &__left__sliding__title {
-      min-height: 61px;
+      min-height: 85px;
       position: relative;
       resize: vertical;
     }
@@ -208,26 +212,11 @@
     }
 
     &__left__sliding__title__show-hide {
-      padding: 30px 6px;
+      padding: 18px 6px;
     }
 
     &__left__sliding__title {
       min-height: 85px;
-    }
-  }
-
-  @media(max-width:344px) {
-
-    &__left__sliding__title {
-      min-height: 109px;
-    }
-
-    &__left__sliding__title__show-hide {
-      padding: 42px 6px;
-    }
-
-    .title1 {
-      width: 164px;
     }
   }
 }

@@ -8,13 +8,31 @@ $(document).ready(function () {
     var viewText = "View +";
     var hideText = "Hide -";
     var errorText = "Error";
-    
-    if (showHide.text() === showMoreText) {
-        showHide.text(showLessText);
-    } else if (showHide.text() === viewText) {
-        showHide.text(hideText);
-    } else  {
-        showHide.text(errorText); // Shouldn't be here
+
+    var plus = "+";
+    var minus = "-";
+
+    function init() {
+        if (screen.width < 641) {
+            showMoreText = plus;
+            showLessText = minus;
+            viewText = plus;
+            hideText = minus;
+
+            $('.show_hide').each(function() {
+                $(this).text(plus);
+            });
+
+            showHide.text(minus);
+        } else {
+            if (showHide.text() == showMoreText) {
+                showHide.text(showLessText);
+            } else if (showHide.text() == viewText) {
+                showHide.text(hideText);
+            } else {
+                showHide.text(errorText); // Shouldn't be here
+            }
+        }
     }
 
     function controlSlide(e) {
@@ -22,22 +40,36 @@ $(document).ready(function () {
 
         var text = $(this).find('.show_hide').text();
 
-        if (text === showMoreText) {
-            text = showLessText;
-        } else if (text === showLessText){
-            text = showMoreText;
-        } else if(text === viewText) {
-            text = hideText;
-        } else if (text === hideText) {
-            text = viewText;
-        } else {
-            text = errorText; // Shouldn't be here
+        switch (text) {
+            case showMoreText:
+                text = showLessText;
+                break;
+            case showLessText:
+                text = showMoreText;
+                break;
+            case viewText:
+                text = hideText;
+                break;
+            case hideText:
+                text = viewText;
+                break;
+            case plus:
+                text = minus;
+                break;
+            case minus:
+                text = plus;
+                break;
+            default:
+                text = errorText; // Shouldn't be here
+                break;
         }
 
         $(this).find('.show_hide').text(text);
 
         e.preventDefault();
     }
+
+    init();
 
     $('.our-care__left__sliding__title').click(function (e) {
         controlSlide.call(this, e);
