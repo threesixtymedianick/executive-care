@@ -1,0 +1,60 @@
+.thankyou {
+
+  @include header();
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+  
+    &__content {
+      margin-bottom: 10px;
+
+      &__title {
+        @include title($color-white, $color-blue);
+      }
+
+      &__box {
+        background-color: $color-light-blue;
+        padding: 20px;
+        color: $color-black;
+        overflow: auto;
+
+        li, p {
+          font-size: $font-size-small;
+        }
+
+        &__left {
+          float: left;
+          width: 48.5%;
+
+          input {
+            margin-bottom: 20px;
+          }
+        }
+
+        &__right {
+          float: right;
+          width: 48.5%;
+      }
+    }
+  }
+
+  @media(max-width:$laptop-breakpoint) {
+    
+    &__left {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+      &__content__title {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &__header {
+      background-image: none !important;
+    }
+  }
+}
