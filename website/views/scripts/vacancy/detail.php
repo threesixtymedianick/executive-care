@@ -15,7 +15,7 @@ $vacancy              = $this->vacancy[0];
             <div class="careers__left">
                 <div class="careers__left__content">
                     <div class="careers__left__content__title">
-                        <?= $vacancy->getRoleTitle(); ?>
+                        <?= $vacancy->getRoleTitle()[0]->getName();; ?>
                     </div>
                     <div class="careers__left__content__box">
                         <div class="careers__left__content__box--detailrow">
