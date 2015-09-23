@@ -177,7 +177,7 @@ class PageController extends AbstractPageController
             if ($volunteerForm->isValid($request->getPost())) {
                 $values = $volunteerForm->getValues();
                 $view->data = $values;
-                $html = $view->render('enquiry.php');
+                $html = $view->render('volunteer.php');
                 $mail->addTo($this->config->enquiry_email);
             }
 
