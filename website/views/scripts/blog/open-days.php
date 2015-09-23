@@ -1,5 +1,6 @@
 <?php
-    $headerImage  = $this->image("open-days_header");
+    $headerImage          = $this->image("open-days_header");
+    $days                 = $this->days
 ?>
 
 <?php if ($this->editmode): ?>
@@ -17,10 +18,13 @@
                 </ul>
                 <div class="blog__content">
                     <div class="tab" id="opendays">
-                        <?php foreach ($this->days as $entry) {
+                        <?php foreach ($days as $entry) {
                             echo $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]);
                         } ?>
-                        <div class="blog__content__pagination"><?= $this->days ?></div>
+                        <?= $this->paginationControl($days, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                 </div>
             </div>

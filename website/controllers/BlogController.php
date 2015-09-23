@@ -50,7 +50,7 @@ class BlogController extends AbstractBlogController
         $this->view->events = $this->_blog->getListByCategory(
             $eventsCategory,
             $this->_getParam('page', 1),
-            $this->_getParam('perpage', 10)
+            $this->_getParam('perpage', 3)
         );
 
         $newsCategory = Object_BlogCategory::getByName('news');
@@ -61,7 +61,7 @@ class BlogController extends AbstractBlogController
         $this->view->news = $this->_blog->getListByCategory(
             $newsCategory,
             $this->_getParam('page', 1),
-            $this->_getParam('perpage', 10)
+            $this->_getParam('perpage', 3)
         );
 
         $this->render('news-events');
@@ -83,7 +83,7 @@ class BlogController extends AbstractBlogController
         $this->view->days = $this->_blog->getListByCategory(
             $daysCategory,
             $this->_getParam('page', 1),
-            $this->_getParam('perpage', 10)
+            $this->_getParam('perpage', 3)
         );
 
         $this->render('open-days');

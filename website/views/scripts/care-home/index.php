@@ -53,7 +53,7 @@ $careHomes = $this->paginator;
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <?= $this->paginationControl($this->paginator, 'Sliding', 'partial/pagination.php', [
+                    <?= $this->paginationControl($careHomes, 'Sliding', 'partial/pagination.php', [
                         'urlprefix' => $this->document->getFullPath() . '?page=',
                         'appendQueryString' => true
                     ]); ?>

@@ -37,14 +37,20 @@ $events = $this->events;
                             <?= $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]); ?>
                         <?php endforeach; ?>
 
-                        <div class="blog__content__pagination"><?= $news ?></div>
+                        <?= $this->paginationControl($news, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                     <div class="tab" id="events">
                         <?php foreach ($events as $entry) : ?>
                             <?= $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]); ?>
                         <?php endforeach; ?>
 
-                        <div class="blog__content__pagination"><?= $events ?></div>
+                        <?= $this->paginationControl($events, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                 </div>
             </div>
