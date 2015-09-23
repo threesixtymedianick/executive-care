@@ -94,7 +94,7 @@
 
           .details-title {
             display: inline-block;
-            width: 15%;
+            min-width: 15%;
             vertical-align: top;
             color: $color-dark-purple;
             font-weight: bold;
@@ -102,7 +102,7 @@
 
           .details {
             display: inline-block;
-            width: 83%;
+            max-width: 83%;
             vertical-align: top;
             margin-bottom: 10px;
           }
