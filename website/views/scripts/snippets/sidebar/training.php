@@ -16,7 +16,7 @@ endif; ?>
 <div class="sidebar__panel">
     <div class="sidebar__panel--training">
         <div class="sidebar__panel--training-image"></div>
-        <div class="sidebar__panel--content">
+        <div class="sidebar__panel--content heightMatch">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>

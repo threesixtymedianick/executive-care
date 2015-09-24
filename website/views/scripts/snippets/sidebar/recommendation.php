@@ -12,9 +12,9 @@ endif; ?>
 <?php endif; ?>
 
 <div class="sidebar__panel">
-    <div class="sidebar__panel--recommendation equalHeight">
+    <div class="sidebar__panel--recommendation">
         <div class="sidebar__panel--recommendation-image"></div>
-        <div class="sidebar__panel--content full-width-panel">
+        <div class="sidebar__panel--content full-width-panel heightMatch">
             <h3><?= $recommendation['title']; ?></h3>
             <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
             <p><?= $recommendation['description']; ?></p>
