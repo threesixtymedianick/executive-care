@@ -5,6 +5,7 @@
     $contactUsOpeningTimes          = $this->input("contact-us_opening_times");
     $googleMapLocation              = $this->input("contact-us_map_location");
     $contactUsLiveChatDetails       = $this->wysiwyg("live_chat_details_content");
+    $contactUsEnquiryHeader         = $this->wysiwyg("contact-us-header");
 ?>
 <div class="container">
     <div class="container__inner">
@@ -39,6 +40,9 @@
                     <li><a id="brochure_tab" href='#brochure'>Request a brochure</a></li>
                 </ul>
                 <div class="tab" id="enquiry">
+                    <div class="contact-us__left__header">
+                        <?= $contactUsEnquiryHeader; ?>
+                    </div>
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="enquiry_form">
                         <div class="tab__left field-wrap">
                             <?= $this->enquiryForm->enquiry_name ?>
