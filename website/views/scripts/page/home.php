@@ -1,8 +1,8 @@
 <?php
-    $title = $this->input("our-care-title");
-    $content = $this->textarea("our-care-content");
-    
-    if ($this->editmode) : ?>
+$title = $this->input("our-care-title");
+$content = $this->textarea("our-care-content");
+
+if ($this->editmode) : ?>
     <div>
         <span id="admin_carousel">
             <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them
@@ -19,13 +19,15 @@
                     <ul class="bxslider">
                         <?php foreach ($this->multihref("homepage-carousel") as $element) : ?>
                             <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
-                                <li style="background-image: url('<?= $element->getFullPath(); ?>');">
-                                    <div class="bxslider__slider-caption">
-                                        <h1>Welcome to Executive Care</h1>
+                                <a href="#">
+                                    <li style="background-image: url('<?= $element->getFullPath(); ?>');">
+                                        <div class="bxslider__slider-caption">
+                                            <h1>Welcome to Executive Care</h1>
 
-                                        <h2><a href="#">Find out more about us</a></h2>
-                                    </div>
-                                </li>
+                                            <h2>Find out more about us</h2>
+                                        </div>
+                                    </li>
+                                </a>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </ul>
@@ -36,6 +38,7 @@
                             <div class="sidebar__panel--care-explained-image"></div>
                             <div class="sidebar__panel--content">
                                 <h3><?= $title; ?></h3>
+
                                 <p><?= $content; ?></p>
                                 <a href="/our-care" class="sidebar__panel--button mleft">Read More</a>
                             </div>
