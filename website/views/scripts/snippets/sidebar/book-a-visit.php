@@ -16,7 +16,7 @@ endif; ?>
 <div class="sidebar__panel">
     <div class="sidebar__panel--visit">
         <div class="sidebar__panel--visit-image"></div>
-        <div class="sidebar__panel--content full-width-panel">
+        <div class="sidebar__panel--content full-width-panel heightMatch">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <?php if ($link !== null) : ?>

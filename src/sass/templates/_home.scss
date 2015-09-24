@@ -9,11 +9,15 @@
     @include span-columns(4);
   }
 
+  & .sidebar__panel--content {
+    height: 230px;
+  }
+
   &__panel {
     background-color: $color-grey;
     color: $color-white;
     padding: 30px 15px;
-    margin-bottom: $gutter;
+    margin-bottom: 10px;
 
     &-header {
       @include font-header($weight: 300);
@@ -82,9 +86,12 @@
             }
 
             h1, h2 {
+              font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+              font-weight: 300;
+              letter-spacing: 2px;
               text-transform: uppercase;
-              padding: 3px 15px;
-              font-size: 15px;
+              padding: 3px 13px;
+              font-size: 14px;
               background-color: $color-purple;
               margin: 0;
               display: table;
@@ -92,6 +99,7 @@
               @media(min-width:$tablet-breakpoint) {
                 font-size: 17px;
                 padding: 3px 18px;
+                letter-spacing: 4px;
               }
             }
 
@@ -101,24 +109,33 @@
           }
         }
 
-
-
         .bx-controls-direction {
 
           a {
-            width: 34px;
-            height: 44px;
+            width: 24px;
+            height: 30px;
+
+            @media(min-width:$tablet-breakpoint) {
+              width: 34px;
+              height: 44px;
+            }
           }
         }
 
         .bx-prev {
           background: url('../images/home/home-controls.png') no-repeat 0 0;
+          background-size: auto 100%;
           left: 15px;
         }
 
         .bx-next {
-          background: url('../images/home/home-controls.png') no-repeat -38px 0;
+          background: url('../images/home/home-controls.png') no-repeat -26px 0;
+          background-size: auto 100%;
           right: 15px;
+          
+          @media(min-width:$tablet-breakpoint) {
+            background-position: -39px 0;
+          }
         }
       }
     }
@@ -133,10 +150,6 @@
 
     & .sidebar__panel {
       @include span-columns(6);
-
-      a.sidebar__panel--button {
-        color: $color-black;
-      }
     }
   }
 

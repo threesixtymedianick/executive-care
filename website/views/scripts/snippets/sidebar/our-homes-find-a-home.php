@@ -10,7 +10,7 @@
         </div>
         <div class="sidebar__panel--our-homes-find-a-home-details">
             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
-            <div class="sidebar__panel--content">
+            <div class="sidebar__panel--content heightMatch">
                 <h3>Fernedale Care Home</h3>
                 <p>Use our interactive search tool to find an Executive Care home near you. Enter your postcode, town or city below:</p>
                 <a href="/contact-us" class="sidebar__panel--button mleft">Find out more</a>

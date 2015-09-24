@@ -34,9 +34,9 @@ if ($this->editmode) : ?>
                 </div>
                 <div class="home__panels">
                     <div class="sidebar__panel">
-                        <div class="sidebar__panel--care-explained equalHeight">
+                        <div class="sidebar__panel--care-explained">
                             <div class="sidebar__panel--care-explained-image"></div>
-                            <div class="sidebar__panel--content">
+                            <div class="sidebar__panel--content heightMatch">
                                 <h3><?= $title; ?></h3>
 
                                 <p><?= $content; ?></p>

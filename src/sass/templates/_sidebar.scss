@@ -100,6 +100,10 @@
           width: 40%;
         }
       }
+
+      a.sidebar__panel--button {
+        color: $color-grey;
+      }
     }
 
     &--work-for-us {
@@ -120,6 +124,10 @@
           width: 40%;
         }
       }
+
+      a.sidebar__panel--button {
+        color: $color-dark-purple;
+      }
     }
 
     &--find-a-home {
@@ -131,6 +139,7 @@
 
       & .sidebar__panel--button{
         width: 92%;
+        color: $color-dark-green;
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -178,6 +187,10 @@
           width: 40%;
         }
       }
+
+      a.sidebar__panel--button {
+        color: $color-purple;
+      }
     }
 
     &--news-and-events {
@@ -198,25 +211,9 @@
           width: 40%;
         }
       }
-    }
 
-    &--care-explained {
-      @include sidebar-panels($color-dark-green);
-
-      &-image {
-        @include sidebar-image('../images/home/our-care-explained.png');
-      }
-
-      @media (max-width: $laptop-breakpoint) {
-        &-image {
-          width: 146px;
-        }
-      }
-      
-      @media (max-width: 400px) {
-        &-image {
-          width: 40%;
-        }
+      a.sidebar__panel--button {
+        color: $color-grey;
       }
     }
 
@@ -237,6 +234,34 @@
         &-image {
           width: 40%;
         }
+      }
+
+      a.sidebar__panel--button {
+        color: $color-dark-green;
+      }
+    }
+
+    &--care-explained {
+      @include sidebar-panels($color-dark-green);
+
+      &-image {
+        @include sidebar-image('../images/home/our-care-explained.png');
+      }
+
+      @media (max-width: $laptop-breakpoint) {
+        &-image {
+          width: 146px;
+        }
+      }
+      
+      @media (max-width: 400px) {
+        &-image {
+          width: 40%;
+        }
+      }
+
+      a.sidebar__panel--button {
+        color: $color-dark-green;
       }
     }
 
@@ -257,6 +282,10 @@
         &-image {
           width: 40%;
         }
+      }
+
+      a.sidebar__panel--button {
+        color: $color-dark-purple;
       }
     }
 
@@ -370,6 +399,10 @@
         &-image {
           width: 40%;
         }
+      }
+
+      a.sidebar__panel--button {
+        color: $color-blue;
       }
     }
 

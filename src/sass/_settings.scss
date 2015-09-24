@@ -30,7 +30,7 @@ $font-size-x-x-large: 2.2em;
 @mixin font-header($weight: 300) {
   font-family: 'Raleway', 'Open Sans', 'Helvetica', 'Arial', sans-serif;
   font-weight: $weight;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 @mixin font-body($weight: 300) {

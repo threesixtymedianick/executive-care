@@ -10,7 +10,7 @@ endif; ?>
 <div class="sidebar__panel">
     <div class="sidebar__panel--find-a-home">
         <div class="sidebar__panel--find-a-home-image"></div>
-        <div class="sidebar__panel--content">
+        <div class="sidebar__panel--content heightMatch">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <input type="search" class="sidebar__panel--button" name="search" placeholder="Search" />
