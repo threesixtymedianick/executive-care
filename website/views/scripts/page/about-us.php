@@ -1,7 +1,6 @@
 <?php
-    $aboutUsInfoTab       = $this->wysiwyg("about_us_info");
-    $aboutUsTrainingTab   = $this->wysiwyg("about_us_training");
-    $headerImage          = $this->href("about_us_header");
+$aboutUsInfoTab = $this->wysiwyg("about_us_info");
+$headerImage = $this->href("about_us_header");
 ?>
 
 <?php if ($this->editmode): ?>
@@ -16,13 +15,9 @@
             <div class="about-us__left">
                 <ul class="tabs">
                     <li><a id="info_tab" href='#info'>About Us</a></li>
-                    <li><a id="training_tab" href='#training'>Staff Training</a></li>
                 </ul>
                 <div class="tab" id="info">
                     <?= $aboutUsInfoTab ?>
-                </div>
-                <div class="tab" id="training">
-                    <?= $aboutUsTrainingTab ?>
                 </div>
             </div>
             <div class="sidebar">
