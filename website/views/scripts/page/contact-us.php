@@ -62,6 +62,9 @@
                             </div>
                             <?= $this->enquiryForm->enquiry_opt_in ?>
                             <label for="enquiry_opt_in">I would like to hear about the latest news and upcoming events</label>
+                            <br />
+                            <?= $this->enquiryForm->enquiry_send_brochure ?>
+                            <label for="enquiry_send_brochure">I would like to receive a brochure through the post</label>
                             <?= $this->enquiryForm->enquiry_submit ?>
                         </div>
                     </form>

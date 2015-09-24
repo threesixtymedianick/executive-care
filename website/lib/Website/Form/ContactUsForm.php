@@ -40,10 +40,12 @@ class ContactUsForm extends BaseForm
 
         $opt = new \Zend_Form_Element_Checkbox('enquiry_opt_in');
 
+        $sendBrochure = new \Zend_Form_Element_Checkbox('enquiry_send_brochure');
+
         $submit = new \Zend_Form_Element_Submit('enquiry_submit');
         $submit->setLabel('Submit');
 
-        $this->addElements([$name, $email, $number, $address, $message, $opt, $submit]);
+        $this->addElements([$name, $email, $number, $address, $message, $opt, $sendBrochure, $submit]);
 
         parent::clearDecorators();
 
