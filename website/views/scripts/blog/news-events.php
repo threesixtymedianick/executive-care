@@ -1,24 +1,24 @@
 <?php
-    $news = $this->news;
-    $events = $this->events;
+$news = $this->news;
+$events = $this->events;
 ?>
 
 <div class="blog__slider">
     <ul class="blogslider">
         <?php foreach ($events as $slider): ?>
             <?php if ($slider->getBlogImage() !== null): ?>
-                <li style="background-image:url('<?= $slider->getBlogImage()->getFullPath(); ?>');">
-                    <div class="blogslider__details">
-                        <div class="blogslider__details--title">
-                            <a href="<?= $this->url(['key' => $slider->getUrlPath()], 'blog-show', false, false); ?>">
+                <a href="<?= $this->url(['key' => $slider->getUrlPath()], 'blog-show', false, false); ?>">
+                    <li style="background-image:url('<?= $slider->getBlogImage()->getFullPath(); ?>');">
+                        <div class="blogslider__details">
+                            <div class="blogslider__details--title">
                                 <?= $slider->getTitle() ?>
-                            </a>
+                            </div>
+                            <div class="blogslider__details--date">
+                                <?= $slider->getDate()->toString('dd.MM.Y'); ?>
+                            </div>
                         </div>
-                        <div class="blogslider__details--date">
-                            <?= $slider->getDate()->toString('dd.MM.Y'); ?>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </a>
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
@@ -34,14 +34,14 @@
                 <div class="blog__content">
                     <div class="tab" id="news">
                         <?php foreach ($news as $entry) : ?>
-                            <?= $this->partial("blog/partial/blog-entry.php", [ "entry" => $entry ]); ?>
+                            <?= $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]); ?>
                         <?php endforeach; ?>
 
                         <div class="blog__content__pagination"><?= $news ?></div>
                     </div>
                     <div class="tab" id="events">
                         <?php foreach ($events as $entry) : ?>
-                            <?= $this->partial("blog/partial/blog-entry.php", [ "entry" => $entry ]); ?>
+                            <?= $this->partial("blog/partial/blog-entry.php", ["entry" => $entry]); ?>
                         <?php endforeach; ?>
 
                         <div class="blog__content__pagination"><?= $events ?></div>
