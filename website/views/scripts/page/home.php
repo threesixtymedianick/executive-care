@@ -19,12 +19,29 @@ if ($this->editmode) : ?>
                     <ul class="bxslider">
                         <?php foreach ($this->multihref("homepage-carousel") as $element) : ?>
                             <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
-                                <a href="#">
+                                <?php
+                                if (null !== $element->getMetadata("Link-Document") && "" !== $element->getMetadata("Link-Document")) {
+                                    $link = $element->getMetadata("Link-Document");
+                                } elseif (null !== $element->getMetadata("Link-Object") && "" !== $element->getMetadata("Link-Object")) {
+                                    $link = $element->getMetadata("Link-Object");
+                                } elseif (null !== $element->getMetadata("Link-External") && "" !== $element->getMetadata("Link-External")) {
+                                    $link = $element->getMetadata("Link-External");
+                                } else {
+                                    $link = "";
+                                } ?>
+                                <a href="<?= $link; ?>">
                                     <li style="background-image: url('<?= $element->getFullPath(); ?>');">
                                         <div class="bxslider__slider-caption">
-                                            <h1>Welcome to Executive Care</h1>
-
-                                            <h2>Find out more about us</h2>
+                                            <?php if (null !== $element->getMetadata("title") && "" !== $element->getMetadata("title")) : ?>
+                                                <h1>
+                                                    <?= $element->getMetadata("title"); ?>
+                                                </h1>
+                                            <?php endif; ?>
+                                            <?php if (null !== $element->getMetadata("subtitle") && "" !== $element->getMetadata("subtitle")) : ?>
+                                                <h2>
+                                                    <?= $element->getMetadata("subtitle"); ?>
+                                                </h2>
+                                            <?php endif; ?>
                                         </div>
                                     </li>
                                 </a>

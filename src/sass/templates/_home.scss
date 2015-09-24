@@ -95,6 +95,7 @@
               background-color: $color-purple;
               margin: 0;
               display: table;
+              color: $color-white;
               
               @media(min-width:$tablet-breakpoint) {
                 font-size: 17px;
