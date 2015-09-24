@@ -1,6 +1,6 @@
 <?php
-$aboutUsInfoTab = $this->wysiwyg("about_us_info");
-$headerImage = $this->href("about_us_header");
+    $aboutUsInfoTab = $this->wysiwyg("about_us_info");
+    $headerImage = $this->href("about_us_header");
 ?>
 
 <?php if ($this->editmode): ?>
