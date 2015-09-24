@@ -26,8 +26,8 @@
                             <?= $contactUsEnquiryNumber ?><br />
                             <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
                         </div>
-                        <br clear="all" />
                         </div>
+                        <br />
                         <div class="contact-us__address__telephone">
                             Tel: <?= $contactUsEnquiryNumberSecond ?>
                         </div>
