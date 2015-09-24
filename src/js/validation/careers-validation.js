@@ -28,7 +28,12 @@ $(document).ready(function () {
         application_position_1                      : "required",
         application_preferred_shift                 : "required",
         application_preferred_hours                 : "required",
-        application_how_did_you_hear                : "required"
+        application_how_did_you_hear                : "required",
+        application_recent_company_email_one        : { valDomain: true },
+        application_recent_company_email_two        : { valDomain: true },
+        application_recent_company_email_three      : { valDomain: true }
+
+
     };
 
     if($(form).length > 0) {
