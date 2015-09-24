@@ -225,9 +225,13 @@
       margin-top: 0px;
       margin-bottom: 0px;
 
-      &__content__title, &__content__title.results {
+      &__content__title {
         width: 100%;
         text-align: center;
+      }
+
+      &__content__title.results, &__content__box.hide {
+        display: none;
       }
     }
 

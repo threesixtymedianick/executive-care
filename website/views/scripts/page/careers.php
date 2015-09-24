@@ -29,7 +29,7 @@
                     <div class="careers__left__content__title results">
                         Vacancies
                     </div>
-                    <div class="careers__left__content__box">
+                    <div class="careers__left__content__box hide">
 
                         <?php if (empty($vacancies)) : ?>
                             No vacancies
