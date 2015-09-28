@@ -90,7 +90,7 @@ $distances = $this->distances;
 
                                 <p>Use our interactive search tool to find an Executive Care home near you. Enter your
                                     postcode, town or city below:</p>
-                                <a href="/contact-us" class="sidebar__panel--button right">Find out more</a>
+                                <a href="/contact-us" class="sidebar__panel--button mleft">Find out more</a>
                             </div>
                         </div>
                     </div>

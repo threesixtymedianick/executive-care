@@ -308,6 +308,12 @@
         &-image {
           width: 146px;
         }
+
+        a.sidebar__panel--button.mleft {
+          color: $color-dark-green;
+          width: 150px;
+          display: block;
+        }
       }
       
       @media (max-width: 400px) {
