@@ -13,7 +13,7 @@ endif; ?>
         <div class="sidebar__panel--content heightMatch">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
-            <input type="search" class="sidebar__panel--button" name="search" placeholder="Search" />
+            <input type="search" class="sidebar__panel--button mleft" name="search" placeholder="Search" />
         </div>
     </div>
 </div>
