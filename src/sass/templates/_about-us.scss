@@ -43,15 +43,9 @@
       background-image: none !important;
     }
 
-    #info_tab, #training_tab {
-      width: 50%;
+    #info_tab {
+      width: 100%;
       text-align: center;
-    }
-  }
-
-  @media(max-width:$tablet-breakpoint) {
-    #info_tab, #training_tab {
-      font-size: 0.75em;
     }
   }
 }
