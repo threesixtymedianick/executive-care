@@ -52,6 +52,10 @@
     }
     @include sliding-content($color-blue, $color-blue, $color-blue, $color-light-blue);
 
+    &__sliding__content.slide {
+      font-size: 14px;
+    }
+
   }
 
   &__right {

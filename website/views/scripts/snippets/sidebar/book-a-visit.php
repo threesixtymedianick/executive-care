@@ -19,9 +19,11 @@ endif; ?>
         <div class="sidebar__panel--content full-width-panel heightMatch">
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
+            <div class="visit-btn">
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button"><?= $link->getText(); ?></a>
             <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>
