@@ -90,6 +90,11 @@
         @include sidebar-image('../images/home/contact-us.png');
       }
 
+      a.sidebar__panel--button {
+        display: block;
+        width: 150px;
+      }
+
       @media (max-width: $laptop-breakpoint) {
         &-image {
           width: 146px;
@@ -203,6 +208,11 @@
         @include sidebar-image('../images/home/open-days.png');
       }
 
+      a.sidebar__panel--button {
+        display: block;
+        width: 150px;
+      }
+
       @media (max-width: $laptop-breakpoint) {
         &-image {
           width: 146px;
@@ -225,6 +235,11 @@
 
       &-image {
         @include sidebar-image('../images/home/our-care-explained.png');
+      }
+
+      a.sidebar__panel--button {
+        display: block;
+        width: 150px;
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -396,6 +411,11 @@
 
       &-image {
         @include sidebar-image('../images/home/work-for-executive-care.png');
+      }
+
+      a.sidebar__panel--button {
+        display: block;
+        width: 150px;
       }
 
       @media (max-width: $laptop-breakpoint) {
