@@ -98,13 +98,14 @@
       &__homes-box {
         background-color: $color-green;
         color: $color-white;
-        width: 48.5%;
+        width: 47.5%;
         display: inline-block;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         float: left;
 
         &:nth-child(even) {
           margin-left: 2%;
+          margin-right: 10px;
         }
 
         &--image {
@@ -113,7 +114,7 @@
           background-repeat: no-repeat;
           background-size: cover;
           background-position: center;
-          width: 60%;
+          width: 50%;
           height: 230px;
         }
 
@@ -181,10 +182,14 @@
 
       ul {
         list-style-type: none;
+        float: right;
+        display: block;
+        margin-right: 15px;
+        margin-top: 0px;
 
         li {
           display: inline-block;
-          padding: 2px 4px;
+          padding: 2px 7px;
 
           a {
             text-decoration: none;
