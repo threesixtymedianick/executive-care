@@ -17,13 +17,15 @@
        a {
          @include tabs-li-a($color-transparent);
 
-         &#news_tab,
-         &#open_day_tab {
+         &#news_tab.active,
+         &#open_day_tab,
+         &#events_tab.active {
            background-color: $color-purple;
          }
 
-         &#events_tab {
-           background-color: $color-blue;
+         &#events_tab ,
+         &#news_tab {
+           background-color: $color-grey;
          }
        }
      }
