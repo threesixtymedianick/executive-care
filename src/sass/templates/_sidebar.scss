@@ -173,6 +173,26 @@
 
     &--visit {
       background-color: $color-dark-green;
+
+      & .visit-btn {
+        float: right;
+        width: 60%;
+
+        & .sidebar__panel--button {
+          display: block;
+          width: 150px;
+          color: $color-dark-green;
+        }
+      }
+
+      @media(max-width:$laptop-breakpoint) {
+        & .visit-btn {
+          width: auto;
+          margin-right: -15px;
+        }
+      }
+
+
     }
 
     &--contact-us {
@@ -304,6 +324,8 @@
 
       a.sidebar__panel--button {
         color: $color-dark-purple;
+        display: block;
+        width: 150px;
       }
     }
 
