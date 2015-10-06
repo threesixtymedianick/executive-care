@@ -3,6 +3,7 @@ namespace Website\Service;
 
 use Guzzle\Http\Client;
 use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Http\Exception\ServerErrorReponseException;
 use Doctrine\Common\Cache\FilesystemCache;
 use Guzzle\Plugin\Cache\CallbackCanCacheStrategy;
 use Guzzle\Cache\DoctrineCacheAdapter;
@@ -145,6 +146,8 @@ class RecommendationService
     {
         try {
             $response = $this->client->get("recommendations/rss.cfm?displayid=$careHomeId")->send();
+        } catch (ServerErrorReponseException $e) {
+            return false;
         } catch (ClientErrorResponseException $e) {
             return false;
         }
