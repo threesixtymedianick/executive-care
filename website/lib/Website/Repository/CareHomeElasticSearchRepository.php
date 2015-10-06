@@ -90,4 +90,35 @@ class CareHomeElasticSearchRepository
 
         return false;
     }
+
+    public function nearby($lat, $lon, $size = 5)
+    {
+        // Carehomes index
+        $index = $this->client->getIndex(self::ES_INDEX);
+
+        $query = new Query();
+        $query->setSize($size);
+
+        $query->addSort([
+            '_geo_distance' => [
+                'location' => [ $lon, $lat ],
+                'order'    => 'asc',
+                'unit'     => 'miles',
+            ]
+        ]);
+
+        // Get the results
+        try {
+            $resultSet = $index->search($query);
+            $careHomes = $resultSet->getResults();
+        } catch (Exception $e) {
+            return false;
+        }
+
+        if (!empty($careHomes)) {
+            return $careHomes;
+        }
+
+        return false;
+    }
 }
