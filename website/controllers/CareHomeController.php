@@ -65,10 +65,9 @@ class CareHomeController extends AbstractPageController
             $results = $careHomesRepo->search($query);
         }
 
-        // Initalise empty arrays, template will check for them being empty and
+        // Initalise empty array, template will check for them being empty and
         // display no results found if necessary
         $careHomes = [];
-        //$distances = [];
 
         $counter = 0;
 
@@ -89,8 +88,6 @@ class CareHomeController extends AbstractPageController
         $paginator->setCurrentPageNumber($this->_getParam('page'));
         $paginator->setItemCountPerPage(10);
 
-
         $this->view->results = $paginator;
-        //$this->view->distances = $distances;
     }
 }
