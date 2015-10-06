@@ -22,7 +22,7 @@ $careHomes = $this->careHomes;
                         <p><?= $ourHomesDescription ?></p>
 
                         <div class="our-homes__left--search">
-                            <form action="/our-homes/search" method="POST">
+                            <form action="/our-homes/search" method="GET">
                                 <input type="search" name="query" placeholder="Search by name, town or postcode"/>
                                 <button class="search-submit" type="submit" role="button">
                                     Search

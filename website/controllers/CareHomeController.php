@@ -58,7 +58,7 @@ class CareHomeController extends AbstractPageController
      */
     public function searchAction()
     {
-        $query = $this->getRequest()->getPost('query');
+        $query = $this->_getParam('query');
 
         if (null !== $query) {
             $careHomesRepo = new CareHomeElasticSearchRepository();
