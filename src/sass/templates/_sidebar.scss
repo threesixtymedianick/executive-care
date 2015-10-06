@@ -7,6 +7,14 @@
     margin-top: 0;
   }
 
+  .map {
+    height: 410px;
+    width: 100%;
+    border-left: 2px solid $color-dark-green;
+    border-right: 2px solid $color-dark-green;
+    position: relative;
+  }
+
   @media (max-width:$laptop-breakpoint) {
     &.home {
       width:100%;
@@ -100,7 +108,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -124,7 +132,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -153,15 +161,15 @@
       }
 
       :-moz-placeholder { /* Firefox 18- */
-        color: $color-dark-green;  
+        color: $color-dark-green;
       }
 
       ::-moz-placeholder {  /* Firefox 19+ */
-        color: $color-dark-green;  
+        color: $color-dark-green;
       }
 
-      :-ms-input-placeholder {  
-        color: $color-dark-green;  
+      :-ms-input-placeholder {
+        color: $color-dark-green;
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -207,7 +215,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -238,7 +246,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -267,7 +275,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -291,7 +299,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -315,7 +323,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -352,7 +360,7 @@
           display: block;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;
@@ -445,7 +453,7 @@
           width: 146px;
         }
       }
-      
+
       @media (max-width: 400px) {
         &-image {
           width: 40%;

@@ -42,7 +42,12 @@ $recommendations = $this->recommendations;
                 </div>
             </div>
             <div class="sidebar">
-                <div id="careHomeMap" data-lat="<?= $careHome->getLat() ?>" data-lon="<?= $careHome->getLon() ?>"></div>
+                <div id="careHomeMap"
+                     class="map"
+                     data-id="<?= $careHome->getId() ?>"
+                     data-lat="<?= $careHome->getLat() ?>"
+                     data-lon="<?= $careHome->getLon() ?>">
+                </div>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/get-in-touch')); ?>
 
