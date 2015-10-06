@@ -14,6 +14,9 @@ endif; ?>
             <h3><?= $title; ?></h3>
             <p><?= $content; ?></p>
             <input type="search" class="sidebar__panel--button mleft" name="search" placeholder="Search" />
+            <button class="search-submit" type="submit" role="button">
+                                    Search
+                                </button>
         </div>
     </div>
 </div>
