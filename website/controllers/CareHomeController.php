@@ -12,10 +12,16 @@ class CareHomeController extends AbstractPageController
      */
     public function indexAction()
     {
+        // Load care homes
         $careHomes = new Object\CareHomes\Listing();
         $careHomes->setOrderKey("title");
+        $list = $careHomes->load();
 
-        $this->view->careHomes = $careHomes->load();
+        // Setup pagination
+        $paginator = Zend_Paginator::factory($list);
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        $paginator->setItemCountPerPage(6);
+        $this->view->careHomes = $paginator;
     }
 
     /**
@@ -27,22 +33,22 @@ class CareHomeController extends AbstractPageController
     {
         $key = $this->_getParam("key");
 
-        if (null !== $key) {
-            $list = new Object_CareHomes_List();
-            $list->setCondition("o_key = '" . $key . "'");
-            $careHome = $list->load();
-
-            $recommendationService = new RecommendationService();
-            $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
-
-            if (false !== $recommendations && !empty($recommendations)) {
-                $this->view->recommendations = $recommendations;
-            }
-
-            $this->view->careHome = $careHome[0];
-        } else {
+        if (null === $key) {
             throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
         }
+
+        $list = new Object_CareHomes_List();
+        $list->setCondition("o_key = '" . $key . "'");
+        $careHome = $list->load();
+
+        $recommendationService = new RecommendationService();
+        $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
+
+        if (false !== $recommendations && !empty($recommendations)) {
+            $this->view->recommendations = $recommendations;
+        }
+
+        $this->view->careHome = $careHome[0];
     }
 
     /**
@@ -52,26 +58,36 @@ class CareHomeController extends AbstractPageController
      */
     public function searchAction()
     {
-        $query = $this->getRequest()->getPost('query');
+        $query = $this->_getParam('query');
 
         if (null !== $query) {
             $careHomesRepo = new CareHomeElasticSearchRepository();
             $results = $careHomesRepo->search($query);
         }
 
-        // Initalise empty arrays, template will check for them being empty and
+        // Initalise empty array, template will check for them being empty and
         // display no results found if necessary
         $careHomes = [];
-        $distances = [];
+
+        $counter = 0;
 
         if (!empty($results)) {
             foreach ($results as $home) {
+                // Get care homes
                 $careHomes[] = Object_CareHomes::getById($home->getId());
-                $distances[] = $home->getParam('sort');
+
+                // Append distance to care home
+                $careHomes[$counter]->distance = $home->getParam('sort')[0];
+
+                $counter++;
             }
         }
 
-        $this->view->results = $careHomes;
-        $this->view->distances = $distances;
+        // Setup pagination
+        $paginator = Zend_Paginator::factory($careHomes);
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        $paginator->setItemCountPerPage(6);
+
+        $this->view->results = $paginator;
     }
 }

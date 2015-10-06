@@ -22,7 +22,7 @@ $careHomes = $this->careHomes;
                         <p><?= $ourHomesDescription ?></p>
 
                         <div class="our-homes__left--search">
-                            <form action="/our-homes/search" method="POST">
+                            <form action="/our-homes/search" method="GET">
                                 <input type="search" name="query" placeholder="Search by name, town or postcode"/>
                                 <button class="search-submit" type="submit" role="button">
                                     Search
@@ -53,15 +53,12 @@ $careHomes = $this->careHomes;
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <div class="our-homes__left--pagination">
-                        <ul>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                        </ul>
-                    </div>
+                    <!-- pagination start -->
+                    <?= $this->paginationControl($this->careHomes, 'Sliding', 'includes/paging.php', [
+                       'urlprefix'         => $this->document->getFullPath() . '?page=',
+                       'appendQueryString' => true
+                    ]); ?>
+                    <!-- pagination end -->
                 </div>
             </div>
             <div class="sidebar">

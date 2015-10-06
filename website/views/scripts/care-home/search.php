@@ -50,7 +50,7 @@ $distances = $this->distances;
                                     <?= $home->getTitle() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__distance">
-                                    <?= round($distances[$i][0], 2); ?> Miles away<br/>
+                                    <?= round($home->distance, 2); ?> Miles away<br/>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__address">
                                     <?= $home->getAddress() ?><br/>
@@ -62,15 +62,12 @@ $distances = $this->distances;
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <div class="our-homes__left--pagination">
-                        <ul>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                        </ul>
-                    </div>
+                    <!-- pagination start -->
+                    <?= $this->paginationControl($this->results, 'Sliding', 'includes/paging.php', [
+                       'urlprefix'         => $this->document->getFullPath() . '?page=',
+                       'appendQueryString' => true
+                    ]); ?>
+                    <!-- pagination end -->
                 </div>
             </div>
             <div class="sidebar">
