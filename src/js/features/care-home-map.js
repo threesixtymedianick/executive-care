@@ -25,33 +25,5 @@ $(document).ready(function() {
             icon: '/website/static/images/place_icons/place_icon_1.png',
             map: map,
         });
-
-        // Get care home JSON
-        $.ajax({
-            url: '/ajax/care-home/' + id,
-            type: 'GET',
-            dataType: 'json',
-        })
-        .done(function(data) {
-            $.each(data, function(key, data) {
-                // Check lat long is specified
-                /*if (data.lat !== null && data.lon !== null) {
-                    // Create LatLng
-                    var latLng = new google.maps.LatLng(data.lat, data.lon);
-
-                    var iconBase = '../website/static/images/place_icons/';
-
-                    // Create marker
-                    var marker = new google.maps.Marker({
-                        position: latLng,
-                        icon: iconBase + 'place_icon_1.png',
-                        map: map,
-                    });
-                }*/
-            });
-        })
-        .fail(function() {
-            // Handle errors
-        });
     }
 });
