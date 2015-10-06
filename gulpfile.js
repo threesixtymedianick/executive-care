@@ -12,6 +12,7 @@ var gulp        = require("gulp");
 var concat      = require("gulp-concat");
 var copy        = require("gulp-copy");
 var cssmin      = require("gulp-minify-css");
+var sourcemaps  = require('gulp-sourcemaps');
 var imagemin    = require("gulp-imagemin");
 var plumber     = require("gulp-plumber");
 var runSequence = require('run-sequence');
@@ -62,11 +63,13 @@ gulp.task("watch", function() {
 gulp.task("build-css", function() {
     return gulp
         .src(paths.src.scss + "*.scss")
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'IE 10']
               }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.build.css))
     ;
 });
