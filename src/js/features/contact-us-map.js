@@ -77,7 +77,8 @@ function openMapsInGoogleMaps(controlDiv) {
     var controlUI = document.createElement('div');
     controlUI.style.backgroundColor = '#fff';
     controlUI.style.cursor = 'pointer';
-    controlUI.style.marginBottom = '22px';
+    controlUI.style.marginBottom = '30px';
+    controlUI.style.marginLeft = '-76px';
     controlUI.style.textAlign = 'center';
     controlUI.title = 'Click to open on GoogleMaps';
     controlDiv.appendChild(controlUI);
@@ -89,7 +90,7 @@ function openMapsInGoogleMaps(controlDiv) {
     controlText.style.fontFamily = 'Raleway,Open Sans';
     controlText.style.fontWeight = 'bold';
     controlText.style.fontSize = '14px';
-    controlText.style.lineHeight = '38px';
+    controlText.style.lineHeight = '30px';
     controlText.style.paddingLeft = '5px';
     controlText.style.paddingRight = '5px';
     controlText.innerHTML = 'View on Google';
