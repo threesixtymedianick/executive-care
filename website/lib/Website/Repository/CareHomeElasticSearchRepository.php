@@ -66,6 +66,8 @@ class CareHomeElasticSearchRepository
         // Note on $lon, $lat being reversed, this is required
         // https://www.elastic.co/guide/en/elasticsearch/guide/current/lat-lon-formats.html
         $query = new Query();
+        $query->setSize(20);
+
         $query->addSort([
             '_geo_distance' => [
                 'location' => [ $lon, $lat ],

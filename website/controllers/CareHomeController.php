@@ -68,16 +68,29 @@ class CareHomeController extends AbstractPageController
         // Initalise empty arrays, template will check for them being empty and
         // display no results found if necessary
         $careHomes = [];
-        $distances = [];
+        //$distances = [];
+
+        $counter = 0;
 
         if (!empty($results)) {
             foreach ($results as $home) {
+                // Get care homes
                 $careHomes[] = Object_CareHomes::getById($home->getId());
-                $distances[] = $home->getParam('sort');
+
+                // Append distance to care home
+                $careHomes[$counter]->distance = $home->getParam('sort')[0];
+
+                $counter++;
             }
         }
 
-        $this->view->results = $careHomes;
-        $this->view->distances = $distances;
+        // Setup pagination
+        $paginator = Zend_Paginator::factory($careHomes);
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        $paginator->setItemCountPerPage(10);
+
+
+        $this->view->results = $paginator;
+        //$this->view->distances = $distances;
     }
 }
