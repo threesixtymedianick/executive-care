@@ -22,7 +22,7 @@ $recommendations = $this->recommendations;
                         </div>
                         <?= $this->partial("partial/care-homes/letter-from-the-manager.php", ["careHomeObject" => $careHome]); ?>
 
-                        <?= $this->partial("partial/care-homes/activities-calendar.php", ["careHomeObject" => $careHome]); ?>
+                        <?= $this->partial("partial/care-homes/life-here-at-the-home.php", ["careHomeObject" => $careHome]); ?>
 
                         <?= $this->partial("partial/care-homes/gallery.php", ["careHomeObject" => $careHome]); ?>
 
