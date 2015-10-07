@@ -20,10 +20,10 @@
         <div class="testimonials__content__item--summary--date">
             <?= $entry->getDate()->toString('dd.MM.Y'); ?>
         </div>
-        <div class="testimonials__content__item--summary-text">
-            <?= (trim($entry->getSummary()))
-                ? $entry->getSummary()
-                : Website_Tool_Text::cutStringRespectingWhitespace(trim(strip_tags($entry->getContent())), 200) ?>
-        </div>
+    </div>
+    <div class="testimonials__content__item--summary-text">
+        <?= (trim($entry->getSummary()))
+            ? $entry->getSummary()
+            : Website_Tool_Text::cutStringRespectingWhitespace(trim(strip_tags($entry->getContent())), 200) ?>
     </div>
 </div>
