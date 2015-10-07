@@ -44,7 +44,7 @@ class CareHomeController extends AbstractPageController
         if (null !== $careHome[0]->getCareHomeID()) {
             // Get recommendations for care home
             $recommendationService = new RecommendationService();
-            $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
+            $recommendations = $recommendationService->getRecommendationForCareHome($careHome[0]->getCareHomeID());
 
             if (false !== $recommendations && !empty($recommendations)) {
                 $this->view->recommendations = $recommendations;

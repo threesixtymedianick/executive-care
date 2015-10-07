@@ -1,6 +1,6 @@
 <?php
 $careHome        = $this->careHome;
-$recommendations = $this->recommendations;
+$recommendation  = $this->recommendations;
 $googleMapsUrl   = 'https://www.google.com/maps/preview/@' . $careHome->getLat() . ',' . $careHome->getLon() . ',13z';
 $nearbyHomes     = $this->nearbyHomes;
 ?>

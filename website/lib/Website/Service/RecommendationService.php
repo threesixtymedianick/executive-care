@@ -66,7 +66,7 @@ class RecommendationService
      * @param  int $careHomeId
      * @return array|bool
      */
-    public function getRecommendationsForCareHome($careHomeId)
+    public function getRecommendationForCareHome($careHomeId)
     {
         if (!is_numeric($careHomeId)) {
             return false;
@@ -78,20 +78,22 @@ class RecommendationService
             return false;
         }
 
-        $recommendations = [];
+        // Count how many recommendations there are for this home
+        $recommendationCount = count($xmlData->channel->item);
 
-        if (!empty($xmlData)) {
-            foreach ($xmlData->channel->item as $recommendation) {
-                $recommendations[] = [
-                    'title'       => (string) $recommendation->title,
-                    'description' => (string) $recommendation->description,
-                    'pubDate'     => (string) $recommendation->pubDate,
-                    'author'      => (string) $recommendation->author,
-                ];
-            }
-        }
+        // Pick a random recommendation from this list
+        $random = rand(0, $recommendationCount - 1);
 
-        return $recommendations;
+        // Create the recommendation
+        $recommendation = [
+            'title'       => (string) $xmlData->channel->title,
+            'link'        => (string) $xmlData->channel->link,
+            'description' => (string) $xmlData->channel->item[$random]->description,
+            'pubDate'     => (string) $xmlData->channel->item[$random]->pubDate,
+            'author'      => (string) $xmlData->channel->item[$random]->author,
+        ];
+
+        return $recommendation;
     }
 
     /**
