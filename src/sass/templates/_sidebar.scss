@@ -428,6 +428,18 @@
         color: $color-white;
       }
 
+      img {
+        margin-top: 15px;
+        float: left;
+      }
+
+      .rec-text {
+        float: right;
+        width: 170px;
+        margin-top: 15px;
+        margin-right: -25px;
+      }
+
       .recommendations-logo {
         width: 58%;
         display: inline;

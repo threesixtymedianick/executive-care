@@ -18,6 +18,12 @@ $image = $this->image('sidebar_images');
             <div class="sidebar__panel--recommendation-image"
                  style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></div>
             <div class="sidebar__panel--content full-width-panel heightMatch">
+                <img src="/website/static/images/reccomendation-logo.png">
+                <div class="rec-text">
+                Latest recomendations for homes in our group
+                </div>
+                <div class="clear">
+                </div>
                 <h3><?= $recommendation['title']; ?></h3>
                 <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
                 <p><?= $recommendation['description']; ?></p>
