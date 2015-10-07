@@ -51,6 +51,7 @@
 
    &__content {
      background-color: $color-light-purple;
+     overflow: auto;
 
      &--date {
        display: inline-block;
