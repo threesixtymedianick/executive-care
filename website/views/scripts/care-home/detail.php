@@ -84,7 +84,21 @@ $nearbyHomes     = $this->nearbyHomes;
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
+                <?php if (null !== $recommendation): ?>
+                    <div class="sidebar__panel">
+                        <div class="sidebar__panel--recommendation">
+                            <div class="sidebar__panel--recommendation-image"></div>
+                            <div class="sidebar__panel--content full-width-panel heightMatch">
+                                <h3><?= $recommendation['title']; ?></h3>
+                                <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
+                                <p><?= $recommendation['description']; ?></p>
+                                <a href="<?= $recommendation['link']; ?>" target="_blank">
+                                    Continue reading
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

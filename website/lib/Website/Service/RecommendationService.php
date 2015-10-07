@@ -74,6 +74,10 @@ class RecommendationService
 
         $xmlData = $this->getRecommendationData($careHomeId);
 
+        if (false === $xmlData) {
+            return false;
+        }
+
         $recommendations = [];
 
         if (!empty($xmlData)) {

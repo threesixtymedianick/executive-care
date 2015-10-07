@@ -23,7 +23,7 @@ $distances = $this->distances;
                         <p><?= $ourHomesDescription ?></p>
 
                         <div class="our-homes__left--search">
-                            <form action="/our-homes/search" method="POST">
+                            <form action="/our-homes/search" method="GET">
                                 <input type="search" name="query" placeholder="Search by name, town or postcode"/>
                                 <button class="search-submit" type="submit" role="button">
                                     Search
@@ -57,7 +57,7 @@ $distances = $this->distances;
                                     <?= $home->getPostcode() ?>
                                 </div>
                                 <div class="our-homes__left__content__homes-box__info__find-out-more">
-                                    <a href="#">Find out more</a>
+                                    <a href="/care-homes/detail/<?= $home->getKey(); ?>">Find out more</a>
                                 </div>
                             </div>
                         </div>
