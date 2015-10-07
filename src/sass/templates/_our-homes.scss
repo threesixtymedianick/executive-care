@@ -204,6 +204,10 @@
     &__nearby {
       padding: 20px;
       background-color: $color-light-green;
+
+      .nearby-homes-slider {
+        height: 190px;
+      }
     }
   }
 

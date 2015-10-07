@@ -41,11 +41,25 @@ class CareHomeController extends AbstractPageController
         $list->setCondition("o_key = '" . $key . "'");
         $careHome = $list->load();
 
+        // Get recommendations for care home
         $recommendationService = new RecommendationService();
         $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
 
         if (false !== $recommendations && !empty($recommendations)) {
             $this->view->recommendations = $recommendations;
+        }
+
+        // Get nearby care homes
+        $careHomesRepo = new CareHomeElasticSearchRepository();
+        $nearbyHomes = $careHomesRepo->nearby((float) $careHome[0]->getLat(), (float) $careHome[0]->getLon());
+
+        if (false !== $nearbyHomes && !empty($careHomesRepo)) {
+            $nearbyHomes = $this->transformResults($nearbyHomes);
+
+            // Remove the first item from the results as it will be the care home we are currently viewing
+            array_shift($nearbyHomes);
+
+            $this->view->nearbyHomes = $nearbyHomes;
         }
 
         $this->view->careHome = $careHome[0];
@@ -65,6 +79,26 @@ class CareHomeController extends AbstractPageController
             $results = $careHomesRepo->search($query);
         }
 
+        // Transform results into array of care home objects
+        $careHomes = $this->transformResults($results);
+
+        // Setup pagination
+        $paginator = Zend_Paginator::factory($careHomes);
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        $paginator->setItemCountPerPage(6);
+
+        $this->view->results = $paginator;
+    }
+
+    /**
+     * Transform results from array of Elastica\Result into array of
+     * care home objects
+     *
+     * @param  array  $results
+     * @return array
+     */
+    protected function transformResults($results)
+    {
         // Initalise empty array, template will check for them being empty and
         // display no results found if necessary
         $careHomes = [];
@@ -87,11 +121,6 @@ class CareHomeController extends AbstractPageController
             }
         }
 
-        // Setup pagination
-        $paginator = Zend_Paginator::factory($careHomes);
-        $paginator->setCurrentPageNumber($this->_getParam('page'));
-        $paginator->setItemCountPerPage(6);
-
-        $this->view->results = $paginator;
+        return $careHomes;
     }
 }

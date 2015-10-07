@@ -5,6 +5,7 @@ require("./modules/nav");
 require("./modules/box-height");
 require("./modules/date-picker");
 require("./modules/live-chat");
+require("./modules/nearby-homes-slider");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");

@@ -1,8 +1,8 @@
 <?php
 $careHome        = $this->careHome;
 $recommendations = $this->recommendations;
-
-$googleMapsUrl = 'https://www.google.com/maps/preview/@' . $careHome->getLat() . ',' . $careHome->getLon() . ',13z';
+$googleMapsUrl   = 'https://www.google.com/maps/preview/@' . $careHome->getLat() . ',' . $careHome->getLon() . ',13z';
+$nearbyHomes     = $this->nearbyHomes;
 ?>
 
 <div class="our-care__header">-</div>
@@ -40,7 +40,18 @@ $googleMapsUrl = 'https://www.google.com/maps/preview/@' . $careHome->getLat() .
                     Others nearby
                 </div>
                 <div class="our-homes__left__nearby">
-                    More 'ere
+                    <div class="nearby-homes-slider">
+                        <?php if (isset($nearbyHomes)) : ?>
+                            <?php foreach ($nearbyHomes as $careHome) : ?>
+                                <div class="slide">
+                                    <img src="<?= $careHome->getHomeImage() ?>" />
+                                    <?= $careHome->getTitle(); ?><br />
+                                    <?= round($careHome->distance, 2) ?> miles away
+                                    <a href="<?= $careHome->getKey() ?>">Find out more</a>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
             <div class="sidebar">
