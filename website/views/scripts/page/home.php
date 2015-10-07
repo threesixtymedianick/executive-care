@@ -19,7 +19,9 @@ if ($this->editmode) : ?>
                 <div class="home__panel home__welcome">
                     <ul class="bxslider">
                         <?php foreach ($carouselImages as $element) : ?>
-                            <?= $this->partial("partial/homepage-slider.php", ['element' => $element]); ?>
+                            <?php if ($element instanceof \Pimcore\Model\Asset\Image) : ?>
+                                <?= $this->partial("partial/homepage-slider.php", ['element' => $element]); ?>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </ul>
                 </div>
