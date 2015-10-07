@@ -41,12 +41,14 @@ class CareHomeController extends AbstractPageController
         $list->setCondition("o_key = '" . $key . "'");
         $careHome = $list->load();
 
-        // Get recommendations for care home
-        $recommendationService = new RecommendationService();
-        $recommendations = $recommendationService->getRecommendationsForCareHome($careHome[0]->getCareHomeID());
+        if (null !== $careHome[0]->getCareHomeID()) {
+            // Get recommendations for care home
+            $recommendationService = new RecommendationService();
+            $recommendations = $recommendationService->getRecommendationForCareHome($careHome[0]->getCareHomeID());
 
-        if (false !== $recommendations && !empty($recommendations)) {
-            $this->view->recommendations = $recommendations;
+            if (false !== $recommendations && !empty($recommendations)) {
+                $this->view->recommendations = $recommendations;
+            }
         }
 
         // Get nearby care homes
