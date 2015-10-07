@@ -1,15 +1,15 @@
 <?php
     $title                = $this->input('title', [ 'width' => 250 ]);
     $ourCareInfoBox       = $this->wysiwyg("our-care_info");
-    $headerImage          = $this->href("our-care_header");
+    $headerImage          = $this->image("our-care_header");
 ?>
 
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else : ?>
+<div class="our-care__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
-
-<div class="our-care__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-care">

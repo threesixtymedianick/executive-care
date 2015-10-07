@@ -11,6 +11,7 @@
     - php5-curl
     - php5-mcrypt
     - php5-gd
+    - php5-imagick
     - curl
     - node
     - nodejs
@@ -35,3 +36,4 @@
 - include: copy_files.yml
 - include: create_database.yml
 - include: apache.yml
+- include: php_conf.yml

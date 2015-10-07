@@ -1,6 +1,7 @@
 <?php
 $title = $this->input("our-care-title");
-$content = $this->textarea("our-care-content");
+
+$carouselImages = $this->multihref("homepage-carousel");
 
 if ($this->editmode) : ?>
     <div>
@@ -8,7 +9,7 @@ if ($this->editmode) : ?>
             <p>Drop image assets from the panel on the left here to add to carousel, then refresh the page to see them
                 below.</p>
         </span>
-        <?= $this->multihref("homepage-carousel"); ?>
+        <?= $carouselImages; ?>
     </div>
 <?php endif; ?>
 <div class="container">
@@ -17,29 +18,35 @@ if ($this->editmode) : ?>
             <div class="home__left">
                 <div class="home__panel home__welcome">
                     <ul class="bxslider">
-                        <?php foreach ($this->multihref("homepage-carousel") as $element) : ?>
-                            <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
+                        <?php foreach ($carouselImages as $element) : ?>
+                            <?php $image = $element->getThumbnail('homepage_slider');
+                            if (!($image === "" || $image === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
                                 <?php
-                                if (null !== $element->getMetadata("Link-Document") && "" !== $element->getMetadata("Link-Document")) {
-                                    $link = $element->getMetadata("Link-Document");
-                                } elseif (null !== $element->getMetadata("Link-Object") && "" !== $element->getMetadata("Link-Object")) {
-                                    $link = $element->getMetadata("Link-Object");
-                                } elseif (null !== $element->getMetadata("Link-External") && "" !== $element->getMetadata("Link-External")) {
-                                    $link = $element->getMetadata("Link-External");
+                                $linkDocument = $element->getMetadata("Link-Document");
+                                $linkObject = $element->getMetadata("Link-Object");
+                                $linkExternal = $element->getMetadata("Link-External");
+                                if (null !== $linkDocument && "" !== $linkDocument) {
+                                    $link = $linkDocument;
+                                } elseif (null !== $linkObject && "" !== $linkObject) {
+                                    $link = $linkObject;
+                                } elseif (null !== $linkExternal && "" !== $linkExternal) {
+                                    $link = $linkExternal;
                                 } else {
                                     $link = "";
                                 } ?>
                                 <a href="<?= $link; ?>">
-                                    <li style="background-image: url('<?= $element->getFullPath(); ?>');">
+                                    <li style="background-image: url('<?= $image; ?>');">
                                         <div class="bxslider__slider-caption">
-                                            <?php if (null !== $element->getMetadata("title") && "" !== $element->getMetadata("title")) : ?>
+                                            <?php $metadataTitle = $element->getMetadata("title");
+                                            if (null !== $metadataTitle && "" !== $metadataTitle) : ?>
                                                 <h1>
-                                                    <?= $element->getMetadata("title"); ?>
+                                                    <?= $metadataTitle; ?>
                                                 </h1>
                                             <?php endif; ?>
-                                            <?php if (null !== $element->getMetadata("subtitle") && "" !== $element->getMetadata("subtitle")) : ?>
+                                            <?php $metadataSubtitle = $element->getMetadata("subtitle");
+                                            if (null !== $metadataSubtitle && "" !== $metadataSubtitle) : ?>
                                                 <h2>
-                                                    <?= $element->getMetadata("subtitle"); ?>
+                                                    <?= $metadataSubtitle; ?>
                                                 </h2>
                                             <?php endif; ?>
                                         </div>

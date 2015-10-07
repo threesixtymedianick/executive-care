@@ -3,15 +3,16 @@
     $volunteerTitle = $this->input("volunteerTitle");
     $volunteerDesc = $this->wysiwyg("volunteerDesc");
     $volunteerReq = $this->wysiwyg("volunteerReq");
-    $headerImage = $this->href("volunteer_header");
+    $headerImage = $this->image("volunteer_header");
 ?>
 
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else : ?>
+    <div class="volunteer__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
 
-<div class="volunteer__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">
