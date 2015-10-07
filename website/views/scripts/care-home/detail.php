@@ -3,6 +3,7 @@ $careHome        = $this->careHome;
 $recommendation  = $this->recommendations;
 $googleMapsUrl   = 'https://www.google.com/maps/preview/@' . $careHome->getLat() . ',' . $careHome->getLon() . ',13z';
 $nearbyHomes     = $this->nearbyHomes;
+$careHomeImage = $this->careHomeImage($careHome);
 ?>
 
 <div class="our-care__header">-</div>
@@ -14,10 +15,9 @@ $nearbyHomes     = $this->nearbyHomes;
                     Welcome to
                 </div>
                 <div class="our-homes__left__content">
-
-                    <img class="our-homes__left__content__headerimage"
-                         src="<?= $this->careHomeImage($careHome); ?>"/>
-
+                    <?php if (null !== $careHomeImage && "" !== $careHomeImage) : ?>
+                        <img class="our-homes__left__content__headerimage" src="<?= $careHomeImage; ?>"/>
+                    <?php endif; ?>
                     <div class="our-homes__left__content__wrapper">
                         <div class="our-homes__left__content__box">
                             <?= $careHome->getDescription(); ?>
