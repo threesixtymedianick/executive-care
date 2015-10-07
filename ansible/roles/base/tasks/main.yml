@@ -1,6 +1,16 @@
 ---
+- name: Add php5.5 repo
+   apt_repository: repo=ppa:ondrej/php5-5.6 state='present' update_cache=yes
+   when: "php_min_version == 5.6"
+
 - apt: pkg={{item}} state=installed
   with_items:
+    - php5-cli
+    - php5-fpm
+    - php5-mysql
+    - php5-curl
+    - php5-mcrypt
+    - php5-gd
     - curl
     - node
     - nodejs
@@ -9,9 +19,6 @@
     - mysql-server-5.6
     - fail2ban
     - python-mysqldb
-    - php5-curl
-    - php5-gd
-    - php5-mysql
 
 - file: path=/ubuntu/.ssh state=directory
 - copy: src=.ssh/config mode=600 dest=/ubuntu/.ssh/config
