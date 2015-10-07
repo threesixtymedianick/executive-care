@@ -106,7 +106,8 @@ gulp.task('build-js-libs', function() {
             './bower_components/matchHeight/jquery.matchHeight.js',
             './bower_components/datetimepicker/jquery.datetimepicker.js',
             './bower_components/jquery.cookie/jquery.cookie.js',
-            './bower_components/jt.timepicker/jquery.timepicker.js'
+            './bower_components/jt.timepicker/jquery.timepicker.js',
+            './bower_components/lightbox2/dist/js/lightbox.js'
         ])
         .pipe(plumber())
         .pipe(concat('libraries.js'))
@@ -119,6 +120,7 @@ gulp.task('build-css-libs', function () {
           './bower_components/bxslider-4/dist/jquery.bxslider.css',
           './bower_components/datetimepicker/jquery.datetimepicker.css',
           './bower_components/jt.timepicker/jquery.timepicker.css',
+          './bower_components/lightbox2/dist/css/lightbox.css',
           './src/css/**/*.css'
       ])
       .pipe(concat('libraries.css'))
@@ -149,6 +151,7 @@ gulp.task('copy-public-images', function() {
     return gulp.src([
         './src/images/public/**/*.*',
         './bower_components/bxslider-4/dist/images/*.*',
+        './bower_components/lightbox2/dist/images/*.*'
     ])
         .pipe(gulp.dest('./website/static/images/'))
     ;

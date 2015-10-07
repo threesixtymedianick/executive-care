@@ -8,6 +8,7 @@ require("./modules/live-chat");
 require("./modules/nearby-homes-slider");
 require("./modules/book-a-visit-form");
 require("./modules/contact-us-form");
+require("./modules/lightbox2-options");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");

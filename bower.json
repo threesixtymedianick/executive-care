@@ -33,6 +33,7 @@
     "jquery-validation": "~1.14.0",
     "jquery.cookie": "~1.4.1",
     "matchHeight": "~0.6.0",
-    "jt.timepicker": "timepicker#~1.8.1"
+    "jt.timepicker": "timepicker#~1.8.1",
+    "lightbox2": "~2.8.1"
   }
 }
