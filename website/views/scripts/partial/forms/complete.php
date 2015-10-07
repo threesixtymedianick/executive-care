@@ -20,7 +20,7 @@
     </div>
     <div class="tab__controls">
       <div class="field-wrap">
-        <?= $form->application_agree_statement; ?>
+        <?= $form->application_keep_on_file; ?>
       </div>
     </div>
     <?= $form->application_submit; ?>
