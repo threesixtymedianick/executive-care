@@ -1,0 +1,28 @@
+$images-folder: '/website/static/images/';
+
+body:after {
+  content: url($images-folder + 'close.png') url($images-folder + 'loading.gif') url($images-folder + 'prev.png') url($images-folder + 'next.png') !important;
+}
+
+.lb-cancel {
+  background: url($images-folder + 'loading.gif') no-repeat !important;
+}
+
+.lb-nav {
+  a.lb-prev {
+    background: url($images-folder + 'prev.png') left 48% no-repeat !important;
+  }
+}
+
+.lb-nav {
+    a.lb-next {
+    background: url($images-folder + 'next.png') right 48% no-repeat !important;
+  }
+}
+
+
+.lb-data  {
+  .lb-close {
+    background: url($images-folder + 'close.png') top right no-repeat !important;
+  }
+}

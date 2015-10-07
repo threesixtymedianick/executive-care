@@ -151,6 +151,7 @@ gulp.task('copy-public-images', function() {
     return gulp.src([
         './src/images/public/**/*.*',
         './bower_components/bxslider-4/dist/images/*.*',
+        './bower_components/lightbox2/dist/images/*.*'
     ])
         .pipe(gulp.dest('./website/static/images/'))
     ;
