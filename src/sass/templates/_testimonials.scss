@@ -24,10 +24,25 @@
     @include tab();
   }
 
+  &__left {
+
+    &__content {
+      &__title {
+        background-color: $color-blue;
+        @include font-header($weight: 300);
+        font-size: 1.8em;
+        padding: 6px 20px;
+        display: inline-block;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+    }
+  }
+
   &__content {
     background-color: $color-light-purple;
     overflow: auto;
-
+    
     &--date {
       display: inline-block;
       background-color: $color-grey;
@@ -73,7 +88,16 @@
         }
 
         &--title {
-          @include blog-title($color-blue)
+          display: table;
+          background-color: $color-blue;
+          padding: .5em 1.6em;
+
+          a {
+            color: $color-white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.1em;
+          }
         }
 
         &--name {
@@ -85,12 +109,18 @@
           font-size: 1.3em;
         }
 
-        @include blog-date();
+        &--date {
+          display: table;
+          background-color: $color-grey;
+          padding: .5em 1.6em;
+          color: $color-white;
+          font-size: .69rem;
+        }
 
         &-text {
           clear: both;
           padding-top: .8em;
-          font-size: 1.1em;
+          font-size: 0.69rem;
           overflow: auto;
 
           &-link {

@@ -15,7 +15,7 @@ $headerImage          = $this->href("our-care_header");
         <div class="our-care">
             <div class="our-care__left">
                 <div class="our-care__left__content">
-                    <div class="our-care__left__content__title">
+                    <div class="testimonials__left__content__title">
                         <?= $title ?>
                     </div>
                     <div class="our-care__left__content__box">
