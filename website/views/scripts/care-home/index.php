@@ -73,10 +73,10 @@ $careHomes = $this->careHomes;
                         </div>
                         <div class="sidebar__panel--our-homes-find-a-home-details">
                             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
-                            <div class="sidebar__panel--content">
-                                <h3>Fernedale Care Home</h3>
+                            <div class="sidebar__panel--content homecontent">
+                                <h3 class="title"></h3>
 
-                                <p>Use our interactive search tool to find an Executive Care home near you. Enter your
+                                <p class="address">Use our interactive search tool to find an Executive Care home near you. Enter your
                                     postcode, town or city below:</p>
                                 <a href="/contact-us" class="sidebar__panel--button mleft">Find out more</a>
                             </div>
