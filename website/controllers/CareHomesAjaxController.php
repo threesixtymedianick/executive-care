@@ -45,7 +45,5 @@ class CareHomesAjaxController extends AjaxController
 
         return $this->getHelper('json')
              ->sendJson((array) $careHome[0]);
-
-        exit;
     }
 }
