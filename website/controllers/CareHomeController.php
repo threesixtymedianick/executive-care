@@ -73,13 +73,17 @@ class CareHomeController extends AbstractPageController
 
         if (!empty($results)) {
             foreach ($results as $home) {
-                // Get care homes
-                $careHomes[] = Object_CareHomes::getById($home->getId());
+                $careHome = Object_CareHomes::getById($home->getId());
 
-                // Append distance to care home
-                $careHomes[$counter]->distance = $home->getParam('sort')[0];
+                if (null !== $careHome) {
+                    // Get care homes
+                    $careHomes[] = $careHome;
 
-                $counter++;
+                    // Append distance to care home
+                    $careHomes[$counter]->distance = $home->getParam('sort')[0];
+
+                    $counter++;
+                }
             }
         }
 
