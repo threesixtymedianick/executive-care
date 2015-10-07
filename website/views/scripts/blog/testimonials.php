@@ -7,9 +7,9 @@ $headerImage          = $this->href("our-care_header");
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else: ?>
+    <div class="our-care__header" style="background-image: url('<?= $headerImage->getThumbnail('header_image'); ?>');">-</div>
 <?php endif; ?>
-
-<div class="our-care__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-care">

@@ -1,0 +1,2 @@
+---
+- copy: src=php/upload_filesize.ini dest=/etc/php5/fpm/conf.d/01-upload-fs.ini owner=root group=root

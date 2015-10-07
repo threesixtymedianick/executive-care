@@ -1,6 +1,6 @@
 <?php
     $applicationFormPDF = Asset::getById(25);
-    $headerImage        = $this->href("careers_header");
+    $headerImage        = $this->image("careers_header");
     $pageDescription    = $this->wysiwyg('description');
     $vacancies          = $this->vacancies;
 ?>
@@ -8,10 +8,10 @@
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else : ?>
+    <div class="careers__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
 
-
-<div class="careers__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="careers">

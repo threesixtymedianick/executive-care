@@ -1,12 +1,13 @@
 <?php
-    $headerImage          = $this->href("open-days_header");
+    $headerImage          = $this->image("open-days_header");
 ?>
 
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else: ?>
+    <div class="blog__header" style="background-image: url('<?= $headerImage->getThumbnail('header_image'); ?>');">-</div>
 <?php endif; ?>
-<div class="blog__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">

@@ -6,9 +6,10 @@ $headerImage = $this->image("thankyouHeader");
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else : ?>
+    <div class="thankyou__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
 
-<div class="thankyou__header" style="background-image: url('<?= $headerImage->getSrc(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="thankyou">

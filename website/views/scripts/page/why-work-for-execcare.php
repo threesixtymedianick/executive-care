@@ -1,17 +1,18 @@
 <?php
-$whyWorkForm = $this->whyWorkForm;
-$whyWorkTitle = $this->input("whyWorkTitle", ["width"=> 300]);
-$whyWorkDesc = $this->wysiwyg("whyWorkDesc");
-$whyWorkReq = $this->wysiwyg("whyWorkReq");
-$headerImage = $this->image("whyWorkHeader");
+    $whyWorkForm = $this->whyWorkForm;
+    $whyWorkTitle = $this->input("whyWorkTitle", ["width"=> 300]);
+    $whyWorkDesc = $this->wysiwyg("whyWorkDesc");
+    $whyWorkReq = $this->wysiwyg("whyWorkReq");
+    $headerImage = $this->image("whyWorkHeader");
 ?>
 
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
     <?= $headerImage ?>
+<?php else: ?>
+    <div class="whyWork__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
 
-<div class="whyWork__header" style="background-image: url('<?= $headerImage->getSrc(); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">

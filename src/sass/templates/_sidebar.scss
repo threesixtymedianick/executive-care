@@ -95,7 +95,7 @@
       @include sidebar-panels($color-grey);
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image();
       }
 
       a.sidebar__panel--button {
@@ -124,7 +124,7 @@
       @include sidebar-panels($color-dark-purple);
 
       &-image {
-        @include sidebar-image('../images/home/work-for-executive-care.png');
+        @include sidebar-image();
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -148,7 +148,7 @@
       @include sidebar-panels($color-dark-green);
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image();
       }
 
       & .sidebar__panel--button {
@@ -214,7 +214,7 @@
       @include sidebar-panels($color-purple);
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image();
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -240,7 +240,7 @@
       @include sidebar-panels($color-grey);
 
       &-image {
-        @include sidebar-image('../images/home/open-days.png');
+        @include sidebar-image();
       }
 
       a.sidebar__panel--button {
@@ -269,7 +269,7 @@
       @include sidebar-panels($color-dark-green);
 
       &-image {
-        @include sidebar-image('../images/home/our-care-explained.png');
+        @include sidebar-image();
       }
 
       a.sidebar__panel--button {
@@ -298,7 +298,7 @@
       @include sidebar-panels($color-dark-green);
 
       &-image {
-        @include sidebar-image('../images/home/our-care-explained.png');
+        @include sidebar-image();
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -322,7 +322,7 @@
       @include sidebar-panels($color-dark-purple);
 
       &-image {
-        @include sidebar-image('../images/home/open-days.png');
+        @include sidebar-image();
       }
 
       @media (max-width: $laptop-breakpoint) {
@@ -353,7 +353,7 @@
       }
 
       &-image {
-        @include sidebar-image('../images/home/contact-us.png');
+        @include sidebar-image();
       }
 
       & .sidebar__panel--button.mleft {
@@ -447,7 +447,7 @@
       @include sidebar-panels($color-blue);
 
       &-image {
-        @include sidebar-image('../images/home/work-for-executive-care.png');
+        @include sidebar-image();
       }
 
       a.sidebar__panel--button {

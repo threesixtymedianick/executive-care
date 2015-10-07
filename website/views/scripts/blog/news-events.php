@@ -8,7 +8,7 @@ $events = $this->events;
         <?php foreach ($events as $slider): ?>
             <?php if ($slider->getBlogImage() !== null): ?>
                 <a href="<?= $this->url(['key' => $slider->getUrlPath()], 'blog-show', false, false); ?>">
-                    <li style="background-image:url('<?= $slider->getBlogImage()->getFullPath(); ?>');">
+                    <li style="background-image:url('<?= $slider->getBlogImage()->getThumbnail('header_images'); ?>');">
                         <div class="blogslider__details">
                             <div class="blogslider__details--title">
                                 <?= $slider->getTitle() ?>
