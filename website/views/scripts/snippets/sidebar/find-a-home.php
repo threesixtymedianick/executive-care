@@ -22,8 +22,10 @@ $image = $this->image('sidebar_image');
                 <h3><?= $title; ?></h3>
 
                 <p><?= $content; ?></p>
-                <input type="search" class="sidebar__panel--button mleft" name="search" placeholder="Search" />
-            <button class="search-submit" type="submit" role="button">
+                <form action="/our-homes/search" method="get">
+                    <input type="search" class="sidebar__panel--button mleft" name="query" placeholder="Search"/>
+                    <button class="search-submit" type="submit" role="button"/>
+                </form>
             </div>
         </div>
     </div>
