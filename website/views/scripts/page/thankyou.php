@@ -15,7 +15,7 @@ $headerImage = $this->image("thankyouHeader");
             <div class="thankyou__left">
                 <div class="thankyou__left__content">
                     <div class="thankyou__left__content__title">
-                        Thankyou
+                        Thank You
                     </div>
                     <div class="thankyou__left__content__box">
                         <?= $thankyouDesc ?>
@@ -24,15 +24,9 @@ $headerImage = $this->image("thankyouHeader");
                 </div>
             </div>
             <div class="sidebar">
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/volunteer')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
-
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online')); ?>
-
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
-
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/job-alerts')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
             </div>
         </div>
     </div>
