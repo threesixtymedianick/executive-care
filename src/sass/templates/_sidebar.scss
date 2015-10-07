@@ -341,15 +341,15 @@
         @include sidebar-image('../images/home/contact-us.png');
       }
 
-      @media (max-width: $laptop-breakpoint) {
-        &-image {
-          width: 146px;
-        }
-
-        a.sidebar__panel--button.mleft {
+      & .sidebar__panel--button.mleft {
           color: $color-dark-green;
           width: 150px;
           display: block;
+        }
+
+      @media (max-width: $laptop-breakpoint) {
+        &-image {
+          width: 146px;
         }
       }
       
