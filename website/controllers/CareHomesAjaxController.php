@@ -15,9 +15,10 @@ class CareHomesAjaxController extends AjaxController
 
         foreach ($careHomes->objects as $home) {
             $data[] = [
-                'title'    => $home->Title,
-                'lat'      => $home->Lat,
-                'lon'      => $home->Lon,
+                'id'       => $home->getId(),
+                'title'    => $home->getTitle(),
+                'lat'      => $home->getLat(),
+                'lon'      => $home->getLon(),
             ];
         }
 

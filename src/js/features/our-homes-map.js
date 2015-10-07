@@ -21,6 +21,11 @@ $(document).ready(function() {
         })
         .done(function(data) {
             $.each(data, function(key, data) {
+                // Set the info box to show the first care home
+                if (key === 0) {
+                    updateCareHomeDetails(data.id);
+                }
+
                 // Check lat long is specified
                 if (data.lat !== null && data.lon !== null) {
                     // Create LatLng
@@ -33,6 +38,11 @@ $(document).ready(function() {
                         position: latLng,
                         icon: iconBase + 'place_icon_1.png',
                         map: map,
+                        careHomeId: data.id,
+                    });
+
+                    marker.addListener('click', function() {
+                        updateCareHomeDetails(marker.careHomeId);
                     });
                 }
             });
@@ -40,5 +50,21 @@ $(document).ready(function() {
         .fail(function() {
             // Handle errors
         });
+
+        function updateCareHomeDetails(id) {
+            $.ajax({
+                url: '/ajax/care-home/' + id,
+                type: 'GET',
+                dataType: 'json',
+            })
+            .done(function(data) {
+                $('.homecontent > h3.title').html(data.Title);
+                $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
+                $('.homecontent > a').attr('href', '/care-homes/details/' + data.o_key);
+            })
+            .fail(function() {
+
+            })
+        }
     }
 });
