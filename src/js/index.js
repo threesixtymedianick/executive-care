@@ -6,6 +6,7 @@ require("./modules/box-height");
 require("./modules/date-picker");
 require("./modules/live-chat");
 require("./modules/nearby-homes-slider");
+require("./modules/book-a-visit-form");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");
@@ -18,3 +19,4 @@ require("./validation/custom-validation-rules");
 require("./validation/contact-us-validation");
 require("./validation/volunteer-validation");
 require("./validation/careers-validation");
+require("./validation/book-a-visit-validation");

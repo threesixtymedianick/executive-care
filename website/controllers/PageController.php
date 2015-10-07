@@ -121,7 +121,8 @@ class PageController extends AbstractPageController
     }
 
     /**
-     *
+     * [careersApplyOnlineAction description]
+     * @return [type] [description]
      */
     public function careersApplyOnlineAction()
     {
@@ -159,6 +160,10 @@ class PageController extends AbstractPageController
         $this->view->applicationForm = $applicationForm;
     }
 
+    /**
+     * [volunteerAction description]
+     * @return [type] [description]
+     */
     public function volunteerAction()
     {
         $volunteerForm = new VolunteerForm();
@@ -190,16 +195,28 @@ class PageController extends AbstractPageController
         $this->view->volunteerForm = $volunteerForm;
     }
 
+    /**
+     * [trainingDevelopmentAction description]
+     * @return [type] [description]
+     */
     public function trainingDevelopmentAction()
     {
 
     }
 
+    /**
+     * [whyWorkForExecccareAction description]
+     * @return [type] [description]
+     */
     public function whyWorkForExecccareAction()
     {
 
     }
 
+    /**
+     * [bookAVisitAction description]
+     * @return [type] [description]
+     */
     public function bookAVisitAction()
     {
         $bookAVisitForm = new BookAVisitForm();
