@@ -2,8 +2,10 @@
     $this->layout()->setLayout('layout');
     $entry = $this->entry;
 
-    if (null !== $this->entry->getBlogImage()) {
-        $blogImage = $this->entry->getBlogImage()->getFullPath();
+    $headerImage = $this->entry->getBlogImage();
+
+    if (null !== $headerImage && "" !== $headerImage) {
+        $blogImage = $headerImage->getThumbnail('header_images');
     }
 ?>
 

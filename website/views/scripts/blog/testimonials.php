@@ -1,7 +1,7 @@
 <?php
 $title                = $this->input('title', [ 'width' => 250 ]);
 $ourCareInfoBox       = $this->wysiwyg("our-care_info");
-$headerImage          = $this->href("our-care_header");
+$headerImage          = $this->image("our-care_header");
 ?>
 
 <?php if ($this->editmode): ?>
