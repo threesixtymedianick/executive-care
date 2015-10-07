@@ -13,13 +13,13 @@
             </div>
         <?php endif; ?>
     </div>
-    <div class="our-homes__left__sliding__content equalHeight <?= $this->editmode ? "" : "slide"; ?>">
-        <?php
-        foreach ($careHomeObject->getGallery() as $element) {
-            if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) {
-                echo '<img class="our-homes__left__sliding__content__gallery-item" src="' . $element->getFullPath() . '"/>';
-            }
-        }
-        ?>
+    <div class="our-homes__left__sliding__content equalHeight gallery <?= $this->editmode ? "" : "slide"; ?>">
+        <?php foreach ($careHomeObject->getGallery() as $element) : ?>
+           <?php if (!($element->getFullPath() === "" || $element->getFullPath() === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
+                <a data-lightbox="<?= $careHomeObject->getTitle(); ?>" href="<?= $element->getFullPath();?>">
+                    <img src="<?=$element->getThumbnail('care_home_gallery');?>" />
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 </div>
