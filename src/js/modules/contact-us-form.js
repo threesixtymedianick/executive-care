@@ -1,7 +1,7 @@
 var queryString = require("../utils/query-string-parameter");
 
 $(document).ready(function() {
-    if ($('.book-a-visit__left__content__box').length > 0) {
+    if ($('.contact-us__left').length > 0) {
         // Date picker
         $('#bookAVisit_date').datetimepicker({
             timepicker: false,
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         if (typeof careHome !== 'undefined') {
             // Set the care home select option to the care home passed in the query string
-            $('#bookAVisit_careHomes').val(careHome);
+            $('#care_home_options').val(careHome);
         }
     }
 });
