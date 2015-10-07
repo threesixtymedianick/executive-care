@@ -1,7 +1,8 @@
 <?php $element = $this->element; ?>
 
 <?php $image = $element->getThumbnail('homepage_slider');
-if (!($image === "" || $image === null) && $element instanceof \Pimcore\Model\Asset\Image) : ?>
+
+if (!($image === "" || $image === null)) : ?>
     <?php
     $linkDocument = $element->getMetadata("Link-Document");
     $linkObject = $element->getMetadata("Link-Object");
