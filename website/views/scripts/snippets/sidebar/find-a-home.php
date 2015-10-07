@@ -15,8 +15,7 @@ endif; ?>
             <p><?= $content; ?></p>
             <input type="search" class="sidebar__panel--button mleft" name="search" placeholder="Search" />
             <button class="search-submit" type="submit" role="button">
-                                    Search
-                                </button>
+            </button>
         </div>
     </div>
 </div>
