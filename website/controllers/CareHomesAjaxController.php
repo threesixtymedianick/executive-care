@@ -24,4 +24,26 @@ class CareHomesAjaxController extends AjaxController
         $this->getHelper('json')
              ->sendJson($data);
     }
+
+    /**
+     * Get details for an individual care home
+     *
+     * @return json|bool
+     */
+    public function getCareHomeAction()
+    {
+        $key = $this->_getParam("id");
+
+        $list = new Object\CareHomes\Listing();
+        $list->setCondition("oo_id = '" . $key . "'");
+        $careHome = $list->load();
+
+        if (!isset($careHome[0])) {
+            return $this->getHelper('json')
+                 ->sendJson(['error']);
+        }
+
+        return $this->getHelper('json')
+             ->sendJson((array) $careHome[0]);
+    }
 }

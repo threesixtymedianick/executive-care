@@ -1,6 +1,8 @@
 <?php
 $careHome        = $this->careHome;
 $recommendations = $this->recommendations;
+
+$googleMapsUrl = 'https://www.google.com/maps/preview/@' . $careHome->getLat() . ',' . $careHome->getLon() . ',13z';
 ?>
 
 <div class="our-care__header">-</div>
@@ -42,6 +44,23 @@ $recommendations = $this->recommendations;
                 </div>
             </div>
             <div class="sidebar">
+                <div class="map-container">
+                    <div id="careHomeMap"
+                         class="map"
+                         data-id="<?= $careHome->getId() ?>"
+                         data-lat="<?= $careHome->getLat() ?>"
+                         data-lon="<?= $careHome->getLon() ?>">
+                    </div>
+                    <div class="address">
+                        <h2>How to find us</h2>
+                        <?= $careHome->getTitle() ?>
+                        <?= $careHome->getAddress() ?>
+                        <?= $careHome->getPostcode() ?>
+
+                        <a href="<?= $googleMapsUrl ?>" target="_blank">Find us</a>
+                    </div>
+                </div>
+
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/get-in-touch')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure')); ?>
