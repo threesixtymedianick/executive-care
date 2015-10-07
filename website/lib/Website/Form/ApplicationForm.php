@@ -15,20 +15,20 @@ class ApplicationForm extends BaseForm
 
         $positions = [
             "" => $select,
-            0 => "Boss",
-            1 => "Not the boss"
+            0 => "",
+            1 => ""
         ];
 
         $shifts = [
             "" => $select,
-            0 => "All the hours",
-            1 => "Barely any hours"
+            0 => "",
+            1 => ""
         ];
 
         $vacancy = [
             "" => $select,
-            0 => "Me mate Dave told us about it",
-            1 => "I just showed up"
+            0 => "",
+            1 => ""
         ];
 
         $formName = "application_";
