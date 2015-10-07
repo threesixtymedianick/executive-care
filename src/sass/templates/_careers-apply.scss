@@ -124,7 +124,9 @@
         width: auto;
         vertical-align: middle;
         position: relative;
-        bottom: 1px;
+        bottom: -2px;
+        float: left;
+        margin-right: 20px;
       }
 
       input[type=submit] {
@@ -169,17 +171,111 @@
     }
   }
 
+  label[for=application_qualification_five] {
+    width: 150px;
+
+    @media(max-width:$laptop-breakpoint) {
+      width: auto;
+    }
+  }
+
+  label[for=application_medical_impairment_one],
+  label[for=application_medical_impairment_two],
+  label[for=application_medical_impairment_three] {
+    width: 500px;
+
+    @media(max-width:$laptop-breakpoint) {
+      width: 200px;
+    }
+  }
+
+  #application_agree_statement-error {
+    left: 32px;
+    top: 16px;
+  }  
+
   @media(max-width:$laptop-breakpoint) {
     &__left, 
     &__left__title, 
     &__left__form__title, 
     .tab__left.field-wrap, 
     .tab__right.field-wrap {
-      width: 100%;
+      width: 100% !important;
+    }
+
+    .tab__col-1-3.field-wrap {
+      width: 50% !important;
     }
 
     &__left {
       margin-top: 0px;
+    }
+
+    .field-wrap.half {
+      width: 100%;
+    }
+  }
+
+  @media(max-width:654px) {
+    #application_special_experience-error {
+      top: 21px;
+    }
+
+    #application_special_experience {
+      margin-top: 20px;
+    }
+
+    label[for=application_keep_on_file] {
+      width: 400px;
+    }
+  }
+
+  @media(max-width:537px) {
+
+    label[for=application_agree_statement],
+    label[for=application_keep_on_file] {
+      width: 200px;
+    }
+
+    #application_agree_statement-error {
+      left: 82px;
+      top: 36px;
+    }
+
+     #application_special_experience-error {
+      top: 41px;
+    }
+
+    #application_recent_company_from_date-error,
+    #application_recent_company_to_date-error {
+      top: 21px;
+    }
+
+    #application_recent_company_from_date,
+    #application_recent_company_to_date {
+      margin-top: 20px;
+    }
+
+    #application_recent_company_from_date-error {
+      left: 0px;
+    }
+
+    .tab__col-1-3.field-wrap {
+      width: 100% !important;
+    }
+  }
+
+  @media(max-width:365px) {
+    #application_apply_reason,
+    #application_strengths,
+    #application_how_did_you_hear {
+      margin-top: 20px;
+    }
+
+    #application_apply_reason-error,
+    #application_strengths-error,
+    #application_how_did_you_hear-error {
+      top: 21px;
     }
   }
 }
@@ -188,4 +284,5 @@
   display: none;
   border: 0;
 }
+
 

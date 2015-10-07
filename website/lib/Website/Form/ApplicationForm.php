@@ -341,7 +341,7 @@ class ApplicationForm extends BaseForm
         $referencesAddressOne->setLabel('Address:');
 
         $referencesTelephoneOne = new \Zend_Form_Element_Text($formName . 'references_telephone_one');
-        $referencesTelephoneOne->setLabel('Address:');
+        $referencesTelephoneOne->setLabel('Telephone:');
 
         $referencesCompanyEmailOne = new \Zend_Form_Element_Text($formName . 'references_email_one');
         $referencesCompanyEmailOne->setLabel('Email:')
@@ -361,7 +361,7 @@ class ApplicationForm extends BaseForm
         $referencesAddressTwo->setLabel('Address:');
 
         $referencesTelephoneTwo = new \Zend_Form_Element_Text($formName . 'references_telephone_two');
-        $referencesTelephoneTwo->setLabel('Address:');
+        $referencesTelephoneTwo->setLabel('Telephone:');
 
         $referencesCompanyEmailTwo = new \Zend_Form_Element_Text($formName . 'references_email_two');
         $referencesCompanyEmailTwo->setLabel('Email:')
@@ -381,7 +381,7 @@ class ApplicationForm extends BaseForm
         $referencesAddressThree->setLabel('Address:');
 
         $referencesTelephoneThree = new \Zend_Form_Element_Text($formName . 'references_telephone_three');
-        $referencesTelephoneThree->setLabel('Address:');
+        $referencesTelephoneThree->setLabel('Telephone:');
 
         $referencesCompanyEmailThree = new \Zend_Form_Element_Text($formName . 'references_email_three');
         $referencesCompanyEmailThree->setLabel('Email:')
@@ -394,7 +394,8 @@ class ApplicationForm extends BaseForm
             $referencesPositionOne, $referencesPositionTwo, $referencesPositionThree,
             $referencesContactOne, $referencesCompanyTwo, $referencesCompanyThree,
             $referencesTelephoneOne, $referencesTelephoneTwo, $referencesTelephoneThree,
-            $referencesCompanyEmailOne, $referencesCompanyEmailTwo, $referencesCompanyEmailThree
+            $referencesCompanyEmailOne, $referencesCompanyEmailTwo, $referencesCompanyEmailThree, 
+            $referencesContactTwo, $referencesContactThree
         ]);
     }
 
