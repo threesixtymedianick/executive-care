@@ -13,14 +13,12 @@ class BookAVisitForm extends BaseForm
 
         $careHomes = new \Zend_Form_Element_Select($formName . 'careHomes');
         $careHomes->setLabel('Care Home:');
+        $careHomes->setMultiOptions($this->getCareHomeSelect());
 
-        $date = new \Zend_Form_Element_Select($formName . 'date');
+        $date = new \Zend_Form_Element_Text($formName . 'date');
         $date->setAttrib('class', 'book-a-visit__left__content__box__left--date');
 
-        $day = new \Zend_Form_Element_Select($formName . 'day');
-        $day->setAttrib('class', 'book-a-visit__left__content__box__left--day');
-
-        $time = new \Zend_Form_Element_Select($formName . 'time');
+        $time = new \Zend_Form_Element_Text($formName . 'time');
         $time->setAttrib('class', 'book-a-visit__left__content__box__left--time');
 
         $name = new \Zend_Form_Element_Text($formName . 'name');
@@ -61,5 +59,25 @@ class BookAVisitForm extends BaseForm
         $submit->setDecorators(['ViewHelper']);
 
         return $this;
+    }
+
+    /**
+     * Get a list of care homes and create an array with id => title
+     *
+     * @return array
+     */
+    protected function getCareHomeSelect()
+    {
+        $careHomes = new \Object\CareHomes\Listing();
+        $careHomes->setOrderKey("title");
+        $list = $careHomes->load();
+
+        $careHomes = [];
+
+        foreach ($list as $careHome) {
+            $careHomes[$careHome->getId()] = $careHome->getTitle();
+        }
+
+        return $careHomes;
     }
 }

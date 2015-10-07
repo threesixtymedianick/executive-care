@@ -11,11 +11,7 @@ class BrochureForm extends BaseForm
 
         $selectOne = "Select one:";
 
-        $careHomeOptions = [
-            "" => $selectOne,
-            0 => "Abbeyvale Care Centre, Hartlepool",
-            1 => "Ashwood Court, Sunderland"
-        ];
+        $careHomeOptions = $this->getCareHomeSelect();
 
         $deliveryMethodOptions = [
             "" => $selectOne,
@@ -77,5 +73,25 @@ class BrochureForm extends BaseForm
         $submit->setDecorators(['ViewHelper']);
 
         return $this;
+    }
+
+    /**
+     * Get a list of care homes and create an array with id => title
+     *
+     * @return array
+     */
+    protected function getCareHomeSelect()
+    {
+        $careHomes = new \Object\CareHomes\Listing();
+        $careHomes->setOrderKey("title");
+        $list = $careHomes->load();
+
+        $careHomes = [];
+
+        foreach ($list as $careHome) {
+            $careHomes[$careHome->getId()] = $careHome->getTitle();
+        }
+
+        return $careHomes;
     }
 }

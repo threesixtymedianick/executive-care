@@ -26,19 +26,16 @@ $headerImage = $this->href("book-a-visitHeader");
                                 echo $careHome;
                                 ?>
                             </div>
+                            <div id="dates"></div>
                             <div class="book-a-visit__left__content__box__left field-wrap clear fullWidth">
                                 <div class="bkv">
-                                <label for="bookAVisit_date" class="optional">Date:</label>
-                                <?= $bookAVisitForm->bookAVisit_date ?>
-                                </div>
-                                
-                                <div class="bkv">
-                                <?= $bookAVisitForm->bookAVisit_day ?>
+                                    <label for="bookAVisit_date">Date:</label>
+                                    <?= $bookAVisitForm->bookAVisit_date ?>
                                 </div>
 
                                 <div class="bkv">
-                                <label for="bookAVisit_time" class="optional">Time:</label>
-                                <?= $bookAVisitForm->bookAVisit_time ?>
+                                    <label for="bookAVisit_time">Time:</label>
+                                    <?= $bookAVisitForm->bookAVisit_time ?>
                                 </div>
                             </div>
                             <div class="book-a-visit__left__content__box__left field-wrap clear">
