@@ -51,11 +51,26 @@
         border-top: none;
       }
 
-      @include blog-image();
+      &--image {
+        @include span-columns(12);
+
+        @media(min-width:$laptop-breakpoint) {
+          @include span-columns(3);
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
 
       &--summary {
-        @include span-columns(9);
-        margin-right: 0;
+        @include span-columns(12);
+
+        @media(min-width:$laptop-breakpoint) {
+          @include span-columns(9);
+          margin-right: 0;
+        }
 
         &--title {
           @include blog-title($color-blue)
@@ -76,6 +91,26 @@
           clear: both;
           padding-top: .8em;
           font-size: 1.1em;
+          overflow: auto;
+
+          &-link {
+            padding-top: 10px;
+
+            @media(min-width:$laptop-breakpoint) {
+              display: none;
+            }
+          
+            a.read-more {
+              padding: 5px 10px;
+              background-color: $color-white;
+              display: inline-block;
+              float: right;
+              text-transform: uppercase;
+              @include font-header($weight: 300);
+              text-decoration: none;
+              color: $color-blue;
+            }
+          }
         }
       }
     }

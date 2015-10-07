@@ -25,5 +25,8 @@
         <?= (trim($entry->getSummary()))
             ? $entry->getSummary()
             : Website_Tool_Text::cutStringRespectingWhitespace(trim(strip_tags($entry->getContent())), 200) ?>
+        <div class="testimonials__content__item--summary-text-link">
+            <a href="<?= $this->url(['key' => $entry->getUrlPath()], 'blog-show', false, false); ?>" class="read-more">Read More</a>
+        </div>
     </div>
 </div>
