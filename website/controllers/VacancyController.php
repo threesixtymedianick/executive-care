@@ -126,7 +126,7 @@ class VacancyController extends AbstractPageController
     protected function filterByRole($role)
     {
         $list = new Object_Vacancy_List();
-        $list->setCondition("roleTitle = " . $list->quote($role));
+        $list->setCondition("roleTitle LIKE " . $list->quote("%$role%"));
         $vacancies = $list->load();
 
         if (!empty($vacancies)) {
