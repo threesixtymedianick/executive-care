@@ -1,6 +1,6 @@
 <?php
 $ourHomesDescription = $this->wysiwyg("our_homes_description");
-$headerImage = $this->href("our_homes_header");
+$headerImage = $this->image("our_homes_header");
 $results = $this->results;
 $distances = $this->distances;
 ?>
@@ -10,7 +10,7 @@ $distances = $this->distances;
     <?= $headerImage ?>
 <?php endif; ?>
 
-<div class="our-homes__header" style="background-image: url('<?= $headerImage->getFullPath(); ?>');">-</div>
+<div class="our-homes__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
