@@ -72,7 +72,11 @@ $nearbyHomes     = $this->nearbyHomes;
                     </div>
                 </div>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/get-in-touch')); ?>
+                <div class="sidebar__buttons get-in-touch">
+                    <a href="/contact-us?carehome=<?= $careHome->getId() ?>" alt="Get in touch with us">
+                        Get in touch
+                    </a>
+                </div>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure')); ?>
 
