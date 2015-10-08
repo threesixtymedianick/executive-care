@@ -60,7 +60,7 @@ $(document).ready(function() {
             .done(function(data) {
                 $('.homecontent > h3.title').html(data.Title);
                 $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
-                $('.homecontent > a').attr('href', '/care-homes/details/' + data.o_key);
+                $('.homecontent > a').attr('href', '/care-homes/detail/' + data.o_key);
             })
             .fail(function() {
 
