@@ -29,7 +29,6 @@ $vacancy = $this->vacancySelect();
     </div>
     <div class="form-wrapper">
         <h5>Search by vacancy:</h5>
-
         <form>
             <select name="vacancy_search" id="vacancy_search">
                 <option value="">Select</option>

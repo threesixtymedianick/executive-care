@@ -1,7 +1,8 @@
 <?php
-$title                = $this->input('title', [ 'width' => 250 ]);
-$ourCareInfoBox       = $this->wysiwyg("our-care_info");
-$headerImage          = $this->image("our-care_header");
+$title                  = $this->input('title', [ 'width' => 250 ]);
+$ourCareInfoBox         = $this->wysiwyg("our-care_info");
+$headerImage            = $this->image("our-care_header");
+$testimonial            = $this->testimonial;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -19,9 +20,13 @@ $headerImage          = $this->image("our-care_header");
                         <?= $title ?>
                     </div>
                     <div class="our-care__left__content__box">
-                        <?php foreach ($this->testimonial as $entry) {
+                        <?php foreach ($testimonial as $entry) {
                             echo $this->partial("blog/partial/testimonial-entry.php", ["entry" => $entry]);
                         } ?>
+                        <?= $this->paginationControl($testimonial, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                 </div>
             </div>

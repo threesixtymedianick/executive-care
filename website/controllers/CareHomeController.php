@@ -15,13 +15,14 @@ class CareHomeController extends AbstractPageController
         // Load care homes
         $careHomes = new Object\CareHomes\Listing();
         $careHomes->setOrderKey("title");
-        $list = $careHomes->load();
+        $careHomes->setOrder("asc");
+        $careHomes = $careHomes->load();
 
         // Setup pagination
-        $paginator = Zend_Paginator::factory($list);
+        $paginator = Zend_Paginator::factory($careHomes);
         $paginator->setCurrentPageNumber($this->_getParam('page'));
         $paginator->setItemCountPerPage(6);
-        $this->view->careHomes = $paginator;
+        $this->view->paginator  = $paginator;
     }
 
     /**

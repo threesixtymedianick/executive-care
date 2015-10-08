@@ -1,6 +1,6 @@
 <?php
 $headerImage = $this->image("careers_header");
-$results = $this->results;
+$results = $this->paginator;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -24,6 +24,10 @@ $results = $this->results;
                         <?php foreach ($results as $i => $item) : ?>
                             <?= $this->partial("partial/vacancy/vacancy-item.php", ["item" => $item]); ?>
                         <?php endforeach; ?>
+                        <?= $this->paginationControl($this->paginator, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                 </div>
             </div>

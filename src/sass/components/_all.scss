@@ -1,0 +1,12 @@
+.pagination {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+   a {
+     text-decoration: none;
+   }
+}
+
+#pagination-current {
+  font-size: $font-size-large;
+}
