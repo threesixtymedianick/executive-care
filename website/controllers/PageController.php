@@ -41,7 +41,7 @@ class PageController extends AbstractPageController
 
         $paginator = Zend_Paginator::factory($vacancy);
         $paginator->setCurrentPageNumber($this->_getParam('page'));
-        $paginator->setItemCountPerPage(1);
+        $paginator->setItemCountPerPage(12);
         $this->view->paginator  = $paginator;
     }
 
