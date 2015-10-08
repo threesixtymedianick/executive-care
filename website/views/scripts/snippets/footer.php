@@ -27,11 +27,4 @@
     <div>
       <a href="<?= $this->url(array("document" => Document::getById(7)), "default", true); ?>">Care Homes</a>
     </div>
-    <div>
-      <a href="#">Dementia Care Homes</a>
-    </div>
-    <div>
-      <a href="#">Press</a>
-    </div>
-
 </div>
