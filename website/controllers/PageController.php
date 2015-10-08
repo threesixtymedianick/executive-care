@@ -35,8 +35,14 @@ class PageController extends AbstractPageController
     public function careersAction()
     {
         $vacancy = new Object\Vacancy\Listing();
+        $vacancy->setOrderKey("roleTitle");
+        $vacancy->setOrder("asc");
 
-        $this->view->vacancies = $vacancy->load();
+
+        $paginator = Zend_Paginator::factory($vacancy);
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
+        $paginator->setItemCountPerPage(12);
+        $this->view->paginator  = $paginator;
     }
 
     /**
