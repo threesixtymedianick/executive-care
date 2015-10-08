@@ -10,6 +10,6 @@ class Zend_View_Helper_CareHomeImage extends Zend_View_Helper_Abstract
             return null;
         }
 
-        return $select->getFullPath();
+        return $select->getThumbnail('header_images');
     }
 }
