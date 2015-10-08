@@ -4,7 +4,6 @@
 
   &__left {
     @include span-columns(8);
-    margin-top: 350px;
     margin-bottom: 50px;
 
     &__content {
@@ -72,6 +71,30 @@
           border: none;
         }
 
+        #bookAVisit_date, 
+        #bookAVisit_time,
+        #bookAVisit_name,
+        #bookAVisit_email,
+        #bookAVisit_number,
+        #bookAVisit_address {
+          @extend input;
+          @include border-radius(0px);
+          background: transparent;
+          @include appearance(none);
+          background-color: $color-white;
+          background-size: 29px 29px;
+          padding: 0 6px;
+          height: 29px;
+          line-height: 29px;
+          border: none;
+        }
+
+        #bookAVisit_date, 
+        #bookAVisit_time {
+          background: url('../images/down-arrow-green.png') no-repeat top right $color-white;
+          background-size: 29px 29px;
+        }
+
         .bkv {
           display: inline;
           width: 23%;
@@ -80,11 +103,6 @@
 
         .bkv:not(:first-child) {
           margin-left: 20px;
-        }
-
-        .bkv:nth-child(2) {
-          margin-bottom: 0px;
-          margin-top: 20px;
         }
 
 

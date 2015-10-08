@@ -79,7 +79,7 @@
                 </div>
 
             </div>
-            <div class="sidebar">
+            <div class="sidebar book-a-visit">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/upcoming-open-days')); ?>
