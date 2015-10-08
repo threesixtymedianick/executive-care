@@ -2,7 +2,7 @@
     $applicationFormPDF = Asset::getById(25);
     $headerImage        = $this->image("careers_header");
     $pageDescription    = $this->wysiwyg('description');
-    $vacancies          = $this->vacancies;
+    $vacancies          = $this->paginator;
 ?>
 
 <?php if ($this->editmode): ?>
@@ -39,17 +39,10 @@
                             <?php endforeach; ?>
                         <?php endif; ?>
 
-                        <div class="careers__left__content__box--row-pagination">
-                            <ul>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5...</a></li>
-                                <li><a href="#">16</a></li>
-                                <li><a href="#">></a></li>
-                            </ul>
-                        </div>
+                        <?= $this->paginationControl($vacancies, 'Sliding', 'partial/pagination.php', [
+                            'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'appendQueryString' => true
+                        ]); ?>
                     </div>
                 </div>
             </div>
