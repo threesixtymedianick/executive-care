@@ -10,7 +10,7 @@
     <p>Place main header image here</p>
     <?= $headerImage ?>
 <?php else: ?>
-    <div class="whyWork__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
+    <div class="careers__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <?php endif; ?>
 
 <div class="container">
