@@ -252,4 +252,30 @@
       width: 100%;
     }
   }
+
+  .rmv-arrow-ie9 {
+    position:relative;
+    z-index:0;
+  }
+
+  .rmv-arrow-ie9 select {
+    z-index:1;
+  }
+
+  .rmv-arrow-ie9 select::-ms-expand{
+    display:none;
+  }
+
+  .rmv-arrow-ie9:before {
+    display:block;
+    position:absolute;
+    content:'';
+    right:0px;
+    top:0px;
+    height:0.7em;
+    width:1em;
+    margin:2px;
+    background:$color-purple;
+    z-index:5;
+}
 }
