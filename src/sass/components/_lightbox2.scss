@@ -1,9 +1,5 @@
 $images-folder: '/website/static/images/';
 
-body:after {
-  content: url($images-folder + 'close.png') url($images-folder + 'loading.gif') url($images-folder + 'prev.png') url($images-folder + 'next.png') !important;
-}
-
 .lb-cancel {
   background: url($images-folder + 'loading.gif') no-repeat !important;
 }
