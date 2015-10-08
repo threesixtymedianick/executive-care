@@ -1,9 +1,15 @@
 <?php
     $trainingTab       = $this->wysiwyg("training-tab");
     $developmentTab   = $this->wysiwyg("development-tab");
+    $headerImage = $this->image("thankyouHeader");
 ?>
 
-<div class="training-development__header">-</div>
+<?php if ($this->editmode): ?>
+    <p>Place main header image here</p>
+    <?= $headerImage ?>
+<?php else : ?>
+    <div class="training-development__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
+<?php endif; ?>
 <div class="container">
     <div class="container__inner">
         <div class="training-development">
