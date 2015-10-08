@@ -20,7 +20,7 @@ class CareHomeController extends AbstractPageController
 
         // Setup pagination
         $paginator = Zend_Paginator::factory($careHomes);
-        $paginator->setCurrentPageNumber( $this->_getParam('page') );
+        $paginator->setCurrentPageNumber($this->_getParam('page'));
         $paginator->setItemCountPerPage(6);
         $this->view->paginator  = $paginator;
     }
