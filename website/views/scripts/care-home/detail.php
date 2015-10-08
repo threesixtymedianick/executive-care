@@ -45,9 +45,11 @@ $careHomeImage = $this->careHomeImage($careHome);
                             <?php foreach ($nearbyHomes as $careHome) : ?>
                                 <div class="slide">
                                     <img src="<?= $careHome->getHomeImage() ?>" />
-                                    <?= $careHome->getTitle(); ?><br />
-                                    <?= round($careHome->distance, 2) ?> miles away
-                                    <a href="<?= $careHome->getKey() ?>">Find out more</a>
+                                    <div class="slide--home-details">
+                                        <h3><?= $careHome->getTitle(); ?></h3>
+                                        <p><?= round($careHome->distance, 2) ?> miles away</p>
+                                        <a href="<?= $careHome->getKey() ?>">Find out more</a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
@@ -57,16 +59,16 @@ $careHomeImage = $this->careHomeImage($careHome);
             <div class="sidebar">
                 <div class="map-container">
                     <div id="careHomeMap"
-                         class="map"
+                         class="heightMatch"
                          data-id="<?= $careHome->getId() ?>"
                          data-lat="<?= $careHome->getLat() ?>"
                          data-lon="<?= $careHome->getLon() ?>">
                     </div>
                     <div class="address">
                         <h2>How to find us</h2>
-                        <?= $careHome->getTitle() ?>
-                        <?= $careHome->getAddress() ?>
-                        <?= $careHome->getPostcode() ?>
+                        <p><?= $careHome->getTitle() ?><br />
+                        <?= $careHome->getAddress() ?><br />
+                        <?= $careHome->getPostcode() ?></p>
 
                         <a href="<?= $googleMapsUrl ?>" target="_blank">Find us</a>
                     </div>

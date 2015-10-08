@@ -10,6 +10,10 @@
 
     &__title {
       @include title($color-white, $color-green);
+
+      @media(max-width: $tablet-breakpoint) {
+        display: none;
+      }
     }
 
     &--search {
@@ -204,6 +208,81 @@
     &__nearby {
       padding: 20px;
       background-color: $color-light-green;
+      display: block;
+
+      @media(max-width: $tablet-breakpoint) {
+        display: none;
+      }
+
+      .bx-wrapper {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 0;
+
+        .slide {
+          background-color: $color-green;
+          display: inline-block !important;
+          margin-right: 15px;
+          overflow: hidden;
+          height: 150px;
+
+          img {
+            max-width: 40%;
+            float: left;
+            height: auto;
+          }
+
+          &--home-details{
+            display: inline-block;
+            width: 58%;
+            padding-left: 10px;
+            vertical-align: top;
+            font-size: $font-size-small;
+            color: $color-white;
+
+            h3 {
+              padding: 10px 10px 0 0;
+              @include font-header($weight: 300);
+              text-transform: uppercase;
+              font-size: $font-size-large;
+              margin: 0;
+            }
+
+            a {
+              color: $color-green;
+              background-color: $color-white;
+              @include font-header($weight: 300);
+              font-size: $font-size-small;
+              padding: 5px 10px;
+              text-transform: uppercase;
+              text-decoration: none;
+              margin-left: -10px;
+              padding-left: 10px;
+            }
+          }
+        }
+
+        .bx-controls-direction {
+
+          a {
+            width: 20px;
+            height: 26px;
+          }
+        }
+
+        .bx-prev {
+          background: url('../images/slider-controls.png') no-repeat 0 0;
+          background-size: auto 100%;
+          left: -25px;
+        }
+
+        .bx-next {
+          background: url('../images/slider-controls.png') no-repeat -27px 0;
+          background-size: auto 100%;
+          right: -25px;
+        }
+      }
 
       .nearby-homes-slider {
         height: 190px;
