@@ -33,6 +33,53 @@
     margin-top: 37px;
   }
 
+  & .map-container {
+    background-color: $color-green;
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: auto;
+    
+    #careHomeMap {
+      float: left;
+      width: 40%;
+      display: inline-block;
+
+      @media (max-width: $laptop-breakpoint) {
+        width: 146px;
+      }
+    }
+
+    .address {
+      width: 59%;
+      padding: 0 10px 0;
+      font-size: $font-size-small;
+      display: inline-block;
+      vertical-align: top;
+      color: $color-white;
+      float: left;
+
+      h2 {
+        padding: 10px 10px 0 0;
+        @include font-header($weight: 300);
+        text-transform: uppercase;
+        font-size: $font-size-large;
+        margin: 0;
+      }
+
+      a {
+        color: $color-green;
+        background-color: $color-white;
+        @include font-header($weight: 300);
+        font-size: $font-size-small;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-left: -10px;
+        padding-left: 10px;
+      }
+    }
+  }
+
   input {
     border: none;
     margin-bottom: 10px;
