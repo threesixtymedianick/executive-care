@@ -21,13 +21,15 @@ $results = $this->paginator;
                     <div class="careers__left__content__box">
                         <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancy-search')); ?>
 
-                        <?php foreach ($results as $i => $item) : ?>
-                            <?= $this->partial("partial/vacancy/vacancy-item.php", ["item" => $item]); ?>
-                        <?php endforeach; ?>
-                        <?= $this->paginationControl($this->paginator, 'Sliding', 'partial/pagination.php', [
-                            'urlprefix' => $this->document->getFullPath() . '?page=',
-                            'appendQueryString' => true
-                        ]); ?>
+                        <?php if (!empty($results)): ?>
+                            <?php foreach ($results as $i => $item) : ?>
+                                <?= $this->partial("partial/vacancy/vacancy-item.php", ["item" => $item]); ?>
+                            <?php endforeach; ?>
+                            <?= $this->paginationControl($this->paginator, 'Sliding', 'partial/pagination.php', [
+                                'urlprefix' => $this->document->getFullPath() . '?page=',
+                                'appendQueryString' => true
+                            ]); ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
