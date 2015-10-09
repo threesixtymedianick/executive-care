@@ -76,7 +76,10 @@ gulp.task("build-css", function() {
 
 gulp.task("minify-css", function() {
     return gulp
-        .src(paths.build.css + 'screen.css')
+        .src([
+            paths.build.css + 'style.css',
+            paths.build.css + 'libraries.css',
+        ])
         .pipe(cssmin({
             keepSpecialComments: 0
         }))
@@ -87,8 +90,7 @@ gulp.task("minify-css", function() {
 
 gulp.task("build-js", ["build-js-libs"], function() {
     var bundler = browserify({
-        entries: ['./' + paths.src.js + 'index.js'], // Only need initial file, browserify finds the deps
-        transform: [reactify] // We want to convert JSX to normal javascript
+        entries: ['./' + paths.src.js + 'index.js'] // Only need initial file, browserify finds the deps
     });
 
     return bundler
@@ -127,22 +129,12 @@ gulp.task('build-css-libs', function () {
       .pipe(gulp.dest(paths.build.css))
 });
 
-/*gulp.task('build-js-fallback', function() {
-    return gulp.src([
-            './bower_components/selectivizr/selectivizr.js',
-            './bower_components/respond/dest/respond.src.js'
-        ])
-        .pipe(plumber())
-        .pipe(uglifyjs('ie.js'))
-        .pipe(gulp.dest(paths.build.js))
-    ;
-});*/
-
 gulp.task("minify-js", function() {
     return gulp.src([
-            paths.build.js + 'index.js'
+            paths.build.js + 'index.js',
+            paths.build.js + 'libraries.js'
         ])
-        .pipe(uglifyjs('index.js'))
+        .pipe(uglifyjs())
         .pipe(gulp.dest(paths.build.js))
     ;
 });
