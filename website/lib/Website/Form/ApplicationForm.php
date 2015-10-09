@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mattbooth
- * Date: 09/10/15
- * Time: 10:07 AM
- */
 
 namespace Website\Form;
-
 
 class ApplicationForm extends BaseForm
 {
