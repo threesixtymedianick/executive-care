@@ -39,13 +39,6 @@
                             </div>
                             <?= $form->application_submit ?>
                         </div>
-
-                <div class="tab__left select-wrap">
-                    <?= $this->brochureForm->care_home_options ?>
-                </div>
-                <div class="tab__right select-wrap">
-                    <?= $this->brochureForm->delivery_method_options ?>
-                </div>
                     </form>
                     <br style="clear:both;"/>
                 </div>
