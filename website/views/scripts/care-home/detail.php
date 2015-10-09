@@ -44,13 +44,13 @@ $banner = $careHome->getBanner();
                 <div class="our-homes__left__nearby">
                     <div class="nearby-homes-slider">
                         <?php if (isset($nearbyHomes)) : ?>
-                            <?php foreach ($nearbyHomes as $careHome) : ?>
+                            <?php foreach ($nearbyHomes as $nearbyHome) : ?>
                                 <div class="slide">
-                                    <img src="<?= $careHome->getHomeImage() ?>" />
+                                    <img src="<?= $nearbyHome->getHomeImage() ?>" />
                                     <div class="slide--home-details">
-                                        <h3><?= $careHome->getTitle(); ?></h3>
-                                        <p><?= round($careHome->distance, 2) ?> miles away</p>
-                                        <a href="<?= $careHome->getKey() ?>">Find out more</a>
+                                        <h3><?= $nearbyHome->getTitle(); ?></h3>
+                                        <p><?= round($nearbyHome->distance, 2) ?> miles away</p>
+                                        <a href="<?= $nearbyHome->getKey() ?>">Find out more</a>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
