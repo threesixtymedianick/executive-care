@@ -59,7 +59,9 @@ $(document).ready(function () {
             })
                 .done(function (data) {
                     $('.homecontent > h3.title').html(data.Title);
-                    $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
+                    var address = data.Address;
+                    address = address.replace(',', ',<br />');
+                    $('.homecontent > p').html(address + '<br /> ' + data.Postcode);
 
                     var listingImage = data.ListingImage;
 
