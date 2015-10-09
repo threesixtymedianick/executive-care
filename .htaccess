@@ -30,6 +30,70 @@ RewriteBase /
     RewriteRule . - [L]
 </IfModule>
 
+##########################################
+### 301 Redirects                      ###
+##########################################
+
+RedirectMatch 301 ^/news/ /news-and-events/
+RedirectMatch 301 ^/jobs/ /careers/
+
+Redirect 301 /index.php/about-us-header/about-us /about-us
+Redirect 301 /index.php/about-us-header/staff-training /about-us
+Redirect 301 /index.php/ashwood-court /care-homes/detail/ashwood-court
+Redirect 301 /index.php/bluebell-court-2 /our-homes
+Redirect 301 /index.php/care-homes-east-midlands /our-homes
+Redirect 301 /index.php/careers /careers
+Redirect 301 /index.php/cedar-lodge /care-homes/detail/cedar-lodge
+Redirect 301 /index.php/conifer-lodge /care-homes/detail/conifer-lodge
+Redirect 301 /index.php/contact-us /contact-us
+Redirect 301 /index.php/contact-us/brochure_request /contact-us
+Redirect 301 /index.php/contact-us/make-an-enquiry /contact-us
+Redirect 301 /index.php/craigend-gardens /care-homes/detail/craigend-gardens
+Redirect 301 /index.php/eagle-view-care-home /care-homes/detail/eagle-view-care-home
+Redirect 301 /index.php/evergreens-care-home /our-homes
+Redirect 301 /index.php/ferndene-care-home /care-homes/detail/ferndene-care-home
+Redirect 301 /index.php/ferndene-care-home-2 /care-homes/detail/ferndene-care-home
+Redirect 301 /index.php/heather-house /care-homes/detail/heather-house
+Redirect 301 /index.php/hillcrest-care-home /care-homes/detail/hillcrest-care-home
+Redirect 301 /index.php/home-pages/abbeyvale-care-centre /care-homes/detail/abbeyvale-care-centre
+Redirect 301 /index.php/home-pages/ashwood-court /care-homes/detail/ashwood-court
+Redirect 301 /index.php/home-pages/bluebell-court-2 /our-homes
+Redirect 301 /index.php/home-pages/briardene-care-home /care-homes/detail/briardene-care-home
+Redirect 301 /index.php/home-pages/cedar-lodge /care-homes/detail/cedar-lodge
+Redirect 301 /index.php/home-pages/cherry-tree /care-homes/detail/cherry-tree
+Redirect 301 /index.php/home-pages/conifer-lodge /care-homes/detail/conifer-lodge
+Redirect 301 /index.php/home-pages/craigend-gardens /care-homes/detail/craigend-gardens
+Redirect 301 /index.php/home-pages/derwent-care-home /care-homes/detail/derwent-care-home
+Redirect 301 /index.php/home-pages/eagle-view-care-home /care-homes/detail/eagle-view-care-home
+Redirect 301 /index.php/home-pages/evergreens-care-home /our-homes
+Redirect 301 /index.php/home-pages/ferndene-care-home /care-homes/detail/ferndene-care-home
+Redirect 301 /index.php/home-pages/ferndene-care-home-2 /care-homes/detail/ferndene-care-home
+Redirect 301 /index.php/home-pages/heather-house /care-homes/detail/heather-house
+Redirect 301 /index.php/home-pages/hillcrest-care-home /care-homes/detail/hillcrest-care-home
+Redirect 301 /index.php/home-pages/holly-lodge /care-homes/detail/holly-lodge-care-home
+Redirect 301 /index.php/home-pages/kingston-court /care-homes/detail/kingston-court
+Redirect 301 /index.php/home-pages/pembroke-lodge /care-homes/detail/pembroke-lodge
+Redirect 301 /index.php/home-pages/sovereign-court /care-homes/detail/sovereign-lodge
+Redirect 301 /index.php/our-care-header/a-person-centered-approach /our-care
+Redirect 301 /index.php/our-care-header/dementia-care /our-care
+Redirect 301 /index.php/our-care-header/nursing-care /our-care
+Redirect 301 /index.php/our-care-header/residential-care /our-care
+Redirect 301 /index.php/our-care-header/specialised-care /our-care
+Redirect 301 /index.php/our-homes/care-homes-east-england /our-homes
+Redirect 301 /index.php/our-homes/care-homes-east-midlands /our-homes
+Redirect 301 /index.php/our-homes/care-homes-london /our-homes
+Redirect 301 /index.php/our-homes/care-homes-north-east /our-homes
+Redirect 301 /index.php/our-homes/care-homes-north-west /our-homes
+Redirect 301 /index.php/our-homes/care-homes-scotland /our-homes
+Redirect 301 /index.php/our-homes/care-homes-south-east /our-homes
+Redirect 301 /index.php/our-homes/care-homes-south-west /our-homes
+Redirect 301 /index.php/our-homes/care-homes-wales /our-homes
+Redirect 301 /index.php/our-homes/care-homes-west-midlands /our-homes
+Redirect 301 /index.php/our-homes/care-homes-yorkshire /our-homes
+Redirect 301 /index.php/pembroke-lodge /care-homes/detail/pembroke-lodge
+Redirect 301 /index.php/press /news-and-events
+Redirect 301 /index.php/sovereign-court /care-homes/detail/sovereign-lodge
+
 # ASSETS: check if request method is GET (because of WebDAV) and if the requested file (asset) exists on the filesystem, if both match, deliver the asset directly
 RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)
 RewriteCond %{DOCUMENT_ROOT}/website/var/assets%{REQUEST_URI} -f
@@ -116,3 +180,5 @@ RewriteRule ^.*$ index.php [NC,L]
     # high risk
     #ModPagespeedEnableFilters defer_javascript,local_storage_cache
 </IfModule>
+
+
