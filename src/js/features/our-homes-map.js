@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     if ($('.our-homes .map').length > 0) {
         // Google Map Options
         var options = {
@@ -19,37 +19,37 @@ $(document).ready(function() {
             type: 'GET',
             dataType: 'json',
         })
-        .done(function(data) {
-            $.each(data, function(key, data) {
-                // Set the info box to show the first care home
-                if (key === 0) {
-                    updateCareHomeDetails(data.id);
-                }
+            .done(function (data) {
+                $.each(data, function (key, data) {
+                    // Set the info box to show the first care home
+                    if (key === 0) {
+                        updateCareHomeDetails(data.id);
+                    }
 
-                // Check lat long is specified
-                if (data.lat !== null && data.lon !== null) {
-                    // Create LatLng
-                    var latLng = new google.maps.LatLng(data.lat, data.lon);
+                    // Check lat long is specified
+                    if (data.lat !== null && data.lon !== null) {
+                        // Create LatLng
+                        var latLng = new google.maps.LatLng(data.lat, data.lon);
 
-                    var iconBase = '../website/static/images/place_icons/';
+                        var iconBase = '../website/static/images/place_icons/';
 
-                    // Create marker
-                    var marker = new google.maps.Marker({
-                        position: latLng,
-                        icon: iconBase + 'place_icon_1.png',
-                        map: map,
-                        careHomeId: data.id,
-                    });
+                        // Create marker
+                        var marker = new google.maps.Marker({
+                            position: latLng,
+                            icon: iconBase + 'place_icon_1.png',
+                            map: map,
+                            careHomeId: data.id,
+                        });
 
-                    marker.addListener('click', function() {
-                        updateCareHomeDetails(marker.careHomeId);
-                    });
-                }
+                        marker.addListener('click', function () {
+                            updateCareHomeDetails(marker.careHomeId);
+                        });
+                    }
+                });
+            })
+            .fail(function () {
+                // Handle errors
             });
-        })
-        .fail(function() {
-            // Handle errors
-        });
 
         function updateCareHomeDetails(id) {
             $.ajax({
@@ -57,20 +57,24 @@ $(document).ready(function() {
                 type: 'GET',
                 dataType: 'json',
             })
-            .done(function(data) {
-                $('.homecontent > h3.title').html(data.Title);
-                $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
-                if (null !== data.ListingImage && "" !== data/ListingImage) {
-                    var image =  data.ListingImage.path + data.ListingImage.filename;
-                    $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('" + image + "')");
-                } else {
-                    $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('/website/static/images/home/find-a-home.png')");
-                }
-                $('.homecontent > a').attr('href', '/care-homes/detail/' + data.o_key);
-            })
-            .fail(function() {
+                .done(function (data) {
+                    $('.homecontent > h3.title').html(data.Title);
+                    $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
 
-            })
+                    var listingImage = data.ListingImage;
+
+                    if ((typeof(listingImage) !== 'undefined') && listingImage !== null && listingImage !== "") {
+                        var image = listingImage.path + listingImage.filename;
+                        $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('" + image + "')");
+                    } else {
+                        $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('/website/static/images/home/find-a-home.png')");
+                    }
+
+                    $('.homecontent > a').attr('href', '/care-homes/detail/' + data.o_key);
+                })
+                .fail(function () {
+
+                })
         }
     }
 });
