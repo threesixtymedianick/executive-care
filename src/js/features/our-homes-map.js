@@ -61,7 +61,8 @@ $(document).ready(function() {
                 $('.homecontent > h3.title').html(data.Title);
                 $('.homecontent > p').html(data.Address + ' ' + data.Postcode);
                 if (null !== data.ListingImage && "" !== data/ListingImage) {
-                    $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('" + data.ListingImage + "')");
+                    var image =  data.ListingImage.path + data.ListingImage.filename;
+                    $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('" + image + "')");
                 } else {
                     $('.sidebar__panel--our-homes-find-a-home-image').css("background", "url('/website/static/images/home/find-a-home.png')");
                 }
