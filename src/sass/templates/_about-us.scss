@@ -29,7 +29,7 @@
   .tab {
     @include tab();
     background: $color-light-blue;
-    color: $color-blue;
+    font-size: 1.2em;
   }
 
   @media(max-width:$laptop-breakpoint) {
