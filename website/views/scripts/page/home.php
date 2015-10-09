@@ -26,17 +26,7 @@ if ($this->editmode) : ?>
                     </ul>
                 </div>
                 <div class="home__panels">
-                    <div class="sidebar__panel">
-                        <div class="sidebar__panel--care-explained">
-                            <div class="sidebar__panel--care-explained-image"></div>
-                            <div class="sidebar__panel--content heightMatch">
-                                <h3><?= $title; ?></h3>
-
-                                <p><?= $content; ?></p>
-                                <a href="/our-care" class="sidebar__panel--button mleft">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?= $this->inc(Document_Snippet::getByPath('/snippets/our-care-explained')); ?>
 
                     <?= $this->inc(Document_Snippet::getByPath('/snippets/recommendation')); ?>
                 </div>
