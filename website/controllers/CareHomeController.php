@@ -50,6 +50,8 @@ class CareHomeController extends AbstractPageController
             if (false !== $recommendations && !empty($recommendations)) {
                 $this->view->recommendations = $recommendations;
             }
+        } else {
+            throw new \Zend_Controller_Action_Exception('This page does not exist', 404);
         }
 
         // Get nearby care homes

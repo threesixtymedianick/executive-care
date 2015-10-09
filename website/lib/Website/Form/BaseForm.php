@@ -19,4 +19,47 @@ class BaseForm extends \Zend_Form
 
         return $this;
     }
+
+    /**
+     * Get a list of care homes and create an array with id => title
+     *
+     * @return array
+     */
+    protected function getCareHomeSelect()
+    {
+        $careHomes = new \Object\CareHomes\Listing();
+        $careHomes->setOrderKey("title");
+        $list = $careHomes->load();
+
+        $careHomes = [];
+
+        foreach ($list as $careHome) {
+            $careHomes[$careHome->getId()] = $careHome->getTitle();
+        }
+
+        return $careHomes;
+    }
+
+    /**
+     * Get a list of available vacancy roles
+     * @return array
+     */
+    public function getVacancyRoleSelect()
+    {
+        $vacancies = new \Object\VacancyRole\Listing();
+
+        if (!$vacancies instanceof Pimcore\Model\Object\VacancyRole\Listing) {
+            return [];
+        }
+
+        $vacancies->setOrderKey("name");
+
+        foreach ($vacancies as $vacancy) {
+            $vacancyAssociativeArray[] = [
+                $vacancy->getId(),
+                $vacancy->getName()
+            ];
+        }
+        return $vacancyAssociativeArray;
+    }
 }
