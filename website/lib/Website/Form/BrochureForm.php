@@ -74,24 +74,4 @@ class BrochureForm extends BaseForm
 
         return $this;
     }
-
-    /**
-     * Get a list of care homes and create an array with id => title
-     *
-     * @return array
-     */
-    protected function getCareHomeSelect()
-    {
-        $careHomes = new \Object\CareHomes\Listing();
-        $careHomes->setOrderKey("title");
-        $list = $careHomes->load();
-
-        $careHomes = [];
-
-        foreach ($list as $careHome) {
-            $careHomes[$careHome->getId()] = $careHome->getTitle();
-        }
-
-        return $careHomes;
-    }
 }

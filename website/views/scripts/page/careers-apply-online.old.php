@@ -1,6 +1,5 @@
 <?php 
     $headerImage = $this->image("about_us_header");
-    $form = $this->applicationForm;
 ?>
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
@@ -18,27 +17,13 @@
                 </div>
                 <div class="careers__apply__left__form">
                     <form enctype="application/x-www-form-urlencoded" action="" method="post" id="application_form">
-                        <div class="tab__left field-wrap">
-                            <?= $form->application_careHomes ?>
-                        </div>
-                        <div class="tab__right field-wrap">
-                            <?= $form->application_vacancyRoles ?>
-                        </div>
-                        <div class="tab__left field-wrap">
-                            <?= $form->application_name ?>
-                        </div>
-                        <div class="tab__right field-wrap">
-                            <?= $form->application_number ?>
-                        </div>
-                        <div class="tab__controls field-wrap">
-                            <?= $form->application_email ?>
-                        </div>
-                        <div class="tab__controls">
-                            <div class="field-wrap">
-                                <?= $form->application_coverLetter ?>
-                            </div>
-                            <?= $form->application_submit ?>
-                        </div>
+                        <?= $this->partial("partial/forms/personal_details_1.php", $this); ?>
+                        <?= $this->partial("partial/forms/position.php", $this); ?>
+                        <?= $this->partial("partial/forms/education_training.php", $this); ?>
+                        <?= $this->partial("partial/forms/personal_details_2.php", $this); ?>
+                        <?= $this->partial("partial/forms/references.php", $this); ?>
+                        <?= $this->partial("partial/forms/medical.php", $this); ?>
+                        <?= $this->partial("partial/forms/complete.php", $this); ?>
                     </form>
                     <br style="clear:both;"/>
                 </div>
