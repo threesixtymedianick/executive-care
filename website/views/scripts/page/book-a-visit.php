@@ -1,5 +1,6 @@
 <?php
     $bookAVisitForm = $this->bookAVisitForm;
+    $contactUsLiveChatDetails = $this->wysiwyg("live_chat_details_content", ["width" => 300, "height" => 100]);
     $headerImage = $this->image("book-a-visitHeader");
 ?>
 
