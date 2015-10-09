@@ -46,20 +46,16 @@ class BaseForm extends \Zend_Form
      */
     public function getVacancyRoleSelect()
     {
-        $vacancies = new \Object\VacancyRole\Listing();
+        $roles = new \Object\VacancyRole\Listing();
+        $roles->setOrderKey("name");
+        $list = $roles->load();
 
-        if (!$vacancies instanceof Pimcore\Model\Object\VacancyRole\Listing) {
-            return [];
+        $roles = [];
+
+        foreach ($list as $vacancyRole) {
+            $roles[$vacancyRole->getId()] = $vacancyRole->getName();
         }
 
-        $vacancies->setOrderKey("name");
-
-        foreach ($vacancies as $vacancy) {
-            $vacancyAssociativeArray[] = [
-                $vacancy->getId(),
-                $vacancy->getName()
-            ];
-        }
-        return $vacancyAssociativeArray;
+        return $roles;
     }
 }
