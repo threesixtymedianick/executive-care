@@ -58,7 +58,7 @@ class SnippetsController extends AbstractPageController
         if (isset($recommendation)) {
             $recommendation['title'] = str_replace(' from carehome.co.uk', '', $recommendation['title']);
             $recommendation['pubDate'] = (new DateTime($recommendation['pubDate']))->format('j F Y');
-            $recommendation['description'] = mb_strimwidth($recommendation['description'], 0, 220, "...");
+            $recommendation['description'] = mb_strimwidth($recommendation['description'], 0, 140, "...");
         }
 
         $this->view->recommendation = $recommendation;
