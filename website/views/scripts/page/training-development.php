@@ -14,16 +14,33 @@
     <div class="container__inner">
         <div class="training-development">
             <div class="training-development__left">
-                <ul class="tabs">
-                    <li><a id="training_tab" href='#training'>Training</a></li>
-                    <li><a id="development_tab" href='#development'>Development</a></li>
-                </ul>
-                <div class="tab" id="training">
-                    <?= $trainingTab ?>
-                </div>
-                <div class="tab" id="development">
-                    <?= $developmentTab ?>
-                </div>
+
+                <?php if (!$this->editmode) : ?>
+                    <ul class="tabs">
+                        <li><a id="training_tab" href='#training'>Training</a></li>
+                        <li><a id="development_tab" href='#development'>Development</a></li>
+                    </ul>
+                    <div class="tab" id="training">
+                        <?= $trainingTab ?>
+                    </div>
+                    <div class="tab" id="development">
+                        <?= $developmentTab ?>
+                    </div>
+                <?php else : ?>
+                    <ul class="tabs">
+                        <li><a id="training_tab" href='#training'>Training</a></li>
+                    </ul>
+                    <div class="tab" id="training">
+                        <?= $trainingTab ?>
+                    </div>
+                    <br />
+                    <ul class="tabs">
+                        <li><a id="development_tab" href='#development'>Development</a></li>
+                    </ul>
+                    <div class="tab" id="development">
+                        <?= $developmentTab ?>
+                    </div>
+                <?php endif; ?>
             </div>
                 <div class="sidebar">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/volunteer')); ?>
