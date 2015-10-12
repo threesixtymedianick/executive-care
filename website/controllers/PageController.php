@@ -99,6 +99,8 @@ class PageController extends AbstractPageController
                 // Get the values from the form
                 $values = $brochureForm->getValues();
 
+                $values['care_home_options'] = $this->getMultiOptionByName($values, $brochureForm, 'care_home_options');
+
                 // Set the values to the view
                 //  in a variable called data
                 $view->data = $values;
@@ -152,6 +154,9 @@ class PageController extends AbstractPageController
             if ($applicationForm->isValid($request->getPost())) {
                 // Get posted form values
                 $values = $applicationForm->getValues();
+
+                $values['application_careHomes'] = $this->getMultiOptionByName($values, $applicationForm, 'application_careHomes');
+                $values['application_vacancyRoles'] = $this->getMultiOptionByName($values, $applicationForm, 'application_vacancyRoles');
 
                 // Assign form data to view
                 $view->data = $values;
@@ -248,6 +253,7 @@ class PageController extends AbstractPageController
 
             if ($bookAVisitForm->isValid($request->getPost())) {
                 $values = $bookAVisitForm->getValues();
+                $values['bookAVisitForm_careHomes'] = $this->getMultiOptionByName($values, $bookAVisitForm, 'bookAVisitForm_careHomes');
                 $view->data = $values;
                 $html = $view->render('book.php');
                 $mail->addTo($this->config->enquiry_email);
@@ -266,5 +272,29 @@ class PageController extends AbstractPageController
     public function thankYouAction()
     {
 
+    }
+
+    /**
+     * Gets the name value from a multioption field rather than the Id
+     *
+     * Used to display in form email templates
+     *
+     * @param $values  The form values to check
+     * @param $form  The particular form to get the values from
+     * @param $formElement  The form element which is a multi options
+     * @return mixed  The returned values
+     */
+    private function getMultiOptionByName ($values, $form, $formElement)
+    {
+        $id = $values[$formElement];
+
+        $element = $form->getElement($formElement);
+        if (!$element instanceof \Zend_Form_Element_Select || null === $element) {
+            return false;
+        }
+
+        $options = $element->getMultiOptions();
+
+        return $values[$formElement] = $options[$id];
     }
 }

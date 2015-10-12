@@ -22,7 +22,7 @@
                             <?= $form->application_careHomes ?>
                         </div>
                         <div class="tab__right field-wrap">
-                            <?= $form->application_vacancyRoles ?>
+                            <?= $form->application_vacancyRoles; ?>
                         </div>
                         <div class="tab__left field-wrap">
                             <?= $form->application_name ?>
