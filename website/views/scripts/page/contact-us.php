@@ -99,22 +99,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="contact-us__live-chat">
-                    <div class="contact-us__live-chat__icon">
-                        <img src="website/static/images/home/woman_headset2.png" />
-                    </div>
-                    <div class="contact-us__live-chat__details">
-                        <div class="contact-us__live-chat__details__title">
-                            Chat
-                        </div>
-                        <div class="contact-us__live-chat__details__content">
-                            <?= $contactUsLiveChatDetails ?>
-                        </div>
-                        <div class="contact-us__live-chat__details__open-chat">
-                            <a href="#livechat">Chat now</a>
-                        </div>
-                    </div>
-                </div>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/live-chat')); ?>
             </div>
         </div>
     </div>
