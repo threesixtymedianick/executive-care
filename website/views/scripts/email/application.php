@@ -29,3 +29,4 @@
         <td><?= str_replace("\n", "<br />", $this->data[$formName . 'coverLetter']); ?></td>
     </tr>
 </table>
+

@@ -34,7 +34,7 @@ class BaseForm extends \Zend_Form
         $careHomes = [];
 
         foreach ($list as $careHome) {
-            $careHomes[$careHome->getId()] = $careHome->getTitle();
+            $careHomes[$careHome->getTitle()] = $careHome->getTitle();
         }
 
         return $careHomes;
@@ -53,7 +53,7 @@ class BaseForm extends \Zend_Form
         $roles = [];
 
         foreach ($list as $vacancyRole) {
-            $roles[$vacancyRole->getId()] = $vacancyRole->getName();
+            $roles[$vacancyRole->getName()] = $vacancyRole->getName();
         }
 
         return $roles;
