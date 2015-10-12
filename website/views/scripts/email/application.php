@@ -26,6 +26,6 @@
     </tr>
     <tr>
         <td>Covering letter: </td>
-        <td><?= $this->data[$formName . 'coverLetter']; ?></td>
+        <td><?= str_replace("\n", "<br />", $this->data[$formName . 'coverLetter']); ?></td>
     </tr>
 </table>
