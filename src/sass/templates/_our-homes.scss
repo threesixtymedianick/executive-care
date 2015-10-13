@@ -23,8 +23,10 @@
 
       input[type=search] {
         width: 100%;
-        padding: 6px;
+        padding: 8px;
         font-size: 1.2em;
+        border: none;
+        margin-left: -4px;
       }
 
       .search-submit {
@@ -182,6 +184,10 @@
 
     .pagination a {
       color: black;
+    }
+
+    .pagination {
+      font-size: 1.3em;
     }
 
     &--pagination {
