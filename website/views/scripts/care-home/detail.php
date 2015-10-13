@@ -93,9 +93,12 @@ $banner = $careHome->getBanner();
                         <div class="sidebar__panel--recommendation">
                             <div class="sidebar__panel--recommendation-image"></div>
                             <div class="sidebar__panel--content full-width-panel heightMatch">
+                                <div class="recommendation-logo">    
+                                    <img src="/website/static/images/reccomendation-logo.png">
+                                </div>
                                 <h3><?= $recommendation['title']; ?></h3>
                                 <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
-                                <p><?= mb_strimwidth($recommendation['description'], 0, 220, "..."); ?></p>
+                                <p><?= mb_strimwidth($recommendation['description'], 0, 150, "..."); ?></p>
                                 <a href="<?= $recommendation['link']; ?>" target="_blank">
                                     Continue reading
                                 </a>
