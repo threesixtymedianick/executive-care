@@ -63,6 +63,10 @@
         }
       }
     }
+
+    &__telephone {
+      text-transform: uppercase;
+    }
   }
 
   @include tab-ul();

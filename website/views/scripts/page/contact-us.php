@@ -13,7 +13,7 @@
             <div class="sidebar contact">
                     <div class="contact-us__address">
                         <div class="contact-us__address__title">
-                            Crystal Court Care Home
+                            Executive Care Homes
                         </div>
                         <div class="contact-us__address__address">
                             <?= $contactUsAddress ?>
