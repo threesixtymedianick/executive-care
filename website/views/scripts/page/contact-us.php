@@ -99,7 +99,6 @@
                         </div>
                     </form>
                 </div>
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/live-chat')); ?>
             </div>
         </div>
     </div>
