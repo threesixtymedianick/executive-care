@@ -25,10 +25,6 @@ $documentKey = ($this->document->getId() === 1) ? 'home' : $this->document->getK
                         <span>Mon-Fri 8.30am-5pm</span>
                      </div>
                   </div>
-                  <div class="site-header__email">
-                     <i class="site-header__contact-email-icon"></i>
-                     <?= $this->config->infoemail; ?>
-                  </div>
                </div>
             </div>
          </div>

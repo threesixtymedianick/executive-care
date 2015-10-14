@@ -12,10 +12,7 @@
   <div>
       Fax: <?= $this->config->fax; ?>
   </div>
-
-  <div>
-      Email: <?= $this->config->infoemail; ?>
-  </div>
+  
 </div>
 <div class="site-footer__block">
   <div>
