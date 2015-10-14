@@ -7,7 +7,7 @@ $careHomeImage   = $this->careHomeImage($careHome);
 $banner = $careHome->getBanner();
 ?>
 
-<div class="our-care__header" style="background-image: url('<?= $careHomeImage; ?>');">-</div>
+<div class="our-care__header home-header" style="background-image: url('<?= $careHomeImage; ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
@@ -58,7 +58,7 @@ $banner = $careHome->getBanner();
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
+            <div class="sidebar homes-detail">
                 <div class="map-container">
                     <div id="careHomeMap"
                          class="heightMatch"
