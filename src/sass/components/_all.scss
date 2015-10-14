@@ -10,3 +10,9 @@
 #pagination-current {
   font-size: $font-size-large;
 }
+
+input {
+   -webkit-appearance: none;
+   border-radius: 0;
+   -webkit-border-radius: 0px;
+}
