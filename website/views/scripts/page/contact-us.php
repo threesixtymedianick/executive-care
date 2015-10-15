@@ -28,11 +28,7 @@
                         </div>
                         </div>
                         <br />
-                        <div class="contact-us__address__telephone">
-                            Tel: <?= $contactUsEnquiryNumberSecond ?>
-                        </div>
                     </div>
-                    <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
                 </div>
             <div class="contact-us__left">
                 <ul class="tabs">
