@@ -18,7 +18,7 @@ $image = $this->image('sidebar_images');
             <div class="sidebar__panel--recommendation-image"
                  style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></div>
             <div class="sidebar__panel--content full-width-panel heightMatch">
-                <img src="/website/static/images/reccomendation-logo.png">
+                <img src="/website/static/images/reccomendation-logo.png" class="carehome-logo">
                 <div class="rec-text">
                 Latest recomendations for homes in our group
                 </div>
