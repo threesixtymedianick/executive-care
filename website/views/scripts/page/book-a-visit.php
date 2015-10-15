@@ -61,7 +61,6 @@
                         </form>
                     </div>
                 </div>
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/live-chat')); ?>
             </div>
             <div class="sidebar book-a-visit">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
