@@ -29,9 +29,7 @@ class ContactUsForm extends BaseForm
             ->setRequired(true);
 
         $address = new \Zend_Form_Element_Text('enquiry_address');
-        $address->setLabel('Your address:')
-            ->addValidator('NotEmpty', true)
-            ->setRequired(true);
+        $address->setLabel('Your address:');
 
         $message = new \Zend_Form_Element_Textarea('enquiry_message');
         $message->setLabel('Your message:')

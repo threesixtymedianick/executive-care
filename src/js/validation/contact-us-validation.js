@@ -2,7 +2,6 @@ $("#enquiry_form").validate({
     rules: {
         enquiry_name                : "required",
         enquiry_number              : { required: true, number: true },
-        enquiry_address             : "required",
         enquiry_message             : "required",
         enquiry_email               : { required: true, email: true, valDomain: true }
     },
@@ -16,7 +15,6 @@ $("#enquiry_form").validate({
             email: "Please enter a valid email address",
             required: "An email address is required"
         },
-        enquiry_message             : "Please enter a message to send",
         enquiry_address             : "Please enter an address to contact you with"
     }
 });
