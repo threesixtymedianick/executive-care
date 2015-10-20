@@ -99,6 +99,8 @@ class PageController extends AbstractPageController
                 // Get the values from the form
                 $values = $brochureForm->getValues();
 
+                $shouldDownloadBrochure = $values['delivery_method_options'] === "1";
+
                 $values['care_home_options'] = $this->getMultiOptionByName($values, $brochureForm, 'care_home_options');
 
                 // Set the values to the view
@@ -111,7 +113,12 @@ class PageController extends AbstractPageController
                 // Add our email address for this form
                 $mail->addTo($this->config->brochure_email);
 
-                $this->getResponse()->setRedirect('/thank-you');
+                if (!$shouldDownloadBrochure) {
+                    $this->getResponse()->setRedirect('/thank-you');
+                } else {
+                    $careHomeId = $values['care_home_options'];
+                    $this->downloadBrochure($careHomeId);
+                }
 
             } else if ($enquiryForm->isValid($request->getPost())) {
                 $values = $enquiryForm->getValues();
@@ -131,10 +138,6 @@ class PageController extends AbstractPageController
         $this->view->enquiryForm = $enquiryForm;
     }
 
-    /**
-     * [careersApplyOnlineAction description]
-     * @return [type] [description]
-     */
     public function careersApplyOnlineAction()
     {
         $applicationForm = new ApplicationForm();
@@ -296,5 +299,24 @@ class PageController extends AbstractPageController
         $options = $element->getMultiOptions();
 
         return $values[$formElement] = $options[$id];
+    }
+
+    /**
+     * Fires off a download of the brochure for the supplied care home
+     * @param $careHomeId  The care home ID to query and download the brochure
+     * @throws Zend_Controller_Action_Exception
+     */
+    private function downloadBrochure($careHomeId)
+    {
+        $careHome = Object_CareHomes::getById($careHomeId);
+
+        $brochure = $careHome->getBrochure();
+
+        if ($brochure !== null || !$brochure) {
+            $careHomeLink = $brochure->getFullPath();
+            $this->getResponse()->setRedirect('/download' . $careHomeLink);
+        } else {
+            throw new Zend_Controller_Action_Exception('This file does not exist', 404);
+        }
     }
 }
