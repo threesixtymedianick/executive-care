@@ -15,7 +15,7 @@ class DownloadController extends AbstractPageController
         $fileLoc = 'var/assets/' . $this->getRequest()->getParams()['file'];
         $fileName = $this->getRequest()->getParams()['file'];
 
-        if(!is_file($fileLoc)) {
+        if (!is_file($fileLoc)) {
             throw new Zend_Controller_Action_Exception('This file does not exist', 404);
         }
 

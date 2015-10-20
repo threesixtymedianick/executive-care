@@ -99,7 +99,9 @@ class PageController extends AbstractPageController
                 // Get the values from the form
                 $values = $brochureForm->getValues();
 
-                $shouldDownloadBrochure = $values['delivery_method_options'] === "1";
+                $shouldDownloadBrochure = $values['delivery_method_options'] === "1" ? true : false;
+
+                $careHomeId = $values['care_home_options'];
 
                 $values['care_home_options'] = $this->getMultiOptionByName($values, $brochureForm, 'care_home_options');
 
@@ -116,8 +118,15 @@ class PageController extends AbstractPageController
                 if (!$shouldDownloadBrochure) {
                     $this->getResponse()->setRedirect('/thank-you');
                 } else {
-                    $careHomeId = $values['care_home_options'];
-                    $this->downloadBrochure($careHomeId);
+                    $careHome = Object_CareHomes::getById($careHomeId);
+
+                    $brochure = $careHome->getBrochure();
+                    if ($brochure !== null || !$brochure) {
+                        $careHomeLink = $brochure->getFullPath();
+                        $this->getResponse()->setRedirect('/thank-you?brochure=' . $careHomeLink);
+                    } else {
+                        throw new Zend_Controller_Action_Exception('This file does not exist', 404);
+                    }
                 }
 
             } else if ($enquiryForm->isValid($request->getPost())) {
@@ -125,7 +134,7 @@ class PageController extends AbstractPageController
                 $view->data = $values;
                 $html = $view->render('enquiry.php');
                 $mail->addTo($this->config->enquiry_email);
-                $this->getResponse()->setRedirect('/thank-you');
+                $this->getResponse()->setRedirect('/thank-you?');
             }
 
             $mail->setBodyHtml($html);
@@ -274,7 +283,11 @@ class PageController extends AbstractPageController
 
     public function thankYouAction()
     {
-
+        // Downloads a brochure if a parameter is given
+        $brochure = $this->getRequest()->getParams()['brochure'];
+        if ($brochure !== null || $brochure) {
+            echo "<script type = 'text/javascript'>window.open('/download/" . $brochure . "','_blank');</script>";
+        }
     }
 
     /**
@@ -299,24 +312,5 @@ class PageController extends AbstractPageController
         $options = $element->getMultiOptions();
 
         return $values[$formElement] = $options[$id];
-    }
-
-    /**
-     * Fires off a download of the brochure for the supplied care home
-     * @param $careHomeId  The care home ID to query and download the brochure
-     * @throws Zend_Controller_Action_Exception
-     */
-    private function downloadBrochure($careHomeId)
-    {
-        $careHome = Object_CareHomes::getById($careHomeId);
-
-        $brochure = $careHome->getBrochure();
-
-        if ($brochure !== null || !$brochure) {
-            $careHomeLink = $brochure->getFullPath();
-            $this->getResponse()->setRedirect('/download' . $careHomeLink);
-        } else {
-            throw new Zend_Controller_Action_Exception('This file does not exist', 404);
-        }
     }
 }
