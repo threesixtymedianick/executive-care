@@ -13,7 +13,7 @@ $banner = $careHome->getBanner();
         <div class="our-homes">
             <div class="our-homes__left">
                 <div class="our-homes__left__title">
-                    Welcome to
+                    Welcome to <?= $careHome->getTitle(); ?>
                 </div>
                 <div class="our-homes__left__content">
                     <?php
@@ -30,10 +30,7 @@ $banner = $careHome->getBanner();
 
                         <?= $this->partial("partial/care-homes/gallery.php", ["careHomeObject" => $careHome]); ?>
 
-                        <?= $this->partial("partial/care-homes/ratings-and-report.php", [
-                            "careHomeObject"  => $careHome,
-                            "recommendations" => $recommendations,
-                        ]); ?>
+                        <?= $this->partial("partial/care-homes/ratings-and-report.php", ["careHomeObject"  => $careHome]); ?>
                     </div>
                 </div>
                 <br/>
