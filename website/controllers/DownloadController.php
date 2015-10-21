@@ -12,8 +12,8 @@ class DownloadController extends AbstractPageController
         $this->_helper->layout()->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
 
-        $fileLoc = 'var/assets/' . $this->getRequest()->getParams()['file'];
         $fileName = $this->getRequest()->getParams()['file'];
+        $fileLoc = 'var/assets/' . $fileName;
 
         if (!is_file($fileLoc)) {
             throw new Zend_Controller_Action_Exception('This file does not exist', 404);
@@ -28,6 +28,7 @@ class DownloadController extends AbstractPageController
             ->setHeader('Cache-Control','must-revalidate, post-check=0, pre-check=0', true)
             ->setHeader('Pragma','public', true)
             ->setHeader('Content-Length: ' , filesize($fileLoc),true);
+
         $this->getResponse()->setBody(file_get_contents($fileLoc));
     }
 }
