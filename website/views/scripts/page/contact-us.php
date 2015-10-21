@@ -18,13 +18,13 @@
                             <?= $contactUsAddress ?>
                         </div>
                         <div class="contact-us__address__enquiries">
-                        <div class="contact-us__address__enquiries__left">
-                            Enquiries:
-                        </div>
-                        <div class="contact-us__address__enquiries__right">
-                            <?= $contactUsEnquiryNumber ?><br />
-                            <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
-                        </div>
+                            <div class="contact-us__address__enquiries__left">
+                                Enquiries:
+                            </div>
+                            <div class="contact-us__address__enquiries__right">
+                                <?= $contactUsEnquiryNumber ?><br />
+                                <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
+                            </div>
                         </div>
                         <br />
                     </div>
