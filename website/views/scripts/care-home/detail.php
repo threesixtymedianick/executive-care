@@ -68,9 +68,14 @@ $banner = $careHome->getBanner();
                     </div>
                     <div class="address">
                         <h2>How to find us</h2>
-                        <p><?= $careHome->getTitle() ?><br />
-                        <?= $careHome->getAddress() ?><br />
-                        <?= $careHome->getPostcode() ?></p>
+                        <p>
+                            <?= $careHome->getTitle() ?><br />
+                            <?= $careHome->getAddress() ?><br />
+                            <?= $careHome->getPostcode() ?><br />
+                            <?php if ($careHome->getPhoneNumber() !== null || $careHome->getPhoneNumber()): ?>
+                                TEL: <?=$careHome->getPhoneNumber(); ?>
+                            <?php endif ?>
+                         </p>
 
                         <a href="<?= $googleMapsUrl ?>" target="_blank">Find us</a>
                     </div>
