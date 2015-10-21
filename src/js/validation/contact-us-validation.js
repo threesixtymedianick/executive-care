@@ -15,7 +15,7 @@ $("#enquiry_form").validate({
             email: "Please enter a valid email address",
             required: "An email address is required"
         },
-        enquiry_address             : "Please enter an address to contact you with"
+        enquiry_message             : "Please enter a message to send",
     }
 });
 
