@@ -10,6 +10,7 @@
 
     &__title {
       @include title($color-white, $color-green);
+      width: 100%;
 
       @media(max-width: $tablet-breakpoint) {
         display: none;
