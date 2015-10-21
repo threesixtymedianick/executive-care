@@ -99,6 +99,10 @@ class PageController extends AbstractPageController
                 // Get the values from the form
                 $values = $brochureForm->getValues();
 
+                $shouldDownloadBrochure = $values['delivery_method_options'] === "1" ? true : false;
+
+                $careHomeId = $values['care_home_options'];
+
                 $values['care_home_options'] = $this->getMultiOptionByName($values, $brochureForm, 'care_home_options');
 
                 // Set the values to the view
@@ -111,14 +115,26 @@ class PageController extends AbstractPageController
                 // Add our email address for this form
                 $mail->addTo($this->config->brochure_email);
 
-                $this->getResponse()->setRedirect('/thank-you');
+                if (!$shouldDownloadBrochure) {
+                    $this->getResponse()->setRedirect('/thank-you');
+                } else {
+                    $careHome = Object_CareHomes::getById($careHomeId);
+
+                    $brochure = $careHome->getBrochure();
+                    if ($brochure !== null || !$brochure) {
+                        $careHomeLink = $brochure->getFullPath();
+                        $this->getResponse()->setRedirect('/thank-you?brochure=' . $careHomeLink);
+                    } else {
+                        throw new Zend_Controller_Action_Exception('This file does not exist', 404);
+                    }
+                }
 
             } else if ($enquiryForm->isValid($request->getPost())) {
                 $values = $enquiryForm->getValues();
                 $view->data = $values;
                 $html = $view->render('enquiry.php');
                 $mail->addTo($this->config->enquiry_email);
-                $this->getResponse()->setRedirect('/thank-you');
+                $this->getResponse()->setRedirect('/thank-you?');
             }
 
             $mail->setBodyHtml($html);
@@ -131,10 +147,6 @@ class PageController extends AbstractPageController
         $this->view->enquiryForm = $enquiryForm;
     }
 
-    /**
-     * [careersApplyOnlineAction description]
-     * @return [type] [description]
-     */
     public function careersApplyOnlineAction()
     {
         $applicationForm = new ApplicationForm();
@@ -271,7 +283,11 @@ class PageController extends AbstractPageController
 
     public function thankYouAction()
     {
-
+        // Downloads a brochure if a parameter is given
+        $brochure = $this->getRequest()->getParams()['brochure'];
+        if ($brochure !== null || $brochure) {
+            echo "<script type = 'text/javascript'>window.open('/download/" . $brochure . "','_blank');</script>";
+        }
     }
 
     /**
