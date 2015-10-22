@@ -1,4 +1,4 @@
-Care home: <?= $this->data['bookAVisit_careHomes']; ?> <br />
+Care home: <?= $this->data['bookAVisitForm_careHomes']; ?> <br />
 Date: <?= $this->data['bookAVisit_date']; ?> <br />
 Day: <?= $this->data['bookAVisit_day']; ?><br />
 Time: <?= $this->data['bookAVisit_time']; ?><br />
