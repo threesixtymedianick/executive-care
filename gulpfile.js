@@ -65,7 +65,7 @@ gulp.task("build-css", function() {
     return gulp
         .src(paths.src.scss + "*.scss")
         .pipe(sourcemaps.init())
-        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>. Get in the Sea.")}))
         .pipe(sass())
         .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'IE 10']
@@ -113,7 +113,7 @@ gulp.task('build-js-libs', function() {
             './bower_components/jt.timepicker/jquery.timepicker.js',
             './bower_components/lightbox2/dist/js/lightbox.js'
         ])
-        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>. Get in the Sea.")}))
         .pipe(concat('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
         .pipe(notify('JS Libraries build successful'))
