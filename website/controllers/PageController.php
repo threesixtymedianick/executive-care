@@ -265,7 +265,7 @@ class PageController extends AbstractPageController
 
             if ($bookAVisitForm->isValid($request->getPost())) {
                 $values = $bookAVisitForm->getValues();
-                $values['bookAVisitForm_careHomes'] = $this->getMultiOptionByName($values, $bookAVisitForm, 'bookAVisitForm_careHomes');
+                $values['bookAVisitForm_careHomes'] = $this->getMultiOptionByName($values, $bookAVisitForm, 'bookAVisit_careHomes');
                 $view->data = $values;
                 $html = $view->render('book.php');
                 $mail->addTo($this->config->enquiry_email);
