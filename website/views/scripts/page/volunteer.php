@@ -56,10 +56,6 @@
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online')); ?>
-
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
-
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/job-alerts')); ?>               
             </div>
         </div>
