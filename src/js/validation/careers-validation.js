@@ -13,7 +13,7 @@ $(document).ready(function () {
         },
         messages: {
             application_name                            : required,
-            application_email                           : { required: required, email: "Please used an email address", valDomain: "Please enter a valid email address" },
+            application_email                           : { required: required, email: "Please use an email address", valDomain: "Please enter a valid email address" },
             application_number                          : required,
             application_careHomes                       : required,
             application_vacancyRole                     : required,

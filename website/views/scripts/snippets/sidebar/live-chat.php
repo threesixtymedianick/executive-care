@@ -17,11 +17,11 @@ endif; ?>
         <div class="contact-us__live-chat__details__title">
             Chat
         </div>
-        <div class="contact-us__live-chat__details__content">
-            <?= $contactUsLiveChatDetails ?>
-        </div>
         <div class="contact-us__live-chat__details__open-chat">
             <a href="#livechat">Chat now</a>
+        </div>
+        <div class="contact-us__live-chat__details__content">
+            <?= $contactUsLiveChatDetails ?>
         </div>
     </div>
 </div>

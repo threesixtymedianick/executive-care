@@ -96,6 +96,15 @@ cd into ~/Sites/executive-care and run
 vagrant up
 ```
 
+To populate elastic search
+
+```
+vagrant ssh
+php /var/www/pimcore/cli/console.php elasticsearch:mappings
+php /var/www/pimcore/cli/console.php elasticsearch:seeder
+```
+
+
 The admin panel can be accessed at http://executive-care.dev/admin
 
 ```
