@@ -1,4 +1,5 @@
 .our-homes {
+  
   @include outer-container;
 
   @include header();
@@ -8,8 +9,18 @@
     margin-top: 350px;
     margin-bottom: 50px;
 
+    a {
+      text-decoration: none;
+      color: $color-purple;
+    }
+
+    a:hover {
+      color: $color-dark-purple;
+    }
+
     &__title {
       @include title($color-white, $color-green);
+      width: 100%;
 
       @media(max-width: $tablet-breakpoint) {
         display: none;
@@ -23,8 +34,10 @@
 
       input[type=search] {
         width: 100%;
-        padding: 6px;
+        padding: 8px;
         font-size: 1.2em;
+        border: none;
+        margin-left: -4px;
       }
 
       .search-submit {
@@ -182,6 +195,10 @@
 
     .pagination a {
       color: black;
+    }
+
+    .pagination {
+      font-size: 1.4em;
     }
 
     &--pagination {
@@ -426,6 +443,16 @@
     margin-bottom: -10px !important;
     }
   }
+
+  .homes-detail {
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .home-header {
+    background-image: none;
+  }
 }
 
 .gallery {
@@ -436,5 +463,14 @@
 
   & img {
     border: 0;
+  }
+}
+
+.recommendation-logo {
+  display: block;
+  width: 100%;
+
+  img {
+    float: none;
   }
 }

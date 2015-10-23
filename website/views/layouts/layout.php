@@ -27,7 +27,7 @@ $documentKey = ($this->document->getId() === 1) ? 'home' : $this->document->getK
                   </div>
                   <div class="site-header__email">
                      <i class="site-header__contact-email-icon"></i>
-                     <?= $this->config->infoemail; ?>
+                     <a href="mailto:<?= $this->config->infoemail; ?>"><?= $this->config->infoemail; ?></a>
                   </div>
                </div>
             </div>

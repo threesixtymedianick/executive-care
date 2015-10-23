@@ -14,7 +14,7 @@
   </div>
 
   <div>
-      Email: <?= $this->config->infoemail; ?>
+      Email: <a href="mailto:<?= $this->config->infoemail; ?>"><?= $this->config->infoemail; ?></a>
   </div>
 </div>
 <div class="site-footer__block">

@@ -3,7 +3,7 @@
 endif; ?>
 
 <?php
-$title = $this->link("link");
+$link = $this->link("link");
 ?>
 
 <?php if ($this->editmode) : ?>
@@ -15,11 +15,11 @@ $title = $this->link("link");
     <div class="sidebar__buttons request-brochure">
         <?php if (!$this->editmode) : ?>
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="sidebar__panel--button mleft"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?>" class="mleft"><?= $link->getText(); ?></a>
             <?php endif; ?>
         <?php else : ?>
             <?php if ($link !== null) : ?>
-                <?= $link->getText(); ?>
+                <a><?= $link->getText(); ?></a>
             <?php endif; ?>
         <?php endif; ?>
     </div>

@@ -7,13 +7,13 @@ $careHomeImage   = $this->careHomeImage($careHome);
 $banner = $careHome->getBanner();
 ?>
 
-<div class="our-care__header" style="background-image: url('<?= $careHomeImage; ?>');">-</div>
+<div class="our-care__header home-header" style="background-image: url('<?= $careHomeImage; ?>');">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
             <div class="our-homes__left">
                 <div class="our-homes__left__title">
-                    Welcome to
+                    Welcome to <?= $careHome->getTitle(); ?>
                 </div>
                 <div class="our-homes__left__content">
                     <?php
@@ -30,10 +30,7 @@ $banner = $careHome->getBanner();
 
                         <?= $this->partial("partial/care-homes/gallery.php", ["careHomeObject" => $careHome]); ?>
 
-                        <?= $this->partial("partial/care-homes/ratings-and-report.php", [
-                            "careHomeObject"  => $careHome,
-                            "recommendations" => $recommendations,
-                        ]); ?>
+                        <?= $this->partial("partial/care-homes/ratings-and-report.php", ["careHomeObject"  => $careHome]); ?>
                     </div>
                 </div>
                 <br/>
@@ -58,7 +55,7 @@ $banner = $careHome->getBanner();
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
+            <div class="sidebar homes-detail">
                 <div class="map-container">
                     <div id="careHomeMap"
                          class="heightMatch"
@@ -68,9 +65,14 @@ $banner = $careHome->getBanner();
                     </div>
                     <div class="address">
                         <h2>How to find us</h2>
-                        <p><?= $careHome->getTitle() ?><br />
-                        <?= $careHome->getAddress() ?><br />
-                        <?= $careHome->getPostcode() ?></p>
+                        <p>
+                            <?= $careHome->getTitle() ?><br />
+                            <?= $careHome->getAddress() ?><br />
+                            <?= $careHome->getPostcode() ?><br />
+                            <?php if ($careHome->getPhoneNumber() !== null || $careHome->getPhoneNumber()): ?>
+                                TEL: <?=$careHome->getPhoneNumber(); ?>
+                            <?php endif ?>
+                         </p>
 
                         <a href="<?= $googleMapsUrl ?>" target="_blank">Find us</a>
                     </div>
@@ -93,9 +95,12 @@ $banner = $careHome->getBanner();
                         <div class="sidebar__panel--recommendation">
                             <div class="sidebar__panel--recommendation-image"></div>
                             <div class="sidebar__panel--content full-width-panel heightMatch">
+                                <div class="recommendation-logo">    
+                                    <img src="/website/static/images/reccomendation-logo.png">
+                                </div>
                                 <h3><?= $recommendation['title']; ?></h3>
                                 <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
-                                <p><?= mb_strimwidth($recommendation['description'], 0, 220, "..."); ?></p>
+                                <p><?= mb_strimwidth($recommendation['description'], 0, 150, "..."); ?></p>
                                 <a href="<?= $recommendation['link']; ?>" target="_blank">
                                     Continue reading
                                 </a>

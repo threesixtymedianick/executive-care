@@ -9,7 +9,7 @@ $(document).ready(function() {
 
         // Google Map Options
         var options = {
-            zoom: 13,
+            zoom: 9,
             center: latLon,
             disableDefaultUI: true,
             zoomControl: true,

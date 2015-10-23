@@ -1,7 +1,6 @@
 <?php
     $contactUsAddress               = $this->wysiwyg("contact-us-address", ["width" => 200, "height" => 300]);
     $contactUsEnquiryNumber         = $this->input("contact-us_enquiry-number");
-    $contactUsEnquiryNumberSecond   = $this->input("contact-us_enquiry-number-second");
     $contactUsOpeningTimes          = $this->input("contact-us_opening_times");
     $googleMapLocation              = $this->input("contact-us_map_location");
     $contactUsLiveChatDetails       = $this->wysiwyg("live_chat_details_content");
@@ -13,26 +12,22 @@
             <div class="sidebar contact">
                     <div class="contact-us__address">
                         <div class="contact-us__address__title">
-                            Crystal Court Care Home
+                            Executive Care Homes
                         </div>
                         <div class="contact-us__address__address">
                             <?= $contactUsAddress ?>
                         </div>
                         <div class="contact-us__address__enquiries">
-                        <div class="contact-us__address__enquiries__left">
-                            Enquiries:
-                        </div>
-                        <div class="contact-us__address__enquiries__right">
-                            <?= $contactUsEnquiryNumber ?><br />
-                            <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
-                        </div>
+                            <div class="contact-us__address__enquiries__left">
+                                Enquiries:
+                            </div>
+                            <div class="contact-us__address__enquiries__right">
+                                <?= $contactUsEnquiryNumber ?><br />
+                                <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
+                            </div>
                         </div>
                         <br />
-                        <div class="contact-us__address__telephone">
-                            Tel: <?= $contactUsEnquiryNumberSecond ?>
-                        </div>
                     </div>
-                    <div id="map-canvas" data-placeId="<?= $this->config->place_id; ?>"></div>
                 </div>
             <div class="contact-us__left">
                 <ul class="tabs">
@@ -98,22 +93,6 @@
                             <?= $this->brochureForm->brochure_submit ?>
                         </div>
                     </form>
-                </div>
-                <div class="contact-us__live-chat">
-                    <div class="contact-us__live-chat__icon">
-                        <img src="website/static/images/home/woman_headset2.png" />
-                    </div>
-                    <div class="contact-us__live-chat__details">
-                        <div class="contact-us__live-chat__details__title">
-                            Chat
-                        </div>
-                        <div class="contact-us__live-chat__details__content">
-                            <?= $contactUsLiveChatDetails ?>
-                        </div>
-                        <div class="contact-us__live-chat__details__open-chat">
-                            <a href="#livechat">Chat now</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ class BookAVisitForm extends BaseForm
         $submit = new \Zend_Form_Element_Submit($formName . 'submit');
         $submit->setLabel('Submit');
 
-        $this->addElements([$careHomes, $date, $day, $time, $name, $email, $number, $address, $opt, $submit]);
+        $this->addElements([$careHomes, $date, $time, $name, $email, $number, $address, $opt, $submit]);
 
         parent::clearDecorators();
 

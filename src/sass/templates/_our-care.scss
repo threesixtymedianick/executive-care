@@ -30,6 +30,15 @@
     margin-top: 350px;
     margin-bottom: 50px;
 
+    a {
+      text-decoration: none;
+      color: $color-purple;
+    }
+
+    a:hover {
+      color: $color-dark-purple;
+    }
+
     &__content {
       margin-bottom: 10px;
 
