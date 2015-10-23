@@ -121,11 +121,12 @@ class PageController extends AbstractPageController
                     $careHome = Object_CareHomes::getById($careHomeId);
 
                     $brochure = $careHome->getBrochure();
-                    if ($brochure !== null || !$brochure) {
+                    
+                    if ($brochure !== null || $brochure) {
                         $careHomeLink = $brochure->getFullPath();
                         $this->getResponse()->setRedirect('/thank-you?brochure=' . $careHomeLink);
                     } else {
-                        throw new Zend_Controller_Action_Exception('This file does not exist', 404);
+                        $this->getResponse()->setRedirect('/thank-you');
                     }
                 }
 
