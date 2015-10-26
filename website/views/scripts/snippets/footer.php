@@ -12,7 +12,6 @@
   <div>
       Fax: <?= $this->config->fax; ?>
   </div>
-
   <div>
       Email: <a href="mailto:<?= $this->config->infoemail; ?>"><?= $this->config->infoemail; ?></a>
   </div>

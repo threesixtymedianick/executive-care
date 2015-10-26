@@ -75,7 +75,7 @@ class BlogController extends AbstractBlogController
     {
         $this->enableLayout();
 
-        $daysCategory = Object_BlogCategory::getByName('news');
+        $daysCategory = Object_BlogCategory::getByName('open days');
         $daysCategory = $daysCategory->getObjects()[0];
 
         $this->categoryValidation($daysCategory);

@@ -8,11 +8,7 @@ AddType text/x-component .htc
 # ALLOW USER BY IP
 <Limit GET POST>
  order deny,allow
- deny from all
- allow from 81.130.199.179
- allow from 192.168.
- allow from kryten2k35.ddns.net
- allow from 194.74.102.194
+ allow from all
 </Limit>
 
 Options +SymLinksIfOwnerMatch
