@@ -1,7 +1,6 @@
 <?php
     $contactUsAddress               = $this->wysiwyg("contact-us-address", ["width" => 200, "height" => 300]);
     $contactUsEnquiryNumber         = $this->input("contact-us_enquiry-number");
-    $contactUsEnquiryNumberSecond   = $this->input("contact-us_enquiry-number-second");
     $contactUsOpeningTimes          = $this->input("contact-us_opening_times");
     $googleMapLocation              = $this->input("contact-us_map_location");
     $contactUsLiveChatDetails       = $this->wysiwyg("live_chat_details_content");
@@ -19,13 +18,13 @@
                             <?= $contactUsAddress ?>
                         </div>
                         <div class="contact-us__address__enquiries">
-                        <div class="contact-us__address__enquiries__left">
-                            Enquiries:
-                        </div>
-                        <div class="contact-us__address__enquiries__right">
-                            <?= $contactUsEnquiryNumber ?><br />
-                            <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
-                        </div>
+                            <div class="contact-us__address__enquiries__left">
+                                Enquiries:
+                            </div>
+                            <div class="contact-us__address__enquiries__right">
+                                <?= $contactUsEnquiryNumber ?><br />
+                                <span id="opening_times"><?= $contactUsOpeningTimes ?></span>
+                            </div>
                         </div>
                         <br />
                     </div>

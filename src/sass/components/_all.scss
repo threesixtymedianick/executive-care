@@ -10,3 +10,10 @@
 #pagination-current {
   font-size: $font-size-large;
 }
+
+input,
+input:not[type=checkbox] {
+   -webkit-appearance: none;
+   border-radius: 0;
+   -webkit-border-radius: 0px;
+}

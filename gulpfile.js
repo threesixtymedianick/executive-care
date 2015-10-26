@@ -23,6 +23,7 @@ var reactify    = require('reactify');
 var source      = require('vinyl-source-stream');
 var pixrem      = require('gulp-pixrem');
 var autoprefixer = require('gulp-autoprefixer');
+var notify       = require("gulp-notify");
 
 var paths = {
     src: {
@@ -64,13 +65,14 @@ gulp.task("build-css", function() {
     return gulp
         .src(paths.src.scss + "*.scss")
         .pipe(sourcemaps.init())
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sass())
         .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'IE 10']
               }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.build.css))
+        .pipe(notify('CSS build successful'))
     ;
 });
 
@@ -111,9 +113,10 @@ gulp.task('build-js-libs', function() {
             './bower_components/jt.timepicker/jquery.timepicker.js',
             './bower_components/lightbox2/dist/js/lightbox.js'
         ])
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(concat('libraries.js'))
         .pipe(gulp.dest(paths.build.js))
+        .pipe(notify('JS Libraries build successful'))
     ;
 });
 

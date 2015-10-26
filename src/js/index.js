@@ -13,7 +13,6 @@ require("./modules/googleanalytics");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");
-require("./features/contact-us-map");
 require("./features/our-homes-map");
 require("./features/vacancy-filter");
 require("./features/care-home-map");

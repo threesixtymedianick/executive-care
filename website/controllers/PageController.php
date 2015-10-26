@@ -99,6 +99,12 @@ class PageController extends AbstractPageController
                 // Get the values from the form
                 $values = $brochureForm->getValues();
 
+                $shouldDownloadBrochure = $values['delivery_method_options'] === "1" ? true : false;
+
+                $careHomeId = $values['care_home_options'];
+
+                $values['care_home_options'] = $this->getMultiOptionByName($values, $brochureForm, 'care_home_options');
+
                 // Set the values to the view
                 //  in a variable called data
                 $view->data = $values;
@@ -109,14 +115,27 @@ class PageController extends AbstractPageController
                 // Add our email address for this form
                 $mail->addTo($this->config->brochure_email);
 
-                $this->getResponse()->setRedirect('/thank-you');
+                if (!$shouldDownloadBrochure) {
+                    $this->getResponse()->setRedirect('/thank-you');
+                } else {
+                    $careHome = Object_CareHomes::getById($careHomeId);
+
+                    $brochure = $careHome->getBrochure();
+                    
+                    if ($brochure !== null || $brochure) {
+                        $careHomeLink = $brochure->getFullPath();
+                        $this->getResponse()->setRedirect('/thank-you?brochure=' . $careHomeLink);
+                    } else {
+                        $this->getResponse()->setRedirect('/thank-you');
+                    }
+                }
 
             } else if ($enquiryForm->isValid($request->getPost())) {
                 $values = $enquiryForm->getValues();
                 $view->data = $values;
                 $html = $view->render('enquiry.php');
                 $mail->addTo($this->config->enquiry_email);
-                $this->getResponse()->setRedirect('/thank-you');
+                $this->getResponse()->setRedirect('/thank-you?');
             }
 
             $mail->setBodyHtml($html);
@@ -129,10 +148,6 @@ class PageController extends AbstractPageController
         $this->view->enquiryForm = $enquiryForm;
     }
 
-    /**
-     * [careersApplyOnlineAction description]
-     * @return [type] [description]
-     */
     public function careersApplyOnlineAction()
     {
         $applicationForm = new ApplicationForm();
@@ -152,6 +167,9 @@ class PageController extends AbstractPageController
             if ($applicationForm->isValid($request->getPost())) {
                 // Get posted form values
                 $values = $applicationForm->getValues();
+
+                $values['application_careHomes'] = $this->getMultiOptionByName($values, $applicationForm, 'application_careHomes');
+                $values['application_vacancyRoles'] = $this->getMultiOptionByName($values, $applicationForm, 'application_vacancyRoles');
 
                 // Assign form data to view
                 $view->data = $values;
@@ -248,6 +266,7 @@ class PageController extends AbstractPageController
 
             if ($bookAVisitForm->isValid($request->getPost())) {
                 $values = $bookAVisitForm->getValues();
+                $values['bookAVisitForm_careHomes'] = $this->getMultiOptionByName($values, $bookAVisitForm, 'bookAVisit_careHomes');
                 $view->data = $values;
                 $html = $view->render('book.php');
                 $mail->addTo($this->config->enquiry_email);
@@ -265,6 +284,34 @@ class PageController extends AbstractPageController
 
     public function thankYouAction()
     {
+        // Downloads a brochure if a parameter is given
+        $brochure = $this->getRequest()->getParams()['brochure'];
+        if ($brochure !== null || $brochure) {
+            echo "<script type = 'text/javascript'>window.open('/download/" . $brochure . "','_blank');</script>";
+        }
+    }
 
+    /**
+     * Gets the name value from a multioption field rather than the Id
+     *
+     * Used to display in form email templates
+     *
+     * @param $values  The form values to check
+     * @param $form  The particular form to get the values from
+     * @param $formElement  The form element which is a multi options
+     * @return mixed  The returned values
+     */
+    private function getMultiOptionByName ($values, $form, $formElement)
+    {
+        $id = $values[$formElement];
+
+        $element = $form->getElement($formElement);
+        if (!$element instanceof \Zend_Form_Element_Select || null === $element) {
+            return false;
+        }
+
+        $options = $element->getMultiOptions();
+
+        return $values[$formElement] = $options[$id];
     }
 }

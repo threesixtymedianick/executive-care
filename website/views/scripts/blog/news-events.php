@@ -39,6 +39,7 @@ $events = $this->events;
 
                         <?= $this->paginationControl($news, 'Sliding', 'partial/pagination.php', [
                             'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'urlsuffix' => '#news',
                             'appendQueryString' => true
                         ]); ?>
                     </div>
@@ -49,6 +50,7 @@ $events = $this->events;
 
                         <?= $this->paginationControl($events, 'Sliding', 'partial/pagination.php', [
                             'urlprefix' => $this->document->getFullPath() . '?page=',
+                            'urlsuffix' => '#events',
                             'appendQueryString' => true
                         ]); ?>
                     </div>
