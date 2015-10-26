@@ -28,7 +28,7 @@ class RecommendationService
     /**
      * The amount of attempts we will make to get a random recommendation
      */
-    const RETRY_ATTEMPTS = 10;
+    const RETRY_ATTEMPTS = 5;
 
     /**
      * Constructor
@@ -155,6 +155,8 @@ class RecommendationService
         } catch (ServerErrorReponseException $e) {
             return false;
         } catch (ClientErrorResponseException $e) {
+            return false;
+        } catch (\Exception $e) {
             return false;
         }
 
