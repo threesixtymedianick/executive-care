@@ -94,6 +94,14 @@
     color: $color-white;
     margin-bottom: 10px;
 
+    &--homeinfo-content {
+      display: inline-block;
+      position: relative;
+      min-height: 230px;
+      width: 39%;
+      padding: 0 10px 10px;
+    }
+
     &--content {
       padding: 0 10px 10px;
       margin-bottom: 15px;
@@ -402,7 +410,13 @@
       }
 
       &-image {
-        @include sidebar-image();
+        float: left;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 40%;
+        height: 230px;
       }
 
       & .sidebar__panel--button.mleft {

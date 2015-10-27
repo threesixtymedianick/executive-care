@@ -39,12 +39,18 @@ class CareHomesAjaxController extends AjaxController
         $list->setCondition("oo_id = '" . $key . "'");
         $careHome = $list->load();
 
-        if (!isset($careHome[0])) {
+        $selectedHome = (array) $careHome[0];
+
+        if (!isset($selectedHome)) {
             return $this->getHelper('json')
                  ->sendJson(['error']);
         }
 
+        if ($selectedHome['ListingImage'] !== "" && $selectedHome['ListingImage']) {
+            $selectedHome['ListingImage'] = $careHome[0]->getListingImage()->getThumbnail('care-homes-index-images')->getPath();
+        }
+
         return $this->getHelper('json')
-             ->sendJson((array) $careHome[0]);
+             ->sendJson($selectedHome);
     }
 }
