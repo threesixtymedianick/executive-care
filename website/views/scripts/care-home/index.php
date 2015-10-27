@@ -33,7 +33,7 @@ $careHomes = $this->paginator;
                     <?php foreach ($careHomes as $home) : ?>
                         <div class="our-homes__left__content__homes-box equalHeight">
                             <?php if ($home->getListingImage()) : ?>
-                                <?php $image = $home->getListingImage()->getFullPath(); ?>
+                                <?php $image = $home->getListingImage()->getThumbnail('care-homes-index-images'); ?>
                             <?php else : ?>
                                 <?php $image = "/website/static/images/home/find-a-home.png"; ?>
                             <?php endif; ?>
@@ -71,7 +71,7 @@ $careHomes = $this->paginator;
                         </div>
                         <div class="sidebar__panel--our-homes-find-a-home-details">
                             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
-                            <div class="sidebar__panel--content homecontent">
+                            <div class="sidebar__panel--homeinfo-content homecontent">
                                 <h3 class="title"></h3>
 
                                 <p class="address">Use our interactive search tool to find an Executive Care home near you. Enter your
