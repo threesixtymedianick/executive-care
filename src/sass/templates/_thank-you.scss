@@ -1,0 +1,51 @@
+.thank-you {
+  @include header();
+
+  &__left {
+    @include span-columns(8);
+    margin-top: 350px;
+    margin-bottom: 50px;
+  }
+
+  @include tab-ul();
+
+  .tabs {
+    @include tabs();
+
+    li {
+      @include tabs-li();
+
+      a {
+        @include tabs-li-a($color-grey);
+
+        &.active {
+          background-color: $color-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .tab {
+    @include tab();
+    background: $color-light-blue;
+    font-size: 1.2em;
+  }
+
+  @media(max-width:$laptop-breakpoint) {
+    &__left {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    &__header {
+      background-image: none !important;
+    }
+
+    #info_tab {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
