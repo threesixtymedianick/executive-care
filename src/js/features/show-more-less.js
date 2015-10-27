@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $(".slide").hide();
-    $(".slide:first").css( "display", "block" );
 
     var showHide = $(".show_hide:first");
     var showMoreText = "Show More +";
