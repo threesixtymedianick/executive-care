@@ -84,7 +84,7 @@ $banner = $careHome->getBanner();
                     </a>
                 </div>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure'), ['careHome' => $careHome]); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancies')); ?>
 
