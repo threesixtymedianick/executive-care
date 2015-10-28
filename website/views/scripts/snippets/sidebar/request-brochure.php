@@ -3,7 +3,8 @@
 endif; ?>
 
 <?php
-$link = $this->link("link");
+$linkText = "Request a Brochure";
+$careHome = $this->careHome;
 ?>
 
 <?php if ($this->editmode) : ?>
@@ -14,16 +15,15 @@ $link = $this->link("link");
 
     <div class="sidebar__buttons request-brochure">
         <?php if (!$this->editmode) : ?>
-            <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="mleft"><?= $link->getText(); ?></a>
+            <?php if ($careHome !== null) : ?>
+                <a href="/contact-us?carehome=<?= $careHome->getId(); ?>&#brochure" class="mleft"><?= $linkText; ?></a>
+            <?php else : ?>
+                <a href="/contact-us?#brochure" class="mleft"><?= $linkText; ?></a>
             <?php endif; ?>
         <?php else : ?>
-            <?php if ($link !== null) : ?>
-                <a><?= $link->getText(); ?></a>
-            <?php endif; ?>
+            <a><?= $linkText; ?></a>
         <?php endif; ?>
     </div>
-
     <?php if ($this->editmode) : ?>
 </div>
 <?php endif; ?>
