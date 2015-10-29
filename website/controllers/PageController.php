@@ -42,7 +42,7 @@ class PageController extends AbstractPageController
         $paginator = Zend_Paginator::factory($vacancy);
         $paginator->setCurrentPageNumber($this->_getParam('page'));
         $paginator->setItemCountPerPage(12);
-        $this->view->paginator  = $paginator;
+        $this->view->paginator = $paginator;
     }
 
     /**
@@ -121,10 +121,10 @@ class PageController extends AbstractPageController
                     $careHome = Object_CareHomes::getById($careHomeId);
 
                     $brochure = $careHome->getBrochure();
-                    
+
                     if ($brochure !== null || $brochure) {
-                        $careHomeLink = $brochure->getFullPath();
-                        $this->getResponse()->setRedirect('/thank-you?brochure=' . $careHomeLink);
+                        $brochureId = $brochure->getId();
+                        $this->getResponse()->setRedirect('/thank-you?id=' . $brochureId);
                     } else {
                         $this->getResponse()->setRedirect('/thank-you');
                     }
@@ -165,11 +165,15 @@ class PageController extends AbstractPageController
             $mail = new \Pimcore\Mail();
 
             if ($applicationForm->isValid($request->getPost())) {
+
+                $cvFilename = $this->receiveFileUpload($request);
+
                 // Get posted form values
                 $values = $applicationForm->getValues();
 
                 $values['application_careHomes'] = $this->getMultiOptionByName($values, $applicationForm, 'application_careHomes');
                 $values['application_vacancyRoles'] = $this->getMultiOptionByName($values, $applicationForm, 'application_vacancyRoles');
+                $values['application_cvFile'] = $cvFilename;
 
                 // Assign form data to view
                 $view->data = $values;
@@ -285,9 +289,9 @@ class PageController extends AbstractPageController
     public function thankYouAction()
     {
         // Downloads a brochure if a parameter is given
-        $brochure = $this->getRequest()->getParams()['brochure'];
+        $brochure = $this->getRequest()->getParams()['id'];
         if ($brochure !== null || $brochure) {
-            echo "<script type = 'text/javascript'>window.open('/download/" . $brochure . "','_blank');</script>";
+            echo "<script type = 'text/javascript'>window.open('/download/" . $brochure . "/','_blank');</script>";
         }
     }
 
@@ -301,7 +305,7 @@ class PageController extends AbstractPageController
      * @param $formElement  The form element which is a multi options
      * @return mixed  The returned values
      */
-    private function getMultiOptionByName ($values, $form, $formElement)
+    private function getMultiOptionByName($values, $form, $formElement)
     {
         $id = $values[$formElement];
 
@@ -313,5 +317,34 @@ class PageController extends AbstractPageController
         $options = $element->getMultiOptions();
 
         return $values[$formElement] = $options[$id];
+    }
+
+    /**
+     * @param $request
+     * @param $extensionSplit
+     * @throws Zend_File_Transfer_Exception
+     */
+    private function receiveFileUpload($request)
+    {
+        $cvFolder = 'var/cv_uploads/';
+        if (!file_exists('' . $cvFolder . '')) {
+            mkdir($cvFolder, 0777, true);
+        }
+
+        $application_name = $request->getParams()['application_name'];
+
+        $fileName = str_replace(' ', '', $application_name);
+
+        $upload = new Zend_File_Transfer_Adapter_Http();
+        
+        $extensionSplit = explode('.', $upload->getFilename());
+        $extensionSplitLength = sizeof($extensionSplit);
+        $extension = "." . $extensionSplit[$extensionSplitLength - 1];
+
+        $fileSuffix = '_' . date('MdYHis') . '_cv_upload';
+        $upload->addFilter('Rename', $cvFolder . $fileName . $fileSuffix . $extension);
+        $upload->receive();
+
+        return $fileName . $fileSuffix . $extension;
     }
 }
