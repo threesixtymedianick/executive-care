@@ -46,21 +46,25 @@ class ApplicationForm extends BaseForm
             ->addValidator('NotEmpty', true)
             ->setRequired(true);
 
-//        $cvFile = new \Zend_Form_Element_File($formName . 'cvFile');
-//        $cvFile->setLabel('C.V upload')
-//            ->setDestination(APPLICATION_PATH . '/var/tmp')
-//            ->setRequired(true)
-//            ->addValidator('NotEmpty');
+        $file = new \Zend_Form_Element_File($formName . 'cvFile');
+        $file->setLabel('CV Upload:')->setRequired(true)
+            ->addValidator('Size', false, ['max' => '5242880'])
+            ->addValidator('Extension', false, ['docx', 'doc', 'txt', 'pdf']);
 
         $submit = new \Zend_Form_Element_Submit($formName . 'submit');
         $submit->setLabel('Submit')
             ->setAttrib('class', 'careers__apply__left__form__submitbutton');
 
-        $this->addElements([$name, $email, $number, $careHomes, $vacancy, $coverLetter, $submit]);
+        $this->addElements([$name, $email, $number, $careHomes, $vacancy, $coverLetter, $file, $submit]);
 
-        parent::clearDecorators();
+        foreach ($this->getElements() as $key => $value) {
+            $value->removeDecorator('HtmlTag');
+            $value->removeDecorator('DtDdWrapper');
+        }
 
-        $submit->setDecorators(array('ViewHelper'));
+        $submit->setDecorators(['ViewHelper']);
+
+        $this->setEnctype(\Zend_Form::ENCTYPE_MULTIPART);
 
         return $this;
     }

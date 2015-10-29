@@ -28,5 +28,13 @@
         <td>Covering letter: </td>
         <td><?= str_replace("\n", "<br />", $this->data[$formName . 'coverLetter']); ?></td>
     </tr>
+    <tr>
+        <td>CV Download: </td>
+        <?php if ($this->data[$formName . 'cvFile']) : ?>
+            <td><a href="http://<?= $_SERVER['HTTP_HOST']; ?>/cv/<?= $this->data[$formName . 'cvFile']; ?>">Download attached CV</a></td>
+        <?php else : ?>
+            <td>No CV attached</td>
+        <?php endif; ?>
+    </tr>
 </table>
 
