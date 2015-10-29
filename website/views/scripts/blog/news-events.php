@@ -5,7 +5,7 @@ $events = $this->events;
 
 <div class="blog__slider">
     <ul class="blogslider">
-        <?php foreach ($events as $slider): ?>
+        <?php foreach ($news as $slider): ?>
             <?php if ($slider->getBlogImage() !== null): ?>
                 <a href="<?= $this->url(['key' => $slider->getUrlPath()], 'blog-show', false, false); ?>">
                     <li style="background-image:url('<?= $slider->getBlogImage()->getThumbnail('header_images'); ?>');">
