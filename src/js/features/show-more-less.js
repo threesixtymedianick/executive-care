@@ -22,9 +22,7 @@ $(document).ready(function () {
             $('.show_hide').each(function() {
                 $(this).text(plus);
             });
-
-            //showHide.text(minus);
-        } 
+        }
     }
 
     function controlSlide(e) {
