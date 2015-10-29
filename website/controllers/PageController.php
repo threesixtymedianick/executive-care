@@ -166,17 +166,32 @@ class PageController extends AbstractPageController
 
             if ($applicationForm->isValid($request->getPost())) {
 
+                // Receive the file upload. This needs to be done before getValues() is called
+                // Otherwise the filenames are messed up and the upload will return as null if attempted to
+                // Be retrieved using the form element name
+                // This also returns the filename of the upload to use later
                 $cvFilename = $this->receiveFileUpload($request);
 
                 // Get posted form values
                 $values = $applicationForm->getValues();
 
-                $values['application_careHomes'] = $this->getMultiOptionByName($values, $applicationForm, 'application_careHomes');
-                $values['application_vacancyRoles'] = $this->getMultiOptionByName($values, $applicationForm, 'application_vacancyRoles');
+                // Set the care homes select box to use human readable names for the options box.
+                // Makes them more readable in the emails
+                $values['application_careHomes'] = $this->getMultiOptionByName($values, $applicationForm,
+                    'application_careHomes');
+
+                // Same for the vacancies
+                $values['application_vacancyRoles'] = $this->getMultiOptionByName($values, $applicationForm,
+                    'application_vacancyRoles');
+
+                // Since we called getValues() the filename of the uploaded file is no longer in the variable for this
+                // So we reset it to the filename now
                 $values['application_cvFile'] = $cvFilename;
 
                 // Assign form data to view
                 $view->data = $values;
+
+                // Email template to render
                 $html = $view->render('application.php');
 
                 // Send the email
@@ -320,31 +335,47 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * @param $request
-     * @param $extensionSplit
+     * Receives the file upload from the request passed via the forms
+     * @param $request  The HTTP request
+     * @return string  The filename of the uploaded file
      * @throws Zend_File_Transfer_Exception
      */
     private function receiveFileUpload($request)
     {
+
+        // Hard coded CV folder
         $cvFolder = 'var/cv_uploads/';
+
+        // Create this folder if it does not exist
         if (!file_exists('' . $cvFolder . '')) {
             mkdir($cvFolder, 0777, true);
         }
 
+        // Get the name from the application form in order to build a new name for the uploaded CV
         $application_name = $request->getParams()['application_name'];
 
+        // Strip any white space
         $fileName = str_replace(' ', '', $application_name);
 
+        // Get a new file transfer object
         $upload = new Zend_File_Transfer_Adapter_Http();
-        
+
+        // Get the extension of the uploaded file. We need this because we will be renaming the file ourselves and
+        // Therefore need to use the original extension
         $extensionSplit = explode('.', $upload->getFilename());
         $extensionSplitLength = sizeof($extensionSplit);
         $extension = "." . $extensionSplit[$extensionSplitLength - 1];
 
+        // Suffix of the file. Add an underscore, the datestamp and _cv_upload
         $fileSuffix = '_' . date('MdYHis') . '_cv_upload';
+
+        // Rename the file
         $upload->addFilter('Rename', $cvFolder . $fileName . $fileSuffix . $extension);
+
+        // Create the file. This retrieves it from the tmp folder and renames it
         $upload->receive();
 
+        // Return the filename
         return $fileName . $fileSuffix . $extension;
     }
 }
