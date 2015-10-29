@@ -31,7 +31,7 @@ class DownloadController extends AbstractPageController
             $fileLoc = "var/assets/" . $asset->getPath();
 
             // The full filename and path of the asset
-            $fullPath = $fileName . $fileLoc;
+            $fullPath = $fileLoc . $fileName;
 
             // Throw an exception if the file doesn't exist
             if (!is_file($fullPath)) {
@@ -65,7 +65,7 @@ class DownloadController extends AbstractPageController
         $fileLoc = 'var/cv_uploads/';
 
         // Full path and filename of the file
-        $fullPath = $fileName . $fileLoc;
+        $fullPath = $fileLoc . $fileName;
 
         // Throw an exception if the file doesn't exist
         if (!is_file($fullPath)) {
