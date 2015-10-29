@@ -47,9 +47,10 @@ class ApplicationForm extends BaseForm
             ->setRequired(true);
 
         $file = new \Zend_Form_Element_File($formName . 'cvFile');
-        $file->setLabel('CV Upload:')->setRequired(true)
+        $file->setLabel('CV Upload (docx, doc, rtf, pdf):')->setRequired(true)
             ->addValidator('Size', false, ['max' => '5242880'])
-            ->addValidator('Extension', false, ['docx', 'doc', 'txt', 'pdf']);
+            ->addValidator('Extension', false, ['docx', 'doc', 'rtf', 'pdf'])
+            ->setRequired(false);
 
         $submit = new \Zend_Form_Element_Submit($formName . 'submit');
         $submit->setLabel('Submit')

@@ -36,6 +36,8 @@
                         <div class="tab__controls">
                             <div class="field-wrap">
                                 <?= $form->application_coverLetter ?>
+                            </div>
+                            <div class="field-wrap upload-button">
                                 <?= $form->application_cvFile ?>
                             </div>
                             <?= $form->application_submit ?>
