@@ -22,16 +22,6 @@ $(document).ready(function () {
             $('.show_hide').each(function() {
                 $(this).text(plus);
             });
-
-            showHide.text(minus);
-        } else {
-            if (showHide.text() == showMoreText) {
-                showHide.text(showLessText);
-            } else if (showHide.text() == viewText) {
-                showHide.text(hideText);
-            } else {
-                showHide.text(errorText); // Shouldn't be here
-            }
         }
     }
 
