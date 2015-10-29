@@ -362,9 +362,8 @@ class PageController extends AbstractPageController
 
         // Get the extension of the uploaded file. We need this because we will be renaming the file ourselves and
         // Therefore need to use the original extension
-        $extensionSplit = explode('.', $upload->getFilename());
-        $extensionSplitLength = sizeof($extensionSplit);
-        $extension = "." . $extensionSplit[$extensionSplitLength - 1];
+        $path_parts = pathinfo($upload->getFilename());
+        $extension = "." . $path_parts['extension'];
 
         // Suffix of the file. Add an underscore, the datestamp and _cv_upload
         $fileSuffix = '_' . date('MdYHis') . '_cv_upload';
