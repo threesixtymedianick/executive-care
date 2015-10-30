@@ -68,7 +68,7 @@ $(document).ready(function () {
                     if ((typeof(listingImage) !== 'undefined') && listingImage !== null && listingImage !== "") {
                         $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('" + listingImage + "')");
                     } else {
-                        $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('/website/static/images/home/find-a-home.png')");
+                        $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('/website/static/images/default/default-home.png')");
                     }
 
                     $('.homecontent > a').attr('href', '/care-homes/detail/' + data.o_key);

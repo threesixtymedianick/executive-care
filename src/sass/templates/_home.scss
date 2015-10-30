@@ -124,13 +124,13 @@
         }
 
         .bx-prev {
-          background: url('../images/home/home-controls.png') no-repeat 0 0;
+          background: url('../images/buttons/arrows/home-controls.png') no-repeat 0 0;
           background-size: auto 100%;
           left: 15px;
         }
 
         .bx-next {
-          background: url('../images/home/home-controls.png') no-repeat -26px 0;
+          background: url('../images/buttons/arrows/home-controls.png') no-repeat -26px 0;
           background-size: auto 100%;
           right: 15px;
           
@@ -241,24 +241,6 @@
         margin-bottom: 0px;
       }
     }
-  }
-
-  &__find-a-home {
-    background-image: url('../images/home/find-a-home.png');
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-
-  &__news {
-    background-image: url('../images/home/news-and-events.png');
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-
-  &__work-for-us {
-    background-image: url('../images/home/work-for-executive-care.png');
-    background-position: left center;
-    background-repeat: no-repeat;
   }
 
   @media (max-width:$laptop-breakpoint) {

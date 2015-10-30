@@ -11,7 +11,7 @@ $documentKey = ($this->document->getId() === 1) ? 'home' : $this->document->getK
       <header class="site-header">
          <div class="container">
             <div class="site-header__logo">
-               <a href="<?= $homePage; ?>"><img src="/website/static/images/executive-care-logo.png" alt="Executive Care" /></a>
+               <a href="<?= $homePage; ?>"><img src="/website/static/images/logos/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
                <div class="site-header__contact-header">
