@@ -9,12 +9,6 @@ $(document).ready(function() {
     // font resize these elements
     var elm = $('p, h1, h2, h3');
 
-    // The cookie name for text size
-    var cookieName = "textSize";
-
-    // Days to set the cookie for
-    var daysToSetCookie = 365;
-
     // Set size on page load if cookie value is set
     if (getCookie() !== undefined) {
         elm.css({'fontSize' : parseFloat(getCookie())});
