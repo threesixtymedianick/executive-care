@@ -169,7 +169,7 @@
               position: absolute;
               color: transparent;
               background-color: transparent;
-              background: url('../images/right-arrow.png') no-repeat 0 0;
+              background: url('../images/buttons/arrows/right-arrow.png') no-repeat 0 0;
               background-size: cover;
               cursor: pointer;
               border: none;
@@ -187,7 +187,7 @@
               appearance: none;
               -moz-appearance: none;
               -webkit-appearance: none;
-              background: url('../images/down-arrow.png') no-repeat top right $color-white;
+              background: url('../images/buttons/arrows/down-arrow.png') no-repeat top right $color-white;
               background-size: 29px 29px;
             }
 

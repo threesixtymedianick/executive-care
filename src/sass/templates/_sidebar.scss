@@ -241,7 +241,7 @@
 
       .search-submit {
         position: absolute;
-        background: url('../images/search-arrow-grey.png') no-repeat 0 0;
+        background: url('../images/buttons/arrows/search-arrow-grey.png') no-repeat 0 0;
         background-size: cover;
         border: none;
         cursor: pointer;
@@ -467,7 +467,7 @@
         }
 
         & .arrow {
-          background: url('../images/green-arrow.png') no-repeat 0 0;
+          background: url('../images/buttons/arrows/green-arrow.png') no-repeat 0 0;
           height: 32px;
           width: 30px;
           position: absolute;
@@ -630,7 +630,7 @@
       @include border-radius(0px);
       background: transparent;
       @include appearance(none);
-      background: url('../images/white-blue-arrow.png') no-repeat top right $color-light-blue;
+      background: url('../images/buttons/arrows/white-blue-arrow.png') no-repeat top right $color-light-blue;
     }
 
     .signup-btn {
