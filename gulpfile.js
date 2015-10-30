@@ -24,6 +24,7 @@ var source = require('vinyl-source-stream');
 var pixrem = require('gulp-pixrem');
 var autoprefixer = require('gulp-autoprefixer');
 var notify = require("gulp-notify");
+var del = require('del');
 
 var paths = {
     src: {
@@ -44,7 +45,7 @@ var paths = {
 gulp.task("default", ["build", "watch"]);
 
 gulp.task("build", function (cb) {
-    runSequence("build-css", "build-js", "copy-public-images", "copy-lightbox-images", "copy-bx-slider-images", "copy-fonts", "copy-plugins", "build-css-libs", cb);
+    runSequence("clean-static", "build-css", "build-js", "copy-public-images", "copy-lightbox-images", "copy-bx-slider-images", "copy-fonts", "copy-plugins", "build-css-libs", cb);
 });
 
 gulp.task("deploy", function (cb) {
@@ -145,9 +146,7 @@ gulp.task("minify-js", function () {
 
 gulp.task('copy-public-images', function () {
     return gulp.src([
-        './src/images/public/**/*.*',
-        './bower_components/bxslider-4/dist/images/*.*',
-        './bower_components/lightbox2/dist/images/*.*'
+        './src/images/public/**/*.*'
     ])
         .pipe(gulp.dest('./website/static/images/'))
         ;
@@ -187,4 +186,10 @@ gulp.task('copy-plugins', function () {
     return gulp.src('./src/third-party/**/*.*')
         .pipe(gulp.dest('./website/static/plugins/'))
         ;
+});
+
+gulp.task('clean-static', function () {
+    return del([
+        './website/static/*'
+    ]);
 });
