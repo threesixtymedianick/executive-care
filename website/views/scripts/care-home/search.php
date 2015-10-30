@@ -41,7 +41,7 @@ $distances = $this->distances;
                             <?php if ($home->getListingImage()) : ?>
                                 <?php $image = $home->getListingImage()->getFullPath(); ?>
                             <?php else : ?>
-                                <?php $image = "/website/static/images/home/find-a-home.png"; ?>
+                                <?php $image = "/website/static/images/default/default-home.png"; ?>
                             <?php endif; ?>
                             <div class="our-homes__left__content__homes-box--image"
                                  style="background-image: url('<?= $image; ?>');"></div>
