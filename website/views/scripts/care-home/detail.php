@@ -96,7 +96,7 @@ $banner = $careHome->getBanner();
                             <div class="sidebar__panel--recommendation-image"></div>
                             <div class="sidebar__panel--content full-width-panel heightMatch">
                                 <div class="recommendation-logo">    
-                                    <img src="/website/static/images/reccomendation-logo.png">
+                                    <img src="/website/static/images/logos/reccomendation-logo.png">
                                 </div>
                                 <h3><?= $recommendation['title']; ?></h3>
                                 <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>

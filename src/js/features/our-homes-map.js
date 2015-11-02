@@ -31,12 +31,12 @@ $(document).ready(function () {
                         // Create LatLng
                         var latLng = new google.maps.LatLng(data.lat, data.lon);
 
-                        var iconBase = '../website/static/images/place_icons/';
+                        var iconBase = '../website/static/images/buttons/icons/';
 
                         // Create marker
                         var marker = new google.maps.Marker({
                             position: latLng,
-                            icon: iconBase + 'place_icon_1.png',
+                            icon: iconBase + 'place-icon.png',
                             map: map,
                             careHomeId: data.id,
                         });
@@ -68,7 +68,7 @@ $(document).ready(function () {
                     if ((typeof(listingImage) !== 'undefined') && listingImage !== null && listingImage !== "") {
                         $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('" + listingImage + "')");
                     } else {
-                        $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('/website/static/images/home/find-a-home.png')");
+                        $('.sidebar__panel--our-homes-find-a-home-image').css("background-image", "url('/website/static/images/default/default-home.png')");
                     }
 
                     $('.homecontent > a').attr('href', '/care-homes/detail/' + data.o_key);
