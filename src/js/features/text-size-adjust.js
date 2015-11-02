@@ -7,7 +7,9 @@ $(document).ready(function() {
     var max = 18;
 
     // font resize these elements
-    var elm = $('p, h1, h2, h3');
+    //var elm = $('p, h1, h2, h3');
+
+    var elm = $('.main').find('p, h1, h2, h3');
 
     // Set size on page load if cookie value is set
     if (getCookie() !== undefined) {

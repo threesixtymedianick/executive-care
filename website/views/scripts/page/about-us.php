@@ -13,7 +13,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="about-us">
-            <div class="about-us__left">
+            <div class="about-us__left main">
                 <ul class="tabs">
                     <li><a id="info_tab" href='#info'>About Us</a></li>
                 </ul>
