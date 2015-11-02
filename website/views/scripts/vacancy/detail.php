@@ -64,9 +64,11 @@ $vacancy              = $this->vacancy[0];
                     <div class="careers__left__content--button">
                         <a href="/careers/apply" alt="Apply online now">Apply Online</a>
                     </div>
-                    <div class="careers__left__content--button">
-                        <a href="<?= $vacancy->getApplicationForm()->getFullPath() ?>" alt="Download application form">Download Application</a>
-                    </div>
+                    <?php if ($vacancy->getApplicationForm() || $vacancy->getApplicationForm() !== null) : ?>
+                        <div class="careers__left__content--button">
+                            <a href="<?= $vacancy->getApplicationForm()->getFullPath() ?>" alt="Download application form">Download Application</a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="sidebar">
