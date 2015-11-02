@@ -14,7 +14,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">
-            <div class="book-a-visit__left">
+            <div class="book-a-visit__left main">
                 <div class="book-a-visit__left__content">
                     <div class="book-a-visit__left__content__title">
                         Book a Visit

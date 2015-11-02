@@ -14,7 +14,7 @@ $distances = $this->distances;
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
-            <div class="our-homes__left">
+            <div class="our-homes__left main">
                 <div class="our-homes__left__title">
                     Our Homes
                 </div>

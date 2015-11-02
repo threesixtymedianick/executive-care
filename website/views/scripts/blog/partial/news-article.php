@@ -1,5 +1,5 @@
 <?php $entry = $this->entry; ?>
-<div class="blog__left">
+<div class="blog__left main">
     <div class="blog__left--title">
         <h2><?= $this->entry->getTitle() ?></h2>
     </div>
