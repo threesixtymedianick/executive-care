@@ -7,24 +7,24 @@
 
 "use strict";
 
-var browserify = require('browserify');
-var gulp = require("gulp");
-var concat = require("gulp-concat");
-var copy = require("gulp-copy");
-var cssmin = require("gulp-minify-css");
-var sourcemaps = require('gulp-sourcemaps');
-var imagemin = require("gulp-imagemin");
-var plumber = require("gulp-plumber");
-var runSequence = require('run-sequence');
-var sass = require("gulp-sass");
-var uglifyjs = require("gulp-uglifyjs"); // extended version of uglify
-var watch = require("gulp-watch");
-var reactify = require('reactify');
-var source = require('vinyl-source-stream');
-var pixrem = require('gulp-pixrem');
-var autoprefixer = require('gulp-autoprefixer');
-var notify = require("gulp-notify");
-var del = require('del');
+var browserify      = require('browserify');
+var gulp            = require("gulp");
+var concat          = require("gulp-concat");
+var copy            = require("gulp-copy");
+var cssmin          = require("gulp-minify-css");
+var sourcemaps      = require('gulp-sourcemaps');
+var imagemin        = require("gulp-imagemin");
+var plumber         = require("gulp-plumber");
+var runSequence     = require('run-sequence');
+var sass            = require("gulp-sass");
+var uglifyjs        = require("gulp-uglifyjs"); // extended version of uglify
+var watch           = require("gulp-watch");
+var reactify        = require('reactify');
+var source          = require('vinyl-source-stream');
+var pixrem          = require('gulp-pixrem');
+var autoprefixer    = require('gulp-autoprefixer');
+var notify          = require("gulp-notify");
+var del             = require('del');
 
 var paths = {
     src: {
