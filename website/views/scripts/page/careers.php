@@ -15,7 +15,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="careers">
-            <div class="careers__left">
+            <div class="careers__left main">
                 <div class="careers__left__content">
                     <div class="careers__left__content__title">
                         Jobs in our care homes

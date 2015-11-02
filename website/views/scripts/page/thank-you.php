@@ -16,7 +16,7 @@ $headerImage = $this->image("thankyouHeader");
 <div class="container">
     <div class="container__inner">
         <div class="thank-you">
-            <div class="thank-you__left">
+            <div class="thank-you__left main">
                 <ul class="tabs">
                     <li><a id="info_tab" href='#info'>Thank You</a></li>
                 </ul>

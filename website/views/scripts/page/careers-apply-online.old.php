@@ -11,7 +11,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="careers__apply">
-            <div class="careers__apply__left">
+            <div class="careers__apply__left main">
                 <div class="careers__apply__left__title">
                     Online Application Form
                 </div>

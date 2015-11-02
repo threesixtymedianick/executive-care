@@ -13,7 +13,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="our-care">
-            <div class="our-care__left">
+            <div class="our-care__left main">
                 <div class="our-care__left__content">
                     <div class="our-care__left__content__title">
                         <?= $title ?>

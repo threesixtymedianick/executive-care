@@ -11,7 +11,7 @@ $banner = $careHome->getBanner();
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
-            <div class="our-homes__left">
+            <div class="our-homes__left main">
                 <div class="our-homes__left__title">
                     Welcome to <?= $careHome->getTitle(); ?>
                 </div>
