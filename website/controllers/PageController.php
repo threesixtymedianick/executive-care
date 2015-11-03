@@ -342,7 +342,6 @@ class PageController extends AbstractPageController
      */
     private function receiveFileUpload($request)
     {
-
         // Hard coded CV folder
         $cvFolder = 'var/cv_uploads/';
 
@@ -360,9 +359,14 @@ class PageController extends AbstractPageController
         // Get a new file transfer object
         $upload = new Zend_File_Transfer_Adapter_Http();
 
+        if (!$upload->getFilename()) {
+            return "";
+        }
+
         // Get the extension of the uploaded file. We need this because we will be renaming the file ourselves and
         // Therefore need to use the original extension
         $path_parts = pathinfo($upload->getFilename());
+
         $extension = "." . $path_parts['extension'];
 
         // Suffix of the file. Add an underscore, the datestamp and _cv_upload
