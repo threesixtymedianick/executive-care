@@ -26,13 +26,6 @@
     }
   }
 
-  @media(max-width: $tablet-breakpoint) {
-    input[type="search"] {
-      width: 65%;
-    }
-  }
-
-  
   .tab {
     @include tab();
     background: $color-light-blue;
