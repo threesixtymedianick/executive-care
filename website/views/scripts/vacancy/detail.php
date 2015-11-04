@@ -2,19 +2,20 @@
 $headerImage          = $this->image("careers_header");
 $vacancy              = $this->vacancy[0];
 
-$vacancyRoleId;
-$vacancyCareHomeId;
+$vacancyRoleId = null;
+$vacancyCareHomeId = null;
 
-$applyUrlString;
-
+// Grab the Vacancy Role ID for the application form
 if (isset($vacancy->getRoleTitle()[0])) {
     $vacancyRoleId = $vacancy->getRoleTitle()[0]->getId();
 }
 
+// Grab the Care Home ID for the application form
 if (isset($vacancy->getCareHomes()[0])) {
     $vacancyCareHomeId = $vacancy->getCareHomes()[0]->getId();
 }
 
+// Format the URL parameters
 $urlFormat = "?carehome=%s&vacancy=%s";
 $applyUrlString = sprintf($urlFormat, $vacancyCareHomeId, $vacancyRoleId);
 
