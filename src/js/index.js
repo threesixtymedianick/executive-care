@@ -13,6 +13,7 @@ require("./modules/googleanalytics");
 require("./modules/wysiwyg-overrides");
 require("./modules/application-form");
 require("./modules/wysiwyg-overrides");
+require("./modules/application-form");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");
