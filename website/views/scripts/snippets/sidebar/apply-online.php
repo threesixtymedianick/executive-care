@@ -4,6 +4,7 @@ endif; ?>
 
 <?php
 $link = $this->link('link');
+$applyUrlString = $this->getParam('applyUrlString');
 ?>
 
 <?php if ($this->editmode): ?>
@@ -15,7 +16,7 @@ $link = $this->link('link');
     <div class="sidebar__buttons applyonline">
         <?php if (!$this->editmode) : ?>
             <?php if ($link !== null) : ?>
-                <a href="<?= $link->getHref(); ?>" class="mleft"><?= $link->getText(); ?></a>
+                <a href="<?= $link->getHref(); ?><?= $applyUrlString; ?>" class="mleft"><?= $link->getText(); ?></a>
             <?php endif; ?>
         <?php else : ?>
             <?php if ($link !== null) : ?>

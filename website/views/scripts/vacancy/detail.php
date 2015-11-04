@@ -2,6 +2,22 @@
 $headerImage          = $this->image("careers_header");
 $vacancy              = $this->vacancy[0];
 
+$vacancyRoleId;
+$vacancyCareHomeId;
+
+$applyUrlString;
+
+if (isset($vacancy->getRoleTitle()[0])) {
+    $vacancyRoleId = $vacancy->getRoleTitle()[0]->getId();
+}
+
+if (isset($vacancy->getCareHomes()[0])) {
+    $vacancyCareHomeId = $vacancy->getCareHomes()[0]->getId();
+}
+
+$urlFormat = "?carehome=%s&vacancy=%s";
+$applyUrlString = sprintf($urlFormat, $vacancyCareHomeId, $vacancyRoleId);
+
 ?>
 <?php if ($this->editmode): ?>
     <p>Place main header image here</p>
@@ -62,7 +78,7 @@ $vacancy              = $this->vacancy[0];
                         </div>
                     </div>
                     <div class="careers__left__content--button">
-                        <a href="/careers/apply" alt="Apply online now">Apply Online</a>
+                        <a href="/careers/apply<?= $applyUrlString;?>" alt="Apply online now">Apply Online</a>
                     </div>
                     <?php if ($vacancy->getApplicationForm() || $vacancy->getApplicationForm() !== null) : ?>
                         <div class="careers__left__content--button">
@@ -76,7 +92,7 @@ $vacancy              = $this->vacancy[0];
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/training')); ?>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/apply-online'), ['applyUrlString' => $applyUrlString]); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/download-form')); ?>
 
