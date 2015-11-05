@@ -11,12 +11,12 @@ if(!$navStartNode instanceof Document\Page) {
 ?>
 <li class="home">
     <a href="<?= $this->url(array("document" => Document::getById(1)), "default", true); ?>">
-      <img src="/src/images/public/home.png">
+      <img src="/website/static/images/buttons/icons/home-icon.png">
     </a>
 </li>
 
 <div class="show-menu">
-  <img class="mob-menu" src="/src/images/public/bar-menu.png">
+  <img class="mob-menu" src="/website/static/images/buttons/icons/burger-icon.png">
 </div>
 <ul class="site-navigation__main-navigation">
   

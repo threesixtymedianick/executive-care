@@ -10,6 +10,8 @@ require("./modules/book-a-visit-form");
 require("./modules/contact-us-form");
 require("./modules/lightbox2-options");
 require("./modules/googleanalytics");
+require("./modules/wysiwyg-overrides");
+require("./modules/application-form");
 
 require("./features/show-more-less");
 require("./features/text-size-adjust");

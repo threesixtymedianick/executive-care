@@ -15,7 +15,7 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      background: url("../images/arrow-down-blue.png") no-repeat top right #ffffff;
+      background: url("../images/buttons/arrows/arrow-down-blue.png") no-repeat top right #ffffff;
       background-size: 29px 29px;
       border: none;
     }
@@ -148,7 +148,7 @@
         right: 0;
       }
     }
-    
+
     input {
       width: 100%;
       padding: 6px;
@@ -326,6 +326,21 @@
 @media(max-width:$laptop-breakpoint) {
   .contact-us {
     margin-top: -36px;
+  }
+
+  .upload-button {
+    label {
+      display: inline-block;
+      font-size: $font-size-small;
+      padding-bottom: 2px;
+
+      &.error {
+        color: red;
+        position: absolute;
+        bottom: -20px;
+        left: 0px;
+      }
+    }
   }
 }
 

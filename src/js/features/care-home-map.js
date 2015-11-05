@@ -22,7 +22,7 @@ $(document).ready(function() {
 
         var marker = new google.maps.Marker({
             position: latLon,
-            icon: '/website/static/images/place_icons/place_icon_1.png',
+            icon: '/website/static/images/buttons/icons/place-icon.png',
             map: map,
         });
     }

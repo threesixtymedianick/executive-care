@@ -63,7 +63,7 @@
           @include border-radius(0px);
           background: transparent;
           @include appearance(none);
-          background: url('../images/down-arrow-green.png') no-repeat top right $color-white;
+          background: url('../images/buttons/arrows/down-arrow-green.png') no-repeat top right $color-white;
           background-size: 29px 29px;
           padding: 0 6px;
           height: 29px;
@@ -91,7 +91,7 @@
 
         #bookAVisit_date, 
         #bookAVisit_time {
-          background: url('../images/down-arrow-green.png') no-repeat top right $color-white;
+          background: url('../images/buttons/arrows/down-arrow-green.png') no-repeat top right $color-white;
           background-size: 29px 29px;
         }
 

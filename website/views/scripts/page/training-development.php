@@ -13,7 +13,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="training-development">
-            <div class="training-development__left">
+            <div class="training-development__left main">
 
                 <?php if (!$this->editmode) : ?>
                     <ul class="tabs">
