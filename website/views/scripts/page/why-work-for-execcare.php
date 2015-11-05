@@ -16,7 +16,7 @@
 <div class="container">
     <div class="container__inner">
         <div class="volunteer">
-            <div class="volunteer__left">
+            <div class="volunteer__left main">
                 <div class="volunteer__left__content">
                     <div class="volunteer__left__content__title">
                         <?= $whyWorkTitle ?>

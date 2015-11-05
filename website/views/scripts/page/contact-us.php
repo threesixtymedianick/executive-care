@@ -18,7 +18,7 @@
                             <?= $contactUsAddress ?>
                         </div>
                         <div class="contact-us__address__enquiries">
-                            <div class="contact-us__address__enquiries__left">
+                            <div class="contact-us__address__enquiries__left main">
                                 Enquiries:
                             </div>
                             <div class="contact-us__address__enquiries__right">
@@ -29,7 +29,7 @@
                         <br />
                     </div>
                 </div>
-            <div class="contact-us__left">
+            <div class="contact-us__left main">
                 <ul class="tabs">
                     <li><a id="enquiry_tab" href='#enquiry'>Make an enquiry</a></li>
                     <li><a id="brochure_tab" href='#brochure'>Request a brochure</a></li>

@@ -7,21 +7,21 @@ $headerImage = $this->image("thankyouHeader");
     <p>Place main header image here</p>
     <?= $headerImage ?>
 <?php else : ?>
-    <div class="thankyou__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
+    <div class="thankyou__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">
+        -
+    </div>
 <?php endif; ?>
+
 
 <div class="container">
     <div class="container__inner">
-        <div class="thankyou">
-            <div class="thankyou__left">
-                <div class="thankyou__left__content">
-                    <div class="thankyou__left__content__title">
-                        Thank You
-                    </div>
-                    <div class="thankyou__left__content__box">
-                        <?= $thankyouDesc ?>
-
-                    </div>
+        <div class="thank-you">
+            <div class="thank-you__left main">
+                <ul class="tabs">
+                    <li><a id="info_tab" href='#info'>Thank You</a></li>
+                </ul>
+                <div class="tab" id="info">
+                    <?= $thankyouDesc ?>
                 </div>
             </div>
             <div class="sidebar">
@@ -31,3 +31,4 @@ $headerImage = $this->image("thankyouHeader");
             </div>
         </div>
     </div>
+</div>

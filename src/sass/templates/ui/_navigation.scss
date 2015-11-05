@@ -66,6 +66,10 @@ $nav-height: 47px;
         font-size: 0.8em;
       }
     }
+
+    .inner_links li:hover {
+      background-color: $color-blue;
+    }
   }
 
   .home {
@@ -128,7 +132,7 @@ $nav-height: 47px;
     }
 
     .inner_links li:hover {
-      background-color:$color-grey;
+      background-color: $color-grey;
     }
     /*Create vertical spacing*/
     li {

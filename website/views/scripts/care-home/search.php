@@ -14,7 +14,7 @@ $distances = $this->distances;
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
-            <div class="our-homes__left">
+            <div class="our-homes__left main">
                 <div class="our-homes__left__title">
                     Our Homes
                 </div>
@@ -41,7 +41,7 @@ $distances = $this->distances;
                             <?php if ($home->getListingImage()) : ?>
                                 <?php $image = $home->getListingImage()->getFullPath(); ?>
                             <?php else : ?>
-                                <?php $image = "/website/static/images/home/find-a-home.png"; ?>
+                                <?php $image = "/website/static/images/default/default-home.png"; ?>
                             <?php endif; ?>
                             <div class="our-homes__left__content__homes-box--image"
                                  style="background-image: url('<?= $image; ?>');"></div>

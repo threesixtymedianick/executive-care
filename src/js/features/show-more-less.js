@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".slide").hide();
-    $(".slide:first").css( "display", "block" );
+    $(".slide:first").css( "display", "hidden" );
 
     var showHide = $(".show_hide:first");
     var showMoreText = "Show More +";
@@ -22,16 +22,6 @@ $(document).ready(function () {
             $('.show_hide').each(function() {
                 $(this).text(plus);
             });
-
-            showHide.text(minus);
-        } else {
-            if (showHide.text() == showMoreText) {
-                showHide.text(showLessText);
-            } else if (showHide.text() == viewText) {
-                showHide.text(hideText);
-            } else {
-                showHide.text(errorText); // Shouldn't be here
-            }
         }
     }
 

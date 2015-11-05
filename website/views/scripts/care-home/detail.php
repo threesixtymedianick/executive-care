@@ -11,7 +11,7 @@ $banner = $careHome->getBanner();
 <div class="container">
     <div class="container__inner">
         <div class="our-homes">
-            <div class="our-homes__left">
+            <div class="our-homes__left main">
                 <div class="our-homes__left__title">
                     Welcome to <?= $careHome->getTitle(); ?>
                 </div>
@@ -84,7 +84,7 @@ $banner = $careHome->getBanner();
                     </a>
                 </div>
 
-                <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure')); ?>
+                <?= $this->inc(Document_Snippet::getByPath('/snippets/request-brochure'), ['careHome' => $careHome]); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/vacancies')); ?>
 
@@ -96,7 +96,7 @@ $banner = $careHome->getBanner();
                             <div class="sidebar__panel--recommendation-image"></div>
                             <div class="sidebar__panel--content full-width-panel heightMatch">
                                 <div class="recommendation-logo">    
-                                    <img src="/website/static/images/reccomendation-logo.png">
+                                    <img src="/website/static/images/logos/reccomendation-logo.png">
                                 </div>
                                 <h3><?= $recommendation['title']; ?></h3>
                                 <small><?= $recommendation['pubDate']; ?> by <?= $recommendation['author']; ?></small>
