@@ -10,8 +10,7 @@ use Website\Form\BookAVisitForm as BookAVisitForm;
 class PageController extends AbstractPageController
 {
     /**
-     * [homeAction description]
-     * @return [type] [description]
+     *
      */
     public function homeAction()
     {
@@ -19,8 +18,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [aboutUsAction description]
-     * @return [type] [description]
+     *
      */
     public function aboutUsAction()
     {
@@ -28,9 +26,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * Careers index page
-     *
-     * @return
+     * @throws Zend_Paginator_Exception
      */
     public function careersAction()
     {
@@ -46,8 +42,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [ourCareAction description]
-     * @return [type] [description]
+     *
      */
     public function ourCareAction()
     {
@@ -55,8 +50,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [ourCareAction description]
-     * @return [type] [description]
+     *
      */
     public function ourCareTestimonialsAction()
     {
@@ -64,8 +58,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [ourCareAction description]
-     * @return [type] [description]
+     *
      */
     public function ourCareHomeInitiativesAction()
     {
@@ -73,9 +66,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * Contact Us page
-     *
-     * @return
+     * @throws Zend_Form_Exception
      */
     public function contactUsAction()
     {
@@ -148,6 +139,9 @@ class PageController extends AbstractPageController
         $this->view->enquiryForm = $enquiryForm;
     }
 
+    /**
+     * @throws Zend_Form_Exception
+     */
     public function careersApplyOnlineAction()
     {
         $applicationForm = new ApplicationForm();
@@ -209,8 +203,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [volunteerAction description]
-     * @return [type] [description]
+     * @throws Zend_Form_Exception
      */
     public function volunteerAction()
     {
@@ -246,8 +239,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [trainingDevelopmentAction description]
-     * @return [type] [description]
+     *
      */
     public function trainingDevelopmentAction()
     {
@@ -255,8 +247,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [whyWorkForExecccareAction description]
-     * @return [type] [description]
+     *
      */
     public function whyWorkForExecccareAction()
     {
@@ -264,8 +255,7 @@ class PageController extends AbstractPageController
     }
 
     /**
-     * [bookAVisitAction description]
-     * @return [type] [description]
+     * @throws Zend_Form_Exception
      */
     public function bookAVisitAction()
     {

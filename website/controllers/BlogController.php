@@ -6,7 +6,7 @@ class BlogController extends AbstractBlogController
 {
 
     /**
-     * @var Blog
+     * @var
      */
     protected $_blog;
 
@@ -16,8 +16,7 @@ class BlogController extends AbstractBlogController
     protected $_commenting;
 
     /**
-     * Init
-     * @return
+     *
      */
     public function init()
     {
@@ -35,8 +34,7 @@ class BlogController extends AbstractBlogController
     }
 
     /**
-     * List news and events
-     * @return
+     * @throws Zend_Controller_Action_Exception
      */
     public function newsEventsAction()
     {
@@ -68,8 +66,7 @@ class BlogController extends AbstractBlogController
     }
 
     /**
-     * List open days
-     * @return
+     * @throws Zend_Controller_Action_Exception
      */
     public function openDaysAction()
     {
@@ -90,8 +87,7 @@ class BlogController extends AbstractBlogController
     }
 
     /**
-     * List testimonials
-     * @return
+     * @throws Zend_Controller_Action_Exception
      */
     public function testimonialsAction()
     {
