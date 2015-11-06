@@ -80,7 +80,7 @@ $distances = $this->distances;
                         </div>
                         <div class="sidebar__panel--our-homes-find-a-home-details">
                             <div class="sidebar__panel--our-homes-find-a-home-image"></div>
-                            <div class="sidebar__panel--content homecontent">
+                            <div class="sidebar__panel--homeinfo-content homecontent">
                                 <h3 class="title"></h3>
 
                                 <p class="address">Use our interactive search tool to find an Executive Care home near you. Enter your

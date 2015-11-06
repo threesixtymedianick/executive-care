@@ -106,9 +106,17 @@
     &--homeinfo-content {
       display: inline-block;
       position: relative;
+      font-size: $font-size-small;
       min-height: 230px;
-      width: 39%;
+      width: 59%;
       padding: 0 10px 10px;
+
+      & .title {
+        text-transform: uppercase;
+        font-size: $font-size-normal;
+        @include font-header($weight: 300);
+        margin: 0;
+      }
     }
 
     &--content {
