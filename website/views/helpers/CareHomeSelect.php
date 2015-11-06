@@ -2,6 +2,9 @@
 
 class Zend_View_Helper_CareHomeSelect extends Zend_View_Helper_Abstract
 {
+    /**
+     * @return array
+     */
     public function careHomeSelect()
     {
         $careHomes = new Object_CareHomes_List();

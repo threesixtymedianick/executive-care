@@ -2,6 +2,9 @@
 
 class Zend_View_Helper_SnippetEditModeStyles extends Zend_View_Helper_Abstract
 {
+    /**
+     * @return string
+     */
     public function snippetEditModeStyles()
     {
         $stylesHtml = '';
