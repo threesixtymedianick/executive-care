@@ -5,9 +5,7 @@ use Website\Repository\VacancyElasticSearchRepository;
 class VacancyController extends AbstractPageController
 {
     /**
-     * Displays the vacancy index page
-     *
-     * @return
+     * @throws Zend_Paginator_Exception
      */
     public function indexAction()
     {
@@ -23,9 +21,7 @@ class VacancyController extends AbstractPageController
     }
 
     /**
-     * Displays a single care home
-     *
-     * @return
+     * @throws Zend_Controller_Action_Exception
      */
     public function detailAction()
     {
@@ -43,9 +39,7 @@ class VacancyController extends AbstractPageController
     }
 
     /**
-     * Search for vacancies
      *
-     * @return
      */
     public function searchAction()
     {
@@ -75,9 +69,8 @@ class VacancyController extends AbstractPageController
     }
 
     /**
-     * Filter vacancies
-     *
-     * @return
+     * @return mixed
+     * @throws Zend_Paginator_Exception
      */
     public function filterAction()
     {

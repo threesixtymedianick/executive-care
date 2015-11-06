@@ -19,36 +19,39 @@ class SnippetsController extends AbstractPageController
     }
 
     /**
-     * [footerAction description]
-     * @return [type] [description]
+     *
      */
     public function footerAction()
     {
 
     }
+
     /**
-     * [addressAction description]
-     * @return [type] [description]
+     *
      */
     public function addressAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function upcomingOpenDaysAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function bookAVisitAction()
     {
 
     }
 
     /**
-     * Recent recommendation snippet
      *
-     * @return
      */
     public function recommendationAction()
     {
@@ -64,71 +67,113 @@ class SnippetsController extends AbstractPageController
         $this->view->recommendation = $recommendation;
     }
 
+    /**
+     *
+     */
     public function findAHomeAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function contactUsAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function applyOnlineAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function downloadFormAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function jobAlertsAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function newsAndEventsAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function trainingAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function volunteerAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function vacancySearchAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function getInTouchAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function requestBrochureAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function vacanciesAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function ourCareExplainedAction()
     {
 
     }
 
+    /**
+     *
+     */
     public function liveChatAction()
     {
 

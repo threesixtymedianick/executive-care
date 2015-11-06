@@ -6,9 +6,7 @@ use Website\Service\RecommendationService;
 class CareHomeController extends AbstractPageController
 {
     /**
-     * Displays the Care Home index page
-     *
-     * @return
+     * @throws Zend_Paginator_Exception
      */
     public function indexAction()
     {
@@ -26,9 +24,7 @@ class CareHomeController extends AbstractPageController
     }
 
     /**
-     * Displays a single care home
-     *
-     * @return
+     * @throws Zend_Controller_Action_Exception
      */
     public function detailAction()
     {
@@ -71,9 +67,7 @@ class CareHomeController extends AbstractPageController
     }
 
     /**
-     * Search for care homes
-     *
-     * @return
+     * @throws Zend_Paginator_Exception
      */
     public function searchAction()
     {
