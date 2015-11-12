@@ -3,7 +3,26 @@ $news = $this->news;
 $events = $this->events;
 ?>
 
-<div class="our-care__header" style="background-image:url('/website/static/images/default/news-and-events-stock.png');background-repeat:no-repeat;background-size:cover;position:absolute;">-</div>
+<div class="blog__slider">
+    <ul class="blogslider">
+        <?php foreach ($news as $slider): ?>
+            <?php if ($slider->getBlogImage() !== null): ?>
+                <a href="<?= $this->url(['key' => $slider->getUrlPath()], 'blog-show', false, false); ?>">
+                    <li style="background-image:url('<?= $slider->getBlogImage()->getThumbnail('header_images'); ?>');">
+                        <div class="blogslider__details">
+                            <div class="blogslider__details--title">
+                                <?= $slider->getTitle() ?>
+                            </div>
+                            <div class="blogslider__details--date">
+                                <?= $slider->getDate()->toString('dd.MM.Y'); ?>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
