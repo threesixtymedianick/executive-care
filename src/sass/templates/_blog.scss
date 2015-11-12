@@ -1,5 +1,11 @@
 .blog {
 
+  margin-top: 450px;
+
+  @media(max-width:$laptop-breakpoint) {
+    margin-top: 0px;
+  }
+
   @include blog-slider();
 
   @include blog-left();
