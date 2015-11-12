@@ -3,6 +3,7 @@ $title                  = $this->input('title', [ 'width' => 250 ]);
 $ourCareInfoBox         = $this->wysiwyg("our-care_info");
 $headerImage            = $this->image("our-care_header");
 $testimonial            = $this->testimonial;
+
 ?>
 
 <?php if ($this->editmode): ?>
@@ -30,7 +31,7 @@ $testimonial            = $this->testimonial;
                     </div>
                 </div>
             </div>
-            <div class="sidebar">
+            <div class="sidebar m-bottom">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/find-a-home')); ?>
 
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/upcoming-open-days')); ?>

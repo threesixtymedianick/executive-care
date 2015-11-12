@@ -118,7 +118,7 @@
         }
 
         &-text {
-          clear: both;
+          float: left !important;
           padding-top: .8em;
           font-size: 0.69rem;
           overflow: auto;
