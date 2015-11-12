@@ -36,12 +36,13 @@ class CareHomeElasticSearchRepository
 
     /**
      * Geolocation search for Care Homes
-     *
-     * @param  string $query
-     * @return
+     * @param $query
+     * @return bool|\Elastica\Result[]
      */
     public function search($query)
     {
+        $query = $query . ', UK';
+
         $data = $this->geocoder->geocode($query);
 
         if (null === $data) {
