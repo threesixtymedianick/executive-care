@@ -1,6 +1,6 @@
 .blog {
 
-  margin-top: 450px;
+  margin-top: 350px;
 
   @media(max-width:$laptop-breakpoint) {
     margin-top: 0px;
@@ -152,12 +152,13 @@
       }
     }
 
-    .m-bottom {
-      margin-bottom: 5px;
-    }
-
     .sidebar__panel--recommendation.equalHeight {
       display: none;
     }
   }
+}
+
+.m-bottom {
+  margin-bottom: 5px;
+  margin-top: 36px !important;
 }
