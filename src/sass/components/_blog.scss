@@ -1,12 +1,7 @@
 @mixin blog-left() {
   &__left {
     @include span-columns(8);
-    margin-top: 350px;
     margin-bottom: 50px;
-
-    &.news-home {
-      margin-top: 50px;
-    }
 
     &--title {
       background-color: $color-purple;
