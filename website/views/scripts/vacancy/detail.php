@@ -25,10 +25,9 @@ $applyUrlString = sprintf($urlFormat, $vacancyCareHomeId, $vacancyRoleId);
     <?= $headerImage ?>
 <?php endif; ?>
 
-<div class="careers__header" style="background-image: url('<?= $headerImage->getThumbnail('header_images'); ?>');">-</div>
 <div class="container">
     <div class="container__inner">
-        <div class="careers">
+        <div class="careers careers-detail">
             <div class="careers__left main">
                 <div class="careers__left__content">
                     <div class="careers__left__content__title">
