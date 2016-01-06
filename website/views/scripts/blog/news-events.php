@@ -3,7 +3,7 @@ $news = $this->news;
 $events = $this->events;
 ?>
 
-<div class="our-care__header" style="background-image:url('/website/static/images/default/news-and-events-stock.png');background-repeat:no-repeat;background-size:cover;position:absolute;">-</div>
+<div class="blog__header">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">

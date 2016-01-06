@@ -10,7 +10,7 @@ $testimonial            = $this->testimonial;
     <p>Place main header image here</p>
     <?= $headerImage ?>
 <?php else: ?>
-    <div class="our-care__header" style="background-image: url('<?= $headerImage->getThumbnail('header_image'); ?>');">-</div>
+    <div class="blog__header" style="background-image: url('<?= $headerImage->getThumbnail('header_image'); ?>');">-</div>
 <?php endif; ?>
 <div class="container">
     <div class="container__inner">

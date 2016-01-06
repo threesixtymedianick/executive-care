@@ -1,7 +1,5 @@
 .blog {
 
-  margin-top: 350px;
-
   @media(max-width:$laptop-breakpoint) {
     margin-top: 0px;
   }
@@ -36,6 +34,22 @@
        }
      }
    }
+
+  &__header {
+    background-image: url('../images/default/news-and-events-stock.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    max-height: 572px;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
 
    &__slider .bx-viewport {
     z-index: 1;
@@ -100,6 +114,10 @@
      @include blog-pagination();
    }
 
+  &__left {
+    margin-top: 350px;
+  }
+
    @media(max-width:$laptop-breakpoint) {
 
     &__header {
@@ -160,5 +178,4 @@
 
 .m-bottom {
   margin-bottom: 5px;
-  margin-top: 36px !important;
 }
