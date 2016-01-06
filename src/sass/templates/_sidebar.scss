@@ -38,15 +38,16 @@
     margin-top: 37px;
   }
 
-  & .map-container {
+  &.map-container {
     background-color: $color-green;
     width: 100%;
     margin-bottom: 10px;
     overflow: auto;
     
-    #careHomeMap {
+    &__map {
       float: left;
       width: 40%;
+      height: 220px;
       display: inline-block;
 
       @media (max-width: $laptop-breakpoint) {
@@ -653,9 +654,7 @@
     .signup-btn {
       background-color: $color-white;
       border: none;
-      position: absolute;
-      right: 0;
-      bottom: 15px;
+      float: right;
       text-transform: uppercase;
       padding: 4px 60px 4px 10px;
     }

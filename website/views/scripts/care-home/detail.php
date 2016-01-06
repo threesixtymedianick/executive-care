@@ -58,7 +58,7 @@ $banner = $careHome->getBanner();
             <div class="sidebar homes-detail">
                 <div class="map-container">
                     <div id="careHomeMap"
-                         class="heightMatch"
+                         class="map-container__map"
                          data-id="<?= $careHome->getId() ?>"
                          data-lat="<?= $careHome->getLat() ?>"
                          data-lon="<?= $careHome->getLon() ?>">
