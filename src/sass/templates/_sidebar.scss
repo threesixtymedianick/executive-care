@@ -653,9 +653,7 @@
     .signup-btn {
       background-color: $color-white;
       border: none;
-      position: absolute;
-      right: 0;
-      bottom: 15px;
+      float: right;
       text-transform: uppercase;
       padding: 4px 60px 4px 10px;
     }
