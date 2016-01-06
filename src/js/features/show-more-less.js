@@ -12,21 +12,6 @@ $(document).ready(function () {
     var plus = "+";
     var minus = "-";
 
-    // Commented out as not working
-    //
-    // function init() {
-    //     if (screen.width < 641) {
-    //         showMoreText = plus;
-    //         showLessText = minus;
-    //         viewText = plus;
-    //         hideText = minus;
-
-    //         $('.show_hide').each(function() {
-    //             $(this).text(plus);
-    //         });
-    //     }
-    // }
-
     function controlSlide(e) {
         $(this).closest('.sliding_content').find('.slide').slideToggle(500);
 
