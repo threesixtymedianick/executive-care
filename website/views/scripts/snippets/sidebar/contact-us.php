@@ -18,9 +18,8 @@ $image = $this->image('sidebar_image');
     <?php endif; ?>
 
     <div class="sidebar__panel">
-        <div class="sidebar__panel--contact-us">
-            <div class="sidebar__panel--contact-us-image"
-                 style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></div>
+        <div class="sidebar__panel--contact-us">            
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--contact-us-image" style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></a>
             <div class="sidebar__panel--content heightMatch">
                 <h3><?= $title; ?></h3>
 

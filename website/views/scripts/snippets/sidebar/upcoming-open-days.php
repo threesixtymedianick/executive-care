@@ -19,7 +19,7 @@ $image = $this->image('sidebar_image');
 
     <div class="sidebar__panel">
         <div class="sidebar__panel--open-days">
-            <div class="sidebar__panel--open-days-image" style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></div>
+            <a href="<?= $link->getHref(); ?>" class="sidebar__panel--open-days-image" style="background: url('<?= $image->getThumbnail('sidebar_image'); ?>') no-repeat top center;"></a>
             <div class="sidebar__panel--content heightMatch">
                 <h3><?= $title; ?></h3>
 
