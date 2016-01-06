@@ -37,8 +37,8 @@ $careHomes = $this->paginator;
                             <?php else : ?>
                                 <?php $image = "/website/static/images/default/default-home.png"; ?>
                             <?php endif; ?>
-                            <div class="our-homes__left__content__homes-box--image"
-                                 style="background-image: url('<?= $image ?>');"></div>
+                            <a href="/care-homes/detail/<?= $home->getKey(); ?>" class="our-homes__left__content__homes-box--image"
+                                 style="background-image: url('<?= $image ?>');"></a>
                             <div class="our-homes__left__content__homes-box__info">
                                 <div class="our-homes__left__content__homes-box__info__title">
                                     <?= $home->getTitle() ?>
