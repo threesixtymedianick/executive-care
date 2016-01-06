@@ -197,6 +197,11 @@
 
      }
 
+     .desktop-hide {
+      display: none;
+      visibility: hidden;
+     }
+
     &__left__sliding__title {
       min-height: 85px;
       position: relative;

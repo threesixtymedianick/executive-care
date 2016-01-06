@@ -30,7 +30,7 @@
                             </div>
                             <?php if (!$this->editmode) : ?>
                                 <div class="our-care__left__sliding__title__show-hide">
-                                    <a href="#" class="show_hide">Show More +</a>
+                                    <a href="#" class="show_hide"><span class="desktop-hide">Show More </span>+</a>
                                 </div>
                             <?php endif; ?>
                         </div>
