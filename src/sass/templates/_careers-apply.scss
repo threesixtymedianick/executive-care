@@ -227,6 +227,9 @@
     .field-wrap.half {
       width: 100%;
     }
+    &__header {
+      background-image: none !important;
+    }
   }
 
   @media(max-width:654px) {
