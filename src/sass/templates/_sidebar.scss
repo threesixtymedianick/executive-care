@@ -3,6 +3,10 @@
   margin-top: 386px;
   margin-bottom: 50px;
 
+  .careers-detail & {
+    margin-top: 66px;
+  }
+
   &.home {
     margin-top: 0;
   }
@@ -34,10 +38,6 @@
     }
   }
 
-  &.blog {
-    margin-top: 37px;
-  }
-
   &.contact {
     margin-top: 37px;
   }
@@ -48,9 +48,10 @@
     margin-bottom: 10px;
     overflow: auto;
     
-    #careHomeMap {
+    &__map {
       float: left;
       width: 40%;
+      height: 220px;
       display: inline-block;
 
       @media (max-width: $laptop-breakpoint) {
@@ -657,9 +658,7 @@
     .signup-btn {
       background-color: $color-white;
       border: none;
-      position: absolute;
-      right: 0;
-      bottom: 15px;
+      float: right;
       text-transform: uppercase;
       padding: 4px 60px 4px 10px;
     }

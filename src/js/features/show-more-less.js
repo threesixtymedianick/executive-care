@@ -3,8 +3,8 @@ $(document).ready(function () {
     $(".slide:first").css( "display", "hidden" );
 
     var showHide = $(".show_hide:first");
-    var showMoreText = "Show More +";
-    var showLessText = "Show Less -";
+    var showMoreText = '<span class="desktop-hide">Show More </span>+';
+    var showLessText = '<span class="desktop-hide">Show Less </span>-';
     var viewText = "View +";
     var hideText = "Hide -";
     var errorText = "Error";
@@ -12,23 +12,10 @@ $(document).ready(function () {
     var plus = "+";
     var minus = "-";
 
-    function init() {
-        if (screen.width < 641) {
-            showMoreText = plus;
-            showLessText = minus;
-            viewText = plus;
-            hideText = minus;
-
-            $('.show_hide').each(function() {
-                $(this).text(plus);
-            });
-        }
-    }
-
     function controlSlide(e) {
         $(this).closest('.sliding_content').find('.slide').slideToggle(500);
 
-        var text = $(this).find('.show_hide').text();
+        var text = $(this).find('.show_hide').html();
 
         switch (text) {
             case showMoreText:
@@ -54,12 +41,12 @@ $(document).ready(function () {
                 break;
         }
 
-        $(this).find('.show_hide').text(text);
+        $(this).find('.show_hide').html(text);
 
         e.preventDefault();
     }
 
-    init();
+    // init();
 
     $('.our-care__left__sliding__title').click(function (e) {
         controlSlide.call(this, e);
