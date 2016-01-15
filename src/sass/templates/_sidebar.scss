@@ -44,9 +44,10 @@
     margin-bottom: 10px;
     overflow: auto;
     
-    #careHomeMap {
+    &__map {
       float: left;
       width: 40%;
+      height: 220px;
       display: inline-block;
 
       @media (max-width: $laptop-breakpoint) {
