@@ -1,28 +1,29 @@
 <?php
-    $this->layout()->setLayout('layout');
-    $entry = $this->entry;
+$this->layout()->setLayout('layout');
+$entry = $this->entry;
 
-    $headerImage = $this->entry->getBlogImage();
+if (strcasecmp($entry->getCategories()[0]->getName(), "testimonials") === 0) {
+    $headerImage = '/website/var/assets/header-images/thanks_1.jpg';
+} else {
+    $headerImage = '/website/static/images/default/news-and-events-stock.jpg';
+}
 
-    if (null !== $headerImage && "" !== $headerImage) {
-        $blogImage = $headerImage->getThumbnail('header_images');
-    }
 ?>
 
-<div class="blog__header" style="background-image:url('<?= $blogImage; ?>');">-</div>
+<div class="blog__header" style="background-image:url('<?= $headerImage; ?>')">-</div>
 <div class="container">
     <div class="container__inner">
         <div class="blog">
             <?php
-                foreach ($this->entry->getCategories() as $category) {
-                    $catName = $category->getName();
-                }
+            foreach ($this->entry->getCategories() as $category) {
+                $catName = $category->getName();
+            }
 
-                if ($catName === "Open Days") {
-                    echo $this->partial("blog/partial/open-day.php", [ "entry" => $entry ]);
-                } else {
-                    echo $this->partial("blog/partial/news-article.php", [ "entry" => $entry ]);
-                }
+            if ($catName === "Open Days") {
+                echo $this->partial("blog/partial/open-day.php", ["entry" => $entry]);
+            } else {
+                echo $this->partial("blog/partial/news-article.php", ["entry" => $entry]);
+            }
             ?>
             <div class="sidebar">
                 <?= $this->inc(Document_Snippet::getByPath('/snippets/news-and-events')); ?>
