@@ -1,5 +1,6 @@
 site/pimcore
 site/var
+site/website/var
 site/node_modules
 .vagrant
 site/website/static/*
