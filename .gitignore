@@ -1,14 +1,30 @@
+# IDE
+.idea
+
+# Node.JS
+site/node_modules
+site/bower_components
+
+# Composer
+site/composer.lock
+site/vendor
+
+# Vagrant
+.vagrant
+site/index.html
+
+# Misc
+.DS_Store
+faviconData.json
+site/website/views/layouts/includes/favicon.php
+
+# Pimcore
+site/website/static
 site/pimcore
 site/var
+site/plugins
 site/website/var
-site/node_modules
-.vagrant
-site/website/static/*
-.idea
-.DS_Store
 
-site/vendor/
+# Robots.txt
+site/robots.txt
 
-site/plugins/
-site/composer.lock
-site/bower_components/
