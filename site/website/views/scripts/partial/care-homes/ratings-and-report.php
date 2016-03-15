@@ -9,7 +9,7 @@ $careHomeObject = $this->careHomeObject;
         </div>
         <?php if (!$this->editmode) : ?>
             <div class="our-homes__left__sliding__title__show-hide">
-                <a href="#" class="show_hide">View +</a>
+                <a href="#" class="show_hide"><span class="desktop-hide">View </span>+</a>
             </div>
         <?php endif; ?>
     </div>
