@@ -110,7 +110,7 @@ gulp.task('build-js-libs', function () {
         './bower_components/jquery-validation/dist/jquery.validate.js',
         './bower_components/jquery-validation/dist/additional-methods.js',
         './bower_components/matchHeight/jquery.matchHeight.js',
-        './bower_components/datetimepicker/jquery.datetimepicker.js',
+        './bower_components/datetimepicker/build/jquery.datetimepicker.full.js',
         './bower_components/jquery.cookie/jquery.cookie.js',
         './bower_components/jt.timepicker/jquery.timepicker.js',
         './bower_components/lightbox2/dist/js/lightbox.js'
