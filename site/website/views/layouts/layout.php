@@ -14,9 +14,6 @@ $documentKey = ($this->document->getId() === 1) ? 'home' : $this->document->getK
                <a href="<?= $homePage; ?>"><img src="/website/static/images/logos/executive-care-logo.png" alt="Executive Care" /></a>
             </div>
             <div class="site-header__contact">
-               <div class="site-header__contact-header">
-                  <a href="#" id="smaller">A-</a> | <a href="#" id="larger">A+</a>
-               </div>
                <div class="site-header__contact-details">
                   <div class="site-header__telephone">
                      <i class="site-header__contact-telephone-icon"></i>

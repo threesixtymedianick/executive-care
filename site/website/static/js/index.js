@@ -173,96 +173,6 @@ $(document).ready(function () {
 });
 },{}],4:[function(require,module,exports){
 $(document).ready(function() {
-
-    // min font size
-    var min = 14;
-
-    // max font size
-    var max = 18;
-
-    // font resize these elements
-    var elm = $('.main').find('p, h1, h2, h3');
-
-    // Set size on page load if cookie value is set
-    if (getCookie() !== undefined) {
-        elm.css({'fontSize' : parseFloat(getCookie())});
-    }
-
-    // Increase font size
-    $('#larger').click(function(e) {
-
-        e.preventDefault();
-
-        if (getCookie() === undefined) {
-            var currentSize = parseFloat($('p').css('fontSize'));
-        } else {
-            var currentSize = parseFloat(getCookie());
-        }
-
-        // if the font size is lower or equal than the max value
-        if (currentSize <= max) {
-
-            // Onload text size is in em's, so the currentSize calculation
-            // returns a value smaller than the minimum
-            if (currentSize < min) {
-                currentSize = min;
-            }
-
-            // increase the size
-            currentSize = currentSize + 1;
-
-            // set the font size
-            elm.css({'fontSize' : currentSize});
-
-            // Set cookie value
-            setCookie(parseFloat(currentSize));
-        }
-    });
-
-    // Decrease font size
-    $('#smaller').click(function(e) {
-
-        e.preventDefault();
-
-        if (getCookie() === undefined) {
-            var currentSize = parseFloat($('p').css('fontSize'));
-        } else {
-            var currentSize = parseFloat(getCookie());
-        }
-
-        // if the font size is greater or equal than min value
-        if (currentSize >= min) {
-
-            // decrease the size
-            currentSize = currentSize - 1;
-
-            // set the font size
-            elm.css({'fontSize' : currentSize});
-
-            // Set cookie value
-            setCookie(parseFloat(currentSize));
-        }
-    });
-
-    /**
-     * Set a text-size cookie
-     * @param int value
-     */
-    function setCookie(value) {
-        $.cookie('text-size', value, { expires: 365, path: '/' });
-    }
-
-    /**
-     * Get the text-size cookie
-     * @return int
-     */
-    function getCookie() {
-        return $.cookie('text-size');
-    }
-});
-
-},{}],5:[function(require,module,exports){
-$(document).ready(function() {
     if ($('.careers__left__content__box--search').length > 0) {
 
         /**
@@ -314,7 +224,7 @@ $(document).ready(function() {
 });
 
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 require("./modules/tabs");
 require("./modules/homepage-slider");
 require("./modules/blog-slider");
@@ -333,7 +243,6 @@ require("./modules/wysiwyg-overrides");
 require("./modules/application-form");
 
 require("./features/show-more-less");
-require("./features/text-size-adjust");
 require("./features/our-homes-map");
 require("./features/vacancy-filter");
 require("./features/care-home-map");
@@ -344,7 +253,7 @@ require("./validation/volunteer-validation");
 require("./validation/careers-validation");
 require("./validation/book-a-visit-validation");
 
-},{"./features/care-home-map":1,"./features/our-homes-map":2,"./features/show-more-less":3,"./features/text-size-adjust":4,"./features/vacancy-filter":5,"./modules/application-form":7,"./modules/blog-slider":8,"./modules/book-a-visit-form":9,"./modules/box-height":10,"./modules/contact-us-form":11,"./modules/date-picker":12,"./modules/googleanalytics":13,"./modules/homepage-slider":14,"./modules/lightbox2-options":15,"./modules/live-chat":16,"./modules/nav":17,"./modules/nearby-homes-slider":18,"./modules/tabs":19,"./modules/wysiwyg-overrides":20,"./validation/book-a-visit-validation":22,"./validation/careers-validation":23,"./validation/contact-us-validation":24,"./validation/custom-validation-rules":25,"./validation/volunteer-validation":26}],7:[function(require,module,exports){
+},{"./features/care-home-map":1,"./features/our-homes-map":2,"./features/show-more-less":3,"./features/vacancy-filter":4,"./modules/application-form":6,"./modules/blog-slider":7,"./modules/book-a-visit-form":8,"./modules/box-height":9,"./modules/contact-us-form":10,"./modules/date-picker":11,"./modules/googleanalytics":12,"./modules/homepage-slider":13,"./modules/lightbox2-options":14,"./modules/live-chat":15,"./modules/nav":16,"./modules/nearby-homes-slider":17,"./modules/tabs":18,"./modules/wysiwyg-overrides":19,"./validation/book-a-visit-validation":21,"./validation/careers-validation":22,"./validation/contact-us-validation":23,"./validation/custom-validation-rules":24,"./validation/volunteer-validation":25}],6:[function(require,module,exports){
 var queryString = require("../utils/query-string-parameter");
 
 $(document).ready(function() {
@@ -367,7 +276,7 @@ $(document).ready(function() {
         }
     }
 });
-},{"../utils/query-string-parameter":21}],8:[function(require,module,exports){
+},{"../utils/query-string-parameter":20}],7:[function(require,module,exports){
 $(document).ready(function(){
     $('.blogslider').bxSlider({
         mode: 'fade',
@@ -379,7 +288,7 @@ $(document).ready(function(){
         touchEnabled: false
     });
 });
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var queryString = require("../utils/query-string-parameter");
 
 $(document).ready(function() {
@@ -403,7 +312,7 @@ $(document).ready(function() {
     }
 });
 
-},{"../utils/query-string-parameter":21}],10:[function(require,module,exports){
+},{"../utils/query-string-parameter":20}],9:[function(require,module,exports){
 $(function() {
    $('.equalHeight').matchHeight();
 
@@ -411,7 +320,7 @@ $(function() {
     byRow: false
    });
 });
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var queryString = require("../utils/query-string-parameter");
 
 $(document).ready(function() {
@@ -435,12 +344,12 @@ $(document).ready(function() {
     }
 });
 
-},{"../utils/query-string-parameter":21}],12:[function(require,module,exports){
+},{"../utils/query-string-parameter":20}],11:[function(require,module,exports){
 jQuery('.date_picker').datetimepicker({
   timepicker: false,
   format: 'd/m/Y'
 });
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -449,7 +358,7 @@ jQuery('.date_picker').datetimepicker({
 ga('create', 'UA-69155449-1', 'auto');
 ga('send', 'pageview');
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 $(document).ready(function(){
     $('.bxslider').bxSlider({
         adaptiveHeight: true,
@@ -462,13 +371,13 @@ $(document).ready(function(){
         touchEnabled: false
     });
 });
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 lightbox.option({
     'resizeDuration': 200,
     'wrapAround': true,
     'alwaysShowNavOnTouchDevices': true
 })
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 if (window.location.pathname == '/contact-us') {
     window.lpTag = window.lpTag || {};
     if (typeof window.lpTag._tagCount === 'undefined') {
@@ -565,13 +474,13 @@ if (window.location.pathname == '/contact-us') {
         window.lpTag._tagCount += 1;
     }
 }
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 $(document).ready(function() {
 	$('.mob-menu').click(function() {
 		$('.site-navigation__main-navigation').toggleClass('open');
 	});
 });
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 $(window).load(function(){
     $('.nearby-homes-slider').bxSlider({
         slideWidth: 380,
@@ -585,7 +494,7 @@ $(window).load(function(){
     });
 });
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 // Wait until the DOM has loaded before querying the document
 $(document).ready(function(){
     $('ul.tabs').each(function(){
@@ -624,7 +533,7 @@ $(document).ready(function(){
         });
     });
 });
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 (function() {
     if (window.CKEDITOR) {
         CKEDITOR.config.fontSize_sizes = "Small/0.75em;Normal/1em;Large/1.125em;Larger/1.25em;";
@@ -632,7 +541,7 @@ $(document).ready(function(){
 }());
 
 
-},{}],21:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 /**
@@ -650,7 +559,7 @@ module.exports = (function() {
     };
 }());
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 $("#bookAVisit_form").validate({
     rules: {
         bookAVisit_date               : "required",
@@ -674,7 +583,7 @@ $("#bookAVisit_form").validate({
     }
 });
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 $(document).ready(function () {
 
     var required = "*  - Required";
@@ -723,7 +632,7 @@ $(document).ready(function () {
         }
     });
 });
-},{}],24:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 $("#enquiry_form").validate({
     rules: {
         enquiry_name                : "required",
@@ -771,12 +680,12 @@ $("#brochure_form").validate({
         brochure_address            : "Please enter an address to contact you with"
     }
 });
-},{}],25:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 jQuery.validator.addMethod("valDomain",function (emailAddress) {
     var filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
         return filter.test(emailAddress);
 }, 'Invalid domain name.');
-},{}],26:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 $("#volunteer_form").validate({
     rules: {
         volunteer_name                : "required",
@@ -799,4 +708,4 @@ $("#volunteer_form").validate({
         volunteer_address             : "Please enter an address to contact you with"
     }
 });
-},{}]},{},[6]);
+},{}]},{},[5]);
