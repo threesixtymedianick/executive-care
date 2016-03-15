@@ -3,19 +3,16 @@ vagrantfile:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: executive-care.dev
-        memory: '512'
+        hostname: executive-care
+        memory: '1024'
         cpus: '1'
         chosen_provider: virtualbox
         network:
             private_network: 192.168.56.174
             forwarded_port:
-                vflnp_olvckaktkvpz:
-                    host: '8729'
+                vflnp_5o3w7x7w8cio:
+                    host: '7036'
                     guest: '22'
-                elastic_search:
-                    host: '9200'
-                    guest: '9200'
         post_up_message: ''
         provider:
             virtualbox:
@@ -28,17 +25,34 @@ vagrantfile:
                 cpus: 1
         provision:
             puppet:
-                manifests_path: puphpet/puppet
-                manifest_file: site.pp
+                manifests_path: puphpet/puppet/manifests
                 module_path: puphpet/puppet/modules
                 options:
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
-                    - '--parser future'
         synced_folder:
-            vflsf_ozjqtb9qyclr:
-                source: ~/Sites/executive-care
-                target: /var/www
+            vflsf_q795yy6h68jc:
+                source: ./site
+                target: /var/www/html
+                sync_type: nfs
+                smb:
+                    smb_host: ''
+                    smb_username: ''
+                    smb_password: ''
+                rsync:
+                    args:
+                        - '--verbose'
+                        - '--archive'
+                        - '-z'
+                    exclude:
+                        - .vagrant/
+                        - .git/
+                    auto: 'true'
+                owner: www-data
+                group: www-data
+            vflsf_ig7kng0br8o1:
+                source: ./databases
+                target: /var/www/databases
                 sync_type: nfs
                 smb:
                     smb_host: ''
@@ -68,12 +82,15 @@ vagrantfile:
         forward_agent: false
         forward_x11: false
         shell: 'bash -l'
+        insert_key: false
     vagrant:
         host: detect
 server:
     install: '1'
     packages:
+        - curl
         - nano
+        - git
 users_groups:
     install: '1'
     groups: {  }
@@ -83,18 +100,18 @@ locale:
     settings:
         default_locale: ''
         locales:
-            - 'en_GB.UTF-8 UTF-8'
-            - 'en_US.UTF-8 UTF-8'
+            - en_GB.UTF-8
+            - en_US.UTF-8
 firewall:
     install: '1'
     rules: {  }
 cron:
     install: '1'
     jobs:
-        cj_b98wur352i9l:
+        cj_l349xcj852n7:
             name: 'pimcore maintenance'
             user: root
-            command: 'php /var/www/executive-care/pimcore/cli/maintenance.php'
+            command: 'php /var/www/html/pimcore/cli/maintenance.php'
             minute: '5'
             hour: ''
             weekday: ''
@@ -106,9 +123,13 @@ nginx:
         default_vhost: 1
         proxy_buffer_size: 128k
         proxy_buffers: '4 256k'
+        proxy_connect_timeout: 600s
+        proxy_send_timeout: 600s
+        proxy_read_timeout: 600s
+        names_hash_bucket_size: 128
     upstreams: {  }
     vhosts:
-        nxv_ky7ea7dtadln:
+        nxv_rt1891igh9uh:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -128,9 +149,10 @@ nginx:
             rewrite_to_https: '1'
             spdy: '1'
             locations:
-                nxvl_0ke5s0ces0fe:
+                nxvl_e9qffsdcga61:
                     location: /
                     autoindex: 'off'
+                    internal: 'false'
                     try_files:
                         - $uri
                         - $uri/
@@ -138,9 +160,12 @@ nginx:
                     fastcgi: ''
                     fastcgi_index: ''
                     fastcgi_split_path: ''
-                nxvl_p87czwofssna:
+                    proxy: ''
+                    proxy_redirect: ''
+                nxvl_hx1nn6mrh7uo:
                     location: '~ \.php$'
                     autoindex: 'off'
+                    internal: 'false'
                     try_files:
                         - $uri
                         - $uri/
@@ -151,6 +176,8 @@ nginx:
                     fast_cgi_params_extra:
                         - 'SCRIPT_FILENAME $request_filename'
                         - 'APP_ENV dev'
+                    proxy: ''
+                    proxy_redirect: ''
     proxies: {  }
 apache:
     install: '1'
@@ -162,13 +189,16 @@ apache:
         manage_group: false
         sendfile: 0
     modules:
+        - headers
         - proxy_fcgi
         - rewrite
-        - headers
     vhosts:
-        av_sybik1ypazpl:
+        av_utsx7q41zind:
             servername: executive-care.dev
-            docroot: /var/www
+            serveraliases:
+                - executive-care.dev
+                - www.executive-care.dev
+            docroot: /var/www/html
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -181,8 +211,8 @@ apache:
             ssl_protocol: ''
             ssl_cipher: ''
             directories:
-                avd_7vrqhd8240fc:
-                    path: /var/www
+                avd_x3kevqyniz22:
+                    path: /var/www/html
                     options:
                         - Indexes
                         - FollowSymlinks
@@ -193,7 +223,7 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     files_match:
-                        avdfm_lihqxa4nctcx:
+                        avdfm_plf05rlbtaj0:
                             path: \.php$
                             sethandler: 'proxy:fcgi://127.0.0.1:9000'
                             custom_fragment: ''
@@ -206,12 +236,15 @@ php:
     modules:
         php:
             - cli
+            - curl
+            - fpm
+            - gd
             - intl
             - mcrypt
-            - curl
+            - mysql
+            - memcache
         pear: {  }
-        pecl:
-            - pecl_http
+        pecl: {  }
     ini:
         display_errors: 'On'
         error_reporting: '-1'
@@ -220,7 +253,7 @@ php:
     fpm_ini:
         error_log: /var/log/php-fpm.log
     fpm_pools:
-        phpfp_s7pt30y7pdis:
+        phpfp_qpf9t1dd0eex:
             ini:
                 prefix: www
                 listen: '127.0.0.1:9000'
@@ -230,7 +263,7 @@ php:
     composer: '1'
     composer_home: ''
 xdebug:
-    install: '1'
+    install: '0'
     settings:
         xdebug.default_enable: '1'
         xdebug.remote_autostart: '0'
@@ -268,22 +301,10 @@ python:
     packages: {  }
     versions: {  }
 nodejs:
-    install: '1'
-    npm_packages:
-        - browserify
-        - gulp
-        - gulp-concat
-        - gulp-copy
-        - gulp-minify-css
-        - gulp-imagemin
-        - gulp-plumber
-        - run-sequence
-        - gulp-sass
-        - gulp-uglifyjs
-        - gulp-watch
-        - reactify
-        - vinyl-source-stream
-        - gulp-pixrem
+    install: '0'
+    settings:
+        version: null
+    npm_packages: { }
 hhvm:
     install: '0'
     nightly: 0
@@ -299,46 +320,45 @@ hhvm:
         display_errors: 'On'
         error_reporting: '-1'
         date.timezone: UTC
-mysql:
+mariadb:
     install: '1'
     settings:
-        version: '5.6'
+        version: '10.1'
         root_password: 'fgGc91LIlL'
         override_options: {  }
     adminer: 0
     users:
-        mysqlnu_w54efwo8rgs0:
+        mariadbnu_q03t25wvz3hd:
             name: exec-dev
-            password: 'T4ghCa2Hj7Nv'
-
+            password: 'CVfqYXzBaiLK3rNw'
     databases:
-        mysqlnd_quqi7c8dsbz9:
+        mariadbnd_q7mkwxzzzd8i:
             name: executive_care_development
-            sql: '/var/www/pimcore.sql'
+            sql: /var/www/databases/vagrant.database.sql
     grants:
-       mysqlng_1d1fmhx3smng:
-           user: exec-dev
-           table: '*.*'
-           privileges:
-               - ALL
-mariadb:
+        mariadbng_1unxovxovnzc:
+            user: exec-dev
+            table: '*.*'
+            privileges:
+                - ALL
+mysql:
     install: '0'
     settings:
-        version: '10.0'
-        root_password: '123'
+        version: '5.6'
+        root_password: fgGc91LIlL
         override_options: {  }
     adminer: 0
     users:
-        mariadbnu_g6rkdcsim846:
-            name: dbuser
-            password: '123'
+        mysqlnu_q40olpgmkcf4:
+            name: exec-dev
+            password: CVfqYXzBaiLK3rNw
     databases:
-        mariadbnd_t8uuawuzvl1r:
-            name: dbname
-            sql: ''
+        mysqlnd_ll63hqpp6y3z:
+            name: executive_care_development
+            sql: /var/www/databases/vagrant.database.sql
     grants:
-        mariadbng_q0e914g0qtvt:
-            user: dbuser
+        mysqlng_onu81vmmcmsj:
+            user: exec-dev
             table: '*.*'
             privileges:
                 - ALL
@@ -347,7 +367,7 @@ postgresql:
     settings:
         global:
             encoding: UTF8
-            version: '9.3'
+            version: '9.4'
         server:
             postgres_password: '123'
     databases: {  }
@@ -360,6 +380,8 @@ mongodb:
         auth: 1
         bind_ip: 127.0.0.1
         port: '27017'
+    globals:
+        version: 2.6.0
     databases: {  }
 redis:
     install: '0'
@@ -369,20 +391,19 @@ sqlite:
     install: '0'
     adminer: 0
     databases: {  }
-mailcatcher:
+mailhog:
     install: '0'
     settings:
         smtp_ip: 0.0.0.0
         smtp_port: 1025
         http_ip: 0.0.0.0
-        http_port: '1080'
-        mailcatcher_path: /usr/local/rvm/wrappers/default
-        from_email_method: inline
+        http_port: '8025'
+        path: /usr/local/bin/mailhog
 beanstalkd:
     install: '0'
     settings:
         listenaddress: 0.0.0.0
-        listenport: '13000'
+        listenport: '11300'
         maxjobsize: '65535'
         maxconnections: '1024'
         binlogdir: /var/lib/beanstalkd/binlog
@@ -397,7 +418,7 @@ rabbitmq:
     vhosts: {  }
     plugins: {  }
 elastic_search:
-    install: '1'
+    install: '0'
     settings:
         version: 1.4.1
         java_install: true

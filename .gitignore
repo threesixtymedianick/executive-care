@@ -1,13 +1,14 @@
-/pimcore
-/var
-/node_modules
+site/pimcore
+site/var
+site/website/var
+site/node_modules
 .vagrant
-website/static/*
+site/website/static/*
 .idea
 .DS_Store
 
-/vendor/
+site/vendor/
 
-plugins/*
-composer.lock
-bower_components/
+site/plugins/
+site/composer.lock
+site/bower_components/
