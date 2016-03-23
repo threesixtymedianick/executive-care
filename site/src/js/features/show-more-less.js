@@ -5,7 +5,7 @@ $(document).ready(function () {
     var showMoreText = '<span class="desktop-hide">Show More </span>+';
     var showLessText = '<span class="desktop-hide">Show Less </span>-';
     var viewText = '<span class="desktop-hide">View </span>+';
-    var hideText = '<span class="desktop-hide">Hide </span>+';
+    var hideText = '<span class="desktop-hide">Hide </span>-';
     var errorText = "Error";
 
     var plus = "+";
