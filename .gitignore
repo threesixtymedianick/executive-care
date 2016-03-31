@@ -7,7 +7,7 @@ site/bower_components
 
 # Composer
 site/composer.lock
-site/vendor
+site/vendor/*
 
 # Vagrant
 .vagrant
