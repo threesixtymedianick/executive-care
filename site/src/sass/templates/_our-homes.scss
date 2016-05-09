@@ -460,11 +460,25 @@
 .gallery {
   text-align: center;
   & a {
+    display: inline-block;
     text-decoration: none;
+    width: 24%;
+    height: 160px;
+    overflow: hidden;
+    margin: 0 .2% 4px;
+
+    @media(max-width:$tablet-lrg-breakpoint) {
+      width: 32%;
+    }
+
+    @media(max-width:560px) {
+      width: 49%;
+    }
   }
 
   & img {
     border: 0;
+    width: 105%;
   }
 }
 
