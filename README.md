@@ -1,111 +1,35 @@
 # Executive Care
 
-Development - http://development.executive-care.bolser.co.uk
-
-UAT - http://uat.executive-care.bolser.co.uk
-
 ## Installation Instructions
 
-Clone this repository into `~/Sites`
+Clone this repository somewhere on your computer, for example:- `~/Sites`
 
-Download the latest Stable release package from https://www.pimcore.org/en/resources/download
+Download the legacy Pimcore version 3.1.1:- https://www.pimcore.org/download/archive/pimcore-3.1.1.zip
 
-Extract the `/website/var` directory from the release package into `~/Sites/executive-care/var`
+Extract the `/website/var` directory from the legacy package into `~/Sites/executive-care/var`
 
-Extract the `/pimcore` directory from the release package into `~/Sites/executive-care/pimcore`
+Extract the `/pimcore` directory from the lecacy package into `~/Sites/executive-care/pimcore`
 
 Create a symlink from `/website/var` to `/var` by
 
 ```
-cd website
-ln -s ../var var
+ln -s website/var var
 ```
 
-Create the file `~/Sites/executive-care/var/config/system.xml` with the content
+There are differing setup procedures depending on whether or not you're setting up for a production site, or a local vagrant copy. You can find the relevant instructions here:-
 
-```XML
-<?xml version="1.0"?>
-<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
-  <general>
-    <timezone>Europe/Berlin</timezone>
-    <language>en</language>
-    <validLanguages>en</validLanguages>
-    <debug>1</debug>
-    <debugloglevel>debug</debugloglevel>
-    <custom_php_logfile>1</custom_php_logfile>
-  </general>
-  <database>
-    <adapter>Mysqli</adapter>
-    <params>
-      <username>exec-dev</username>
-      <password>T4ghCa2Hj7Nv</password>
-      <dbname>executive_care_development</dbname>
-      <host>localhost</host>
-      <port>3306</port>
-    </params>
-  </database>
-  <documents>
-    <versions>
-      <steps>10</steps>
-    </versions>
-    <default_controller>default</default_controller>
-    <default_action>default</default_action>
-    <error_pages>
-      <default>/</default>
-    </error_pages>
-    <createredirectwhenmoved/>
-    <allowtrailingslash>no</allowtrailingslash>
-    <allowcapitals>no</allowcapitals>
-    <generatepreview>1</generatepreview>
-  </documents>
-  <objects>
-    <versions>
-      <steps>10</steps>
-    </versions>
-  </objects>
-  <assets>
-    <versions>
-      <steps>10</steps>
-    </versions>
-  </assets>
-  <services/>
-  <cache>
-    <excludeCookie/>
-  </cache>
-  <httpclient>
-    <adapter>Zend_Http_Client_Adapter_Socket</adapter>
-  </httpclient>
-</zend-config>
+* [Vagrant](docs/vagrant.md)
+* [Production](docs/production.md)
 
-```
+## ElasticSearch
 
-You also need to pull the git sub modules, using this command
+Once you've installed the site and it is correctly loading, we will need to perform some steps in order to get the searching feature working, using ElasticSearch.
 
-```bash
-  git pull --recurse-submodules
-```
+* [Installing ElasticSearch](/docs/elasticsearch.md)
 
-Add a record to your host file
+## Accessing the Admin Control Panel
 
-```
-192.168.56.174   executive-care.dev
-```
-
-cd into ~/Sites/executive-care and run
-```
-vagrant up
-```
-
-To populate elastic search
-
-```
-vagrant ssh
-php /var/www/pimcore/cli/console.php elasticsearch:mappings
-php /var/www/pimcore/cli/console.php elasticsearch:seeder
-```
-
-
-The admin panel can be accessed at http://executive-care.dev/admin
+The admin panel can be accessed at http://executive-care.dev/admin for vagrant and http://execcaregroup.co.uk/admin for the production site.
 
 ```
 Username - admin
