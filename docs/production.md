@@ -12,4 +12,31 @@ Setting up a Production environment will largely be based on whatever you decide
  
 * Setup your Apache vHost
 
+```
+<VirtualHost *:80>
+  ServerName www.execcaregroup.co.uk
+  ServerAlias execcaregroup.co.uk *.execcaregroup.co.uk
+  ## Vhost docroot
+  DocumentRoot "/var/www"
+  DirectoryIndex index.php
+
+  ## Directories, there should at least be a declaration for /var/www
+
+  <Directory "/var/www">
+    Options Indexes FollowSymlinks MultiViews
+    AllowOverride All
+    Require all granted
+
+  </Directory>
+
+  ## Logging
+  ErrorLog "/var/log/apache2/executive-care_error.log"
+  ServerSignature Off
+  CustomLog "/var/log/apache2/executive-care_access.log" combined
+
+  ## SetEnv/SetEnvIf for environment variables
+  SetEnv APP_ENV dev
+</VirtualHost>
+```
+
 * Consider changing `/var/www/var/config/system.xml` with any relevant database details you need.
